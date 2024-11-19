@@ -1,0 +1,10 @@
+services:
+    pd-project:
+        hostname: pd-project
+        container_name: pd-project
+        image: pd-project
+        build:
+            context: .
+            dockerfile: Dockerfile
+        volumes:
+            - ../code:/home/clingo/code
