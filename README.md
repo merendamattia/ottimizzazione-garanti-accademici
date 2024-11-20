@@ -1,19 +1,31 @@
 # pd-project
 
-Declarative programming project.
+# Utilizzo
+
+## Requisiti
+
+- Docker
+- Docker Compose
+
+Assicurati che Docker e Docker Compose siano installati. Puoi verificare l'installazione eseguendo:
 
 ```bash
-Directory guide:
-.
-├── code
-├── doc
-└── docker
+docker --version
+docker compose --version
 ```
 
-## Contenuto nel dettaglio
+## Build e Run
 
-| Path                  | Description                                                     |
-| --------------------- | --------------------------------------------------------------- |
-| code/script/parser.py | Code for parsing input data                                     |
-| docker/\*             | Docker files for creating the image and container               |
-| doc/                  | Folder containing documentation, specifications, and info files |
+> Per eseguire questi comandi è necessario trovarsi all'interno della cartella docker.
+
+Per costruire il container:
+
+```bash
+docker compose build
+```
+
+Per eseguire il container:
+
+```bash
+docker compose run pd-project
+```
