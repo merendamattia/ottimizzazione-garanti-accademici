@@ -1,28 +1,28 @@
-# Usage
+# Utilizzo
 
-## Requirements
+## Requisiti
 
 - Docker
 - Docker Compose
 
-Make sure Docker and Docker Compose are installed. You can verify the installation by running:
+Assicurati che Docker e Docker Compose siano installati. Puoi verificare l'installazione eseguendo:
 
 ```bash
 docker --version
 docker compose --version
 ```
 
-## Build and Run
+## Build e Run
 
-> You must be inside the docker folder to run this commands.
+> Per eseguire questi comandi è necessario trovarsi all'interno della cartella docker.
 
-To build the container:
+Per costruire il container:
 
 ```bash
 docker compose build
 ```
 
-To run the container:
+Per eseguire il container:
 
 ```bash
 docker compose run pd-project
