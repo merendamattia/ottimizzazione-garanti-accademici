@@ -7,4 +7,4 @@ services:
             context: .
             dockerfile: Dockerfile
         volumes:
-            - ../code:/home/clingo/code
+            - ./src:/home/clingo/code
