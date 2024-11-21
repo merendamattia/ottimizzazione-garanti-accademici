@@ -25,13 +25,14 @@ jobs:
       # Step 3: Generate documentation with Doxygen
       - name: Generate documentation
         run: |
-          doxygen Doxygen
+          ls -la
+          doxygen Doxyfile
 
       # Step 4: Clean up and compile the PDF
       - name: Process documentation
         run: |
           # Remove HTML documentation
-          rm -rf doc/html
+          # rm -rf doc/html
           # Compile LaTeX documentation to PDF
           cd doc/latex
           make
@@ -44,7 +45,7 @@ jobs:
         run: |
           git config --global user.name "GitHub Actions Bot"
           git config --global user.email "actions@github.com"
-          git add doc/refman.pdf
+          git add doc/documentazione.pdf
           git commit -m "Aggiornata documentazione (PDF)"
           git push
         env:
