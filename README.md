@@ -4,8 +4,8 @@
 
 ## Requisiti
 
-- Docker
-- Docker Compose
+-   Docker
+-   Docker Compose
 
 Assicurati che Docker e Docker Compose siano installati. Puoi verificare l'installazione eseguendo:
 
