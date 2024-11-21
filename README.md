@@ -1,23 +1,26 @@
 # pd-project
-
-# Utilizzo
+Realizzato da:
+- Colli Simone
+- Merenda Saverio Mattia
 
 ## Requisiti
+È necessario avere i seguenti strumenti installati:
 
-- Docker
-- Docker Compose
+-   [Docker](https://docs.docker.com/engine/install/).
+-   [Docker Compose](https://docs.docker.com/compose/install/).
+-   [Doxygen](https://doxygen.nl).
+-   [Make](https://www.gnu.org/software/make/).
 
-Assicurati che Docker e Docker Compose siano installati. Puoi verificare l'installazione eseguendo:
+Per verificare la corretta installazione:
 
 ```bash
 docker --version
-docker compose --version
+docker compose version
+doxygen --version
+make --version
 ```
 
 ## Build e Run
-
-> Per eseguire questi comandi è necessario trovarsi all'interno della cartella docker.
-
 Per costruire il container:
 
 ```bash
@@ -28,4 +31,15 @@ Per eseguire il container:
 
 ```bash
 docker compose run pd-project
+```
+
+> Potrebbe essere necessario aggiornare i permessi della cartella `src` con `chmod -R 777 src`.
+
+## Documentazione
+Per generare la documentazione:
+
+```bash
+doxygen Doxyfile
+cd doc/latex
+make
 ```
