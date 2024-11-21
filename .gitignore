@@ -2,7 +2,6 @@
 ./vscode
 ./vscode/*
 .vscode/*
-
 doc/html
 doc/html/*
 ./doc/html
@@ -11,3 +10,4 @@ doc/latex
 doc/latex/*
 ./doc/latex
 ./doc/latex/*
+**/__pycache__/**
