@@ -25,7 +25,7 @@ COPY .github/REQUIREMENTS-PIP requirements-pip.txt
 RUN pip install --break-system-packages -r requirements-pip.txt
 
 # Configurazione della directory di lavoro principale
-ARG WORKDIR="/home/clingo/code"
+ARG WORKDIR="/home/clingo/src"
 RUN mkdir -p ${WORKDIR}
 WORKDIR ${WORKDIR}
 
