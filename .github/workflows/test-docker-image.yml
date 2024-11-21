@@ -4,6 +4,7 @@ on:
   pull_request:
     branches:
       - main
+      - dev
   push:
     branches:
       - main
@@ -18,5 +19,4 @@ jobs:
 
       - name: Build & Run Docker image
         run: |
-          cd docker
           docker compose build

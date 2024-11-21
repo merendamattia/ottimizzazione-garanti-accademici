@@ -21,8 +21,8 @@ RUN mkdir -p ${SETUPDIR}
 WORKDIR ${SETUPDIR}
 
 # Copia e installazione delle dipendenze Python
-COPY pip-requirements.txt pip-requirements.txt
-RUN pip install --break-system-packages -r pip-requirements.txt
+COPY .github/REQUIREMENTS-PIP requirements-pip.txt
+RUN pip install --break-system-packages -r requirements-pip.txt
 
 # Configurazione della directory di lavoro principale
 ARG WORKDIR="/home/clingo/code"
