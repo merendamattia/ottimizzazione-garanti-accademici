@@ -1,10 +1,10 @@
-name: Generate Documentation
+name: Generate Python Documentation
 
 on:
   push:
     branches:
       - main
-      - doxygen-action
+      - dev
   workflow_dispatch:
 
 jobs:
@@ -12,35 +12,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the repository
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Step 2: Install dependencies (Doxygen, Make, and LaTeX tools)
       - name: Install dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y doxygen make texlive texlive-latex-extra texlive-fonts-recommended latexmk
 
-      # Step 3: Generate documentation with Doxygen
       - name: Generate documentation
         run: |
           ls -la
           doxygen Doxyfile
 
-      # Step 4: Clean up and compile the PDF
       - name: Process documentation
         run: |
-          # Remove HTML documentation
-          # rm -rf doc/html
-          # Compile LaTeX documentation to PDF
           cd doc/latex
           make
-          # Move the generated PDF to the doc folder
           cp refman.pdf ../documentazione.pdf
           cd ../
 
-      # Step 5: Commit and push the documentation
       - name: Commit and push documentation
         run: |
           git config --global user.name "GitHub Actions Bot"
