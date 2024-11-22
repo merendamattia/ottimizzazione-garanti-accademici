@@ -1,5 +1,6 @@
 from modules.loader import Loader
 from modules.department_parser import DepartmentParser
+from modules.dataset_loader import DatasetLoader
 
 def main():
     # Inizializza il Loader
@@ -31,5 +32,17 @@ def main():
         print("Errore: nessun dipartimento selezionato.")
         parser.parser.print_help()
 
+def test_dataset_loader():
+    dataset_loader = DatasetLoader('dataset/coperture.xlsx')
+
+    filters = {
+        'Cod. Tipo Corso': ['LM'],
+        'SSD': ['INF/01']
+    }
+    filtered_data = dataset_loader.filter_by_values(filters)
+
+    dataset_loader.save_to_file(df=filtered_data, output_file_path='dataset/tmp_info.csv')
+
 if __name__ == "__main__":
-    main()
+    # main()
+    test_dataset_loader()

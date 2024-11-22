@@ -24,7 +24,7 @@ make --version
 Per costruire il container:
 
 ```bash
-docker compose build
+docker compose build --no-cache
 ```
 
 Per eseguire il container:
