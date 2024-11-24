@@ -1,6 +1,5 @@
-.vscode
-./vscode
-./vscode/*
-.vscode/*
-
+**/.vscode/**
+**/doc/html/**
+**/doc/latex/**
 **/__pycache__/**
+**/.DS_Store/**
