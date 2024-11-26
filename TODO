@@ -1,11 +1,10 @@
 # TODO
 
-1. Estrarre settore dagli SSD
-2. Mappa che tiene traccia di codice dipartimento e nome (SSD: Nome, e.g., 'INF/01': 'Informatica')
-3. Funzione che estrapola tutti gli atomi in base all'SSD del dipartimento e usa il nome di quest'ultimo per costruire il nome del file
-4. Filtrare i dati:
+1. Mappa che tiene traccia di codice dipartimento e nome (SSD: Nome, e.g., 'INF/01': 'Informatica')
+2. Funzione che estrapola tutti gli atomi in base all'SSD del dipartimento e usa il nome di quest'ultimo per costruire il nome del file
+3. Filtrare i dati:
     - Rimuovere le ore (commento)
     - Rimuovere i CFU (commento)
     - Modifica output (docente_corso(1007846, 3948) :- corso(1007846), docente(3948.0).)
     - Tipo corso (tipo_corso(1006765, L, INF) :- corso(1006765), laurea(L), ssd(INF))
-5. Riscrivere tabella traccia in csv + codice python per caricarlo su asp
+4. Riscrivere tabella traccia in csv + codice python per caricarlo su asp
