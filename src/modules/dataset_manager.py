@@ -27,7 +27,39 @@ class DatasetManager:
             if filename.endswith(".lp")
         ]
         return departments
+    
+    def get_sectors(self, SSD = None):
+        """
+        Ottiene la lista dei settori partendo da una lista di SSD.
 
+        Ogni SSD è rappresentato nel formato "SETTORE/CODICE". Questa funzione estrae
+        e restituisce solo la parte relativa al settore (prima del separatore '/').
+        
+        :param SSD: Una lista di stringhe rappresentanti i SSD. Ad esempio, ["INF/01", "MAT/03"].
+        :type SSD: list[str], optional
+        :return: Un set di settori se la lista passata come parametro è non vuota. 
+                Ritorna un set vuoto se il parametro è None o vuoto.
+        :rtype: set[str]
+
+        :example:
+        input: ["INF/01", "MAT/03", "FIS/07"]
+        output: {"INF", "MAT", "FIS"}
+        """
+        if SSD:
+            # print(SSD)
+            # Estrai la parte prima dello slash per ogni elemento della lista
+            items = set()
+            for code in SSD:
+                # Escludere None, NaN, o stringhe vuote
+                if not code or not isinstance(code, str) or code.strip().lower() == "nan":
+                    continue
+                spl = code.split("/")
+                if len(spl) > 1:
+                    items.add(spl[0])
+            return items
+        else:
+            return set()
+        
     def load_data(self, filename):
         """
         Legge i dati da un file di testo e li stampa.
