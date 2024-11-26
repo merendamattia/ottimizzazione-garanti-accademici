@@ -74,9 +74,23 @@ def test_scrittura_atomi():
     dataset_manager = DatasetManager()
     dataset_manager.write_atoms(data, 'informatica')
 
+
+def test_estrazione_settori():
+    dsl = DatasetLoader("dataset/coperture.xlsx")
+    filters = ["SSD"]
+    ds = dsl.get_values(columns=filters)
+    
+    SSD = dsl.df_to_dict(ds)
+    # print(SSD)
+    # print(SSD.keys())
+    dsm = DatasetManager()
+    settori = dsm.get_sectors(SSD["SSD"])
+    print(settori)
+
+
 if __name__ == "__main__":
     # test_parser()
     # test_filtra_per_valori()
     # test_filtra_per_colonne()
-    test_scrittura_atomi()
-    
+    # test_scrittura_atomi()
+    test_estrazione_settori()
