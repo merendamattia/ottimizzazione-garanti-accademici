@@ -87,6 +87,68 @@ class DatasetLoader:
             print(f"Errore durante il filtraggio dei dati: {e}")
             raise e
     
+    
+    def df_to_dict(self, df, id_type="col"):
+        """
+        Converte un DataFrame Pandas in un dizionario strutturato.
+
+        Il dizionario risultante contiene:
+        - "rows": lista degli identificativi delle righe (index del DataFrame).
+        - "cols": lista degli identificativi delle colonne (header del DataFrame).
+        - Chiavi dinamiche: il contenuto delle colonne (default) o delle righe.
+
+        :param df: Un DataFrame Pandas da convertire.
+        :type df: pandas.DataFrame
+        :param id_type: Tipo di identificatore per il contenuto. "col" per colonne (default),
+                        "row" per righe.
+        :type id_type: str, optional
+        :return: Un dizionario strutturato contenente informazioni su righe, colonne
+                 e i dati associati.
+        :rtype: dict
+
+        :example:
+        input:
+            df =
+                A   B   C
+            0   1   2   3
+            1   4   5   6
+
+        output (id_type="col"):
+        {
+            "rows": [0, 1],
+            "cols": ["A", "B", "C"],
+            "A": [1, 4],
+            "B": [2, 5],
+            "C": [3, 6]
+        }
+
+        output (id_type="row"):
+        {
+            "rows": [0, 1],
+            "cols": ["A", "B", "C"],
+            0: [1, 2, 3],
+            1: [4, 5, 6]
+        }
+        """
+        if df is None or df.empty:
+            return {}
+
+        result = {
+            "rows": df.index.tolist(),
+            "cols": df.columns.tolist()
+        }
+
+        if id_type == "col":
+            for col in df.columns:
+                result[col] = df[col].tolist()
+        elif id_type == "row":
+            for row in df.index:
+                result[row] = df.loc[row].tolist()
+        else:
+            raise ValueError("Il parametro id_type deve essere 'col' o 'row'.")
+
+        return result
+    
     def save_to_file(self, df, output_file_path, file_format="csv"):
         """
         Salva il DataFrame su un file specificato.
