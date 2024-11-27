@@ -3,3 +3,4 @@
 **/doc/latex/**
 **/__pycache__/**
 **/.DS_Store/**
+src/dataset/ssd

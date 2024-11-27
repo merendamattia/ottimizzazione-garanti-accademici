@@ -24,7 +24,7 @@ class DatasetManager:
         departments = [
             os.path.splitext(filename)[0]
             for filename in os.listdir(self.dataset_path)
-            if filename.endswith(".lp")
+            if filename.endswith(".csv")
         ]
         return departments
     
@@ -67,7 +67,7 @@ class DatasetManager:
         :raises FileNotFoundError: Se il file specificato non esiste.
         :raises Exception: Per altri errori durante la lettura del file.
         """
-        path = os.path.join(self.dataset_path, f'{filename}.lp')
+        path = os.path.join(self.dataset_path, f'{filename}.csv')
         if not os.path.exists(path):
             raise FileNotFoundError(f"Errore: il file '{path}' non esiste.")
 

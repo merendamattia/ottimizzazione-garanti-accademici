@@ -64,7 +64,7 @@ class DatasetLoader:
             # Converte tutti i valori del DataFrame in stringhe
             df = df.astype(str)
 
-            print(f"Filtri: {filters}")
+            # print(f"Filtri: {filters}")
             
             # Applica i filtri
             for column, values in filters.items():
@@ -74,7 +74,7 @@ class DatasetLoader:
                 
                 # Filtra il DataFrame per i valori specificati nella colonna
                 df = df[df[column].isin(map(str, values))]
-                print(f"Filtrate {df.size} row per '{column}': {values}.")
+                # print(f"Filtrate {df.size} row per '{column}': {values}.")
             
             return df
         except ImportError as e:
@@ -161,10 +161,10 @@ class DatasetLoader:
         try:
             if file_format == "csv":
                 df.to_csv(output_file_path, index=False)
-                print(f"File salvato come CSV in: {output_file_path}")
+                # print(f"File salvato come CSV in: {output_file_path}")
             elif file_format == "excel":
                 df.to_excel(output_file_path, index=False, engine="openpyxl")
-                print(f"File salvato come Excel in: {output_file_path}")
+                # print(f"File salvato come Excel in: {output_file_path}")
             else:
                 raise ValueError("[Errore] Formati supportati: 'csv', 'excel'.")
         except Exception as e:
