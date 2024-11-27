@@ -47,13 +47,13 @@ class DatasetManager:
         """
         if SSD:
             # print(SSD)
-            # Estrai la parte prima dello slash per ogni elemento della lista
             items = set()
             for code in SSD:
                 # Escludere None, NaN, o stringhe vuote
-                if not code or not isinstance(code, str) or code.strip().lower() == "nan":
+                if not code or not isinstance(code, str) or code.strip().lower() == 'nan':
                     continue
-                spl = code.split("/")
+                # Estrae la parte prima di `/` per ogni elemento della lista
+                spl = code.split('/')
                 if len(spl) > 1:
                     items.add(spl[0])
             return items
@@ -67,7 +67,7 @@ class DatasetManager:
         :raises FileNotFoundError: Se il file specificato non esiste.
         :raises Exception: Per altri errori durante la lettura del file.
         """
-        path = os.path.join(self.dataset_path, f"{filename}.lp")
+        path = os.path.join(self.dataset_path, f'{filename}.lp')
         if not os.path.exists(path):
             raise FileNotFoundError(f"Errore: il file '{path}' non esiste.")
 
@@ -95,18 +95,32 @@ class DatasetManager:
         docenti_aggiunti = set()
         corsi_aggiunti = set()
         tipi_corso_aggiunti = set()
+        ssd_aggiunti = set()
 
         try:
             with open(filepath, 'w') as file:
                 # Scrive la sezione dei tipi di corso
                 file.write(f"{comment_character} SEZIONE: Tipi di Corso\n")
                 for _, row in df.iterrows():
-                    tipoCorso = row['Cod. Tipo Corso']
+                    # Non posso usare le lettere in maiuscolo perchè possono essere scambiate per variabili e non atomi
+                    tipoCorso = row['Cod. Tipo Corso'].lower()
                     if tipoCorso not in tipi_corso_aggiunti:
-                        file.write(f"tipo_corso({tipoCorso}).\n")
+                        file.write(f"laurea({tipoCorso}).\n")
                         tipi_corso_aggiunti.add(tipoCorso)
                 file.write("\n")
 
+                # Scrive la sezione dei vari SSD
+                file.write(f"{comment_character} SEZIONE: SSD\n")
+                for _, row in df.iterrows():
+                    # Non posso usare le lettere in maiuscolo perchè possono essere scambiate per variabili e non atomi
+                    ssd = row['SSD'].split('/')
+                    ssd = ssd[0].lower()
+                    if ssd not in ssd_aggiunti:
+                        file.write(f"ssd({ssd}).\n")
+                        ssd_aggiunti.add(ssd)
+                file.write("\n")
+
+                """
                 # Scrive la sezione dei CFU
                 file.write(f"{comment_character} SEZIONE: CFU\n")
                 for _, row in df.iterrows():
@@ -124,50 +138,58 @@ class DatasetManager:
                         file.write(f"ore({oreCorso}).\n")
                         ore_aggiunte.add(oreCorso)
                 file.write("\n")
+                """
 
                 # Scrive la sezione dei docenti
                 file.write(f"{comment_character} SEZIONE: Docenti\n")
                 for _, row in df.iterrows():
-                    matricola = row['Matricola']
-                    prof = row['Cognome'] + " " + row['Nome']
-                    if matricola not in docenti_aggiunti:
-                        file.write(f"{comment_character} {prof} ({matricola})\n")
-                        file.write(f"docente({matricola}).\n")
-                        docenti_aggiunti.add(matricola)
+                    if row['Matricola'].lower() == 'nan':
+                        matricola_docente = row['Matricola']
+                    else:
+                        matricola_docente = int(float(row['Matricola']))
+
+                    nome_docente = row['Cognome'] + " " + row['Nome']
+                    if matricola_docente not in docenti_aggiunti:
+                        file.write(f"{comment_character} {nome_docente} ({matricola_docente})\n")
+                        file.write(f"matricola_docente({matricola_docente}).\n")
+                        docenti_aggiunti.add(matricola_docente)
                 file.write("\n")
 
                 # Scrive la sezione dei corsi
                 file.write(f"{comment_character} SEZIONE: Corsi\n")
                 for _, row in df.iterrows():
-                    codiceCorso = row['Cod. Att. Form.']
-                    nomeCorso = row['Des. Insegnamento']
-                    if codiceCorso not in corsi_aggiunti:
-                        file.write(f"{comment_character} {nomeCorso} ({codiceCorso})\n")
-                        file.write(f"corso({codiceCorso}).\n")
-                        corsi_aggiunti.add(codiceCorso)
+                    matricola_corso = row['Cod. Att. Form.']
+                    nome_corso = row['Des. Insegnamento']
+                    if matricola_corso not in corsi_aggiunti:
+                        file.write(f"{comment_character} {nome_corso} ({matricola_corso})\n")
+                        file.write(f"matricola_corso({matricola_corso}).\n")
+                        corsi_aggiunti.add(matricola_corso)
                 file.write("\n")
 
                 # Scrive le relazioni tra corsi e docenti
                 file.write(f"{comment_character} SEZIONE: Relazioni Corsi-Docenti\n")
                 for _, row in df.iterrows():
-                    codiceCorso = row['Cod. Att. Form.']
-                    matricola = row['Matricola']
-                    prof = row['Cognome'] + " " + row['Nome']
-                    file.write(f"{comment_character} Corso: {codiceCorso}, Docente: {prof}\n")
-                    file.write(f"docente_corso(corso({codiceCorso}), docente({matricola})).\n")
+                    if row['Matricola'].lower() == 'nan':
+                        matricola_docente = row['Matricola']
+                    else:
+                        matricola_docente = int(float(row['Matricola']))
+
+                    matricola_corso = row['Cod. Att. Form.']
+                    nome_docente = row['Cognome'] + " " + row['Nome']
+                    file.write(f"{comment_character} Corso: {matricola_corso}, Docente: {nome_docente}\n")
+                    file.write(f"docente_corso({matricola_corso}, {matricola_docente}) :- matricola_corso({matricola_corso}), matricola_docente({matricola_docente}).\n")
                 file.write("\n")
 
                 # Scrive le informazioni complete sui corsi
                 file.write(f"{comment_character} SEZIONE: Informazioni Corsi\n")
                 for _, row in df.iterrows():
-                    codiceCorso = row['Cod. Att. Form.']
-                    matricola = row['Matricola']
-                    cfu = row['CFU']
-                    oreCorso = row['Ore']
+                    matricola_corso = row['Cod. Att. Form.']
                     prof = row['Cognome'] + " " + row['Nome']
-                    tipoCorso = row['Cod. Tipo Corso']
-                    file.write(f"{comment_character} Corso: {codiceCorso} ({tipoCorso}), Docente: {prof}, CFU: {cfu}, Ore: {oreCorso}\n")
-                    file.write(f"informazioni_corso(corso({codiceCorso}), tipo_corso({tipoCorso}), docente({matricola}), cfu({cfu}), ore({oreCorso})).\n")
+                    tipoCorso = row['Cod. Tipo Corso'].lower()
+                    ssd = row['SSD'].split('/')
+                    ssd = ssd[0].lower()
+                    file.write(f"{comment_character} Corso: {matricola_corso} ({tipoCorso}), Docente: {prof}\n")
+                    file.write(f"corso({matricola_corso}, {tipoCorso}, {ssd}) :- matricola_corso({matricola_corso}), laurea({tipoCorso}), ssd({ssd}).\n")
 
             print(f"Dati salvati con successo in: {filepath}")
         except Exception as e:
