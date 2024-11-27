@@ -113,6 +113,21 @@ def process_ssd(dataset_loader, ssd, failed_ssds):
         print(f"Errore durante l'elaborazione dell'SSD {ssd}: {e}")
 
 def test_estrapolazione_dati_per_ssd():
+    """
+    Estrae i dati per ogni SSD, applicando il filtro e salvando i file CSV nella cartella 'dataset/ssd/'.
+
+    Questa funzione esegue le seguenti operazioni:
+    1. Carica i dati da un file Excel e seleziona la colonna 'SSD', rimuovendo i duplicati.
+    2. Crea una barra di progresso per monitorare l'elaborazione degli SSD.
+    3. Utilizza un `ThreadPoolExecutor` per elaborare i dati in parallelo, migliorando le performance.
+    4. Crea la cartella di output 'dataset/ssd/' se non esiste già.
+    5. Per ogni SSD, chiama la funzione `process_ssd` per applicare il filtro e salvare il file CSV corrispondente.
+    6. Gestisce gli errori durante l'elaborazione e registra gli SSD che non sono stati salvati.
+
+    :param dataset_loader: Istanza di `DatasetLoader` per accedere ai metodi di filtraggio e salvataggio.
+    :param failed_ssds: Set per raccogliere gli SSD che causano errori durante l'elaborazione.
+    """
+    
     dataset_loader = DatasetLoader('dataset/coperture.xlsx')
     columns = ['SSD']
     data = dataset_loader.get_values(columns=columns).drop_duplicates()
