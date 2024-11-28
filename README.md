@@ -6,18 +6,14 @@ Realizzato da:
 ## Requisiti
 È necessario avere i seguenti strumenti installati:
 
--   [Docker](https://docs.docker.com/engine/install/).
--   [Docker Compose](https://docs.docker.com/compose/install/).
--   [Doxygen](https://doxygen.nl).
--   [Make](https://www.gnu.org/software/make/).
+-   [Docker](https://docs.docker.com/engine/install/)
+-   [Docker Compose](https://docs.docker.com/compose/install/)
 
 Per verificare la corretta installazione:
 
 ```bash
 docker --version
 docker compose version
-doxygen --version
-make --version
 ```
 
 ## Build e Run
@@ -36,8 +32,11 @@ docker compose run pd-project
 > Potrebbe essere necessario aggiornare i permessi della cartella `src` con `chmod -R 777 src`.
 
 ## Documentazione
-Per generare la documentazione:
+Per generare la documentazione è necessario avere installato:
+- [Doxygen](https://doxygen.nl)
+- [Make](https://www.gnu.org/software/make/)
 
+Successivamente eseguire:
 ```bash
 doxygen Doxyfile
 cd doc/latex
