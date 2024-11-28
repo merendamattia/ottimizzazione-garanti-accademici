@@ -70,7 +70,7 @@ def test_scrittura_atomi():
     dataset_loader = DatasetLoader('dataset/coperture.xlsx')
 
     filters = {
-        # 'Cod. Tipo Corso': ['LM'],
+        'Cod. Tipo Corso': ['LM'],
         'SSD': ['INF/01']
     }
     data = dataset_loader.filter_by_values(filters=filters)
@@ -157,7 +157,7 @@ def test_estrapolazione_dati_per_ssd():
 if __name__ == "__main__":
     # test_filtra_per_valori()
     # test_filtra_per_colonne()
-    # test_scrittura_atomi()
+    test_scrittura_atomi()
     # test_estrazione_settori()
-    test_estrapolazione_dati_per_ssd()
+    # test_estrapolazione_dati_per_ssd()
     # test_parser()

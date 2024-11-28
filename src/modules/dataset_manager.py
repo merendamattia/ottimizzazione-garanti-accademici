@@ -86,8 +86,14 @@ class DatasetManager:
         :param filename: Nome del file di output (senza estensione).
         :raises Exception: Per errori durante la scrittura del file.
         """
+        # Crea la cartella 'lp' se non esiste
+        output_dir = 'lp'
+        if not os.path.exists(output_dir):
+            os.makedirs(output_dir)
+
         comment_character = '% '
-        filepath = os.path.join(self.dataset_path, filename + '.lp')
+        # filepath = os.path.join(self.dataset_path, filename + '.lp')
+        filepath = os.path.join(output_dir, filename + '.lp')
 
         # Set per tracciare valori già scritti
         cfu_aggiunti = set()
@@ -147,11 +153,33 @@ class DatasetManager:
                         matricola_docente = row['Matricola']
                     else:
                         matricola_docente = int(float(row['Matricola']))
-
+                    
+                    ssd = row['SSD'].split('/')
+                    ssd = ssd[0].lower()
                     nome_docente = row['Cognome'] + " " + row['Nome']
+
                     if matricola_docente not in docenti_aggiunti:
-                        file.write(f"{comment_character} {nome_docente} ({matricola_docente})\n")
+                        file.write(f"{comment_character} {nome_docente} ({matricola_docente}), SSD caratterizzante: {ssd}\n")
                         file.write(f"matricola_docente({matricola_docente}).\n")
+                        docenti_aggiunti.add(matricola_docente)
+                docenti_aggiunti = set() # reset docenti aggiunti
+                file.write("\n")
+
+                # Scrive la sezione dei docenti
+                file.write(f"{comment_character} SEZIONE: SSD caratterizzante dei docenti\n")
+                for _, row in df.iterrows():
+                    if row['Matricola'].lower() == 'nan':
+                        matricola_docente = row['Matricola']
+                    else:
+                        matricola_docente = int(float(row['Matricola']))
+                    
+                    ssd = row['SSD'].split('/')
+                    ssd = ssd[0].lower()
+                    nome_docente = row['Cognome'] + " " + row['Nome']
+
+                    if matricola_docente not in docenti_aggiunti:
+                        file.write(f"{comment_character} {nome_docente} ({matricola_docente}), SSD caratterizzante: {ssd}\n")
+                        file.write(f"docente_ssd({matricola_docente}, {ssd}).\n")
                         docenti_aggiunti.add(matricola_docente)
                 file.write("\n")
 
