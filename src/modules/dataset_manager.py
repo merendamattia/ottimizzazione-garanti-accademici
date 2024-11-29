@@ -121,10 +121,12 @@ class DatasetManager:
                 for _, row in df.iterrows():
                     # Non posso usare le lettere in maiuscolo perchè possono essere scambiate per variabili e non atomi
                     ssd = row['SSD'].split('/')
-                    ssd = ssd[0].lower()
+                    settore = ssd[0].lower()
+                    numero = int(ssd[1])
                     
+                    ssd = str(ssd)
                     if ssd not in ssd_aggiunti:
-                        file.write(f"ssd({ssd}).\n")
+                        file.write(f"ssd({settore}, {numero}).\n")
                         ssd_aggiunti.add(ssd)
                 file.write("\n")
 
@@ -157,7 +159,10 @@ class DatasetManager:
                         matricola_docente = int(float(row['Matricola']))
                     
                     ssd = row['SSD'].split('/')
-                    ssd = ssd[0].lower()
+                    settore = ssd[0].lower()
+                    numero = int(ssd[1])
+                    ssd = str(ssd)
+
                     nome_docente = row['Cognome'] + " " + row['Nome']
 
                     if matricola_docente not in docenti_aggiunti:
@@ -176,12 +181,15 @@ class DatasetManager:
                         matricola_docente = int(float(row['Matricola']))
                     
                     ssd = row['SSD'].split('/')
-                    ssd = ssd[0].lower()
+                    settore = ssd[0].lower()
+                    numero = int(ssd[1])
+                    ssd = str(ssd)
+
                     nome_docente = row['Cognome'] + " " + row['Nome']
 
                     if matricola_docente not in docenti_aggiunti:
                         file.write(f"{comment_character} {nome_docente} ({matricola_docente}), SSD caratterizzante: {ssd}\n")
-                        file.write(f"docente_ssd({matricola_docente}, {ssd}).\n")
+                        file.write(f"docente_ssd({matricola_docente}, {settore}, {numero}) :- matricola_docente({matricola_docente}), ssd({settore}, {numero}).\n")
                         docenti_aggiunti.add(matricola_docente)
                 file.write("\n")
 
@@ -217,10 +225,13 @@ class DatasetManager:
                     matricola_corso = int(float(row['Cod. Att. Form.']))
                     prof = row['Cognome'] + " " + row['Nome']
                     tipoCorso = row['Cod. Tipo Corso'].lower()
+                    
                     ssd = row['SSD'].split('/')
-                    ssd = ssd[0].lower()
+                    settore = ssd[0].lower()
+                    numero = int(ssd[1])
+                    
                     file.write(f"{comment_character} Corso: {matricola_corso} ({tipoCorso}), Docente: {prof}\n")
-                    file.write(f"corso({matricola_corso}, {tipoCorso}, {ssd}) :- matricola_corso({matricola_corso}), laurea({tipoCorso}), ssd({ssd}).\n")
+                    file.write(f"corso({matricola_corso}, {tipoCorso}, {settore}, {numero}) :- matricola_corso({matricola_corso}), laurea({tipoCorso}), ssd({settore}, {numero}).\n")
 
             print(f"Dati salvati con successo in: {filepath}")
         except Exception as e:
