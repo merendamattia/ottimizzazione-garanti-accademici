@@ -110,6 +110,7 @@ class DatasetManager:
                 for _, row in df.iterrows():
                     # Non posso usare le lettere in maiuscolo perchè possono essere scambiate per variabili e non atomi
                     tipoCorso = row['Cod. Tipo Corso'].lower()
+
                     if tipoCorso not in tipi_corso_aggiunti:
                         file.write(f"laurea({tipoCorso}).\n")
                         tipi_corso_aggiunti.add(tipoCorso)
@@ -121,6 +122,7 @@ class DatasetManager:
                     # Non posso usare le lettere in maiuscolo perchè possono essere scambiate per variabili e non atomi
                     ssd = row['SSD'].split('/')
                     ssd = ssd[0].lower()
+                    
                     if ssd not in ssd_aggiunti:
                         file.write(f"ssd({ssd}).\n")
                         ssd_aggiunti.add(ssd)
@@ -186,8 +188,9 @@ class DatasetManager:
                 # Scrive la sezione dei corsi
                 file.write(f"{comment_character} SEZIONE: Corsi\n")
                 for _, row in df.iterrows():
-                    matricola_corso = row['Cod. Att. Form.']
+                    matricola_corso = int(float(row['Cod. Att. Form.']))
                     nome_corso = row['Des. Insegnamento']
+
                     if matricola_corso not in corsi_aggiunti:
                         file.write(f"{comment_character} {nome_corso} ({matricola_corso})\n")
                         file.write(f"matricola_corso({matricola_corso}).\n")
@@ -202,7 +205,7 @@ class DatasetManager:
                     else:
                         matricola_docente = int(float(row['Matricola']))
 
-                    matricola_corso = row['Cod. Att. Form.']
+                    matricola_corso = int(float(row['Cod. Att. Form.']))
                     nome_docente = row['Cognome'] + " " + row['Nome']
                     file.write(f"{comment_character} Corso: {matricola_corso}, Docente: {nome_docente}\n")
                     file.write(f"docente_corso({matricola_corso}, {matricola_docente}) :- matricola_corso({matricola_corso}), matricola_docente({matricola_docente}).\n")
@@ -211,7 +214,7 @@ class DatasetManager:
                 # Scrive le informazioni complete sui corsi
                 file.write(f"{comment_character} SEZIONE: Informazioni Corsi\n")
                 for _, row in df.iterrows():
-                    matricola_corso = row['Cod. Att. Form.']
+                    matricola_corso = int(float(row['Cod. Att. Form.']))
                     prof = row['Cognome'] + " " + row['Nome']
                     tipoCorso = row['Cod. Tipo Corso'].lower()
                     ssd = row['SSD'].split('/')
