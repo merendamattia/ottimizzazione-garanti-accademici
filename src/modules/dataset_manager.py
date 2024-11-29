@@ -105,6 +105,18 @@ class DatasetManager:
 
         try:
             with open(filepath, 'w') as file:
+                
+                # TODO CREARE UN QUALCOSA CHE ME LO AGGIUNGA DINAMICAMENTE
+                # SOLUZIONE TEMPORANEA
+                file.write(f"{comment_character} SEZIONE: Garanti minimi per corso\n")
+                file.write(f"min_garanti(lm, inf, 1, 6).\n")
+                file.write(f"min_garanti(lm, fis, 1, 6).\n")
+                file.write(f"min_garanti(l, inf, 1, 9).\n")
+                file.write(f"min_garanti(l, fis, 1, 9).\n")
+                file.write(f"min_garanti(lm6, fis, 1, 18).\n")
+                file.write("\n")
+                # TODO ###################################################
+
                 # Scrive la sezione dei tipi di corso
                 file.write(f"{comment_character} SEZIONE: Tipi di Corso\n")
                 for _, row in df.iterrows():
