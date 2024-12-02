@@ -103,18 +103,16 @@ class DatasetManager:
 
         try:
             with open(filepath, 'w') as file:
-                """
+                
                 # TODO CREARE UN QUALCOSA CHE ME LO AGGIUNGA DINAMICAMENTE
                 # SOLUZIONE TEMPORANEA
                 file.write(f"{comment_character} SEZIONE: Garanti minimi per corso\n")
-                file.write(f"min_garanti(lm, inf, 1, 6).\n")
-                file.write(f"min_garanti(lm, fis, 1, 6).\n")
-                file.write(f"min_garanti(l, inf, 1, 9).\n")
-                file.write(f"min_garanti(l, fis, 1, 9).\n")
-                file.write(f"min_garanti(lm6, fis, 1, 18).\n")
+                file.write(f"minimo_ministeriale(l, 9) :- laurea(l).\n")
+                file.write(f"minimo_ministeriale(lm, 6) :- laurea(lm).\n")
+                file.write(f"minimo_ministeriale(lm5, 15) :- laurea(lm5).\n")
+                file.write(f"minimo_ministeriale(lm6, 18) :- laurea(lm6).\n")
                 file.write("\n")
                 # TODO ###################################################
-                """
 
                 # Scrive la sezione dei tipi di corso
                 file.write(f"{comment_character} SEZIONE: Tipi di Corso\n")
@@ -133,6 +131,7 @@ class DatasetManager:
                     # Non posso usare le lettere in maiuscolo perchè possono essere scambiate per variabili e non atomi
                     ssd = row['SSD'].split('/')
                     settore = ssd[0].lower()
+                    settore = settore.replace('-', '')
                     numero = int(ssd[1])
                     
                     ssd = str(ssd)
@@ -164,6 +163,7 @@ class DatasetManager:
                     
                     ssd = row['SSD'].split('/')
                     settore = ssd[0].lower()
+                    settore = settore.replace('-', '')
                     numero = int(ssd[1])
                     if codice_corso not in corsi_aggiunti:
                         file.write(f"{comment_character} Corso: {codice_corso} ({tipo_corso}), Docente: {prof}\n")
@@ -223,6 +223,7 @@ class DatasetManager:
                     # Non posso usare le lettere in maiuscolo perchè possono essere scambiate per variabili e non atomi
                     ssd = row['SSD'].split('/')
                     settore = ssd[0].lower()
+                    settore = settore.replace('-', '')
                     numero = int(ssd[1])
                     
                     ssd = str(ssd)
@@ -255,6 +256,7 @@ class DatasetManager:
                     
                     ssd = row['SSD'].split('/')
                     settore = ssd[0].lower()
+                    settore = settore.replace('-', '')
                     numero = int(ssd[1])
                     ssd = str(ssd)
 
@@ -283,6 +285,7 @@ class DatasetManager:
 
                     ssd = row['SSD'].split('/')
                     settore = ssd[0].lower()
+                    settore = settore.replace('-', '')
                     numero = int(ssd[1])
                     ssd = str(ssd)
 
