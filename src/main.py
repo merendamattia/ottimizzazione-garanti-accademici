@@ -282,7 +282,7 @@ def init():
     exit()
 
 
-def main():
+def main_old():
 
     # Se la cartella non esiste, lancio la generazione dei dataset
     dataset_dir = 'dataset/ssd/'
@@ -349,8 +349,15 @@ def main():
     dataset_manager.scrivi_coperture(data, 'coperture')
     
 
-# def main():
-#     pass
+def main():
+    # Se la cartella non esiste, lancio la generazione dei dataset divisi per corsi
+    dataset_dir = 'dataset/corsi/'
+    if not os.path.exists(dataset_dir):
+        os.makedirs(dataset_dir)
+        init()
+    
+
+    pass
 
 if __name__ == "__main__":
-    main()
+    main_old()

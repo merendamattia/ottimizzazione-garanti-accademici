@@ -144,8 +144,8 @@ class DatasetManager:
                 # Scrive la sezione dei corsi
                 file.write(f"{comment_character} SEZIONE: Corsi\n")
                 for _, row in df.iterrows():
-                    codice_corso = int(float(row['Cod. Att. Form.']))
-                    nome_corso = row['Des. Insegnamento']
+                    codice_corso = int(float(row['Cod. Corso di Studio']))
+                    nome_corso = row['Des. Corso di Studio']
 
                     if codice_corso not in corsi_aggiunti:
                         file.write(f"{comment_character} {nome_corso} ({codice_corso})\n")
@@ -153,19 +153,23 @@ class DatasetManager:
                         corsi_aggiunti.add(codice_corso)
                 file.write("\n")
 
+                corsi_aggiunti = set()
+                
                 # Scrive le informazioni complete sui corsi
                 file.write(f"{comment_character} SEZIONE: Informazioni Corsi\n")
                 for _, row in df.iterrows():
-                    matricola_corso = int(float(row['Cod. Att. Form.']))
+                    codice_corso = int(float(row['Cod. Corso di Studio']))
                     prof = row['Cognome'] + " " + row['Nome']
                     tipo_corso = row['Cod. Tipo Corso'].lower()
                     
                     ssd = row['SSD'].split('/')
                     settore = ssd[0].lower()
                     numero = int(ssd[1])
-                    
-                    file.write(f"{comment_character} Corso: {matricola_corso} ({tipo_corso}), Docente: {prof}\n")
-                    file.write(f"corso({matricola_corso}, {tipo_corso}, {settore}, {numero}) :- matricola_corso({matricola_corso}), laurea({tipo_corso}), ssd({settore}, {numero}).\n")
+                    if codice_corso not in corsi_aggiunti:
+                        file.write(f"{comment_character} Corso: {codice_corso} ({tipo_corso}), Docente: {prof}\n")
+                        file.write(f"corso({codice_corso}, {tipo_corso}, {settore}, {numero}) :- codice_corso({codice_corso}), laurea({tipo_corso}), ssd({settore}, {numero}).\n")
+                        corsi_aggiunti.add(codice_corso)
+
                 file.write("\n")
                 
                 # Scrive le relazioni tra corsi e docenti
@@ -176,7 +180,7 @@ class DatasetManager:
                     else:
                         matricola_docente = int(float(row['Matricola']))
 
-                    codice_corso = int(float(row['Cod. Att. Form.']))
+                    codice_corso = int(float(row['Cod. Corso di Studio']))
                     nome_docente = row['Cognome'] + " " + row['Nome']
                     tipo_corso = row['Cod. Tipo Corso'].lower()
 
