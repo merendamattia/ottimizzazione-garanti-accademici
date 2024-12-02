@@ -39,8 +39,8 @@ ministeriale(Corso, Laurea, Minimo) :-
 %      matricola_docente(Docente).
 %#show scelto_garante/2.
 
-% Minimo{garante(Docente, Corso) : cattedra(Docente, Corso, Laurea)}Minimo :-
-{garante(Docente, Corso) : cattedra(Docente, Corso, Laurea)} :-
+Minimo{garante(Docente, Corso) : cattedra(Docente, Corso, Laurea)}Minimo :-
+%{garante(Docente, Corso) : cattedra(Docente, Corso, Laurea)} :-
 ministeriale(Corso, Laurea, Minimo), laurea(Laurea).
 
 :- garante(Docente, Corso1),

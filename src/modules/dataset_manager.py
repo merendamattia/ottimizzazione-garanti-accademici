@@ -1,4 +1,5 @@
 import os
+import pandas as pd
 
 class DatasetManager:
     """
@@ -28,6 +29,40 @@ class DatasetManager:
         ]
         return departments
     
+    def get_courses(self):
+        """
+        Ottiene und dizionario {"codice_corso": "corso"} basandosi sui file presenti nella cartella del dataset.
+        :return: Un dizionario di corsi.
+        :raises FileNotFoundError: Se la cartella del dataset non esiste.
+        """
+        if not os.path.exists(self.dataset_path):
+            raise FileNotFoundError(f"Errore: il file '{self.dataset_path}' non esiste.")
+        
+        df = pd.read_csv(self.dataset_path, dtype=str, sep=',')
+        # print(df)
+        return df.set_index("Cod. Corso di Studio")["Overview"].to_dict()
+    
+    def get_professors(self):
+        """
+        Ottiene und dizionario {"codice_corso": {"matricola"}} basandosi sui file presenti nella cartella del dataset.
+        :return: Un dizionario di corsi: set_matricole.
+        :raises FileNotFoundError: Se la cartella del dataset non esiste.
+        """
+        if not os.path.exists(self.dataset_path):
+            raise FileNotFoundError(f"Errore: il file '{self.dataset_path}' non esiste.")
+        
+        with open(self.dataset_path) as f:
+            # Skip prima riga
+            f.readline()
+            profs = dict()
+            for line in f.readlines():
+                code, mat = line.strip().split(",")
+                if not code in profs:
+                    profs[code] = set()
+                
+                profs[code].add(mat)
+            return profs
+
     def get_sectors(self, SSD = None):
         """
         Ottiene la lista dei settori partendo da una lista di SSD.
@@ -191,8 +226,7 @@ class DatasetManager:
             print(f"Dati salvati con successo in: {filepath}")
         except Exception as e:
             raise Exception(f"Errore durante il salvataggio dei dati su '{filepath}': {e}")
-        
-
+    
     def scrivi_docenti(self, df, filename):
         """
         Scrive i dati del DataFrame in un file ASP (.lp), organizzandoli per sezioni con eliminazione di duplicati.

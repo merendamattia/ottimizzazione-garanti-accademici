@@ -63,7 +63,6 @@ class DatasetLoader:
             
             # Converte tutti i valori del DataFrame in stringhe
             df = df.astype(str)
-
             # print(f"Filtri: {filters}")
             
             # Applica i filtri
@@ -151,7 +150,7 @@ class DatasetLoader:
                 result[row] = df.loc[row].tolist()
         else:
             raise ValueError("Il parametro id_type deve essere 'col' o 'row'.")
-
+        
         return result
     
     def save_to_file(self, df, output_file_path, file_format="csv"):

@@ -1,5 +1,6 @@
 from modules.dataset_manager import DatasetManager
 from modules.department_parser import DepartmentParser
+from modules.course_parser import CourseParser
 from modules.dataset_loader import DatasetLoader
 from tqdm import tqdm
 import os
@@ -349,15 +350,118 @@ def main_old():
     dataset_manager.scrivi_coperture(data, 'coperture')
     
 
+def init_matricole(filename):
+    dsl = DatasetLoader(path_docenti)
+    
+    # Prende le matricole dei docenti non a contratto rimuovendo possibili duplicati
+    matricole = dsl.get_values(columns=["Matricola"]).drop_duplicates()["Matricola"].tolist()
+    
+    dsl = DatasetLoader(path_coperture)
+    ds = dsl.get_values(columns=["Cod. Corso di Studio", "Matricola"])
+    
+    # Filra gli insegnamenti per le matricole dei prof
+    ds_min = dsl.filter_by_values(dataset=ds, filters={"Matricola" : matricole})
+    
+    dsl.save_to_file(ds_min, filename)
+    
+    
+def init_corsi(filename):
+    dsl = DatasetLoader(path_coperture)
+    
+    df = dsl.get_values(columns=["Cod. Corso di Studio", "Des. Corso di Studio", "Cod. Tipo Corso"])
+    
+    df["Overview"] = df["Des. Corso di Studio"].astype(str).str.lower() + "(" + df["Cod. Tipo Corso"] + ")"
+    
+    df = dsl.get_values(dataset=df, columns=["Cod. Corso di Studio", "Overview"])
+    
+    # print(ds)
+    # print(ds_m)
+    
+    # Estrae i codici rimuovendo i duplicati
+    codici_corsi = dsl.get_values(dataset=df, columns=["Cod. Corso di Studio"]).drop_duplicates()
+    
+    ds_min = dsl.filter_by_values(dataset=df, filters={"Cod. Corso di Studio" : codici_corsi["Cod. Corso di Studio"].tolist()})
+    dsl.save_to_file(ds_min, filename)
+
+def init_corsi_matricole(filepathCorsi, filepathProf):
+    init_corsi(filepathCorsi)
+    init_matricole(filepathProf)
+    print("Estrazione completata. Rieseguire il programma.")
+    exit()
+
 def main():
     # Se la cartella non esiste, lancio la generazione dei dataset divisi per corsi
     dataset_dir = 'dataset/corsi/'
+    filepathCorsi = dataset_dir+"codici-corsi.csv"
+    filepathProf = dataset_dir+"codici-matricole.csv"
+    
     if not os.path.exists(dataset_dir):
         os.makedirs(dataset_dir)
-        init()
+    if not os.path.exists(filepathCorsi) or not os.path.exists(filepathProf):
+        init_corsi_matricole(filepathCorsi, filepathProf)
     
+    
+    # Inizializza il Dataset Manager
+    dataset_manager = DatasetManager(dataset_path=filepathCorsi)
 
-    pass
+    # Ottiene la lista dei dipartimenti
+    courses = dataset_manager.get_courses()
+
+    parser = CourseParser()
+    parser.add_courses(courses)
+    args = parser.parse()
+    
+    # print(courses)
+    
+    filters_corsi = {"Cod. Corso di Studio" : list()}
+    
+    if args.all:
+        for key in courses.keys():
+            filters_corsi["Cod. Corso di Studio"].append(key)
+    else:
+        for key in courses.keys():
+            if getattr(args, key, False):
+                filters_corsi["Cod. Corso di Studio"].append(key)
+
+    filters_corsi ["Cod. Corso di Studio"] = list(set(filters_corsi ["Cod. Corso di Studio"]))
+    
+    if not any(vars(args).values()):
+        print("Errore: nessun dipartimento selezionato.")
+        parser.parser.print_help()
+        exit()
+    
+    print(filters_corsi)
+    filters_docenti = {"Matricola": list()}
+    
+    dataset_manager = DatasetManager(dataset_path=filepathProf)
+    profs = dataset_manager.get_professors()
+    
+    print(profs)
+    
+    for code in filters_corsi["Cod. Corso di Studio"]:
+        if profs[code]:
+            for p in profs[code]:
+                filters_docenti["Matricola"].append(p)
+                
+
+    filters_docenti ["Matricola"] = list(set(filters_docenti ["Matricola"]))
+    
+    print(filters_docenti)
+    
+    ### SCRITTURA DOCENTI 
+    dataset_loader = DatasetLoader(path_docenti)
+    data = dataset_loader.filter_by_values(filters=filters_docenti, only_prefix=False)
+    dataset_manager = DatasetManager()
+    dataset_manager.scrivi_docenti(data, 'docenti')
+
+    
+    ### SCRITTURA CORSI
+    dataset_loader = DatasetLoader(path_coperture)
+    data = dataset_loader.filter_by_values(filters=filters_corsi, only_prefix=True)
+    dataset_manager = DatasetManager()
+    dataset_manager.scrivi_coperture(data, 'coperture')
+
+
 
 if __name__ == "__main__":
-    main_old()
+    main()
