@@ -43,7 +43,7 @@ class DatasetLoader:
             print(f"Errore: una o più colonne specificate non esistono nel file. {e}")
             raise e
     
-    def filter_by_values(self, filters, dataset=None):
+    def filter_by_values(self, filters, dataset=None, only_prefix=False):
         """
         Filtra i dati in base a più valori specifici in diverse colonne, convertendo tutti i valori in stringhe.
         :param filters: Dizionario in cui le chiavi sono i nomi delle colonne e i valori sono liste di valori da filtrare.
@@ -72,9 +72,14 @@ class DatasetLoader:
                 if column not in df.columns:
                     raise KeyError(f"La colonna '{column}' non esiste nel dataset. \nColonne disponibili: {list(df.columns)}")
                 
-                # Filtra il DataFrame per i valori specificati nella colonna
-                df = df[df[column].isin(map(str, values))]
-                # print(f"Filtrate {df.size} row per '{column}': {values}.")
+                if only_prefix:
+                    # Filtra il DataFrame per i prefissi specificati nella colonna
+                    df = df[df[column].str.startswith(tuple(values))]
+                    # print(f"Filtrate {df.size} row per '{column}': {values}.")
+                else:
+                    # Filtra il DataFrame per i valori specificati nella colonna
+                    df = df[df[column].isin(map(str, values))]
+                    # print(f"Filtrate {df.size} row per '{column}': {values}.")
             
             return df
         except ImportError as e:

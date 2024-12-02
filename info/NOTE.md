@@ -55,9 +55,10 @@ Le righe vuote devono essere ignorate.
 | Cod. tipo corso | laurea/1            | laurea(l)                                                                                            |
 | SSD             | ssd/2               | ssd(inf, 1)                                                                                          |
 | Matricola       | matricola_docente/1 | matricola_docente(32990)                                                                             |
-| x               | docente/3           | docente(32990, inf, 1) :- matricola_docente(32990), ssd(inf, 1)                                      |
+| Fascia       | fascia/1 | fascia(ti)                                                                             |
+| x               | docente/3           | docente(32990, ti, inf, 1) :- matricola_docente(32990), fascia(ti), ssd(inf, 1)                                      |
 | Cod. Corso      | codice_corso/1      | codice_corso(3023)                                                                                   |
 | x               | corso/2             | corso(3023, l) :- codice_corso(3023), laurea(l)                                                      |
-| x               | cattedra/3          | cattedra(32990, 3023, l) :- matricola_docente(32990), corso(3023,l)                                  |
+| x               | cattedra/3          | cattedra(32990, 3023, l) :- matricola_docente(32990), corso(3023,l), laurea(l)                                  |
 | x               | min_garanti/3       | min_garanti(l, 9, 5) :- laurea(l).                                                                   |
 | x               | min_garanti_corso/3 | min_garanti_corso(3023, 9, 5) :- corso(3023, l), laurea(l), codice_corso(3023), min_garanti(l, 9, 5) |

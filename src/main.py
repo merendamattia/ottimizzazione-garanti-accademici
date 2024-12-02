@@ -4,6 +4,9 @@ from modules.dataset_loader import DatasetLoader
 from tqdm import tqdm
 import os
 from concurrent.futures import ThreadPoolExecutor, as_completed
+import pandas as pd
+from collections import defaultdict
+import shutil
 
 ###################################### TEST ######################################
 
@@ -91,7 +94,7 @@ def run_tests():
 
 ###################################### FUNZIONI PRINCIPALI ######################################
 
-def scrittura_fatti(filters=None, file_name=None):
+def scrittura_fatti(filters=None, file_name=None, path='dataset/coperture.xlsx'):
     """
     Filtra i dati da un dataset Excel basandosi sui criteri forniti e scrive i fatti in un file ASP.
 
@@ -124,17 +127,16 @@ def scrittura_fatti(filters=None, file_name=None):
     :raises FileNotFoundError: Se il file specificato nel DatasetLoader non esiste.
     :raises Exception: Per altri errori durante il filtraggio o la scrittura dei fatti.
     """
-    dataset_loader = DatasetLoader('dataset/coperture.xlsx')
-
     if filters is None:
         filters = {
             'Cod. Tipo Corso': ['LM'],
             'SSD': ['INF/01']
         }
-    data = dataset_loader.filter_by_values(filters=filters)
-
     if file_name is None:
         file_name = 'test'
+    
+    dataset_loader = DatasetLoader(path)
+    data = dataset_loader.filter_by_values(filters=filters)
     dataset_manager = DatasetManager()
     dataset_manager.write_atoms(data, file_name)
 
@@ -161,7 +163,7 @@ def process_ssd(dataset_loader, ssd, failed_ssds):
         failed_ssds.add(str(ssd))  # Converte in stringa per evitare errori di tipo
         print(f"Errore durante l'elaborazione dell'SSD {ssd}: {e}")
 
-def estrazione_dati_per_ssd():
+def estrazione_dati_per_ssd(path='dataset/coperture.xlsx'):
     """
     Estrae i dati per ogni SSD, applicando il filtro e salvando i file CSV nella cartella 'dataset/ssd/'.
 
@@ -177,7 +179,7 @@ def estrazione_dati_per_ssd():
     :param failed_ssds: Set per raccogliere gli SSD che causano errori durante l'elaborazione.
     """
     
-    dataset_loader = DatasetLoader('dataset/coperture.xlsx')
+    dataset_loader = DatasetLoader(path)
     columns = ['SSD']
     data = dataset_loader.get_values(columns=columns).drop_duplicates()
     # print(data)
@@ -203,18 +205,84 @@ def estrazione_dati_per_ssd():
     if failed_ssds:
         print(f"Gli SSD non salvati a causa di errori sono: {', '.join(failed_ssds)}")
 
+def unisci_file_per_settore(path):
+    """
+    Unisce i file CSV che hanno lo stesso settore in base al prefisso del nome file.
+    Salva il risultato in un unico file per settore senza duplicare l'intestazione.
+    Sposta i file originali con '_' nel nome nella cartella 'caratterizzanti'.
+    
+    :param path: Percorso alla cartella contenente i file CSV.
+    """
+    # Dizionario per raccogliere i DataFrame per ogni settore
+    file_per_settore = defaultdict(list)
+    caratterizzanti_path = os.path.join(path, "caratterizzanti")
+
+    # Crea la cartella "caratterizzanti" se non esiste
+    if not os.path.exists(caratterizzanti_path):
+        os.makedirs(caratterizzanti_path)
+
+    # Controlla se la cartella principale esiste
+    if not os.path.exists(path):
+        print(f"Errore: La cartella '{path}' non esiste.")
+        return
+
+    # Itera su tutti i file nella cartella
+    for filename in os.listdir(path):
+        if filename.endswith('.csv') and '_' in filename:
+            # Ottiene il settore dal nome del file (parte prima del '_')
+            settore = filename.split('_')[0]
+            full_path = os.path.join(path, filename)
+
+            try:
+                # Carica il file CSV e lo aggiunge al settore corrispondente
+                df = pd.read_csv(full_path)
+                file_per_settore[settore].append(df)
+            except Exception as e:
+                print(f"Errore durante la lettura del file '{filename}': {e}")
+
+    # Unisce i DataFrame per ogni settore e salva il risultato
+    for settore, dfs in file_per_settore.items():
+        try:
+            # Unisce i DataFrame per il settore senza duplicare l'intestazione
+            output_file = os.path.join(path, f"{settore}.csv")
+            
+            # Scrive il primo file con l'intestazione
+            dfs[0].to_csv(output_file, index=False, mode='w', header=True)
+            
+            # Scrive i file successivi senza intestazione
+            for df in dfs[1:]:
+                df.to_csv(output_file, index=False, mode='a', header=False)
+            
+            print(f"File unito salvato per settore '{settore}': {output_file}")
+        except Exception as e:
+            print(f"Errore durante la scrittura del file per il settore '{settore}': {e}")
+
+    # Sposta i file originali nella cartella 'caratterizzanti'
+    for filename in os.listdir(path):
+        if filename.endswith('.csv') and '_' in filename:
+            source_path = os.path.join(path, filename)
+            destination_path = os.path.join(caratterizzanti_path, filename)
+            try:
+                shutil.move(source_path, destination_path)
+                print(f"File spostato: {filename} -> {destination_path}")
+            except Exception as e:
+                print(f"Errore durante lo spostamento del file '{filename}': {e}")
+
+def init():
+    print("Errore: nessun file trovato nella cartella dataset.")
+    print("Estrazione file in corso...")
+    estrazione_dati_per_ssd(path='dataset/docenti.xlsx')
+    unisci_file_per_settore(path='dataset/ssd')
+    print("Estrazione completata. Rieseguire il programma.")
+    exit()
+
 if __name__ == "__main__":
-    # run_tests()
     
     # Se la cartella non esiste, lancio la generazione dei dataset
     dataset_dir = 'dataset/ssd/'
     if not os.path.exists(dataset_dir):
         os.makedirs(dataset_dir)
-        print("Errore: nessun file trovato nella cartella dataset.")
-        print("Estrazione file in corso...")
-        estrazione_dati_per_ssd()
-        print("Estrazione completata. Rieseguire il programma.")
-        exit()
+        init()
 
     # Inizializza il Dataset Manager
     dataset_manager = DatasetManager(dataset_path=dataset_dir)
@@ -224,18 +292,12 @@ if __name__ == "__main__":
 
     # Se la cartella esiste ma è vuota, lancio la generazione dei dataset
     if not departments:
-        print("Errore: nessun file trovato nella cartella dataset.")
-        print("Estrazione file in corso...")
-        estrazione_dati_per_ssd()
-        print("Estrazione completata. Rieseguire il programma.")
-        exit()
+        init()
 
     # Crea un'istanza del parser e ottiene gli argomenti
     parser = DepartmentParser()
     parser.add_departments(departments)
     args = parser.parse()
-
-    # print("Dipartimenti disponibili:", departments)
 
     # Filtro SSD costruito dinamicamente
     filters = {'SSD': []}
@@ -253,17 +315,14 @@ if __name__ == "__main__":
     if args.all:
         print("Caricamento dati per tutti i dipartimenti...")
         for dep in departments:
-            add_to_filter(dep)  # Costruisce il filtro incrementale
+            add_to_filter(dep)  
     else:
         for dep in departments:
             if getattr(args, dep, False):
-                add_to_filter(dep)  # Costruisce il filtro incrementale
+                add_to_filter(dep)  
 
     # Rimuove eventuali duplicati dal filtro SSD
     filters['SSD'] = list(set(filters['SSD']))
-
-    # Debug: stampa il filtro finale
-    # print("Filtro costruito dinamicamente:", filters)
 
     # Se nessun argomento è specificato
     if not any(vars(args).values()):
@@ -271,4 +330,14 @@ if __name__ == "__main__":
         parser.parser.print_help()
         exit()
 
-    scrittura_fatti(filters=filters, file_name='facts')
+    ### SCRITTURA DOCENTI 
+    dataset_loader = DatasetLoader('dataset/docenti.xlsx')
+    data = dataset_loader.filter_by_values(filters=filters, only_prefix=True)
+    dataset_manager = DatasetManager()
+    dataset_manager.scrivi_docenti(data, 'docenti')
+
+    ### SCRITTURA CORSI
+    dataset_loader = DatasetLoader('dataset/coperture.xlsx')
+    data = dataset_loader.filter_by_values(filters=filters, only_prefix=True)
+    dataset_manager = DatasetManager()
+    dataset_manager.scrivi_coperture(data, 'coperture')
