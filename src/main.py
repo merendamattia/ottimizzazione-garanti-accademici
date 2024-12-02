@@ -331,13 +331,13 @@ if __name__ == "__main__":
         exit()
 
     ### SCRITTURA DOCENTI 
-    dataset_loader = DatasetLoader('dataset/docenti.xlsx')
+    dataset_loader = DatasetLoader('dataset/docenti_sanitized.xlsx')
     data = dataset_loader.filter_by_values(filters=filters, only_prefix=True)
     dataset_manager = DatasetManager()
     dataset_manager.scrivi_docenti(data, 'docenti')
 
     ### SCRITTURA CORSI
-    dataset_loader = DatasetLoader('dataset/coperture.xlsx')
+    dataset_loader = DatasetLoader('dataset/coperture_sanitized.xlsx')
     data = dataset_loader.filter_by_values(filters=filters, only_prefix=True)
     dataset_manager = DatasetManager()
     dataset_manager.scrivi_coperture(data, 'coperture')
