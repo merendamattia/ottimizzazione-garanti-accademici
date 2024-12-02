@@ -8,6 +8,11 @@ import pandas as pd
 from collections import defaultdict
 import shutil
 
+
+###################################### VARIABILI GLOBALI ######################################
+path_coperture = "dataset/coperture_sanitized.xlsx"
+path_docenti = "dataset/docenti_sanitized.xlsx"
+
 ###################################### TEST ######################################
 
 def test_parser():
@@ -44,7 +49,7 @@ def test_parser():
         parser.parser.print_help()
 
 def test_filtra_per_valori():
-    dataset_loader = DatasetLoader('dataset/coperture.xlsx')
+    dataset_loader = DatasetLoader(path_coperture)
 
     filters = {
         'Cod. Tipo Corso': ['LM'],
@@ -55,7 +60,7 @@ def test_filtra_per_valori():
     dataset_loader.save_to_file(df=filtered_data, output_file_path='dataset/tmp_info.csv')
 
 def test_filtra_per_colonne():
-    dataset_loader = DatasetLoader('dataset/coperture.xlsx')
+    dataset_loader = DatasetLoader(path_coperture)
 
     filters = {
         'Cod. Tipo Corso': ['LM'],
@@ -74,7 +79,7 @@ def test_filtra_per_colonne():
     print(data)
 
 def test_estrazione_settori():
-    dsl = DatasetLoader('dataset/coperture.xlsx')
+    dsl = DatasetLoader(path_coperture)
     filters = ['SSD']
     ds = dsl.get_values(columns=filters)
     
@@ -94,7 +99,7 @@ def run_tests():
 
 ###################################### FUNZIONI PRINCIPALI ######################################
 
-def scrittura_fatti(filters=None, file_name=None, path='dataset/coperture.xlsx'):
+def scrittura_fatti(filters=None, file_name=None, path=path_coperture):
     """
     Filtra i dati da un dataset Excel basandosi sui criteri forniti e scrive i fatti in un file ASP.
 
@@ -163,7 +168,7 @@ def process_ssd(dataset_loader, ssd, failed_ssds):
         failed_ssds.add(str(ssd))  # Converte in stringa per evitare errori di tipo
         print(f"Errore durante l'elaborazione dell'SSD {ssd}: {e}")
 
-def estrazione_dati_per_ssd(path='dataset/coperture.xlsx'):
+def estrazione_dati_per_ssd(path=path_coperture):
     """
     Estrae i dati per ogni SSD, applicando il filtro e salvando i file CSV nella cartella 'dataset/ssd/'.
 
@@ -271,13 +276,14 @@ def unisci_file_per_settore(path):
 def init():
     print("Errore: nessun file trovato nella cartella dataset.")
     print("Estrazione file in corso...")
-    estrazione_dati_per_ssd(path='dataset/docenti.xlsx')
+    estrazione_dati_per_ssd(path=path_docenti)
     unisci_file_per_settore(path='dataset/ssd')
     print("Estrazione completata. Rieseguire il programma.")
     exit()
 
-if __name__ == "__main__":
-    
+
+def main():
+
     # Se la cartella non esiste, lancio la generazione dei dataset
     dataset_dir = 'dataset/ssd/'
     if not os.path.exists(dataset_dir):
@@ -331,13 +337,20 @@ if __name__ == "__main__":
         exit()
 
     ### SCRITTURA DOCENTI 
-    dataset_loader = DatasetLoader('dataset/docenti_sanitized.xlsx')
+    dataset_loader = DatasetLoader(path_docenti)
     data = dataset_loader.filter_by_values(filters=filters, only_prefix=True)
     dataset_manager = DatasetManager()
     dataset_manager.scrivi_docenti(data, 'docenti')
 
     ### SCRITTURA CORSI
-    dataset_loader = DatasetLoader('dataset/coperture_sanitized.xlsx')
+    dataset_loader = DatasetLoader(path_coperture)
     data = dataset_loader.filter_by_values(filters=filters, only_prefix=True)
     dataset_manager = DatasetManager()
     dataset_manager.scrivi_coperture(data, 'coperture')
+    
+
+# def main():
+#     pass
+
+if __name__ == "__main__":
+    main()
