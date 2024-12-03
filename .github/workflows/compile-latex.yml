@@ -20,7 +20,7 @@ jobs:
         run: |
           ls -la
           ls -la relazione
-          if [ -f "main.pdf" ]; then
+          if [ -f "relazione/main.pdf" ]; then
             echo "PDF generated successfully."
           else
             echo "PDF generation failed." >&2
