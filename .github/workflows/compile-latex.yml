@@ -13,8 +13,8 @@ jobs:
       - name: Compile main LaTeX document
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: relazione/main.tex
           working_directory: relazione 
+          root_file: main.tex
 
       - name: Check if PDF was created
         run: |
