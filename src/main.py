@@ -430,13 +430,13 @@ def main():
         parser.parser.print_help()
         exit()
     
-    print(filters_corsi)
+    # print(filters_corsi)
     filters_docenti = {"Matricola": list()}
     
     dataset_manager = DatasetManager(dataset_path=filepathProf)
     profs = dataset_manager.get_professors()
     
-    print(profs)
+    # print(profs)
     
     for code in filters_corsi["Cod. Corso di Studio"]:
         if profs[code]:
@@ -446,7 +446,7 @@ def main():
 
     filters_docenti ["Matricola"] = list(set(filters_docenti ["Matricola"]))
     
-    print(filters_docenti)
+    # print(filters_docenti)
     
     ### SCRITTURA DOCENTI 
     dataset_loader = DatasetLoader(path_docenti)
@@ -460,8 +460,6 @@ def main():
     data = dataset_loader.filter_by_values(filters=filters_corsi, only_prefix=True)
     dataset_manager = DatasetManager()
     dataset_manager.scrivi_coperture(data, 'coperture')
-
-
 
 if __name__ == "__main__":
     main()
