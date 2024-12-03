@@ -142,19 +142,19 @@ class DatasetManager:
                 # TODO CREARE UN QUALCOSA CHE ME LO AGGIUNGA DINAMICAMENTE
                 # SOLUZIONE TEMPORANEA
                 file.write(f"{comment_character} SEZIONE: Garanti minimi per corso\n")
-                file.write(f"minimo_ministeriale(lt, 9) :- laurea(lt).\n")
-                file.write(f"minimo_ministeriale(lm, 6) :- laurea(lm).\n")
-                file.write(f"minimo_ministeriale(lm5, 15) :- laurea(lm5).\n")
-                file.write(f"minimo_ministeriale(lm6, 18) :- laurea(lm6).\n")
+                file.write(f"minimo_ministeriale(lt, 9, 5, 4) :- laurea(lt).\n")
+                file.write(f"minimo_ministeriale(lm, 6, 4, 2) :- laurea(lm).\n")
+                file.write(f"minimo_ministeriale(lm5, 15, 8, 7) :- laurea(lm5).\n")
+                file.write(f"minimo_ministeriale(lm6, 18, 10, 8) :- laurea(lm6).\n")
                 
                 # Casi particolari
-                file.write(f"minimo_ministeriale(ltss, 5) :- laurea(ltss).\n")
-                file.write(f"minimo_ministeriale(ltsm, 5) :- laurea(ltsm).\n")
-                file.write(f"minimo_ministeriale(ltps, 4) :- laurea(ltps).\n")
-                file.write(f"minimo_ministeriale(ltop, 4) :- laurea(ltop).\n")
-                file.write(f"minimo_ministeriale(lmss, 4) :- laurea(lmss).\n")
-                file.write(f"minimo_ministeriale(lmsm, 4) :- laurea(lmsm).\n")
-                file.write(f"minimo_ministeriale(lmi, 3) :- laurea(lmi).\n")
+                file.write(f"minimo_ministeriale(ltss, 5, 3, 2) :- laurea(ltss).\n")
+                file.write(f"minimo_ministeriale(ltsm, 5, 3, 2) :- laurea(ltsm).\n")
+                file.write(f"minimo_ministeriale(ltps, 4, 2, 2) :- laurea(ltps).\n")
+                file.write(f"minimo_ministeriale(ltop, 4, 2, 2) :- laurea(ltop).\n")
+                file.write(f"minimo_ministeriale(lmss, 4, 2, 2) :- laurea(lmss).\n")
+                file.write(f"minimo_ministeriale(lmsm, 4, 2, 2) :- laurea(lmsm).\n")
+                file.write(f"minimo_ministeriale(lmi, 3, 1, 2) :- laurea(lmi).\n")
                 file.write("\n")
                 # TODO ###################################################
 
@@ -173,7 +173,11 @@ class DatasetManager:
                 file.write(f"{comment_character} SEZIONE: SSD\n")
                 for _, row in df.iterrows():
                     # Non posso usare le lettere in maiuscolo perchè possono essere scambiate per variabili e non atomi
+                    
                     ssd = row['SSD'].split('/')
+                    if len(ssd) < 2:
+                        continue
+                    
                     settore = ssd[0].lower()
                     settore = settore.replace('-', '')
                     numero = int(ssd[1])
@@ -206,11 +210,13 @@ class DatasetManager:
                     tipo_corso = row['Cod. Tipo Corso'].lower()
                     
                     ssd = row['SSD'].split('/')
+                    if len(ssd) < 2:
+                        continue
                     settore = ssd[0].lower()
                     settore = settore.replace('-', '')
                     numero = int(ssd[1])
                     if codice_corso not in corsi_aggiunti:
-                        file.write(f"{comment_character} Corso: {codice_corso} ({tipo_corso}), Docente: {prof}\n")
+                        file.write(f"{comment_character} Corso: {codice_corso} ({tipo_corso})\n")
                         file.write(f"corso({codice_corso}, {tipo_corso}, {settore}, {numero}) :- codice_corso({codice_corso}), laurea({tipo_corso}), ssd({settore}, {numero}).\n")
                         corsi_aggiunti.add(codice_corso)
 

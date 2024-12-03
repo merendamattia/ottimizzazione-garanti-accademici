@@ -5,9 +5,9 @@ peso(10).
 
 % Regola per associare il minimo ministeriale a ciascun corso.
 % La regola assegna il valore minimo ministeriale a ogni corso in base al tipo di laurea.
-ministeriale(Corso, Minimo) :-
+ministeriale(Corso, Minimo, Minimo_ind, Minimo_det) :-
       corso(Corso, Laurea, _, _),
-      minimo_ministeriale(Laurea, Minimo).
+      minimo_ministeriale(Laurea, Minimo, Minimo_ind, Minimo_det).
 
 % La regola 'minimo{garante/3}' associa ogni docente a un corso con un peso.
 % La regola garantisce che ogni corso sia associato ad un docente con un peso definito.
@@ -18,7 +18,17 @@ Minimo{
             cattedra(Corso, Docente, _),
             peso(Peso)
       } :-
-            ministeriale(Corso, Minimo).
+            ministeriale(Corso, Minimo, _, _).
+
+conta_docenti_indeterminato(Corso, Numero) :- 
+      Numero = #count { 1, Docente : cattedra(Corso, Docente, _), docente(Docente, Fascia, _, _)},
+      Fascia = ti,
+      codice_corso(Corso).
+
+conta_docenti_determinato(Corso, Numero) :- 
+      Numero = #count { 1, Docente : cattedra(Corso, Docente, _), docente(Docente, Fascia, _, _)},
+      Fascia = td,
+      codice_corso(Corso).
 
 % Calcola la somma totale dei pesi assegnati ai docenti per ciascun corso.
 % La somma è ottenuta considerando i pesi di tutti i garanti (docenti) associati al corso.
@@ -68,8 +78,12 @@ somma_pesi_corso(Corso, Somma) :-
       peso(Peso1),
       peso(Peso2),
       Peso1 != Peso2.
-      
 
-#show minimo_ministeriale/2.
-#show somma_pesi_corso/2.
-#show garante/3.
+% Priorità per i garanti con peso 10
+#maximize{Peso : garante(_, _, Peso), Peso = 10}.
+
+% #show minimo_ministeriale/2.
+% #show somma_pesi_corso/2.
+% #show garante/3.
+#show conta_docenti_indeterminato/2.
+#show conta_docenti_determinato/2.
