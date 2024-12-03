@@ -20,15 +20,33 @@ Minimo{
       } :-
             ministeriale(Corso, Minimo, _, _).
 
+% Conta il numero di docenti a tempo indeterminato associati a ciascun corso.
+% La regola utilizza il predicato `cattedra/3` per identificare i docenti e verifica che appartengano alla fascia "ti" (tempo indeterminato).
 conta_docenti_indeterminato(Corso, Numero) :- 
       Numero = #count { 1, Docente : cattedra(Corso, Docente, _), docente(Docente, Fascia, _, _)},
       Fascia = ti,
       codice_corso(Corso).
 
+% Conta il numero di docenti a tempo determinato associati a ciascun corso.
+% La regola utilizza il predicato `cattedra/3` per identificare i docenti e verifica che appartengano alla fascia "td" (tempo determinato).
 conta_docenti_determinato(Corso, Numero) :- 
       Numero = #count { 1, Docente : cattedra(Corso, Docente, _), docente(Docente, Fascia, _, _)},
       Fascia = td,
       codice_corso(Corso).
+
+% Vincolo: il numero di docenti a tempo indeterminato per ogni corso deve essere almeno pari al minimo ministeriale richiesto.
+% Se il numero è inferiore al minimo, la soluzione viene scartata.
+:- conta_docenti_indeterminato(Corso, Numero),
+      ministeriale(Corso, Minimo, Minimo_ind, _),
+      codice_corso(Corso),
+      Numero < Minimo_ind.
+
+% Vincolo: il numero di docenti a tempo determinato per ogni corso deve essere almeno pari al minimo ministeriale richiesto.
+% Se il numero è inferiore al minimo, la soluzione viene scartata.
+:- conta_docenti_determinato(Corso, Numero),
+      ministeriale(Corso, Minimo, _, Minimo_det),
+      codice_corso(Corso),
+      Numero < Minimo_det.
 
 % Calcola la somma totale dei pesi assegnati ai docenti per ciascun corso.
 % La somma è ottenuta considerando i pesi di tutti i garanti (docenti) associati al corso.
@@ -42,7 +60,7 @@ somma_pesi_corso(Corso, Somma) :-
 % Vincolo: la somma totale dei pesi deve essere almeno 10 volte il minimo ministeriale del corso.
 % Questo assicura che il numero complessivo di garanti sia sufficiente per soddisfare i requisiti ministeriali.
 :- somma_pesi_corso(Corso, Somma),
-      ministeriale(Corso, Minimo),
+      ministeriale(Corso, Minimo, _, _),
       codice_corso(Corso),
       Min = 10 * Minimo,
       Somma < Min.
@@ -82,8 +100,8 @@ somma_pesi_corso(Corso, Somma) :-
 % Priorità per i garanti con peso 10
 #maximize{Peso : garante(_, _, Peso), Peso = 10}.
 
-% #show minimo_ministeriale/2.
-% #show somma_pesi_corso/2.
-% #show garante/3.
+#show minimo_ministeriale/4.
+#show somma_pesi_corso/2.
+#show garante/3.
 #show conta_docenti_indeterminato/2.
 #show conta_docenti_determinato/2.
