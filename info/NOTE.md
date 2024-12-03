@@ -33,6 +33,8 @@ Un docente è a contratto se ha la cella della colonna D (i.e., "cod. settore do
 
 # Incoerenze
 
+SSD duplicati tra `docenti` e `coperture.lp`
+
 Sfruttare SSD per la separazione dei professori/corsi per dipartimenti non è corretta, vedi `m-psi_07`:
 
 ```csv

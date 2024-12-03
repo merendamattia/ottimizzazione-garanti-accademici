@@ -1,11 +1,11 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%% Vincoli ministeriali %%%%%%%%%%%%%%%%%%%%%%%%%
 
-minimo_ministeriale(l, 9) :-
-      laurea(l).
+%minimo_ministeriale(l, 9) :-
+%      laurea(l).
 
-minimo_ministeriale(lm, 6) :-
-      laurea(lm).
+%minimo_ministeriale(lm, 6) :-
+%      laurea(lm).
 
 %minimo_ministeriale(lm5, 15) :-
 %      laurea(lm5).
@@ -39,9 +39,13 @@ ministeriale(Corso, Laurea, Minimo) :-
 %      matricola_docente(Docente).
 %#show scelto_garante/2.
 
-Minimo{garante(Docente, Corso) : cattedra(Docente, Corso, Laurea)}Minimo :-
-%{garante(Docente, Corso) : cattedra(Docente, Corso, Laurea)} :-
+
+% Minimo{garante(Docente, Corso) : cattedra(Docente, Corso, Laurea)}Minimo :- %% ecco l'errore
+
+Minimo{garante(Docente, Corso) : cattedra(Corso, Docente, Laurea)}Minimo :-
 ministeriale(Corso, Laurea, Minimo), laurea(Laurea).
+
+%{garante(Docente, Corso) : cattedra(Corso, Docente, Laurea)} :-
 
 :- garante(Docente, Corso1),
       garante(Docente, Corso2),
