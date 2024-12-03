@@ -6,3 +6,5 @@
 src/dataset/ssd
 src/dataset/corsi
 src/lp/*
+src/dataset/coperture_sanitized.xlsx
+src/dataset/docenti_sanitized.xlsx

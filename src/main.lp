@@ -3,52 +3,46 @@
 peso(5).
 peso(10).
 
-
 % Regola per associare il minimo ministeriale a ciascun corso.
 % La regola assegna il valore minimo ministeriale a ogni corso in base al tipo di laurea.
 ministeriale(Corso, Minimo) :-
       corso(Corso, Laurea, _, _),
       minimo_ministeriale(Laurea, Minimo).
 
-
 % La regola 'minimo{garante/3}' associa ogni docente a un corso con un peso.
 % La regola garantisce che ogni corso sia associato ad un docente con un peso definito.
 % Il peso è assegnato in base alla relazione 'peso/1', che contiene i valori 5 e 10.
 % Inoltre, il minimo ministeriale associato al corso viene rispettato.
-Minimo{garante(Docente, Corso, Peso) :
+Minimo{
+            garante(Docente, Corso, Peso) :
             cattedra(Corso, Docente, _),
             peso(Peso)
       } :-
             ministeriale(Corso, Minimo).
 
-% {garante(Docente, Corso, Peso) : peso(Peso)} :-
-%       cattedra(Corso, Docente, Laurea),
-%       corso(Corso, Laurea, _, _).
-
-% La somma di tutti i pesi devono essere esattamente 10 volte il minimo
-
+% Calcola la somma totale dei pesi assegnati ai docenti per ciascun corso.
+% La somma è ottenuta considerando i pesi di tutti i garanti (docenti) associati al corso.
+% Questo predicato è utilizzato per verificare il rispetto dei vincoli di somma e multipli.
 somma_pesi_corso(Corso, Somma) :-
       codice_corso(Corso),
       Somma = #sum{
-            Peso, Docente, Corso : garante(Docente, Corso, Peso)
+            Peso, Docente : garante(Docente, Corso, Peso)
       }.
 
+% Vincolo: la somma totale dei pesi deve essere almeno 10 volte il minimo ministeriale del corso.
+% Questo assicura che il numero complessivo di garanti sia sufficiente per soddisfare i requisiti ministeriali.
 :- somma_pesi_corso(Corso, Somma),
-      minimo_ministeriale(Corso, Minimo),
+      ministeriale(Corso, Minimo),
       codice_corso(Corso),
       Min = 10 * Minimo,
       Somma < Min.
 
-% :- Somma_pesi = #sum{
-%       Peso : garante(Docente, Corso, Peso)
-%       },
-%       codice_corso(Corso),
-%       Somma_pesi != 10*Minimo,
-%       ministeriale(Corso, Minimo).
-
-
-% un garante deve coprire esattamente 10
-
+% Vincolo: la somma totale dei pesi per un corso deve essere un multiplo di 10.
+% Questo vincolo garantisce che i pesi assegnati siano bilanciati, evitando frazionamenti non supportati.
+:- somma_pesi_corso(Corso, Somma),
+      codice_corso(Corso),
+      Modulo = Somma \ 10, % Con questa condizione verifichiamo che siamo bilanciati quelli al 50%
+      Modulo != 0.
 
 % Regola che esclude i docenti che hanno più di una cattedra con pesi che superano 10.
 % Se un docente è associato a più corsi con pesi che, sommati, superano 10, tale assegnazione viene esclusa.
