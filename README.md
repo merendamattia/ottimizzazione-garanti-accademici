@@ -1,10 +1,8 @@
 # Ottimizzazione dei Garanti accademici
-$$
-    \text{Colli Simone}^1 \text{ and } \text{Merenda Saverio Mattia}^2 \\
-    \text{} \\
-    \text{}^1 \texttt{simone.colli@studenti.unipr.it} \\
-    \text{}^2 \texttt{saveriomattia.merenda@studenti.unipr.it}
-$$
+
+Realizzato da:
+- [Colli Simone](https://github.com/SimoneColli)
+- [Merenda Saverio Mattia](https://github.com/merendamattia)
 
 Questo lavoro presenta l'analisi e l'implementazione di un sistema automatizzato per 
 l’assegnazione dei garanti ai corsi universitari, in conformità ai requisiti ministeriali. 
