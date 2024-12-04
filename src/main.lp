@@ -9,6 +9,8 @@ ministeriale(Corso, Minimo, Minimo_ind, Minimo_det) :-
       corso(Corso, Laurea, _, _),
       minimo_ministeriale(Laurea, Minimo, Minimo_ind, Minimo_det).
 
+#show minimo_ministeriale/4.
+
 % La regola 'minimo{garante/3}' associa ogni docente a un corso con un peso.
 % La regola garantisce che ogni corso sia associato ad un docente con un peso definito.
 % Il peso è assegnato in base alla relazione 'peso/1', che contiene i valori 5 e 10.
@@ -20,6 +22,8 @@ Minimo{
       } :-
             ministeriale(Corso, Minimo, _, _).
 
+#show garante/3.
+
 % Conta il numero di docenti a tempo indeterminato associati a ciascun corso.
 % La regola utilizza il predicato `cattedra/3` per identificare i docenti e verifica che appartengano alla fascia "ti" (tempo indeterminato).
 conta_docenti_indeterminato(Corso, Numero) :- 
@@ -27,12 +31,16 @@ conta_docenti_indeterminato(Corso, Numero) :-
       Fascia = ti,
       codice_corso(Corso).
 
+#show conta_docenti_indeterminato/2.
+
 % Conta il numero di docenti a tempo determinato associati a ciascun corso.
 % La regola utilizza il predicato `cattedra/3` per identificare i docenti e verifica che appartengano alla fascia "td" (tempo determinato).
 conta_docenti_determinato(Corso, Numero) :- 
       Numero = #count { 1, Docente : cattedra(Corso, Docente, _), docente(Docente, Fascia, _, _)},
       Fascia = td,
       codice_corso(Corso).
+
+#show conta_docenti_determinato/2.
 
 % Vincolo: il numero di docenti a tempo indeterminato per ogni corso deve essere almeno pari al minimo ministeriale richiesto.
 % Se il numero è inferiore al minimo, la soluzione viene scartata.
@@ -56,6 +64,8 @@ somma_pesi_corso(Corso, Somma) :-
       Somma = #sum{
             Peso, Docente : garante(Docente, Corso, Peso)
       }.
+
+#show somma_pesi_corso/2.
 
 % Vincolo: la somma totale dei pesi deve essere almeno 10 volte il minimo ministeriale del corso.
 % Questo assicura che il numero complessivo di garanti sia sufficiente per soddisfare i requisiti ministeriali.
@@ -97,11 +107,31 @@ somma_pesi_corso(Corso, Somma) :-
       peso(Peso2),
       Peso1 != Peso2.
 
+% Calcola il numero di docenti che afferiscono al settore scientifico disciplinare (SSD) del corso.
+% Un docente è considerato "afferente" se il suo SSD coincide con quello del corso per cui è garante.
+% Il predicato utilizza la somma dei docenti e dei corsi per determinare il numero totale di afferenti.
+numero_docenti_che_afferiscono(Numero) :- 
+      Numero = #sum { 1, Docente, Corso : garante(Docente, Corso, _),
+                                          docente(Docente, _, SettoreSSD, _),
+                                          corso(Corso, _, SettoreSSD, _)
+                  }.
+
+#show numero_docenti_che_afferiscono/1.
+
+% Calcola il numero totale di docenti di riferimento.
+% Questo predicato considera tutti i docenti che sono garanti di uno o più corsi,
+% indipendentemente dall'SSD o da altri criteri.
+numero_docenti_di_riferimento(Numero) :- 
+      Numero = #sum { 1, Docente, Corso : garante(Docente, Corso, _) }.
+
+% Vincolo: il numero di docenti che afferiscono al SSD del corso deve rappresentare almeno il 50%
+% del numero totale di docenti di riferimento.
+% Se la condizione non è soddisfatta, la soluzione viene scartata.
+:- numero_docenti_che_afferiscono(Aff), 
+      numero_docenti_di_riferimento(Tot),
+      2 * Aff <= Tot.
+
+#show numero_docenti_di_riferimento/1.
+
 % Priorità per i garanti con peso 10
 #maximize{Peso : garante(_, _, Peso), Peso = 10}.
-
-#show minimo_ministeriale/4.
-#show somma_pesi_corso/2.
-#show garante/3.
-#show conta_docenti_indeterminato/2.
-#show conta_docenti_determinato/2.
