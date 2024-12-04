@@ -14,7 +14,7 @@ ministeriale(Corso, Minimo, Minimo_ind, Minimo_det) :-
 % Il peso è assegnato in base alla relazione 'peso/1', che contiene i valori 5 e 10.
 % Inoltre, il minimo ministeriale associato al corso viene rispettato.
 Minimo{
-            garante(Docente, Corso, Peso) :
+      garante(Docente, Corso, Peso) :
             cattedra(Corso, Docente, _),
             peso(Peso)
       } :-
