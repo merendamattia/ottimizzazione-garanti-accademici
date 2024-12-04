@@ -13,6 +13,7 @@ import shutil
 ############################## VARIABILI GLOBALI #################################
 path_coperture = "dataset/coperture.xlsx"
 path_docenti = "dataset/docenti.xlsx"
+path_docenti_a_contratto = "dataset/docenti_a_contratto.xlsx"
 
 ###################################### TEST ######################################
 
@@ -430,23 +431,17 @@ def main():
         parser.parser.print_help()
         exit()
     
-    # print(filters_corsi)
     filters_docenti = {"Matricola": list()}
     
     dataset_manager = DatasetManager(dataset_path=filepathProf)
     profs = dataset_manager.get_professors()
-    
-    # print(profs)
     
     for code in filters_corsi["Cod. Corso di Studio"]:
         if profs[code]:
             for p in profs[code]:
                 filters_docenti["Matricola"].append(p)
                 
-
     filters_docenti ["Matricola"] = list(set(filters_docenti ["Matricola"]))
-    
-    # print(filters_docenti)
     
     ### SCRITTURA DOCENTI 
     dataset_loader = DatasetLoader(path_docenti)
@@ -454,12 +449,17 @@ def main():
     dataset_manager = DatasetManager()
     dataset_manager.scrivi_docenti(data, 'docenti')
 
-    
     ### SCRITTURA CORSI
     dataset_loader = DatasetLoader(path_coperture)
     data = dataset_loader.filter_by_values(filters=filters_corsi, only_prefix=True)
     dataset_manager = DatasetManager()
     dataset_manager.scrivi_coperture(data, 'coperture')
+
+    ### SCRITTURA DOCENTI A CONTRATTO
+    dataset_loader = DatasetLoader(path_docenti_a_contratto)
+    data = dataset_loader.get_values()
+    dataset_manager = DatasetManager()
+    dataset_manager.scrivi_docenti_a_contratto(data, 'docenti_a_contratto')
 
 if __name__ == "__main__":
     main()

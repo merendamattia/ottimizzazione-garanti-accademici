@@ -142,19 +142,19 @@ class DatasetManager:
                 # TODO CREARE UN QUALCOSA CHE ME LO AGGIUNGA DINAMICAMENTE
                 # SOLUZIONE TEMPORANEA
                 file.write(f"{comment_character} SEZIONE: Garanti minimi per corso\n")
-                file.write(f"minimo_ministeriale(lt, 9, 5, 4) :- laurea(lt).\n")
-                file.write(f"minimo_ministeriale(lm, 6, 4, 2) :- laurea(lm).\n")
-                file.write(f"minimo_ministeriale(lm5, 15, 8, 7) :- laurea(lm5).\n")
-                file.write(f"minimo_ministeriale(lm6, 18, 10, 8) :- laurea(lm6).\n")
+                file.write(f"minimo_ministeriale(lt, 9, 5, 4, 2) :- laurea(lt).\n")
+                file.write(f"minimo_ministeriale(lm, 6, 4, 2, 1) :- laurea(lm).\n")
+                file.write(f"minimo_ministeriale(lm5, 15, 8, 3) :- laurea(lm5).\n")
+                file.write(f"minimo_ministeriale(lm6, 18, 10, 4) :- laurea(lm6).\n")
                 
                 # Casi particolari
-                file.write(f"minimo_ministeriale(ltss, 5, 3, 2) :- laurea(ltss).\n")
-                file.write(f"minimo_ministeriale(ltsm, 5, 3, 2) :- laurea(ltsm).\n")
-                file.write(f"minimo_ministeriale(ltps, 4, 2, 2) :- laurea(ltps).\n")
-                file.write(f"minimo_ministeriale(ltop, 4, 2, 2) :- laurea(ltop).\n")
-                file.write(f"minimo_ministeriale(lmss, 4, 2, 2) :- laurea(lmss).\n")
-                file.write(f"minimo_ministeriale(lmsm, 4, 2, 2) :- laurea(lmsm).\n")
-                file.write(f"minimo_ministeriale(lmi, 3, 1, 2) :- laurea(lmi).\n")
+                file.write(f"minimo_ministeriale(ltss, 5, 3, 2, 1) :- laurea(ltss).\n")
+                file.write(f"minimo_ministeriale(ltsm, 5, 3, 2, 1) :- laurea(ltsm).\n")
+                file.write(f"minimo_ministeriale(ltps, 4, 2, 2, 1) :- laurea(ltps).\n")
+                file.write(f"minimo_ministeriale(ltop, 4, 2, 2, 1) :- laurea(ltop).\n")
+                file.write(f"minimo_ministeriale(lmss, 4, 2, 2, 1) :- laurea(lmss).\n")
+                file.write(f"minimo_ministeriale(lmsm, 4, 2, 2, 1) :- laurea(lmsm).\n")
+                file.write(f"minimo_ministeriale(lmi, 3, 1, 2, 1) :- laurea(lmi).\n")
                 file.write("\n")
                 # TODO ###################################################
 
@@ -344,6 +344,55 @@ class DatasetManager:
                         file.write(f"{comment_character} {nome_docente} ({matricola_docente}), SSD caratterizzante: {settore}/{numero}\n")
                         file.write(f"docente({matricola_docente}, {fascia}, {settore}, {numero}) :- matricola_docente({matricola_docente}), fascia({fascia}), ssd({settore}, {numero}).\n")
                         docenti_aggiunti.add(matricola_docente)
+                file.write("\n")
+
+            print(f"Dati salvati con successo in: {filepath}")
+        except Exception as e:
+            raise Exception(f"Errore durante il salvataggio dei dati su '{filepath}': {e}")
+        
+    def scrivi_docenti_a_contratto(self, df, filename):
+        """
+        Scrive i dati del DataFrame in un file ASP (.lp), organizzandoli per sezioni con eliminazione di duplicati.
+        :param df: DataFrame contenente i dati da salvare.
+        :param filename: Nome del file di output (senza estensione).
+        :raises Exception: Per errori durante la scrittura del file.
+        """
+        # Crea la cartella 'lp' se non esiste
+        output_dir = 'lp'
+        if not os.path.exists(output_dir):
+            os.makedirs(output_dir)
+
+        comment_character = '% '
+        # filepath = os.path.join(self.dataset_path, filename + '.lp')
+        filepath = os.path.join(output_dir, filename + '.lp')
+
+        # Set per tracciare valori già scritti
+        docenti_aggiunti = set()
+
+        try:
+            with open(filepath, 'w') as file:
+
+                # Scrive la sezione delle fasce dei contratti
+                file.write(f"{comment_character} SEZIONE: FASCIE\n")
+                file.write(f"fascia(c).\n")
+                file.write("\n")
+
+                # Scrive la sezione dei docenti
+                file.write(f"{comment_character} SEZIONE: Docenti\n")
+                for _, row in df.iterrows():
+                    if not row['Matricola'] or row['Matricola'] is None or str(row['Matricola']).lower() == 'nan':
+                        continue
+                    else:
+                        matricola_docente = int(float(row['Matricola']))
+
+                    nome_docente = row['Cognome'] + " " + row['Nome']
+
+                    if matricola_docente not in docenti_aggiunti:
+                        file.write(f"{comment_character} {nome_docente} ({matricola_docente}), docente a contratto\n")
+                        file.write(f"matricola_docente({matricola_docente}).\n")
+                        file.write(f"jolly({matricola_docente}).\n")
+                        docenti_aggiunti.add(matricola_docente)
+                docenti_aggiunti = set() # reset docenti aggiunti
                 file.write("\n")
 
             print(f"Dati salvati con successo in: {filepath}")
