@@ -6,9 +6,11 @@ import re
 path_ns_coperture = "dataset/coperture.xlsx"
 path_ns_docenti = "dataset/docenti.xlsx"
 
+
 path_coperture = "dataset/coperture_sanitized.xlsx"
 path_docenti = "dataset/docenti_sanitized.xlsx"
-
+path_coperture_contratti = "dataset/coperture_contratti_sanitized.xlsx"
+path_coperture_rimaste = "dataset/coperture_rimaste_sanitized.xlsx"
 
 def aggiorna_cod_tipo_corso(row):
     descrizione = row['Des. Corso di Studio']
@@ -35,35 +37,8 @@ def aggiorna_cod_tipo_corso(row):
     
     raise ValueError(f"Valore non mappato: {descrizione.lower()}, {tipo_corso.lower()}")
 
-# %%
-def sanitize_docenti():
-    df = pd.read_excel(path_ns_docenti, engine="openpyxl", dtype=str)
-    # rimozioni .
-    df["Matricola"] = df["Matricola"].str.replace(".", "")
-    # rimozioni ,
-    df["Matricola"] = df["Matricola"].str.replace(",", "")
-    
-    # print(df)
-    df["Matricola"] = df["Matricola"].astype(int)
-    df["Matricola"] = df["Matricola"].astype(str)
-    # salvataggio
-    df.to_excel(path_docenti, index=False)
-    
-# %%
-def sanitize_coperture():
-    df = pd.read_excel(path_ns_coperture, engine="openpyxl", dtype=str)
-    # print(df)
-    # Rimuovere le righe che hanno il campo matricola vuoto
-    df = df.dropna(subset=["Matricola"])
-    # print(df)
-    df["Matricola"] = df["Matricola"].astype(int)
-    # print(df)
-    df["Matricola"] = df["Matricola"].astype(str)
-    # astype
-    matricole = pd.read_excel(path_docenti, engine="openpyxl", dtype=str)["Matricola"]
-    # print(matricole)
-    df = df[df["Matricola"].isin(matricole)]
-    
+
+def sanitize_codici_corso(df):
     # Sostituzione l con lt
     df.loc[df["Cod. Tipo Corso"].str.lower() == "l", "Cod. Tipo Corso"] = "LT"
     
@@ -93,11 +68,79 @@ def sanitize_coperture():
     
     df["Cod. Tipo Corso"] = df["Cod. Corso di Studio"].map(mapping).fillna(df["Cod. Tipo Corso"])
     
+    return df
+# %%
+def sanitize_docenti():
+    df = pd.read_excel(path_ns_docenti, engine="openpyxl", dtype=str)
+    # rimozioni .
+    df["Matricola"] = df["Matricola"].str.replace(".", "")
+    # rimozioni ,
+    df["Matricola"] = df["Matricola"].str.replace(",", "")
+    
+    # print(df)
+    df["Matricola"] = df["Matricola"].astype(int)
+    df["Matricola"] = df["Matricola"].astype(str)
+    # salvataggio
+    df.to_excel(path_docenti, index=False)
+    
+# %%
+def sanitize_coperture():
+    df = pd.read_excel(path_ns_coperture, engine="openpyxl", dtype=str)
+    # print(df)
+    # Rimuovere le righe che hanno il campo matricola vuoto
+    df = df.dropna(subset=["Matricola"])
+    # print(df)
+    df["Matricola"] = df["Matricola"].astype(int)
+    # print(df)
+    df["Matricola"] = df["Matricola"].astype(str)
+    # astype
+    matricole = pd.read_excel(path_docenti, engine="openpyxl", dtype=str)["Matricola"]
+    # print(matricole)
+    df = df[df["Matricola"].isin(matricole)]
+    df = sanitize_codici_corso(df)
+    
     df.to_excel(path_coperture, index=False)
+
+# %%    
+def compute_extra_data():
+    df = pd.read_excel(path_ns_coperture, engine="openpyxl", dtype=str)
+    # print(df)
+    # Rimuovere le righe che hanno il campo matricola vuoto
+    df = df.dropna(subset=["Matricola"])
+    # print(df)
+    df["Matricola"] = df["Matricola"].astype(int)
+    # print(df)
+    df["Matricola"] = df["Matricola"].astype(str)
+    # astype
+    matricole = pd.read_excel(path_docenti, engine="openpyxl", dtype=str)["Matricola"]
+    # print(matricole)
+    
+    # Not isin
+    df = df[~df["Matricola"].isin(matricole)]
+    
+    df = sanitize_codici_corso(df)
+    
+    df.to_excel(path_coperture_contratti, index=False)
+    
+# %%%
+def compute_remained():
+    
+    df_full = pd.read_excel(path_ns_coperture, engine="openpyxl", dtype=str)
+    df_indeterminati = pd.read_excel(path_coperture, engine="openpyxl", dtype=str)
+    df_contratti = pd.read_excel(path_coperture_contratti, engine="openpyxl", dtype=str)
+
+    
+    df_full = df_full[~df_full["Cod. Att. Form."].isin(df_indeterminati["Cod. Att. Form."])]
+    df_full = df_full[~df_full["Cod. Att. Form."].isin(df_contratti["Cod. Att. Form."])]
+
+    df_full.dropna(how="all", inplace=True)
+    df_full.to_excel(path_coperture_rimaste, index=False)
 # %%
 def sanitize():
     sanitize_docenti()
     sanitize_coperture()
+    compute_extra_data()
+    compute_remained()
 
 # %%
 if __name__ == "__main__":
