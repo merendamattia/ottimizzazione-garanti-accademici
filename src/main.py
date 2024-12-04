@@ -10,9 +10,9 @@ from collections import defaultdict
 import shutil
 
 
-###################################### VARIABILI GLOBALI ######################################
-path_coperture = "dataset/coperture_sanitized.xlsx"
-path_docenti = "dataset/docenti_sanitized.xlsx"
+############################## VARIABILI GLOBALI #################################
+path_coperture = "dataset/coperture.xlsx"
+path_docenti = "dataset/docenti.xlsx"
 
 ###################################### TEST ######################################
 
