@@ -11,8 +11,10 @@ ministeriale(Corso, Minimo, Minimo_ind, Minimo_det, Massimo_numero_docenti_a_con
 
 #show minimo_ministeriale/5.
 
-% TODO documentazione
-% Docenti non a contratto come possibili garanti
+% Generazione dei docenti non a contratto come possibili garanti.
+% Questa regola considera solo i docenti appartenenti alle fasce 'td' (tempo determinato)
+% e 'ti' (tempo indeterminato). I docenti a contratto ('c') sono esclusi tramite il controllo `Fascia != c`.
+% Il numero minimo di docenti richiesto è specificato dalla regola ministeriale.
 Minimo{
       garante(Docente, Corso, Peso, Fascia) :
             cattedra(Corso, Docente, _),
@@ -23,8 +25,11 @@ Minimo{
       } :-
             ministeriale(Corso, Minimo, _, _, _).
 
-% TODO documentazione
-% Docenti a contratto come possibili garanti
+% Generazione dei docenti a contratto come possibili garanti.
+% Questa regola considera i docenti indicati come 'jolly', ovvero quelli che 
+% possono essere assegnati come garanti a qualsiasi corso, indipendentemente dal settore.
+% I docenti a contratto sono rappresentati con la fascia 'c'.
+% Il numero massimo di docenti a contratto è limitato dalla regola ministeriale associata al corso.
 {     
       garante(Docente, Corso, Peso, c) :
             jolly(Docente),
@@ -149,13 +154,18 @@ numero_docenti_di_riferimento(Numero) :-
 
 #show numero_docenti_di_riferimento/1.
 
+% Calcola il numero di docenti a contratto assegnati a ciascun corso.
+% Questo predicato è utilizzato per verificare che il numero massimo di docenti
+% a contratto non superi il valore specificato dalla regola ministeriale.
 jolly_per_corso(Corso, Numero) :- 
       codice_corso(Corso),
       Numero = #count { Docente : garante(Docente, Corso, _, c) }.
 
 #show jolly_per_corso/2.
 
-% TODO documentazione
+% Vincolo: il numero di docenti a contratto per ciascun corso non deve superare
+% il valore massimo specificato dalla regola ministeriale.
+% Se il numero di docenti a contratto assegnati supera il massimo consentito, la soluzione viene scartata.
 :- jolly_per_corso(Corso, Numero),
       corso(Corso, Laurea, _, _),
       ministeriale(Corso, _, _, _, Massimo_numero_docenti_a_contratto),
@@ -165,6 +175,8 @@ jolly_per_corso(Corso, Numero) :-
 % Priorità per i garanti con peso 10
 #maximize { Peso : garante(_, _, Peso, _), Peso = 10 }.
 
-% TODO documentazione
-% Do' un peso alto cosi viene 'penalizzato' molto
-#minimize { 100 : garante(_, _, _, c) }. 
+% Penalizzazione per l'uso di docenti a contratto.
+% Questa regola minimizza il numero di docenti a contratto utilizzati, assegnando
+% un peso elevato a ciascun docente a contratto per scoraggiarne l'uso.
+% Questo garantisce che i docenti a contratto siano utilizzati solo quando strettamente necessario.
+#minimize { 200 : garante(_, _, _, c) }. 
