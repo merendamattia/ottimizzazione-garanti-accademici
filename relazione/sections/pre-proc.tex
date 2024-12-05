@@ -3,6 +3,8 @@
 
 \scolli{Usa questa macro per scrivere commenti}
 
+
+
 I dati analizzati sono stati forniti in formato Excel dall'ufficio xxx\scolli{che ufficio?}
 presentando quindi una struttura tabellare composta da una serie di campi.
 
@@ -40,8 +42,9 @@ Come prima cosa abbiamo suddiviso le righe che presentano gli insegnamenti tenut
 Per fare ciò abbiamo sfruttato il file dei docenti che ci è stato fornito, utilizzato la colonna contentente la matricola per identificare ed estrarre, in due file separati,
 le righe relative ai docenti a contratto (`docenti_a_contratto.xlsx') e quelle relative ai docenti a tempo indeterminato (`coperture.xlsx').
 
-In fine dopo aver suddiviso i dati in questo modo abbiamo proceduto con l'identificazione dei casi particolari,
-cercando di identificare questi casi tramite un controllo combinato tra due colonne.
+In fine dopo aver suddiviso i dati in questo modo abbiamo proceduto una piccola modifica dei valori contenuti nella colonna relativa al
+codice del tipo del corso di laurea, sostituendo tutte le occorrenze di "L" con "LT" per esplicitare i corsi di laurea triennale.
+E con l'identificazione dei casi particolari, cercando di identificare questi casi tramite un controllo combinato tra due colonne.
 I casi particolari che abbiamo identificato sono quelli per i corsi di laurea specifici riportati nella seguente tabella:
 \begin{figure}[h]
     \centering
@@ -49,39 +52,9 @@ I casi particolari che abbiamo identificato sono quelli per i corsi di laurea sp
     \caption{Casi particolari}
     \label{fig:casi_particolari}
 \end{figure}
-Per fare ciò abbiamo seguito la seguente logica per ogni caso adattandola al corso da verificare.
-Prendendo come esempio la laurea triennale di Servizio Sociale abbiamo sostituito il codice del tipo del corso (precedente L)
 
+Per fare ciò abbiamo seguito la seguente logica per ogni caso, adattandola al corso da verificare.
+Prendendo come esempio la Laurea Triennale di Servizio Sociale abbiamo sostituito il codice del tipo del corso (precedente "LT") con "LTSS"
+solo nelle righe dove la colonna relativa alla descrizione del corso conteneva un pattern contentente entrambe le keyworld "serviz" "social".
 
-
-\subsection{Gestione dei casi particolari}
-
-\subsection{Scomposizione dei dataset}
-% \subsection{Dati dei docenti}
-
-% \subsection{Dati delle coperture}
-
-
-
-
-When submitting manuscripts using \LaTeX, a PDF file must also be included. 
-Articles should be between 6,000 and 10,000 words, encompassing all text, tables, and figures. 
-A concise and descriptive title must be included, and it is essential to list all contributing authors in the submission, along with their email addresses, names, and affiliations.
-
-\subsection{Subsection 1}
-
-Ensure headings are concise and clearly indicate the hierarchy. 
-Use sparingly and identify with consecutive numbers in square brackets.
-Submit figures (such as \cref{fig-1} electronically at the highest resolution. Number figures consecutively with clear captions.
-
-
-% \begin{figure}[ht]
-%  \centering
-%  \makebox[\textwidth][c]{\includegraphics[width=1\textwidth]{images/padella.jpeg}}%
-%  \caption{Una padella}
-%  \label{fig-1}
-% \end{figure}
-
-\subsection{Subsection 2}
-\textbf{Emerald Publishing} accepts formats such as .ai, .eps, .jpeg, .bmp, and .tif. Electronic figures created in other applications should be provided in their original formats. 
-Additionally, these figures should either be copied and pasted into a blank MS Word document or submitted as a PDF file.
+Dopo aver proseguito con questa serie di operazioni abbiamo ottenuto file omogenei e ben strutturati, rendendo possibile l'analisi dei dati.
