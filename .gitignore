@@ -10,6 +10,7 @@ src/lp/*
 # Latex
 **/*.synctex.gz
 **/*.log
+**/*.dvi
 **/*.bbl
 **/main.pdf
 **/*.blg
