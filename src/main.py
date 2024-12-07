@@ -14,6 +14,7 @@ import shutil
 path_coperture = "dataset/coperture.xlsx"
 path_docenti = "dataset/docenti.xlsx"
 path_docenti_a_contratto = "dataset/docenti_a_contratto.xlsx"
+paths_immatricolati = ["dataset/immatricolati/LT.xlsx", "dataset/immatricolati/LM.xlsx", "dataset/immatricolati/CU.xlsx"]
 
 ###################################### TEST ######################################
 
@@ -460,6 +461,41 @@ def main():
     data = dataset_loader.get_values()
     dataset_manager = DatasetManager()
     dataset_manager.scrivi_docenti_a_contratto(data, 'docenti_a_contratto')
+    
+    
+    ### SCRITTURA MINISTERIALE
+    dataset_loader = DatasetLoader(path_coperture)
+    data = dataset_loader.filter_by_values(filters=filters_corsi, only_prefix=True)
+    data = data[["Cod. Corso di Studio", "Cod. Tipo Corso"]].drop_duplicates()
+    
+    # Carica i file strutturalmente identici e li combina in un unico DataFrame
+    immatricolati_dfs = []
+    for path in paths_immatricolati:
+        immatricolati_dfs.append(pd.read_excel(path, engine="openpyxl", dtype=str))
+
+    # Combina tutti i DataFrame caricati in uno unico
+    immatricolati_df = pd.concat(immatricolati_dfs, ignore_index=True)
+    immatricolati_df = immatricolati_df[["Codice CdL", "Valore Indicatore"]]
+    immatricolati_df = immatricolati_df.rename(columns={"Codice CdL" : "Cod. Corso di Studio"})
+    
+    immatricolati_df["Valore Indicatore"] = immatricolati_df["Valore Indicatore"].astype(int)
+    
+    
+    data = data.merge(
+        immatricolati_df,
+        on="Cod. Corso di Studio",
+        how="left"
+    )
+    data = data.rename(columns={"Valore Indicatore": "Immatricolati"})
+    # data["Massimo Teorico"] = 250
+
+    # TODO Aggiornare quando si avranno i massimi teorici per ciascun corso
+    data["Massimo Teorico"] = data["Immatricolati"]
+    # print(data)
+    
+    dataset_manager = DatasetManager()
+    dataset_manager.scrivi_ministeriali(data, "minesteriali")
+    
 
 if __name__ == "__main__":
     main()
