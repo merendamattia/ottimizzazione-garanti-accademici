@@ -1,5 +1,7 @@
 import os
 import pandas as pd
+import math
+
 
 class DatasetManager:
     """
@@ -114,6 +116,61 @@ class DatasetManager:
         except Exception as e:
             raise Exception(f"Errore durante la lettura del file '{path}': {e}")
 
+    def scrivi_ministeriali(self, df, filename):
+        
+        # print (df)
+        """
+        Scrive i dati del DataFrame in un file ASP (.lp), organizzandoli per sezioni con eliminazione di duplicati.
+        :param df: DataFrame contenente i dati da salvare. Deve contenere una colonna con il codice del corso,
+                    il tipo di laurea secondo lo standard introdotto (ltss, lssm, ecc...), il numero di iscritti effettivi,
+                    il numero massimo teorico (utilizzato per il calcolo della W)
+        :param filename: Nome del file di output (senza estensione).
+        :raises Exception: Per errori durante la scrittura del file.
+        """
+        
+        output_dir = 'lp'
+        if not os.path.exists(output_dir):
+            os.makedirs(output_dir)
+        comment_character = '% '
+        # filepath = os.path.join(self.dataset_path, filename + '.lp')
+        filepath = os.path.join(output_dir, filename + '.lp')
+        
+        parametri_ministeriali_minimi = {
+            "lt": (9, 5, 4, 2),
+            "lm": (6, 4, 2, 1),
+            "lm5": (15, 8, 3),
+            "lm6": (18, 10, 4),
+            "ltss": (5, 3, 2, 1),
+            "ltsm": (5, 3, 2, 1),
+            "ltps": (4, 2, 2, 1),
+            "ltop": (4, 2, 2, 1),
+            "lmss": (4, 2, 2, 1),
+            "lmsm": (4, 2, 2, 1),
+            "lmi": (3, 1, 2, 1)
+        }
+
+        with open(filepath, "w") as file:
+            file.write(f"{comment_character} SEZIONE: Garanti minimi per corso (codice_corso, minimo_complessivo, docenti_ti, docenti_td, max_docenti_contratto)\n")
+            
+            for _, row in df.iterrows():
+                tipo_corso = row["Cod. Tipo Corso"].lower()
+                codice_corso = row["Cod. Corso di Studio"]
+                
+                if tipo_corso in parametri_ministeriali_minimi:
+                    minimo_complessivo, minimo_ti, massimo_td, massimo_contratti = parametri_ministeriali_minimi[tipo_corso]
+                else:
+                    raise ValueError(f"Cod. Tipo Corso ({tipo_corso} ) non coerente per il corso {codice_corso}")
+                
+                w = (int(row["Immatricolati"])/(1.0 * int(row["Massimo Teorico"]))) - 1
+                minimo_complessivo = math.floor(minimo_complessivo * (1+w))
+                minimo_ti = math.floor(minimo_ti * (1+w))
+                
+                # TODO aggiungere formula di calcolo per i contratti => attualmente il documento dell'università fornisce un calcolo sbagliato ( (10-6)/4 = 2 )
+                # TODO quindi il calcolo non viene fatto
+                file.write(f"ministeriale({codice_corso}, {minimo_complessivo}, {minimo_ti}, {massimo_td}, {massimo_contratti}).\n")
+                
+        
+        
     def scrivi_coperture(self, df, filename):
         """
         Scrive i dati del DataFrame in un file ASP (.lp), organizzandoli per sezioni con eliminazione di duplicati.
@@ -139,25 +196,6 @@ class DatasetManager:
         try:
             with open(filepath, 'w') as file:
                 
-                # TODO CREARE UN QUALCOSA CHE ME LO AGGIUNGA DINAMICAMENTE
-                # SOLUZIONE TEMPORANEA
-                file.write(f"{comment_character} SEZIONE: Garanti minimi per corso\n")
-                file.write(f"minimo_ministeriale(lt, 9, 5, 4, 2) :- laurea(lt).\n")
-                file.write(f"minimo_ministeriale(lm, 6, 4, 2, 1) :- laurea(lm).\n")
-                file.write(f"minimo_ministeriale(lm5, 15, 8, 3) :- laurea(lm5).\n")
-                file.write(f"minimo_ministeriale(lm6, 18, 10, 4) :- laurea(lm6).\n")
-                
-                # Casi particolari
-                file.write(f"minimo_ministeriale(ltss, 5, 3, 2, 1) :- laurea(ltss).\n")
-                file.write(f"minimo_ministeriale(ltsm, 5, 3, 2, 1) :- laurea(ltsm).\n")
-                file.write(f"minimo_ministeriale(ltps, 4, 2, 2, 1) :- laurea(ltps).\n")
-                file.write(f"minimo_ministeriale(ltop, 4, 2, 2, 1) :- laurea(ltop).\n")
-                file.write(f"minimo_ministeriale(lmss, 4, 2, 2, 1) :- laurea(lmss).\n")
-                file.write(f"minimo_ministeriale(lmsm, 4, 2, 2, 1) :- laurea(lmsm).\n")
-                file.write(f"minimo_ministeriale(lmi, 3, 1, 2, 1) :- laurea(lmi).\n")
-                file.write("\n")
-                # TODO ###################################################
-
                 # Scrive la sezione dei tipi di corso
                 file.write(f"{comment_character} SEZIONE: Tipi di Corso\n")
                 for _, row in df.iterrows():
