@@ -3,14 +3,6 @@
 peso(5).
 peso(10).
 
-% Regola per associare il minimo ministeriale a ciascun corso.
-% La regola assegna il valore minimo ministeriale a ogni corso in base al tipo di laurea.
-ministeriale(Corso, Minimo, Minimo_ind, Massimo_det, Massimo_numero_docenti_a_contratto) :-
-      corso(Corso, Laurea, _, _),
-      minimo_ministeriale(Laurea, Minimo, Minimo_ind, Massimo_det, Massimo_numero_docenti_a_contratto).
-
-#show minimo_ministeriale/5.
-
 % Generazione dei docenti non a contratto come possibili garanti.
 % Questa regola considera solo i docenti appartenenti alle fasce 'td' (tempo determinato)
 % e 'ti' (tempo indeterminato). I docenti a contratto ('c') sono esclusi tramite il controllo `Fascia != c`.
