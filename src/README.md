@@ -19,5 +19,5 @@ I file che precedono il main devono contenere solo i fatti e le regole (i.e., il
 Nel main aggiungiamo i vari vincoli.
 
 ```bash
-clingo lp/informatica.lp main.lp
+clingo -n 5 --parallel-mode 8 --time-limit=120 lp/* main-contratto.lp
 ```

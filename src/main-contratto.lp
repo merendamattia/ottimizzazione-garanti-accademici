@@ -5,9 +5,9 @@ peso(10).
 
 % Regola per associare il minimo ministeriale a ciascun corso.
 % La regola assegna il valore minimo ministeriale a ogni corso in base al tipo di laurea.
-ministeriale(Corso, Minimo, Minimo_ind, Minimo_det, Massimo_numero_docenti_a_contratto) :-
+ministeriale(Corso, Minimo, Minimo_ind, Massimo_det, Massimo_numero_docenti_a_contratto) :-
       corso(Corso, Laurea, _, _),
-      minimo_ministeriale(Laurea, Minimo, Minimo_ind, Minimo_det, Massimo_numero_docenti_a_contratto).
+      minimo_ministeriale(Laurea, Minimo, Minimo_ind, Massimo_det, Massimo_numero_docenti_a_contratto).
 
 #show minimo_ministeriale/5.
 
@@ -66,14 +66,14 @@ conta_docenti_determinato(Corso, Numero) :-
       Numero < Minimo_ind.
       [Numero * 10@2]
 
-% Vincolo: il numero di docenti a tempo determinato per ogni corso deve essere almeno pari al minimo ministeriale richiesto.
-% Se il numero è inferiore al minimo, la soluzione viene scartata.
+% Vincolo: il numero di docenti a tempo determinato per ogni corso non deve essere superiore al massimo ministeriale richiesto.
+% Se il numero è superiore al massismo, la soluzione viene scartata.
+% Penalizzazione per ricercatori che superano il limite consentito
 % ! weak constraint
 :~ conta_docenti_determinato(Corso, Numero),
-      ministeriale(Corso, Minimo, _, Minimo_det, _),
-      codice_corso(Corso),
-      Numero < Minimo_det.
-      [Numero * 10@2]
+      ministeriale(Corso, _, _, Massimo_det, _),
+      Numero > Massimo_det.
+      [Numero - Massimo_det@1]
 
 % Calcola la somma totale dei pesi assegnati ai docenti per ciascun corso.
 % La somma è ottenuta considerando i pesi di tutti i garanti (docenti) associati al corso.
@@ -163,6 +163,20 @@ jolly_per_corso(Corso, Numero) :-
 
 #show jolly_per_corso/2.
 
+% TODO documentazione
+garanti_per_corso(Corso, Numero) :-
+      codice_corso(Corso),
+      somma_pesi_corso(Corso, Somma),
+      Numero = Somma / 10.
+
+#show garanti_per_corso/2.
+
+% TODO documentazione
+:~ garanti_per_corso(Corso, Numero),
+      ministeriale(Corso, Minimo, _, _, _),
+      Numero != Minimo.
+      [Numero * Minimo@2]
+
 % Vincolo: il numero di docenti a contratto per ciascun corso non deve superare
 % il valore massimo specificato dalla regola ministeriale.
 % Se il numero di docenti a contratto assegnati supera il massimo consentito, la soluzione viene scartata.
@@ -172,11 +186,26 @@ jolly_per_corso(Corso, Numero) :-
       Numero > Massimo_numero_docenti_a_contratto.
       %[10 * Numero@1]
 
-% Priorità per i garanti con peso 10
-#maximize { Peso : garante(_, _, Peso, _), Peso = 10 }.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% ! Priorità generali
+% Massimizzare i docenti a tempo determinato (ricercatori)
+#maximize { 50 : garante(_, _, _, td) }.
 
-% Penalizzazione per l'uso di docenti a contratto.
-% Questa regola minimizza il numero di docenti a contratto utilizzati, assegnando
-% un peso elevato a ciascun docente a contratto per scoraggiarne l'uso.
-% Questo garantisce che i docenti a contratto siano utilizzati solo quando strettamente necessario.
-#minimize { 200 : garante(_, _, _, c) }. 
+% Massimizzare i docenti a tempo indeterminato
+#maximize { 30 : garante(_, _, _, ti) }.
+
+% Minimizzare i docenti a contratto
+#maximize { 25 : garante(_, _, _, c) }.
+
+% Massimizzare i docenti con peso 10
+#maximize { 20 : garante(_, _, Peso, _), Peso = 10 }.
+
+% Minimizzare i docenti con peso 5
+#minimize { 100 : garante(_, _, Peso, _), Peso = 5 }.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% ! Priorità generali
+
+% Ottimizzare i garanti con SSD caratterizzante
+#maximize { 15 : garante(Docente, Corso, _, _), 
+                  docente(Docente, _, SettoreSSD, _), 
+                  corso(Corso, _, SettoreSSD, _) }.
+
+#minimize { Numero : garanti_per_corso(Corso, Numero) }.
