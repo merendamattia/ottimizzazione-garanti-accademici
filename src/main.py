@@ -284,7 +284,6 @@ def init():
     print("Estrazione completata. Rieseguire il programma.")
     exit()
 
-
 def main_old():
 
     # Se la cartella non esiste, lancio la generazione dei dataset
@@ -349,8 +348,7 @@ def main_old():
     dataset_loader = DatasetLoader(path_coperture)
     data = dataset_loader.filter_by_values(filters=filters, only_prefix=True)
     dataset_manager = DatasetManager()
-    dataset_manager.scrivi_coperture(data, 'coperture')
-    
+    dataset_manager.scrivi_coperture(data, 'coperture')   
 
 def init_matricole(filename):
     dsl = DatasetLoader(path_docenti)
@@ -365,7 +363,6 @@ def init_matricole(filename):
     ds_min = dsl.filter_by_values(dataset=ds, filters={"Matricola" : matricole})
     
     dsl.save_to_file(ds_min, filename)
-    
     
 def init_corsi(filename):
     dsl = DatasetLoader(path_coperture)
@@ -394,8 +391,8 @@ def init_corsi_matricole(filepathCorsi, filepathProf):
 def main():
     # Se la cartella non esiste, lancio la generazione dei dataset divisi per corsi
     dataset_dir = 'dataset/corsi/'
-    filepathCorsi = dataset_dir+"codici-corsi.csv"
-    filepathProf = dataset_dir+"codici-matricole.csv"
+    filepathCorsi = dataset_dir + 'codici-corsi.csv'
+    filepathProf = dataset_dir + 'codici-matricole.csv'
     
     if not os.path.exists(dataset_dir):
         os.makedirs(dataset_dir)
@@ -462,7 +459,6 @@ def main():
     dataset_manager = DatasetManager()
     dataset_manager.scrivi_docenti_a_contratto(data, 'docenti_a_contratto')
     
-    
     ### SCRITTURA MINISTERIALE
     dataset_loader = DatasetLoader(path_coperture)
     data = dataset_loader.filter_by_values(filters=filters_corsi, only_prefix=True)
@@ -480,18 +476,16 @@ def main():
     
     immatricolati_df["Valore Indicatore"] = immatricolati_df["Valore Indicatore"].astype(int)
     
-    
     data = data.merge(
         immatricolati_df,
         on="Cod. Corso di Studio",
         how="left"
     )
     data = data.rename(columns={"Valore Indicatore": "Immatricolati"})
-    # data["Massimo Teorico"] = 250
-
+    
     # TODO Aggiornare quando si avranno i massimi teorici per ciascun corso
+    # data["Massimo Teorico"] = 250
     data["Massimo Teorico"] = data["Immatricolati"]
-    # print(data)
     
     dataset_manager = DatasetManager()
     dataset_manager.scrivi_ministeriali(data, "minesteriali")

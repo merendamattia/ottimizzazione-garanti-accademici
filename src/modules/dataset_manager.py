@@ -2,7 +2,6 @@ import os
 import pandas as pd
 import math
 
-
 class DatasetManager:
     """
     Classe per la gestione di file di dataset e la generazione di file ASP strutturati.
@@ -117,8 +116,6 @@ class DatasetManager:
             raise Exception(f"Errore durante la lettura del file '{path}': {e}")
 
     def scrivi_ministeriali(self, df, filename):
-        
-        # print (df)
         """
         Scrive i dati del DataFrame in un file ASP (.lp), organizzandoli per sezioni con eliminazione di duplicati.
         :param df: DataFrame contenente i dati da salvare. Deve contenere una colonna con il codice del corso,
@@ -132,7 +129,6 @@ class DatasetManager:
         if not os.path.exists(output_dir):
             os.makedirs(output_dir)
         comment_character = '% '
-        # filepath = os.path.join(self.dataset_path, filename + '.lp')
         filepath = os.path.join(output_dir, filename + '.lp')
         
         parametri_ministeriali_minimi = {
@@ -149,27 +145,38 @@ class DatasetManager:
             "lmi": (3, 1, 2, 1)
         }
 
-        with open(filepath, "w") as file:
-            file.write(f"{comment_character} SEZIONE: Garanti minimi per corso (codice_corso, minimo_complessivo, docenti_ti, docenti_td, max_docenti_contratto)\n")
+        try:
+            with open(filepath, "w") as file:
+                file.write(f"{comment_character} SEZIONE: Garanti minimi per corso (codice_corso, minimo_complessivo, docenti_ti, docenti_td, max_docenti_contratto)\n")
+                
+                for _, row in df.iterrows():
+                    tipo_corso = row["Cod. Tipo Corso"].lower()
+                    codice_corso = row["Cod. Corso di Studio"]
+                    
+                    if tipo_corso in parametri_ministeriali_minimi:
+                        minimo_complessivo, minimo_ti, massimo_td, massimo_contratti = parametri_ministeriali_minimi[tipo_corso]
+                    else:
+                        raise ValueError(f"Cod. Tipo Corso ({tipo_corso} ) non coerente per il corso {codice_corso}")
+                    
+                    immatricolati = int(row["Immatricolati"])
+                    massimo_teorico = int(row["Massimo Teorico"])
+                    w = (immatricolati / (1.0 * massimo_teorico)) - 1
+                    
+                    if w < 0:
+                        w = 0
+
+                    minimo_complessivo = math.floor(minimo_complessivo * (1 + w))
+                    minimo_ti = math.floor(minimo_ti * (1 + w))
+
+
+                    # TODO aggiungere formula di calcolo per i contratti: 
+                    # TODO  ->  attualmente il documento dell'università fornisce un calcolo sbagliato ( (10 - 6) / 4 = 2 )
+                    # TODO  ->  quindi il calcolo non viene fatto
+                    file.write(f"ministeriale({codice_corso}, {minimo_complessivo}, {minimo_ti}, {massimo_td}, {massimo_contratti}).\n")
             
-            for _, row in df.iterrows():
-                tipo_corso = row["Cod. Tipo Corso"].lower()
-                codice_corso = row["Cod. Corso di Studio"]
-                
-                if tipo_corso in parametri_ministeriali_minimi:
-                    minimo_complessivo, minimo_ti, massimo_td, massimo_contratti = parametri_ministeriali_minimi[tipo_corso]
-                else:
-                    raise ValueError(f"Cod. Tipo Corso ({tipo_corso} ) non coerente per il corso {codice_corso}")
-                
-                w = (int(row["Immatricolati"])/(1.0 * int(row["Massimo Teorico"]))) - 1
-                minimo_complessivo = math.floor(minimo_complessivo * (1+w))
-                minimo_ti = math.floor(minimo_ti * (1+w))
-                
-                # TODO aggiungere formula di calcolo per i contratti => attualmente il documento dell'università fornisce un calcolo sbagliato ( (10-6)/4 = 2 )
-                # TODO quindi il calcolo non viene fatto
-                file.write(f"ministeriale({codice_corso}, {minimo_complessivo}, {minimo_ti}, {massimo_td}, {massimo_contratti}).\n")
-                
-        
+            print(f"Dati salvati con successo in: {filepath}")
+        except Exception as e:
+            raise Exception(f"Errore durante il salvataggio dei dati su '{filepath}': {e}")
         
     def scrivi_coperture(self, df, filename):
         """
