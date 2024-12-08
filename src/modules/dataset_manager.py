@@ -199,6 +199,7 @@ class DatasetManager:
         corsi_aggiunti = set()
         tipi_corso_aggiunti = set()
         ssd_aggiunti = set()
+        taf_aggiunti = set()
 
         try:
             with open(filepath, 'w') as file:
@@ -231,6 +232,17 @@ class DatasetManager:
                     if ssd not in ssd_aggiunti:
                         file.write(f"ssd({settore}, {numero}).\n")
                         ssd_aggiunti.add(ssd)
+                file.write("\n")
+
+                # Scrive la sezione dei TAF
+                file.write(f"{comment_character} SEZIONE: TAF\n")
+                for _, row in df.iterrows():
+                    taf = row['TAF'].lower()
+
+                    if taf not in taf_aggiunti:
+                        # file.write(f"{comment_character} {nome_corso} ({codice_corso})\n")
+                        file.write(f"taf({taf}).\n")
+                        taf_aggiunti.add(taf)
                 file.write("\n")
 
                 # Scrive la sezione dei corsi
@@ -278,9 +290,10 @@ class DatasetManager:
                     codice_corso = int(float(row['Cod. Corso di Studio']))
                     nome_docente = row['Cognome'] + " " + row['Nome']
                     tipo_corso = row['Cod. Tipo Corso'].lower()
+                    taf = row['TAF'].lower()
 
                     file.write(f"{comment_character} Corso: {codice_corso}, Docente: {nome_docente}\n")
-                    file.write(f"cattedra({codice_corso}, {matricola_docente}, {tipo_corso}) :- codice_corso({codice_corso}), matricola_docente({matricola_docente}), laurea({tipo_corso}).\n")
+                    file.write(f"cattedra({codice_corso}, {matricola_docente}, {tipo_corso}, {taf}) :- codice_corso({codice_corso}), matricola_docente({matricola_docente}), laurea({tipo_corso}), taf({taf}).\n")
                 file.write("\n")
 
             print(f"Dati salvati con successo in: {filepath}")

@@ -9,7 +9,7 @@ peso(10).
 % Il numero minimo di docenti richiesto è specificato dalla regola ministeriale.
 Minimo{
       garante(Docente, Corso, Peso, Fascia) :
-            cattedra(Corso, Docente, _),
+            cattedra(Corso, Docente, _, _),
             peso(Peso),
             docente(Docente, Fascia, _, _),
             fascia(Fascia),
@@ -32,18 +32,18 @@ Minimo{
 #show garante/4.
 
 % Conta il numero di docenti a tempo indeterminato associati a ciascun corso.
-% La regola utilizza il predicato `cattedra/3` per identificare i docenti e verifica che appartengano alla fascia "ti" (tempo indeterminato).
+% La regola utilizza il predicato `cattedra/4` per identificare i docenti e verifica che appartengano alla fascia "ti" (tempo indeterminato).
 conta_docenti_indeterminato(Corso, Numero) :- 
-      Numero = #count { 1, Docente : cattedra(Corso, Docente, _), docente(Docente, Fascia, _, _)},
+      Numero = #count { 1, Docente : cattedra(Corso, Docente, _, _), docente(Docente, Fascia, _, _)},
       Fascia = ti,
       codice_corso(Corso).
 
 #show conta_docenti_indeterminato/2.
 
 % Conta il numero di docenti a tempo determinato associati a ciascun corso.
-% La regola utilizza il predicato `cattedra/3` per identificare i docenti e verifica che appartengano alla fascia "td" (tempo determinato).
+% La regola utilizza il predicato `cattedra/4` per identificare i docenti e verifica che appartengano alla fascia "td" (tempo determinato).
 conta_docenti_determinato(Corso, Numero) :- 
-      Numero = #count { 1, Docente : cattedra(Corso, Docente, _), docente(Docente, Fascia, _, _)},
+      Numero = #count { 1, Docente : cattedra(Corso, Docente, _, _), docente(Docente, Fascia, _, _)},
       Fascia = td,
       codice_corso(Corso).
 
@@ -155,7 +155,10 @@ jolly_per_corso(Corso, Numero) :-
 
 #show jolly_per_corso/2.
 
-% TODO documentazione
+% Calcola il numero di garanti effettivi per ciascun corso.
+% Il numero di garanti viene determinato dividendo la somma totale
+% dei pesi assegnati ai garanti per il corso (somma_pesi_corso)
+% per 10.
 garanti_per_corso(Corso, Numero) :-
       codice_corso(Corso),
       somma_pesi_corso(Corso, Somma),
@@ -163,7 +166,10 @@ garanti_per_corso(Corso, Numero) :-
 
 #show garanti_per_corso/2.
 
-% TODO documentazione
+% Vincolo debole per minimizzare il numero di garanti effettivi rispetto al minimo richiesto.
+% Penalizza le soluzioni in cui il numero di garanti effettivi
+% (calcolato da `garanti_per_corso`) non coincide con il numero minimo
+% stabilito dai requisiti ministeriali per il corso.
 :~ garanti_per_corso(Corso, Numero),
       ministeriale(Corso, Minimo, _, _, _),
       Numero != Minimo.
@@ -193,11 +199,24 @@ garanti_per_corso(Corso, Numero) :-
 
 % Minimizzare i docenti con peso 5
 #minimize { 100 : garante(_, _, Peso, _), Peso = 5 }.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%% ! Priorità generali
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% ! 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% ! Massimizzo i docenti con TAF maggiore
+#maximize { 25 : garante(Docente, Corso, _, _), 
+                  cattedra(Corso, Docente, _, TAF), 
+                  TAF = a}.
+#maximize { 18 : garante(Docente, Corso, _, _), 
+                  cattedra(Corso, Docente, _, TAF), 
+                  TAF = b}.
+#maximize { 10 : garante(Docente, Corso, _, _), 
+                  cattedra(Corso, Docente, _, TAF), 
+                  TAF = c}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% ! 
 
 % Ottimizzare i garanti con SSD caratterizzante
 #maximize { 15 : garante(Docente, Corso, _, _), 
                   docente(Docente, _, SettoreSSD, _), 
                   corso(Corso, _, SettoreSSD, _) }.
 
+% Minimizzo il numero di garanti per ogni corso
 #minimize { Numero : garanti_per_corso(Corso, Numero) }.
