@@ -206,4 +206,115 @@ determinato, e un massimo di 2 docenti a contratto.
 
 \subsection{Vincoli}\label{sec:constraints}
 \subsection{Gestione delle priorità}\label{sec:priorita}
+
+La gestione delle priorità è stata un elemento cruciale di questo progetto.
+Abbiamo voluto fornire un sistema che rispettasse i requisiti ministeriali e
+che fosse al contempo flessibile, per affrontare situazioni particolari in cui
+tali requisiti non potessero essere pienamente soddisfatti.
+
+Per prima cosa abbiamo deciso di gestire le priorità dei garanti in base alla loro tipologia contrattuale.
+Per farlo abbiamo di massimizzato, in ordine, l'utilizzo dei ricercatori, dei professori associati/ordinari e dei docenti a contratto;
+preferendo che i docenti facciano da garanti al 100\% su un singolo corso, penalizzando la casistica
+del 50\% su due corsi differenti.
+
+\begin{lstlisting}[language=prolog, caption=Gestione delle priorità dei docenti]
+% Massimizzare i docenti a tempo determinato (ricercatori)
+#maximize { 50 : garante(_, _, _, td) }.
+
+% Massimizzare i docenti a tempo indeterminato
+#maximize { 40 : garante(_, _, _, ti) }.
+
+% Minimizzare i docenti a contratto
+#maximize { 32 : garante(_, _, _, c) }.
+
+% Massimizzare i docenti con peso 10
+#maximize { 25 : garante(_, _, Peso, _), Peso = 10 }.
+
+% Minimizzare i docenti con peso 5
+#minimize { 100, Docente : garante(Docente, _, Peso, _), Peso = 5 }.
+\end{lstlisting}
+
+Abbiamo deciso di favorire la scelta di garanti che insegnano corsi fondamentali per
+i corsi di laurea, classificati come TAF A (insegnamenti di base) e TAF B
+(insegnamenti caratterizzanti), rispetto agli altri insegnamenti.
+
+\begin{lstlisting}[language=prolog, caption=TAF]
+#maximize { 25 : garante(Docente, Corso, _, _), 
+                cattedra(Corso, Docente, _, TAF), 
+                TAF = a}.
+#maximize { 18 : garante(Docente, Corso, _, _), 
+                cattedra(Corso, Docente, _, TAF), 
+                TAF = b}.
+#maximize { 10 : garante(Docente, Corso, _, _), 
+                cattedra(Corso, Docente, _, TAF), 
+                TAF = c}.
+\end{lstlisting}
+
+Per garantire l’aderenza tra le competenze dei garanti e i corsi assegnati,
+abbiamo dato la priorità ai docenti il cui macrosettore scientifico-disciplinare (SSD)
+è coerente con quello caratterizzante del corso.
+
+\begin{lstlisting}[language=prolog, caption=Garanti con macrosettore coerente a quello del corso.]
+% Ottimizzare i garanti con SSD caratterizzante
+#maximize { 20 : garante(Docente, Corso, _, _), 
+                docente(Docente, _, SettoreSSD, _), 
+                corso(Corso, _, SettoreSSD, _) }.
+\end{lstlisting}
+
+Abbiamo minimizzato il numero di garanti assegnati a ciascun corso, penalizzando
+situazioni in cui il numero di garanti supera il minimo richiesto.
+
+\begin{lstlisting}[language=prolog, caption=Minimizzazione dei garanti per corso di laurea.]
+% Minimizzo il numero di garanti per ogni corso
+#minimize { Penalita : 
+            garanti_per_corso(Corso, Numero),
+            Penalita = Numero * 10 }.
+\end{lstlisting}
+
+Nel modello proposto abbiamo introdotto una serie di vincoli deboli per avere
+maggiore flessibilità nella gestione di situazioni in cui non è possibile rispettare
+rigorosamente i requisiti ministeriali.
+
+\begin{lstlisting}[language=prolog, caption=Vincoli di flessibilità]
+% Vincolo: il numero di docenti a tempo indeterminato per ogni corso deve
+% essere almeno pari al minimo ministeriale richiesto.
+% Se il numero e' inferiore al minimo, la soluzione viene scartata.
+% ! weak constraint
+:~ conta_docenti_indeterminato(Corso, Numero),
+        ministeriale(Corso, Minimo, Minimo_ind, _, _),
+        codice_corso(Corso),
+        Numero < Minimo_ind.
+        [Numero * 10@1]
+
+% Vincolo: il numero di docenti a tempo determinato per ogni corso non deve
+% essere superiore al massimo ministeriale richiesto.
+% Se il numero e' superiore al massismo, la soluzione viene scartata.
+% Penalizzazione per ricercatori che superano il limite consentito
+% ! weak constraint
+:~ conta_docenti_determinato(Corso, Numero),
+        ministeriale(Corso, _, _, Massimo_det, _),
+        Numero > Massimo_det,
+        Penalita = Numero - Massimo_det.
+        [Penalita * 50@1]
+% Vincolo: il numero di docenti che afferiscono al SSD del corso deve rappresentare almeno il 50%
+% del numero totale di docenti di riferimento.
+% Se la condizione non e' soddisfatta, la soluzione viene scartata.
+% ! weak constraint
+:~ numero_docenti_che_afferiscono(Aff), 
+        numero_docenti_di_riferimento(Tot),
+        2 * Aff <= Tot. 
+        [Tot - 4 * Aff@1]
+\end{lstlisting}
+
+\begin{lstlisting}[language=prolog, caption=Minimizzazione dei garanti per corso di laurea.]
+% Vincolo debole per minimizzare il numero di garanti effettivi rispetto al minimo richiesto.
+% Penalizza le soluzioni in cui il numero di garanti effettivi
+% (calcolato da `garanti_per_corso`) non coincide con il numero minimo
+% stabilito dai requisiti ministeriali per il corso.
+:~ garanti_per_corso(Corso, Numero),
+        ministeriale(Corso, Minimo, _, _, _),
+        Numero != Minimo.
+        [Numero * Minimo@1]
+\end{lstlisting}
+
 \subsection{Ottimizzzazioni}\label{sec:optimizations}
