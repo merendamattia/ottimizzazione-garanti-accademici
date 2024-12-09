@@ -1,6 +1,44 @@
 \section{ASP}\label{sec:asp}
 
-\subsection{Fatti sui dati}\label{sec:facts}
+In questa sezione approfondiamo l'organizzazione del progetto, evidenziando 
+come sia stato strutturato per garantire chiarezza e modularità. 
+Per facilitare l'ordine visivo e semplificare eventuali ispezioni manuali, 
+il progetto è stato suddiviso in più file sorgenti, ciascuno dedicato a un 
+aspetto specifico del dataset e delle regole.
+
+Abbiamo separato i fatti e le regole in due file principali: uno dedicato 
+ai docenti (Sezione~\ref*{sec:rules-docenti}) e un altro focalizzato sulle 
+coperture (Sezione~\ref*{sec:rules-coperture}). Per maggiore praticità, è 
+stato creato un file specifico per i docenti a contratto 
+(Sezione~\ref*{sec:rules-docenti-contratto}) e un altro per i limiti 
+ministeriali (Sezione~\ref*{sec:rules-ministeriale}).
+
+Il file principale, il main, integra tutte le regole relative ai garanti, 
+inclusi i vincoli e le priorità definite per l'ottimizzazione del sistema 
+(Sezione~\ref*{sec:constraints}).
+
+È importante sottolineare che tutti questi file vengono generati dinamicamente 
+dal programma di preprocessing scritto in Python. Questa fase, gestita dal 
+file main del preprocessing, automatizza la creazione delle regole e dei 
+fatti ASP in base ai dati forniti, garantendo così una configurazione 
+personalizzata e facilmente aggiornabile. 
+
+
+\subsection{Docenti}\label{sec:rules-docenti}
+\begin{lstlisting}[language=Python, caption={Esempio di codice Python}]
+    def saluta(nome):
+        print(f"Ciao, {nome}!")
+    
+    saluta("Mondo")
+\end{lstlisting}
+
+
+\subsection{Coperture}\label{sec:rules-coperture}
+\subsection{Docenti a contratto}\label{sec:rules-docenti-contratto}
+\mmerenda{spiegare qui che li usiamo come jolly}
+\subsection{Ministeriale}\label{sec:rules-ministeriale}
+
+
 \subsection{Vincoli}\label{sec:constraints}
 \subsection{Gestione delle priorità}\label{sec:priorita}
 \subsection{Ottimizzzazioni}\label{sec:optimizations}
