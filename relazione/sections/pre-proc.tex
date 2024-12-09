@@ -1,6 +1,8 @@
 \section{Preprocessing dei dati}
 \label{sec:pre-proc}
 
+\subsection{Analisi preliminare}
+
 I dati analizzati, forniti dall'ufficio didattico dell'Università di Parma, 
 erano organizzati in formato Excel con una struttura tabellare complessa, contenente 
 numerosi campi. Per garantire un'analisi efficace e accurata, si è resa necessaria una 
@@ -71,5 +73,26 @@ sostituito il codice del tipo di corso precedentemente identificato come \texttt
     \label{fig:casi_particolari}
 \end{figure}
 
+\subsection{Analisi post incontro con l'ufficio}
+\label{sec:analisi-post-call}
 
-\mmerenda{aggiungere la roba nuova discussa nella call con l'ufficio del 06/12/2024}
+Venerdì 6 dicembre 2024 abbiamo svolto un incontro con l'ufficio incaricato della gestione dei dati accademici,
+durante il quale sono stati affrontati alcuni punti critici emersi nella fase di analisi preliminare.
+Questo confronto ci ha consentito di ottenere chiarimenti fondamentali e di affinare ulteriormente il
+processo di preprocessing dei dati sopra descritto.
+
+Un argomento importante di cui abbiamo discusso, riguarda la corretta gestione di situazioni in cui la
+numerosità delle immatricolazioni ai corsi di laurea risultano superiori alla numerosità massima teorica.
+
+Un aspetto cruciale emerso riguarda la definizione delle preferenze relative ai docenti incaricati
+del ruolo di garante. È stata delineata una chiara categorizzazione ed preferenza per la valutazione, includendo in ordine:
+i docenti con copertura al 100\% per un singolo corso, docenti a contratto con copertura esclusivamente al 100\% per un singolo corso,
+e docenti a contratto con copertura al 100\% per due corsi distinti.
+
+Relativamente alla scelta dei garanti è stata esposta una preferenza secondaria, che implica la copertura del ruolo di
+garante per un corso da parte del presidente di quel corso di laurea.
+
+Questi chiarimenti e criteri definiti durante l’incontro sono stati integrati nel processo di preprocessing,
+consentendo di riorganizzare i dati in modo coerente con le preferenze e i vincoli discussi.
+Sono stati implementati controlli aggiuntivi per garantire la consistenza dei dati elaborati,
+migliorando così l'efficacia del modello ASP nella fase di assegnazione.
