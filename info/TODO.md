@@ -2,8 +2,10 @@
 
 1. Maximize: i presidenti di un corso devono essere preferibilmente garanti di quel corso (non dipende da noi)
 2. Includere i massimi teorici (studenti iscritti) per ciascun corso (non dipende da noi)
-3. Escludere i corsi inter-ateneo dal dataset completo
+3. Escludere i corsi inter-ateneo dal dataset completo (non dipende da noi)
 4. Fine tuning delle priorità per ottenere il miglior compromesso
+5. 🐞 Fix ssd corso in corso/4 perchè l'ssd salvato è quello del primo prof che incontra (possibile soluzione: ordinare in modo crescente in base al TAF i dati prima che vengano elaborati)
+6. Divisione generazione garanti tra td e ti andando a generare gia il massimo di garanti per i td con aggregato
 
 
 ## Lavori futuri
