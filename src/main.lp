@@ -134,7 +134,7 @@ numero_docenti_che_afferiscono(Numero) :-
 % Questo predicato considera tutti i docenti che sono garanti di uno o più corsi,
 % indipendentemente dall'SSD o da altri criteri.
 numero_docenti_di_riferimento(Numero) :- 
-      Numero = #sum { 1, Docente, Corso : garante(Docente, Corso, _, _) }.
+      Numero = #sum { 1, Docente, Corso : garante(Docente, Corso, _, Fascia), Fascia != c }.
 
 % Vincolo: il numero di docenti che afferiscono al SSD del corso deve rappresentare almeno il 50%
 % del numero totale di docenti di riferimento.
@@ -167,6 +167,15 @@ garanti_per_corso(Corso, Numero) :-
 
 #show garanti_per_corso/2.
 
+% Vincolo debole per minimizzare il numero di garanti effettivi rispetto al minimo richiesto.
+% Penalizza le soluzioni in cui il numero di garanti effettivi
+% (calcolato da `garanti_per_corso`) non coincide con il numero minimo
+% stabilito dai requisiti ministeriali per il corso.
+:~ garanti_per_corso(Corso, Numero),
+      ministeriale(Corso, Minimo, _, _, _),
+      Numero != Minimo.
+      [Numero * Minimo@1]
+
 % Vincolo: il numero di docenti a contratto per ciascun corso non deve superare
 % il valore massimo specificato dalla regola ministeriale.
 % Se il numero di docenti a contratto assegnati supera il massimo consentito, la soluzione viene scartata.
@@ -190,7 +199,7 @@ garanti_per_corso(Corso, Numero) :-
 #maximize { 25 : garante(_, _, Peso, _), Peso = 10 }.
 
 % Minimizzare i docenti con peso 5
-#minimize { 100 : garante(_, _, Peso, _), Peso = 5 }.
+#minimize { 100, Docente : garante(Docente, _, Peso, _), Peso = 5 }.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% ! 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% ! Massimizzo i docenti con TAF maggiore
