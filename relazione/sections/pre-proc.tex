@@ -60,18 +60,39 @@ laurea triennale e migliorare la chiarezza dei dati. Successivamente, abbiamo pr
 l'identificazione dei casi particolari utilizzando un controllo incrociato tra due colonne 
 specifiche. Questo processo ha permesso di individuare e gestire in modo univoco i corsi 
 di laurea che presentano requisiti particolari, come illustrato nella 
-Figura~\ref{fig:casi_particolari}.
+Tabella~\ref{tab:casi-particolari}.
 Per implementare questa logica, abbiamo adattato il processo di modifica dei dati al corso 
 specifico da verificare. Ad esempio, per la Laurea Triennale in Servizio Sociale, abbiamo 
 sostituito il codice del tipo di corso precedentemente identificato come \texttt{LT} con 
 \texttt{LTSS}.
 
-\begin{figure}[h]
+
+\begin{table}[h!]
     \centering
-    \includegraphics[width=0.8\textwidth]{./images/tabellaministeriale.png}
-    \caption{Casi particolari}
-    \label{fig:casi_particolari}
-\end{figure}
+    \renewcommand{\arraystretch}{1.8}
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+    Corsi di studio & \makecell{Docenza di \\riferimento \\(\textbf{minimo})} & \makecell{Prof. a tempo\\indeterm.\\(\textbf{minimo})} & \makecell{Ricercatori\\(\textbf{massimo})} & \makecell{Docenti a\\contratto\\(\textbf{massimo})} \\
+    \hline
+    LT & 9 & 5 & 4 & 2 \\
+    \hline 
+    LM & 6 & 4 & 2 & 1 \\
+    \hline
+    LMCU 5 anni & 15 & 8 & 7 & 3 \\
+    \hline
+    LMCU 6 anni & 18 & 10 & 8 & 4 \\
+    \hline
+    \makecell{LT Servizio Sociale\\LT Scienze Motorie} & 5 & 3 & 2 & 1 \\
+    \hline
+    \makecell{LT Prof. sanitarie\\LT a orient. profess.\\LM Servizio Sociale\\LM Scienze Motorie} & 4 & 2 & 2 & 1 \\
+    \hline
+    LM Infermieristica & 3 & 1 & 2 & 1 \\
+    \hline
+    \end{tabular}
+    \caption{Tabella che riassume i numeri di docenti per i corsi di studio.}
+    \label{tab:casi-particolari}
+\end{table}
+    
 
 \subsection{Analisi post incontro con l'ufficio}
 \label{sec:analisi-post-call}
