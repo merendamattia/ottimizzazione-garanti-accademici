@@ -1,8 +1,6 @@
 \section{Preprocessing dei dati}
 \label{sec:pre-proc}
 
-\subsection{Analisi preliminare}
-
 I dati analizzati, forniti dall'ufficio didattico dell'Università di Parma, 
 erano organizzati in formato Excel con una struttura tabellare complessa, contenente 
 numerosi campi. Per garantire un'analisi efficace e accurata, si è resa necessaria una 
@@ -93,28 +91,33 @@ sostituito il codice del tipo di corso precedentemente identificato come \texttt
     \label{tab:casi-particolari}
 \end{table}
     
+\mmerenda{
+    probabilmente da rimuovere
 
 \subsection{Analisi post incontro con l'ufficio}
 \label{sec:analisi-post-call}
 
-\mmerenda{fare passaggio}
-Venerdì 6 dicembre 2024 abbiamo svolto un incontro con l'ufficio incaricato della gestione dei dati accademici,
-durante il quale sono stati affrontati alcuni punti critici emersi nella fase di analisi preliminare.
-Questo confronto ci ha consentito di ottenere chiarimenti fondamentali e di affinare ulteriormente il
-processo di preprocessing dei dati sopra descritto.
+Venerdì 6 dicembre 2024 si è tenuto un incontro con l’ufficio responsabile della gestione 
+dei dati accademici, durante il quale sono stati affrontati alcuni punti critici emersi 
+nella fase di analisi preliminare. Questo confronto si è rivelato decisivo per ottenere 
+chiarimenti essenziali e per affinare ulteriormente il processo di preprocessing dei dati.
 
-Un argomento importante di cui abbiamo discusso, riguarda la corretta gestione di situazioni in cui la
-numerosità delle immatricolazioni ai corsi di laurea risultano superiori alla numerosità massima teorica.
+Uno dei temi principali discussi riguarda la gestione delle situazioni in cui il numero di 
+immatricolazioni ai corsi di laurea supera il limite massimo teorico consentito. Questo 
+problema ha richiesto una revisione accurata per garantire che il modello potesse gestire 
+tali anomalie in modo efficace.
 
-Un aspetto cruciale emerso riguarda la definizione delle preferenze relative ai docenti incaricati
-del ruolo di garante. È stata delineata una chiara categorizzazione ed preferenza per la valutazione, includendo in ordine:
-i docenti con copertura al 100\% per un singolo corso, docenti a contratto con copertura esclusivamente al 100\% per un singolo corso,
-e docenti a contratto con copertura al 100\% per due corsi distinti.
+Un altro aspetto di rilievo è stato la definizione delle preferenze relative ai docenti 
+incaricati del ruolo di garante. È stata stabilita una chiara gerarchia di priorità per 
+la selezione, partendo dai docenti con copertura al 100\% per un singolo corso, seguiti 
+dai docenti a contratto con copertura esclusivamente al 100\% per un singolo corso e, 
+infine, dai docenti a contratto con copertura al 100\% per due corsi distinti. Inoltre, 
+è stata espressa una preferenza secondaria che privilegia l’assegnazione del ruolo di 
+garante per un corso al presidente dello stesso corso di laurea.
 
-Relativamente alla scelta dei garanti è stata esposta una preferenza secondaria, che implica la copertura del ruolo di
-garante per un corso da parte del presidente di quel corso di laurea.
-
-Questi chiarimenti e criteri definiti durante l’incontro sono stati integrati nel processo di preprocessing,
-consentendo di riorganizzare i dati in modo coerente con le preferenze e i vincoli discussi.
-Sono stati implementati controlli aggiuntivi per garantire la consistenza dei dati elaborati,
-migliorando così l'efficacia del modello ASP nella fase di assegnazione.
+Questi criteri, emersi durante l’incontro, sono stati integrati nel processo di 
+preprocessing per garantire una gestione più coerente dei dati, allineata alle preferenze 
+e ai vincoli stabiliti. Sono stati introdotti controlli aggiuntivi per assicurare la 
+consistenza dei dati elaborati, migliorando così l’efficacia complessiva del modello 
+ASP nella fase di assegnazione.
+}

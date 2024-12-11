@@ -205,55 +205,168 @@ determinato, e un massimo di 2 docenti a contratto.
     \label{tab:formula-w}
 \end{table}
 
+\subsection{Generazione dei garanti}\label{sec:garanti}
+\mmerenda{fare passaggio}
+
+La generazione dei \textit{garanti} rappresenta un elemento chiave nella modellazione ASP 
+sviluppata per questo progetto. In particolare, è stata posta attenzione alla distinzione 
+tra i docenti appartenenti a diverse fasce contrattuali, separando i docenti 
+\textbf{non a contratto} da quelli \textbf{a contratto}, che vengono utilizzati 
+esclusivamente come risorsa di emergenza.
+Inoltre, ogni docente può essere conteggiato una sola volta oppure, al massimo, essere 
+assegnato a due corsi distinti con un peso pari a $0.5$ su ciascun corso. 
+
+Per soddisfare quest'ultimo requisito, il modello ASP proposto utilizza una gestione 
+basata sui pesi, i quali rappresentano il livello di impegno del docente come garante:
+\begin{itemize}
+    \item Un peso di \textbf{10} indica che il docente è assegnato al 100\% su un singolo corso.
+    \item Un peso di \textbf{5} rappresenta un docente che divide il proprio impegno al 50\% su due corsi diversi.
+\end{itemize}
+
+\begin{lstlisting}[language=prolog, caption=Generazione dei pesi.]
+% Predicati di base per definire i pesi possibili.
+peso(5).
+peso(10).
+\end{lstlisting}
+
+\paragraph{Docenti non a contratto.}
+I docenti \textit{non a contratto}, appartenenti alle fasce \textit{tempo determinato} 
+(\texttt{td}) e \textit{tempo indeterminato} (\texttt{ti}), costituiscono la base principale 
+per l'assegnazione dei garanti. La regola ASP proposta genera i possibili garanti per ciascun corso, 
+escludendo esplicitamente i docenti a contratto (\texttt{c}).
+
+\begin{lstlisting}[language=prolog, caption=Generazione dei garanti non a contratto.]
+Minimo{
+      garante(Docente, Corso, Peso, Fascia) :
+            cattedra(Corso, Docente, _, _),
+            peso(Peso),
+            docente(Docente, Fascia, _, _),
+            fascia(Fascia),
+            Fascia != c
+      } :-
+            ministeriale(Corso, Minimo, _, _, _).
+\end{lstlisting}
+
+In questa regola, il numero minimo di garanti per ciascun corso è regolato dal valore \texttt{Minimo} 
+specificato dalla normativa ministeriale, in quanto una soluzione con un numero di garanti minore al 
+minimo ministeriale verrebbe scartata, mentre il peso associato ai garanti può assumere i valori 5 o 
+10, come definito dal predicato \texttt{peso/1}.
+
+\paragraph{Docenti a contratto.}
+I docenti \textit{a contratto} vengono considerati come una risorsa ausiliaria, identificati tramite 
+il predicato \texttt{jolly/1}. A differenza dei docenti non a contratto, i docenti a contratto possono 
+essere assegnati a qualsiasi corso, indipendentemente dall'SSD. Tuttavia, il loro utilizzo è regolato 
+da un limite massimo per corso, specificato dalla normativa ministeriale, come mostrato nel frammento
+di codice seguente.
+
+\begin{lstlisting}[language=prolog, caption=Generazione dei garanti a contratto.]
+{     
+      garante(Docente, Corso, Peso, c) :
+            jolly(Docente),
+            codice_corso(Corso),
+            peso(Peso)
+}Massimo :- ministeriale(Corso, _, _, _, Massimo).
+\end{lstlisting}
+
+Questa regola garantisce che il numero di docenti a contratto utilizzati come garanti non ecceda il 
+valore massimo consentito, specificato dal valore \texttt{Massimo} associato al corso.
+
 
 \subsection{Vincoli}\label{sec:constraints}
-\mmerenda{sistemare e aggiungere i vincoli}
-\mmerenda{scrivere la roba dei pesi}
+Per garantire la validità e l'efficacia della soluzione proposta, il modello definisce un insieme di 
+vincoli suddivisi in due categorie: vincoli \textbf{strong} e vincoli \textbf{weak}. I vincoli strong 
+rappresentano requisiti obbligatori che devono essere rispettati affinché una soluzione sia valida; 
+la loro violazione comporta automaticamente l'esclusione della soluzione. I vincoli weak, invece, non 
+sono strettamente obbligatori, ma introducono penalizzazioni proporzionali alla deviazione dalle 
+condizioni ottimali.
 
-Nel modello proposto abbiamo introdotto una serie di vincoli deboli per avere
-maggiore flessibilità nella gestione di situazioni in cui non è possibile rispettare
-rigorosamente i requisiti ministeriali.
+\paragraph{Vincoli strong.}
+I vincoli \textit{strong} includono diversi aspetti fondamentali. Un aspetto cruciale riguarda il 
+bilanciamento dei pesi associati ai garanti. La somma totale dei pesi per ciascun corso deve soddisfare 
+due condizioni: deve essere almeno 10 volte il numero minimo di docenti richiesti dal corso, poiché 
+ogni garante è considerato effettivo solo se il suo contributo complessivo è pari a 10. Inoltre, 
+tale somma deve essere un multiplo di 10 per garantire la coerenza e la corretta attribuzione dei pesi.
 
-\begin{lstlisting}[language=prolog, caption=Vincoli di flessibilità]
-% Vincolo: il numero di docenti a tempo indeterminato per ogni corso deve
-% essere almeno pari al minimo ministeriale richiesto.
-% Se il numero e' inferiore al minimo, la soluzione viene scartata.
-% ! weak constraint
-:~ conta_docenti_indeterminato(Corso, Numero),
+\begin{lstlisting}[language=prolog]
+ :- somma_pesi_corso(Corso, Somma),
+      ministeriale(Corso, Minimo, _, _, _),
+      Min = 10 * Minimo,
+      Somma < Min.
+
+ :- somma_pesi_corso(Corso, Somma),
+      Modulo = Somma \ 10,
+      Modulo != 0.
+\end{lstlisting}
+
+I pesi complessivi assegnati ai docenti sono soggetti ad ulteriori restrizioni. Un docente 
+non può essere associato a più corsi con un peso complessivo superiore a 10. Questa condizione garantisce 
+che il carico di lavoro individuale rimanga gestibile e coerente con le regole stabilite. Inoltre, 
+un docente non può essere associato allo stesso corso con pesi differenti che, sommati, superano 10. 
+
+\begin{lstlisting}[language=prolog]
+ :- garante(Docente, Corso1, Peso1, _),
+        garante(Docente, Corso2, Peso2, _),
+        matricola_docente(Docente),
+        codice_corso(Corso1), codice_corso(Corso2),
+        Somma = Peso1 + Peso2,
+        Somma > 10,
+        peso(Peso1),
+        peso(Peso2),
+        Corso1 != Corso2.
+
+ :- garante(Docente, Corso1, Peso1, _),
+        garante(Docente, Corso1, Peso2, _),
+        matricola_docente(Docente),
+        codice_corso(Corso1),
+        Somma = Peso1 + Peso2,
+        Somma > 10,
+        peso(Peso1),
+        peso(Peso2),
+        Peso1 != Peso2.
+\end{lstlisting}
+
+\paragraph{Vincoli weak.}
+I vincoli \textit{weak}, invece, mirano ad ottimizzare la qualità della soluzione penalizzando 
+deviazioni dagli standard desiderati. Ad esempio, viene penalizzata la presenza di un numero eccessivo 
+di docenti a tempo determinato (\texttt{td}) rispetto al massimo consentito dalle regole ministeriali. 
+Nella nostra soluzione, la penalizzazione è proporzionale all'eccesso rispetto al limite.
+
+\mmerenda{fix tilde}
+\begin{lstlisting}[language=prolog]
+ :~ conta_docenti_indeterminato(Corso, Numero),
         ministeriale(Corso, Minimo, Minimo_ind, _, _),
         codice_corso(Corso),
         Numero < Minimo_ind.
         [Numero * 10@1]
 
-% Vincolo: il numero di docenti a tempo determinato per ogni corso non deve
-% essere superiore al massimo ministeriale richiesto.
-% Se il numero e' superiore al massismo, la soluzione viene scartata.
-% Penalizzazione per ricercatori che superano il limite consentito
-% ! weak constraint
-:~ conta_docenti_determinato(Corso, Numero),
+ :~ conta_docenti_determinato(Corso, Numero),
         ministeriale(Corso, _, _, Massimo_det, _),
         Numero > Massimo_det,
         Penalita = Numero - Massimo_det.
         [Penalita * 50@1]
-% Vincolo: il numero di docenti che afferiscono al SSD del corso deve rappresentare almeno il 50%
-% del numero totale di docenti di riferimento.
-% Se la condizione non e' soddisfatta, la soluzione viene scartata.
-% ! weak constraint
-:~ numero_docenti_che_afferiscono(Aff), 
-        numero_docenti_di_riferimento(Tot),
-        2 * Aff <= Tot. 
-        [Tot - 4 * Aff@1]
 \end{lstlisting}
 
-\begin{lstlisting}[language=prolog, caption=Minimizzazione dei garanti per corso di laurea.]
-% Vincolo debole per minimizzare il numero di garanti effettivi rispetto al minimo richiesto.
-% Penalizza le soluzioni in cui il numero di garanti effettivi
-% (calcolato da `garanti_per_corso`) non coincide con il numero minimo
-% stabilito dai requisiti ministeriali per il corso.
-:~ garanti_per_corso(Corso, Numero),
-        ministeriale(Corso, Minimo, _, _, _),
-        Numero != Minimo.
-        [Numero * Minimo@1]
+Un altro vincolo weak riguarda la percentuale di docenti che afferiscono agli SSD di base o 
+caratterizzanti di ciascun corso. Se questa percentuale rappresenta meno del 50\% del totale dei docenti 
+di riferimento, viene applicata una penalizzazione proporzionale alla discrepanza:
+
+\begin{lstlisting}[language=prolog]
+ :~ numero_docenti_che_afferiscono(Aff), 
+      numero_docenti_di_riferimento(Tot),
+      2 * Aff <= Tot.
+      [Tot - 4 * Aff@1]
+\end{lstlisting}
+
+Infine, viene penalizzata anche una distribuzione inefficiente dei garanti. Il numero di garanti 
+effettivi, calcolato dividendo la somma dei pesi per 10, deve coincidere con il minimo richiesto 
+dai requisiti ministeriali per ogni corso. In caso contrario, viene applicata una penalizzazione 
+proporzionale alla differenza.
+
+\begin{lstlisting}[language=prolog]
+ :~ garanti_per_corso(Corso, Numero),
+      ministeriale(Corso, Minimo, _, _, _),
+      Numero != Minimo.
+      [Numero * Minimo@1]
 \end{lstlisting}
 
 
@@ -276,20 +389,20 @@ Abbiamo implementato queste priorità nel nostro modello con l'ausilio di regole
 massimizzazione e minimizzazione, come mostrato di seguito:
 
 \begin{lstlisting}[language=prolog, caption=Gestione delle priorità dei docenti.]
-% Docenti a tempo determinato (ricercatori)
-#maximize { 50 : garante(_, _, _, td) }.
+ % Docenti a tempo determinato (ricercatori)
+ #maximize { 50 : garante(_, _, _, td) }.
 
-% Docenti a tempo indeterminato
-#maximize { 40 : garante(_, _, _, ti) }.
+ % Docenti a tempo indeterminato
+ #maximize { 40 : garante(_, _, _, ti) }.
 
-% Docenti a contratto
-#maximize { 32 : garante(_, _, _, c) }.
+ % Docenti a contratto
+ #maximize { 32 : garante(_, _, _, c) }.
 
-% Docenti con peso 10
-#maximize { 25 : garante(_, _, Peso, _), Peso = 10 }.
+ % Docenti con peso 10
+ #maximize { 25 : garante(_, _, Peso, _), Peso = 10 }.
 
-% Minimizzare i docenti con peso 5
-#minimize { 100, Docente : garante(Docente, _, Peso, _), Peso = 5 }.
+ % Minimizzare i docenti con peso 5
+ #minimize { 100, Docente : garante(Docente, _, Peso, _), Peso = 5 }.
 \end{lstlisting}
 
 Inoltre, abbiamo dato priorità ai docenti che insegnano corsi fondamentali per i 
