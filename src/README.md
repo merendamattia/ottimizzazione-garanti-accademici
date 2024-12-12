@@ -6,3 +6,13 @@ Nel main aggiungiamo i vari vincoli.
 ```bash
 clingo -n 15 --parallel-mode 8 --time-limit=180 lp/* main.lp
 ```
+
+Corsi di Informatica (LT e LM)
+```bash
+python3 main.py --3027 --5069
+```
+
+Dipartimento SMFI
+```bash
+python3 main.py --3027 --5069 --3026 --5036 --3030 --5037
+```

@@ -1,6 +1,6 @@
 % Predicati di base per definire i pesi possibili.
 % In questo caso, i pesi disponibili sono 5 e 10.
-% peso(5). % TODO la soluzione attuale è sound anche con pesi solo a 5
+peso(5). % TODO la soluzione attuale è sound anche con pesi solo a 5
 peso(10).
 
 Minimo{

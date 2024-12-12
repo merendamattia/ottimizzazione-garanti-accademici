@@ -2,6 +2,8 @@ import os
 import pandas as pd
 import math
 
+NUMERO_MINIMO_DI_INSEGNAMENTI = 9
+
 class DatasetManager:
     """
     Classe per la gestione di file di dataset e la generazione di file ASP strutturati.
@@ -134,8 +136,8 @@ class DatasetManager:
         parametri_ministeriali_minimi = {
             "lt": (9, 5, 4, 2),
             "lm": (6, 4, 2, 1),
-            "lm5": (15, 8, 3),
-            "lm6": (18, 10, 4),
+            "lm5": (15, 8, 7, 3),
+            "lm6": (18, 10, 8, 4),
             "ltss": (5, 3, 2, 1),
             "ltsm": (5, 3, 2, 1),
             "ltps": (4, 2, 2, 1),
@@ -158,7 +160,11 @@ class DatasetManager:
                     else:
                         raise ValueError(f"Cod. Tipo Corso ({tipo_corso} ) non coerente per il corso {codice_corso}")
                     
+                    if pd.isna(row['Immatricolati']):
+                        continue
+                    
                     immatricolati = int(row["Immatricolati"])
+
                     massimo_teorico = int(row["Massimo Teorico"])
                     w = (immatricolati / (1.0 * massimo_teorico)) - 1
                     
@@ -201,6 +207,16 @@ class DatasetManager:
         ssd_aggiunti = set()
         taf_aggiunti = set()
 
+        # Rimuove eventuali NaN e converte i valori in numeri interi
+        df['Cod. Corso di Studio'] = df['Cod. Corso di Studio'].fillna(0).astype(int)
+
+        # Raggruppa per codice corso e conta le occorrenze
+        conteggi = df['Cod. Corso di Studio'].value_counts()
+
+        # Filtra il DataFrame mantenendo solo i codici corso con almeno 9 occorrenze
+        codici_validi = conteggi[conteggi > NUMERO_MINIMO_DI_INSEGNAMENTI].index
+        df = df[df['Cod. Corso di Studio'].isin(codici_validi)]
+
         try:
             with open(filepath, 'w') as file:
                 
@@ -218,7 +234,6 @@ class DatasetManager:
                 # Scrive la sezione dei vari SSD
                 file.write(f"{comment_character} SEZIONE: SSD\n")
                 for _, row in df.iterrows():
-                    # Non posso usare le lettere in maiuscolo perchè possono essere scambiate per variabili e non atomi
                     
                     ssd = row['SSD'].split('/')
                     if len(ssd) < 2:
@@ -278,6 +293,7 @@ class DatasetManager:
                         corsi_aggiunti.add(codice_corso)
 
                 file.write("\n")
+                
                 
                 # Scrive le relazioni tra corsi e docenti
                 file.write(f"{comment_character} SEZIONE: Relazioni Corsi-Docenti\n")
@@ -415,6 +431,8 @@ class DatasetManager:
         :param filename: Nome del file di output (senza estensione).
         :raises Exception: Per errori durante la scrittura del file.
         """
+        SKIP = True
+
         # Crea la cartella 'lp' se non esiste
         output_dir = 'lp'
         if not os.path.exists(output_dir):
@@ -437,24 +455,25 @@ class DatasetManager:
 
                 # Scrive la sezione dei docenti
                 file.write(f"{comment_character} SEZIONE: Docenti\n")
-                file.write(f"jolly(1).\n")
                 
-                return
-                for _, row in df.iterrows():
-                    if not row['Matricola'] or row['Matricola'] is None or str(row['Matricola']).lower() == 'nan':
-                        continue
-                    else:
-                        matricola_docente = int(float(row['Matricola']))
+                if SKIP:
+                    file.write(f"jolly(1).\n")
+                else:
+                    for _, row in df.iterrows():
+                        if not row['Matricola'] or row['Matricola'] is None or str(row['Matricola']).lower() == 'nan':
+                            continue
+                        else:
+                            matricola_docente = int(float(row['Matricola']))
 
-                    nome_docente = row['Cognome'] + " " + row['Nome']
+                        nome_docente = row['Cognome'] + " " + row['Nome']
 
-                    if matricola_docente not in docenti_aggiunti:
-                        file.write(f"{comment_character} {nome_docente} ({matricola_docente}), docente a contratto\n")
-                        file.write(f"matricola_docente({matricola_docente}).\n")
-                        file.write(f"jolly({matricola_docente}).\n")
-                        docenti_aggiunti.add(matricola_docente)
-                docenti_aggiunti = set() # reset docenti aggiunti
-                file.write("\n")
+                        if matricola_docente not in docenti_aggiunti:
+                            file.write(f"{comment_character} {nome_docente} ({matricola_docente}), docente a contratto\n")
+                            file.write(f"matricola_docente({matricola_docente}).\n")
+                            file.write(f"jolly({matricola_docente}).\n")
+                            docenti_aggiunti.add(matricola_docente)
+                    docenti_aggiunti = set() # reset docenti aggiunti
+                    file.write("\n")        
 
             print(f"Dati salvati con successo in: {filepath}")
         except Exception as e:
