@@ -173,11 +173,8 @@ class DatasetManager:
 
                     minimo_complessivo = math.floor(minimo_complessivo * (1 + w))
                     minimo_ti = math.floor(minimo_ti * (1 + w))
+                    massimo_contratti = math.floor(massimo_contratti * (1 + w))
 
-
-                    # TODO aggiungere formula di calcolo per i contratti: 
-                    # TODO  ->  attualmente il documento dell'università fornisce un calcolo sbagliato ( (10 - 6) / 4 = 2 )
-                    # TODO  ->  quindi il calcolo non viene fatto
                     file.write(f"ministeriale({codice_corso}, {minimo_complessivo}, {minimo_ti}, {massimo_td}, {massimo_contratti}).\n")
             
             print(f"Dati salvati con successo in: {filepath}")
