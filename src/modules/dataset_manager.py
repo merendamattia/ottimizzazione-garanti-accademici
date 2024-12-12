@@ -437,6 +437,9 @@ class DatasetManager:
 
                 # Scrive la sezione dei docenti
                 file.write(f"{comment_character} SEZIONE: Docenti\n")
+                file.write(f"jolly(1).\n")
+                
+                return
                 for _, row in df.iterrows():
                     if not row['Matricola'] or row['Matricola'] is None or str(row['Matricola']).lower() == 'nan':
                         continue
