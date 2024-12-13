@@ -4,7 +4,7 @@
 models=15
 threads=$(nproc)
 threads=$((threads - 2))
-timeLimit=200
+timeLimit=60
 
 # Parsing degli argomenti con getopts
 while getopts "t:m:p:h" opt; do
@@ -28,4 +28,4 @@ echo "Numero di thread: $threads"
 echo "Limite di tempo: $timeLimit"
 
 # Esegui il comando clingo
-clingo -n "$models" --parallel-mode "$threads" --time-limit="$timeLimit" lp/* main-optimized.lp
+clingo -n "$models" --parallel-mode "$threads" --time-limit="$timeLimit" lp/* main-ottimizzato.lp

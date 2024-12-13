@@ -116,30 +116,47 @@ def init_corsi_matricole(filepathCorsi, filepathProf):
     print("Estrazione completata. Rieseguire il programma.")
     exit()
 
-
 def run():
+    print("Running program...")
     output_file = "output.txt"
-    # Esegue il comando shell e salva l'output in un file
-    process = subprocess.run(
-        ["bash", "execute.sh"],
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE
-    )
-    
-    with open(output_file, "wb") as f:
-        f.write(process.stdout)
-    
     ret = 0
+    
+    with subprocess.Popen(
+        ["bash", "execute.sh"], 
+        stdout=subprocess.PIPE, 
+        stderr=subprocess.PIPE,
+        text=True
+    ) as process, open(output_file, "a") as f:
+        # Legge l'output riga per riga
+        for line in process.stdout:
+            print(line.strip())
+            f.write(line.strip() + "\n")
+
+        # Attende la terminazione del processo
+        process.wait()
+        
+    # process = subprocess.Popen(["bash", "execute.sh"], stdout=subprocess.PIPE)
+    
+    # for line in process.stdout:
+    #     print(line.decode().strip())
+    #     with open(output_file, "a") as f:
+    #         f.write(line.decode().strip() + "\n")
+            
+    # process.wait()
+    
     with open(output_file, "r") as f:
         content = f.read()
-        if "UNSATISFABLE" in content:
+        if "UNSATISFIABLE" in content:
             ret = -1
         elif "OPTIMUM FOUND" in content:
             ret = 1
-        else:
-            ret = 0
-    os.remove(output_file)
+        
+    # Rimuove il file temporaneo
+    if os.path.exists(output_file):
+        os.remove(output_file)
+    
     return ret
+
 
 def main():
     
@@ -184,20 +201,26 @@ def main():
     
     print(f"Testing one-by-one")
     banned_codes = list()
+    
     for code in all_codes:
         print(f"Testing {code}")
         current_codes = {"Cod. Corso di Studio": [code]}
-        write(filters_corsi)
+        write(current_codes)
+        
         res = run()
         if res == -1:
             print(f"Errore con {code}")
             banned_codes.append(code)
+        
     
     # scrive la lista di codici da escludere in un file (one-by-one.txt)
     banned_codes_file = "one-by-one-banned.txt"
-    for code in banned_codes:
-        with open(banned_codes_file, "a") as f:
-            f.write(f"{code}\n")
+    if len(banned_codes) > 0:
+        with open(banned_codes_file, "w") as f:
+            for code in banned_codes:
+                f.write(f"{code}\n")
+    else:
+        print("No banned codes")
     
     print()
     print(f"Testing increasing tuples")
@@ -212,9 +235,11 @@ def main():
     
     for code in accepted_codes:
         current_codes["Cod. Corso di Studio"].append(code)
+        
         print(f"Testing {current_codes['Cod. Corso di Studio']}")
         
-        write(filters_corsi)
+        write(current_codes)
+        
         res = run()
         if res == -1:
             print(f"Errore con {code}")
