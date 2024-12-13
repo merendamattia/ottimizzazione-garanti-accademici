@@ -1,29 +1,59 @@
-\section{Valutazione della soluzione proposta}
+\section{Validazione della soluzione proposta}
 \label{sec:expval}
 
-\subsection{Esempio giocattolo}
-\label{sec:-dataset-giocattolo}
+Per testare l'efficacia e la correttezza del modello sviluppato, è stato creato un esempio 
+giocattolo basato sui corsi di laurea in Informatica (LT) e Scienze Informatiche (LM). 
+Questo dataset ridotto è stato progettato per verificare la capacità del modello ASP di 
+generare soluzioni valide, rispettando i vincoli definiti e implementando correttamente 
+le ottimizzazioni.
 
-\mmerenda{magari cambiare nome della sezione in "Validazione della soluzione proposta", lo rende più professionale e accattivante}
+I dati di input per il modello sono stati generati attraverso un comando Python, che ha 
+prodotto i file necessari contenenti i fatti relativi ai docenti, alle coperture, ai 
+docenti a contratto e ai limiti ministeriali.
 
-Per validare il modello sviluppato e testare l’efficacia dell’approccio proposto,
-abbiamo costruito un esempio giocattolo sfruttando il corso di laurea triennale di informatica
-ed il corso di laurea magistrale in Scienze Informatiche.
+\begin{lstlisting}[language=bash]
+ python3 main.py --3027 --5069
+\end{lstlisting}
 
-Il dataset generato ci ha accompagnato nel processo di testing del codice ASP proposto;
-permettendoci di verificare se fosse in grado di gestire correttamente la generazione dei termini,
-i vincoli e le preferenze specificate.
+Una volta generati i file, l'analisi è stata eseguita utilizzando Clingo.
 
-I risultati ottenuti sono stati utilizzati per ottimizzare ulteriormente il codice,
-permettendoci di identificare eventuali aree di miglioramento relative alla gestione
-dei vincoli e all'efficienza della generazione dei termini.
+\begin{lstlisting}[language=bash]
+ clingo -n 15 --parallel-mode 8 --time-limit=180 lp/* main.lp
+\end{lstlisting}
 
-\mmerenda{spiegare i comandi utilizzati per generare il dataset (il comando python)} \\
-\mmerenda{specificare il comando utilizzato per lanciare l'analisi con clingo} \\
-\mmerenda{stampare l'output andando a commentare il risultato}
+Il modello ha prodotto una soluzione ottima in un \textit{centesimo di un secondo}, 
+dimostrando tempi di computazione estremamente brevi. Per il corso di Informatica 
+(codice: 3027) sono stati assegnati 9 garanti in conformità ai requisiti. Per il corso di 
+Scienze Informatiche (codice: 5069) sono stati assegnati 6 garanti, sempre in conformità ai 
+requisiti
 
-\subsection{Dataset piccolo (dipartimento SMFI)}
+È stata inoltre verificata la coerenza tra i garanti assegnati e gli SSD caratterizzanti, 
+con 5 docenti afferenti per Informatica e 4 per Scienze Informatiche.
+
+\subsection{Dataset ridotto: Dipartimento SMFI}
 \label{sec:-dataset-dipartimento-smfi}
+
+Per valutare la scalabilità del modello, è stato eseguito un test utilizzando un dataset 
+ridotto relativo al Dipartimento di Scienze Matematiche, Fisiche e Informatiche (SMFI), 
+comprendente sei corsi di studio. Anche in questo caso, i file di input sono stati generati 
+tramite Python.
+
+\begin{lstlisting}[language=bash]
+ python3 main.py --3027 --5069 --3026 --5036 --3030 --5037
+\end{lstlisting}
+
+L'analisi è stata eseguita con Clingo utilizzando lo stesso comando precedentemente 
+indicato. Il modello ha dimostrato di poter gestire un numero maggiore di corsi, producendo 
+soluzioni valide in tempi brevi. In questo caso, il tempo di computazione è stato di circa 
+\textit{due secondi} per ottenere la soluzione ottimale.
+
+Durante il test, è stata utilizzata la configurazione che prevede solo pesi pari a 10, al 
+fine di ridurre la complessità computazionale. Tuttavia, il modello supporta anche l'opzione 
+di pesi pari a 5, che, pur aumentando significativamente i tempi di computazione, offre 
+maggiore flessibilità nella generazione delle soluzioni.
+
+
+
 
 \subsection{Dataset grande (tutti i dipartimenti)}
 \label{sec:dataset-tutti-dipartimenti}

@@ -118,37 +118,31 @@ Di seguito, un esempio rappresentativo del contenuto del file.
 
 \subsection{Docenti a contratto}\label{sec:rules-docenti-contratto}
 
-Il file \texttt{docenti\_a\_contratto.lp} contiene le informazioni relative ai docenti 
-a contratto, una categoria di docenti utilizzata come risorsa di emergenza nei casi in 
-cui non è possibile soddisfare i vincoli ministeriali con i docenti a tempo determinato 
-o indeterminato. Questi docenti sono identificati tramite la fascia \texttt{c} e vengono 
-impiegati come \textit{jolly}, ovvero come soluzioni di riserva per garantire la copertura 
-minima dei corsi universitari.
+Il file \texttt{docenti\_a\_contratto.lp} contiene informazioni relative ai docenti a 
+contratto, una categoria utilizzata come risorsa di emergenza nei casi in cui i vincoli 
+ministeriali non possono essere soddisfatti con i docenti a tempo determinato o 
+indeterminato. Questi docenti sono identificati dalla fascia \texttt{c} e vengono 
+trattati come \textit{jolly}, ovvero risorse flessibili da impiegare per garantire la 
+copertura minima dei corsi universitari.
 
-All'interno del file, ogni docente a contratto è identificato tramite la sua matricola 
-ed è marcato con il predicato \texttt{jolly/1}. Questo predicato segnala che il docente può 
-essere assegnato a qualsiasi corso, indipendentemente dall'SSD. I docenti a contratto 
-non sono associati a uno specifico corso o SSD come i docenti a tempo determinato o 
-indeterminato, ma possono essere impiegati in modo flessibile per \textit{"tappare i buchi"} 
-e assicurare che tutti i corsi soddisfino i requisiti minimi.
+Essendo considerati come \textit{jolly}, i docenti a contratto non sono associati a 
+un SSD specifico o a un corso particolare, ma possono essere assegnati liberamente per 
+colmare le lacune nei corsi che non soddisfano i requisiti minimi con i docenti delle 
+altre fasce. Il file \texttt{docenti\_a\_contratto.lp} è strutturato in modo minimale, 
+definendo la fascia \texttt{c} e un unico predicato \texttt{jolly/1}, che indica la 
+possibilità di assegnare tali docenti in modo trasversale a qualsiasi corso.
 
-L'utilizzo dei docenti a contratto nel modello ASP è strettamente regolato. Essi sono 
-inclusi come possibili garanti nei corsi, ma il loro utilizzo è penalizzato nel processo 
-di ottimizzazione, al fine di privilegiare i docenti delle altre fasce. Questa scelta 
-garantisce che i docenti a contratto siano usati solo come ultima risorsa, minimizzando 
-il loro impatto sulla soluzione complessiva. Approfondiremo meglio questa questione nella 
-Sezione~\ref*{sec:priorita}.
+Nel modello ASP proposto, i docenti a contratto vengono inclusi come possibili garanti, 
+ma il loro utilizzo è regolato e penalizzato nel processo di ottimizzazione, che vedremo
+meglio nella Sezione~\ref{sec:priorita}. 
 
-Di seguito è riportato un esempio della struttura del file:
+Di seguito riportiamo un esempio della struttura del file, che riflette questa impostazione:
 
-\begin{lstlisting}[language=prolog, caption={Esempio struttura dati di \texttt{docenti\_a\_contratto.lp}.}]    
+\begin{lstlisting}[language=prolog, caption={Esempio struttura dati di \texttt{docenti\_a\_contratto.lp}.}]
  %  SEZIONE: FASCIE
  fascia(c).
 
- %  SEZIONE: Docenti
- %  Rossi Mario (1234), docente a contratto
- matricola_docente(1234).
- jolly(1234).
+ jolly(1).
 \end{lstlisting}
 
 
@@ -198,7 +192,7 @@ determinato, e un massimo di 2 docenti a contratto.
     \hline
     Docenti a tempo indeterminato & 5 & $\lfloor 5 \times (1+w) \rfloor$ \\
     \hline
-    Docenti non appartenenti all'ateneo & 3 & $\lfloor 3 \times (1+w) \rfloor$ \\
+    Docenti a contratto & 2 & $\lfloor 2 \times (1+w) \rfloor$ \\
     \hline
     \end{tabular}
     \caption{Formule per il calcolo del numero di docenti di riferimento in base alla numerosità degli studenti.}
@@ -261,10 +255,9 @@ di codice seguente.
 
 \begin{lstlisting}[language=prolog, caption=Generazione dei garanti a contratto.]
 {     
-      garante(Docente, Corso, Peso, c) :
+      garante(Docente, Corso, 10, c) :
             jolly(Docente),
-            codice_corso(Corso),
-            peso(Peso)
+            codice_corso(Corso)
 }Massimo :- ministeriale(Corso, _, _, _, Massimo).
 \end{lstlisting}
 
@@ -273,21 +266,36 @@ valore massimo consentito, specificato dal valore \texttt{Massimo} associato al 
 
 
 \subsection{Vincoli}\label{sec:constraints}
-Per garantire la validità e l'efficacia della soluzione proposta, il modello definisce un insieme di 
-vincoli suddivisi in due categorie: vincoli \textbf{strong} e vincoli \textbf{weak}. I vincoli strong 
-rappresentano requisiti obbligatori che devono essere rispettati affinché una soluzione sia valida; 
-la loro violazione comporta automaticamente l'esclusione della soluzione. I vincoli weak, invece, non 
-sono strettamente obbligatori, ma introducono penalizzazioni proporzionali alla deviazione dalle 
-condizioni ottimali.
 
-\paragraph{Vincoli strong.}
-I vincoli \textit{strong} includono diversi aspetti fondamentali. Un aspetto cruciale riguarda il 
-bilanciamento dei pesi associati ai garanti. La somma totale dei pesi per ciascun corso deve soddisfare 
-due condizioni: deve essere almeno 10 volte il numero minimo di docenti richiesti dal corso, poiché 
-ogni garante è considerato effettivo solo se il suo contributo complessivo è pari a 10. Inoltre, 
-tale somma deve essere un multiplo di 10 per garantire la coerenza e la corretta attribuzione dei pesi.
+I vincoli definiti in questo modello costituiscono la struttura portante del sistema, garantendo 
+che le soluzioni generate siano coerenti con i requisiti ministeriali e istituzionali. 
+Tutti i vincoli introdotti sono \textbf{strong}, il che significa che ogni soluzione che li 
+viola viene automaticamente esclusa. 
 
-\begin{lstlisting}[language=prolog]
+Per garantire che ogni corso soddisfi i requisiti ministeriali, il numero di docenti assegnati 
+come garanti è soggetto a controlli rigorosi. Innanzitutto, i garanti a tempo indeterminato 
+(\texttt{ti}) devono essere almeno pari al minimo richiesto per ciascun corso. Allo stesso modo, 
+il numero di garanti a tempo determinato (\texttt{td}) non deve superare il massimo consentito. 
+Questi vincoli assicurano che il modello rispetti le linee guida istituzionali senza 
+sovraccaricare un’unica tipologia di docenti:
+
+\begin{lstlisting}[language=prolog, caption={Vincoli su garanti a tempo indeterminato e determinato.}]
+ :- conta_garanti_indeterminato(Corso, Numero),
+      ministeriale(Corso, Minimo, Minimo_ind, _, _),
+      Numero < Minimo_ind.
+
+ :- conta_garanti_determinato(Corso, Numero),
+      ministeriale(Corso, _, _, Massimo_det, _),
+      Numero > Massimo_det.
+\end{lstlisting}
+
+Il modello include vincoli che controllano i pesi assegnati ai garanti. La somma totale dei 
+pesi per ciascun corso deve essere almeno 10 volte il numero minimo di garanti richiesti, 
+poiché un docente è considerato \textit{effettivo} solo se il suo peso totale raggiunge il valore 
+massimo di 10. Inoltre, tale somma deve essere un multiplo di 10 per garantire la coerenza 
+nell’assegnazione del garante stesso.
+
+\begin{lstlisting}[language=prolog, caption={Vincoli sui pesi assegnati ai garanti.}]
  :- somma_pesi_corso(Corso, Somma),
       ministeriale(Corso, Minimo, _, _, _),
       Min = 10 * Minimo,
@@ -298,76 +306,48 @@ tale somma deve essere un multiplo di 10 per garantire la coerenza e la corretta
       Modulo != 0.
 \end{lstlisting}
 
-I pesi complessivi assegnati ai docenti sono soggetti ad ulteriori restrizioni. Un docente 
-non può essere associato a più corsi con un peso complessivo superiore a 10. Questa condizione garantisce 
-che il carico di lavoro individuale rimanga gestibile e coerente con le regole stabilite. Inoltre, 
-un docente non può essere associato allo stesso corso con pesi differenti che, sommati, superano 10. 
+Per evitare conflitti e garantire una distribuzione equa del carico di lavoro, ogni docente 
+può essere associato ad un massimo di due corsi, ma con una somma totale di pesi non superiore 
+a 10. Inoltre, un docente non può essere associato allo stesso corso con pesi differenti che, 
+sommati, superano 10.
 
-\begin{lstlisting}[language=prolog]
- :- garante(Docente, Corso1, Peso1, _),
-        garante(Docente, Corso2, Peso2, _),
-        matricola_docente(Docente),
-        codice_corso(Corso1), codice_corso(Corso2),
-        Somma = Peso1 + Peso2,
-        Somma > 10,
-        peso(Peso1),
-        peso(Peso2),
-        Corso1 != Corso2.
+\begin{lstlisting}[language=prolog, caption={Vincoli sulla distribuzione dei pesi per docente.}]
+ :- garante(Docente, Corso1, Peso1, Fascia),
+      garante(Docente, Corso2, Peso2, Fascia),
+      Somma = Peso1 + Peso2,
+      Somma > 10,
+      Corso1 != Corso2,
+      Fascia != c.
 
- :- garante(Docente, Corso1, Peso1, _),
-        garante(Docente, Corso1, Peso2, _),
-        matricola_docente(Docente),
-        codice_corso(Corso1),
-        Somma = Peso1 + Peso2,
-        Somma > 10,
-        peso(Peso1),
-        peso(Peso2),
-        Peso1 != Peso2.
+ :- garante(Docente, Corso1, Peso1, Fascia),
+      garante(Docente, Corso1, Peso2, Fascia),
+      Somma = Peso1 + Peso2,
+      Somma > 10,
+      Peso1 != Peso2,
+      Fascia != c.
 \end{lstlisting}
 
-\paragraph{Vincoli weak.}
-I vincoli \textit{weak}, invece, mirano ad ottimizzare la qualità della soluzione penalizzando 
-deviazioni dagli standard desiderati. Ad esempio, viene penalizzata la presenza di un numero eccessivo 
-di docenti a tempo determinato (\texttt{td}) rispetto al massimo consentito dalle regole ministeriali. 
-Nella nostra soluzione, la penalizzazione è proporzionale all'eccesso rispetto al limite.
+Per mantenere la coerenza tra i garanti e gli SSD caratterizzanti di ciascun corso, almeno 
+il 50\% dei garanti deve afferire all'SSD del corso. In caso contrario, la soluzione viene esclusa.
 
-\mmerenda{fix tilde}
-\begin{lstlisting}[language=prolog]
- :~ conta_docenti_indeterminato(Corso, Numero),
-        ministeriale(Corso, Minimo, Minimo_ind, _, _),
-        codice_corso(Corso),
-        Numero < Minimo_ind.
-        [Numero * 10@1]
-
- :~ conta_docenti_determinato(Corso, Numero),
-        ministeriale(Corso, _, _, Massimo_det, _),
-        Numero > Massimo_det,
-        Penalita = Numero - Massimo_det.
-        [Penalita * 50@1]
-\end{lstlisting}
-
-Un altro vincolo weak riguarda la percentuale di docenti che afferiscono agli SSD di base o 
-caratterizzanti di ciascun corso. Se questa percentuale rappresenta meno del 50\% del totale dei docenti 
-di riferimento, viene applicata una penalizzazione proporzionale alla discrepanza:
-
-\begin{lstlisting}[language=prolog]
- :~ numero_docenti_che_afferiscono(Aff), 
-      numero_docenti_di_riferimento(Tot),
+\begin{lstlisting}[language=prolog, caption={Vincolo sui garanti afferenti al SSD caratterizzante.}]
+ :- numero_garanti_che_afferiscono(Aff, Corso),
+      numero_garanti_di_riferimento(Tot, Corso),
       2 * Aff <= Tot.
-      [Tot - 4 * Aff@1]
 \end{lstlisting}
 
-Infine, viene penalizzata anche una distribuzione inefficiente dei garanti. Il numero di garanti 
-effettivi, calcolato dividendo la somma dei pesi per 10, deve coincidere con il minimo richiesto 
-dai requisiti ministeriali per ogni corso. In caso contrario, viene applicata una penalizzazione 
-proporzionale alla differenza.
+Infine, il numero totale di docenti a contratto assegnati a ciascun corso non può superare il 
+limite massimo specificato dai requisiti ministeriali.
 
-\begin{lstlisting}[language=prolog]
- :~ garanti_per_corso(Corso, Numero),
-      ministeriale(Corso, Minimo, _, _, _),
-      Numero != Minimo.
-      [Numero * Minimo@1]
+\begin{lstlisting}[language=prolog, caption={Vincolo sul numero massimo di docenti a contratto.}]
+ :- jolly_per_corso(Corso, Numero),
+      ministeriale(Corso, _, _, _, Massimo_numero_docenti_a_contratto),
+      Numero > Massimo_numero_docenti_a_contratto.
 \end{lstlisting}
+
+
+
+
 
 
 \subsection{Gestione delle priorità}\label{sec:priorita}
@@ -449,4 +429,3 @@ di ottimizzare le risorse, evitando l'assegnazione di più docenti di quanto fos
                        Penalita = Numero * 10 }.
 \end{lstlisting}
 
-\subsection{Ottimizzzazioni}\label{sec:optimizations}
