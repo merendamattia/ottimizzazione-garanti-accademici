@@ -4,3 +4,4 @@ numpy
 openpyxl
 tqdm
 python-docx
+odfpy

@@ -3,14 +3,14 @@ import pandas as pd
 import openpyxl
 import re
 
-path_ns_coperture = "dataset/originali/coperture.xlsx"
-path_ns_docenti = "dataset/originali/docenti.xlsx"
+path_ns_coperture = "../dataset/originali/coperture.xlsx"
+path_ns_docenti = "../dataset/originali/docenti.xlsx"
 
 
-path_coperture = "dataset/coperture.xlsx"
-path_docenti = "dataset/docenti.xlsx"
-path_coperture_contratti = "dataset/docenti_a_contratto.xlsx"
-path_coperture_rimaste = "dataset/insegnamenti_senza_docente.xlsx"
+path_coperture = "../dataset/coperture.xlsx"
+path_docenti = "../dataset/docenti.xlsx"
+path_coperture_contratti = "../dataset/docenti_a_contratto.xlsx"
+path_coperture_rimaste = "../dataset/insegnamenti_senza_docente.xlsx"
 
 def aggiorna_cod_tipo_corso(row):
     descrizione = row['Des. Corso di Studio']

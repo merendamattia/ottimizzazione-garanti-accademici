@@ -489,7 +489,6 @@ def main():
     
     dataset_manager = DatasetManager()
     dataset_manager.scrivi_ministeriali(data, "minesteriali")
-    
 
 if __name__ == "__main__":
     main()

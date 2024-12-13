@@ -2,7 +2,7 @@ from docx import Document
 import pandas as pd
 import re
 
-file_path = "dataset/originali/elenco_2024-2025.docx" 
+file_path = "../dataset/originali/elenco_2024-2025.docx" 
 doc = Document(file_path)
 
 tabelle = []
