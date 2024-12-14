@@ -1,6 +1,6 @@
 % Predicati di base per definire i pesi possibili.
 % In questo caso, i pesi disponibili sono 5 e 10.
-peso(5). % TODO la soluzione attuale è sound anche con pesi solo a 5
+% peso(5). % TODO la soluzione attuale è sound anche con pesi solo a 5
 peso(10).
 
 Minimo{
@@ -37,7 +37,7 @@ conta_garanti_indeterminato(Corso, NumeroGaranti) :-
       codice_corso(Corso),
       NumeroGaranti = Numero / 10.
 
-#show conta_garanti_indeterminato/2.
+% #show conta_garanti_indeterminato/2.
 
 % Calcola il numero di docenti a tempo determinato assegnati come garanti a un determinato corso.
 % Il numero è calcolato sommando i pesi di tutti i docenti nella fascia 'td' associati al corso 
@@ -47,7 +47,7 @@ conta_garanti_determinato(Corso, NumeroGaranti) :-
       codice_corso(Corso),
       NumeroGaranti = Numero / 10.
 
-#show conta_garanti_determinato/2.
+% #show conta_garanti_determinato/2.
 
 % Vincolo: il numero di docenti a tempo indeterminato per un corso deve essere almeno pari
 % al minimo richiesto dalla normativa ministeriale per quel corso. Se non soddisfatto, 
@@ -73,7 +73,7 @@ somma_pesi_corso(Corso, Somma) :-
             Peso, Docente : garante(Docente, Corso, Peso, _)
       }.
 
-#show somma_pesi_corso/2.
+% #show somma_pesi_corso/2.
 
 % Vincolo: la somma totale dei pesi deve essere almeno 10 volte il minimo ministeriale del corso.
 % Questo assicura che il numero complessivo di garanti sia sufficiente per soddisfare i requisiti ministeriali.
@@ -129,7 +129,7 @@ numero_garanti_che_afferiscono(Numero, Corso) :-
       codice_corso(Corso),
       Numero = SommaPesi / 10.
 
-#show numero_garanti_che_afferiscono/2.
+% #show numero_garanti_che_afferiscono/2.
 
 % Calcola il numero totale di docenti di riferimento assegnati a un corso.
 % Esclude i docenti a contratto (fascia 'c') e conta il numero di docenti in altre fasce
@@ -145,7 +145,7 @@ numero_garanti_di_riferimento(Numero, Corso) :-
 %       numero_garanti_di_riferimento(Tot, Corso),
 %       2 * Aff <= Tot. 
 
-#show numero_garanti_di_riferimento/2.
+% #show numero_garanti_di_riferimento/2.
 
 % Calcola il numero di docenti a contratto assegnati a ciascun corso.
 % Questo predicato è utilizzato per verificare che il numero massimo di docenti
@@ -154,7 +154,7 @@ jolly_per_corso(Corso, Numero) :-
       codice_corso(Corso),
       Numero = #count { Docente : garante(Docente, Corso, _, c) }.
 
-#show jolly_per_corso/2.
+% #show jolly_per_corso/2.
 
 % Calcola il numero di garanti effettivi per ciascun corso.
 % Il numero di garanti viene determinato dividendo la somma totale
@@ -165,7 +165,7 @@ garanti_per_corso(Corso, Numero) :-
       somma_pesi_corso(Corso, Somma),
       Numero = Somma / 10.
 
-#show garanti_per_corso/2.
+% #show garanti_per_corso/2.
 
 % Vincolo: il numero totale di garanti assegnati a un corso deve essere uguale
 % al minimo richiesto dalla normativa ministeriale per quel corso. Se non soddisfatto,
