@@ -71,6 +71,11 @@ Per analizzare un dataset generato:
 clingo -n 15 --parallel-mode 8 --time-limit=180 lp/* main.lp
 ```
 
+Per i più pigri:
+```bash
+bash lazy-run.sh
+```
+
 ---
 
 ## Documentazione
