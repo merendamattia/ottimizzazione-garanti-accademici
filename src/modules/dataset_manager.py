@@ -2,8 +2,6 @@ import os
 import pandas as pd
 import math
 
-NUMERO_MINIMO_DI_INSEGNAMENTI = 9
-
 class DatasetManager:
     """
     Classe per la gestione di file di dataset e la generazione di file ASP strutturati.
@@ -208,16 +206,6 @@ class DatasetManager:
 
         # Rimuove eventuali NaN e converte i valori in numeri interi
         df['Cod. Corso di Studio'] = df['Cod. Corso di Studio'].fillna(0).astype(int)
-
-        # Raggruppa per codice corso e conta le occorrenze
-        conteggi = df['Cod. Corso di Studio'].value_counts()
-
-        # Filtra il DataFrame mantenendo solo i codici corso con almeno 9 occorrenze
-        codici_validi = conteggi[conteggi > NUMERO_MINIMO_DI_INSEGNAMENTI].index
-        df = df[df['Cod. Corso di Studio'].isin(codici_validi)]
-
-        print(conteggi)
-        print(codici_validi)
 
         try:
             with open(filepath, 'w') as file:
