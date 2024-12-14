@@ -29,7 +29,9 @@ Minimo{
 
 #show garante/4.
 
-% TODO doc
+% Calcola il numero di docenti a tempo indeterminato assegnati come garanti a un determinato corso.
+% Il numero è calcolato sommando i pesi di tutti i docenti nella fascia 'ti' associati al corso 
+% e dividendo il risultato per 10.
 conta_garanti_indeterminato(Corso, NumeroGaranti) :- 
       Numero = #sum { Peso, Docente : garante(Docente, Corso, Peso, ti)},
       codice_corso(Corso),
@@ -37,7 +39,9 @@ conta_garanti_indeterminato(Corso, NumeroGaranti) :-
 
 #show conta_garanti_indeterminato/2.
 
-% TODO doc
+% Calcola il numero di docenti a tempo determinato assegnati come garanti a un determinato corso.
+% Il numero è calcolato sommando i pesi di tutti i docenti nella fascia 'td' associati al corso 
+% e dividendo il risultato per 10.
 conta_garanti_determinato(Corso, NumeroGaranti) :- 
       Numero = #sum { Peso, Docente : garante(Docente, Corso, Peso, td)},
       codice_corso(Corso),
@@ -45,12 +49,16 @@ conta_garanti_determinato(Corso, NumeroGaranti) :-
 
 #show conta_garanti_determinato/2.
 
-% TODO doc
+% Vincolo: il numero di docenti a tempo indeterminato per un corso deve essere almeno pari
+% al minimo richiesto dalla normativa ministeriale per quel corso. Se non soddisfatto, 
+% la soluzione viene scartata.
 :- conta_garanti_indeterminato(Corso, Numero),
-      ministeriale(Corso, Minimo, Minimo_ind, _, _),
+      ministeriale(Corso, _, Minimo_ind, _, _),
       Numero < Minimo_ind.
 
-% TODO doc
+% Vincolo: il numero di docenti a tempo determinato per un corso non deve superare
+% il massimo consentito dalla normativa ministeriale per quel corso. Se superato,
+% la soluzione viene scartata.
 :- conta_garanti_determinato(Corso, Numero),
       ministeriale(Corso, _, _, Massimo_det, _),
       Numero > Massimo_det.
@@ -109,7 +117,9 @@ somma_pesi_corso(Corso, Somma) :-
       Peso1 != Peso2,
       Fascia != c.
 
-% TODO doc
+% Calcola il numero di garanti che afferiscono al settore scientifico-disciplinare (SSD) del corso.
+% Il numero è calcolato sommando i pesi dei docenti garanti che afferiscono al SSD del corso
+% e dividendo il risultato per 10.
 numero_garanti_che_afferiscono(Numero, Corso) :- 
       SommaPesi = #sum {
             Peso ,Docente : garante(Docente, Corso, Peso, _),
@@ -121,12 +131,16 @@ numero_garanti_che_afferiscono(Numero, Corso) :-
 
 #show numero_garanti_che_afferiscono/2.
 
-% TODO doc
+% Calcola il numero totale di docenti di riferimento assegnati a un corso.
+% Esclude i docenti a contratto (fascia 'c') e conta il numero di docenti in altre fasce
+% che sono assegnati al corso.
 numero_garanti_di_riferimento(Numero, Corso) :- 
       Numero = #count {Docente, Corso : garante(Docente, Corso, _, Fascia), Fascia != c },
       codice_corso(Corso).
 
-% TODO doc
+% Vincolo: il numero di garanti che afferiscono al settore scientifico-disciplinare (SSD)
+% di un corso deve essere almeno pari alla metà del numero totale di docenti di riferimento
+% assegnati al corso. Se non soddisfatto, la soluzione viene scartata.
 :- numero_garanti_che_afferiscono(Aff, Corso), 
       numero_garanti_di_riferimento(Tot, Corso),
       2 * Aff <= Tot. 
@@ -153,7 +167,9 @@ garanti_per_corso(Corso, Numero) :-
 
 #show garanti_per_corso/2.
 
-% TODO doc
+% Vincolo: il numero totale di garanti assegnati a un corso deve essere uguale
+% al minimo richiesto dalla normativa ministeriale per quel corso. Se non soddisfatto,
+% la soluzione viene scartata.
 :- garanti_per_corso(Corso, Numero),
       ministeriale(Corso, Minimo, _, _, _),
       Numero != Minimo.

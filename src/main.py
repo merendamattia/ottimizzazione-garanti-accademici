@@ -422,8 +422,10 @@ def main():
             if getattr(args, key, False):
                 filters_corsi["Cod. Corso di Studio"].append(key)
 
-    
     filters_corsi ["Cod. Corso di Studio"] = list(set(filters_corsi ["Cod. Corso di Studio"]))
+    
+    
+    # filters_corsi["Cod. Corso di Studio"] = list(set(filters_corsi["Cod. Corso di Studio"]))
     
     NUMERO_MINIMO_DI_INSEGNAMENTI = 9
     
@@ -438,11 +440,19 @@ def main():
     df_tmp = df_tmp[df_tmp['Cod. Corso di Studio'].isin(codici_non_validi)]
     
     excluded = set(df_tmp["Cod. Corso di Studio"].unique())
-    print(excluded)
-    print(filters_corsi)
+    
+    # print(excluded)
+    # print(filters_corsi)
     
     filters_corsi ["Cod. Corso di Studio"] = list(set(filters_corsi ["Cod. Corso di Studio"]) - excluded)
+    # print(filters_corsi)
+    
+    hand_exluded = set(["5079", "5080"])
+    
+    filters_corsi ["Cod. Corso di Studio"] = list(set(filters_corsi ["Cod. Corso di Studio"]) - hand_exluded)
     print(filters_corsi)
+    
+    
 
     if not any(vars(args).values()):
         print("Errore: nessun dipartimento selezionato.")
