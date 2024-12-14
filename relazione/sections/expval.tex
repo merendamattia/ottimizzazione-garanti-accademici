@@ -53,7 +53,31 @@ di pesi pari a 5, che, pur aumentando significativamente i tempi di computazione
 maggiore flessibilità nella generazione delle soluzioni.
 
 
-
-
-\subsection{Dataset grande (tutti i dipartimenti)}
+\subsection{Dataset grande: tutti i dipartimenti}
 \label{sec:dataset-tutti-dipartimenti}
+
+Come ultima valutazione del modello, è stato utilizzato un dataset 
+comprendente tutti i corsi di studio del dipartimento. Prima dell'elaborazione, sono stati 
+esclusi i casi particolari relativi ai corsi inter-atenei, poiché non erano considerati 
+rilevanti per questa analisi. Inoltre, è stato rimosso il vincolo che richiedeva che almeno 
+il 50\% dei garanti afferissero al macrosettore caratterizzante del corso. Questa scelta è 
+stata necessaria perché in molti corsi la composizione dei docenti non permetteva di 
+soddisfare tale requisito: in alcuni casi, solo due docenti su venti erano afferenti al 
+macrosettore caratterizzante, rendendo impossibile il rispetto di questa condizione.
+
+La prima analisi è stata condotta utilizzando la configurazione con solo pesi pari a 10, 
+che è risultata insoddisfacibile per il dataset completo. Successivamente, è stata 
+effettuata una nuova run abilitando anche l'opzione dei pesi pari a 5.
+
+\begin{lstlisting}[language=bash]
+ clingo -n 15 --parallel-mode 10 --time-limit=3000 lp/* main.lp
+\end{lstlisting}
+
+Nonostante non sia stato raggiunto un modello ottimale entro il limite di tempo di un'ora, 
+sono stati generati 10 modelli, tra cui uno ottimale rispetto ai vincoli soddisfacibili. 
+L'aggiunta del peso 5 ha aumentato significativamente la flessibilità del modello, ma ha 
+anche comportato un'esplosione esponenziale del costo computazionale. Questa crescita è 
+stata causata dal maggiore numero di combinazioni generate, che hanno richiesto un tempo di 
+elaborazione considerevolmente superiore. I risultati ottenuti dimostrano che il modello 
+è in grado di gestire dataset complessi, sebbene con alcune limitazioni legate alla 
+configurazione e ai tempi di computazione. 
