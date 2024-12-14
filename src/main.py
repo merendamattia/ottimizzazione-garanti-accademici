@@ -7,16 +7,30 @@ import pandas as pd
 
 ############################## VARIABILI GLOBALI #################################
 
+# Percorso del file contenente i dati sulle coperture
 path_coperture = "dataset/coperture.xlsx"
+
+# Percorso del file contenente i dati dei docenti
 path_docenti = "dataset/docenti.xlsx"
+
+# Percorso del file contenente i dati dei docenti a contratto
 path_docenti_a_contratto = "dataset/docenti_a_contratto.xlsx"
+
+# Elenco dei file contenenti i dati degli immatricolati (LT, LM, CU)
 paths_immatricolati = ["dataset/immatricolati/LT.xlsx", "dataset/immatricolati/LM.xlsx", "dataset/immatricolati/CU.xlsx"]
 
+# Numero minimo di insegnamenti richiesti per considerare valido un corso
 NUMERO_MINIMO_DI_INSEGNAMENTI = 9
 
 ###################################### FUNZIONI PRINCIPALI ######################################
 
 def init_matricole(filename):
+    """
+    Carica e salva le matricole dei docenti non a contratto.
+    
+    Args:
+        filename (str): Nome del file di output.
+    """
     dsl = DatasetLoader(path_docenti)
     
     # Prende le matricole dei docenti non a contratto rimuovendo possibili duplicati
@@ -31,6 +45,12 @@ def init_matricole(filename):
     dsl.save_to_file(ds_min, filename)
     
 def init_corsi(filename):
+    """
+    Inizializza e salva un file con i codici e le descrizioni dei corsi.
+    
+    Args:
+        filename (str): Nome del file di output.
+    """
     dsl = DatasetLoader(path_coperture)
     
     df = dsl.get_values(columns=["Cod. Corso di Studio", "Des. Corso di Studio", "Cod. Tipo Corso"])
@@ -46,13 +66,26 @@ def init_corsi(filename):
     dsl.save_to_file(ds_min, filename)
 
 def init_corsi_matricole(filepathCorsi, filepathProf):
+    """
+    Inizializza i file relativi ai corsi e alle matricole.
+    
+    Args:
+        filepathCorsi (str): Percorso del file di output per i corsi.
+        filepathProf (str): Percorso del file di output per le matricole.
+    """
     init_corsi(filepathCorsi)
     init_matricole(filepathProf)
     print("Estrazione completata. Rieseguire il programma.")
     exit()
 
 def main():
-    # Se la cartella non esiste, lancio la generazione dei dataset divisi per corsi
+    """
+    Funzione principale per l'elaborazione e la gestione dei dati.
+    
+    - Inizializza i dataset dei corsi e delle matricole se non esistono.
+    - Filtra e salva i dati dei corsi, docenti e coperture.
+    - Genera i file richiesti in base ai parametri specificati.
+    """
     dataset_dir = 'dataset/corsi/'
     filepathCorsi = dataset_dir + 'codici-corsi.csv'
     filepathProf = dataset_dir + 'codici-matricole.csv'

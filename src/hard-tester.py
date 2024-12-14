@@ -1,7 +1,6 @@
 import pandas as pd
 import os
 from modules.dataset_manager import DatasetManager
-from modules.department_parser import DepartmentParser
 from modules.course_parser import CourseParser
 from modules.dataset_loader import DatasetLoader
 import subprocess
