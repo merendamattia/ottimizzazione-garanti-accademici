@@ -15,12 +15,12 @@ ministeriali (Sezione~\ref*{sec:rules-ministeriale}).
 
 Il file principale, il main, integra tutte le regole relative ai garanti, 
 inclusi i vincoli e le priorità definite per l'ottimizzazione del sistema 
-(Sezione~\ref*{sec:constraints}).
+(Sezione~\ref*{sec:garanti}).
 
 È importante sottolineare che tutti questi file vengono generati dinamicamente 
 dal programma di preprocessing scritto in Python. Questa fase, gestita dal 
-file main del preprocessing, automatizza la creazione delle regole e dei 
-fatti ASP in base ai dati forniti, garantendo così una configurazione 
+file \texttt{main.py} del preprocessing, automatizza la creazione delle regole 
+e dei fatti ASP in base ai dati forniti, garantendo così una configurazione 
 personalizzata e facilmente aggiornabile. 
 
 
@@ -37,7 +37,6 @@ sono utilizzati per verificare la compatibilità tra i docenti e i corsi di laur
 Successivamente, vengono dichiarate le fasce contrattuali dei docenti (\texttt{td} 
 per tempo determinato, \texttt{ti} per tempo indeterminato). Queste fasce sono 
 utilizzate per distinguere i docenti in base alla loro tipologia di contratto,
-\scolli{Aggiungerei un "distinguendo i professori associati e ordinari dai ricercatori"}
 aspetto rilevante per rispettare i requisiti ministeriali.
 
 La sezione relativa ai docenti include l'elenco completo dei docenti, ciascuno 
@@ -46,8 +45,6 @@ contrattuale e il settore scientifico disciplinare caratterizzante, che ne
 definisce il dominio di competenza. Queste informazioni sono formalizzate tramite 
 il predicato \texttt{docente/4}, che associa la matricola del docente, la fascia, 
 il settore disciplinare e il livello SSD.
-
-Di seguito, riportiamo un esempio per illustrare la struttura dei dati contenuti nel file.
 
 \begin{lstlisting}[language=prolog, caption={Esempio struttura dati di \texttt{docenti.lp}.}]    
  %  SEZIONE: SSD
@@ -75,8 +72,7 @@ garantire chiarezza e modularità nella definizione delle informazioni.
 
 La prima parte del file introduce i tipi di corso (\texttt{laurea/1}) e i relativi 
 SSD utilizzati per caratterizzare i corsi e i docenti. Successivamente, vengono 
-definiti i TAF (Tipologia Attività Formativa), che classificano ulteriormente 
-gli insegnamenti.
+definiti i TAF che classificano ulteriormente gli insegnamenti.
 
 Le informazioni sui corsi sono strutturate in due livelli: i codici identificativi 
 di ciascun corso (\texttt{codice\_corso/1}) e la loro descrizione dettagliata 
@@ -96,8 +92,8 @@ Di seguito, un esempio rappresentativo del contenuto del file.
  laurea(lm).
 
  %  SEZIONE: TAF
- taf(b).
  taf(a).
+ taf(b).
  taf(c).
 
  %  SEZIONE: Corsi
@@ -136,8 +132,6 @@ Nel modello ASP proposto, i docenti a contratto vengono inclusi come possibili g
 ma il loro utilizzo è regolato e penalizzato nel processo di ottimizzazione, che vedremo
 meglio nella Sezione~\ref{sec:priorita}. 
 
-Di seguito riportiamo un esempio della struttura del file, che riflette questa impostazione:
-
 \begin{lstlisting}[language=prolog, caption={Esempio struttura dati di \texttt{docenti\_a\_contratto.lp}.}]
  %  SEZIONE: FASCIE
  fascia(c).
@@ -157,7 +151,7 @@ e il numero massimo di docenti a contratto.
 Le regole \texttt{ministeriale/5} sono calcolate dinamicamente durante la fase di 
 preprocessing. In particolare, questi valori sono determinati sulla base del numero di 
 studenti iscritti a ciascun corso e grazie all'applicazione della formula della \textit{W}, 
-come illustrato nella Tabella~\ref{tab:formula-w}, che tiene conto delle specifiche 
+come illustrato nella Tabella~\ref{tab:formula-w}, la quale tiene conto delle specifiche 
 necessità di copertura di ciascun corso. Nello specifico, la $W$ viene calcolata nel 
 seguente modo:
 $$
@@ -200,12 +194,11 @@ determinato, e un massimo di 2 docenti a contratto.
 \end{table}
 
 \subsection{Generazione dei garanti}\label{sec:garanti}
-\mmerenda{fare passaggio}
 
 La generazione dei \textit{garanti} rappresenta un elemento chiave nella modellazione ASP 
 sviluppata per questo progetto. In particolare, è stata posta attenzione alla distinzione 
 tra i docenti appartenenti a diverse fasce contrattuali, separando i docenti 
-\textbf{non a contratto} da quelli \textbf{a contratto}, che vengono utilizzati 
+\textbf{non a contratto} da quelli \textbf{a contratto}, i quali vengono utilizzati 
 esclusivamente come risorsa di emergenza.
 Inoltre, ogni docente può essere conteggiato una sola volta oppure, al massimo, essere 
 assegnato a due corsi distinti con un peso pari a $0.5$ su ciascun corso. 
@@ -277,7 +270,7 @@ come garanti è soggetto a controlli rigorosi. Innanzitutto, i garanti a tempo i
 (\texttt{ti}) devono essere almeno pari al minimo richiesto per ciascun corso. Allo stesso modo, 
 il numero di garanti a tempo determinato (\texttt{td}) non deve superare il massimo consentito. 
 Questi vincoli assicurano che il modello rispetti le linee guida istituzionali senza 
-sovraccaricare un’unica tipologia di docenti:
+sovraccaricare un'unica tipologia di docenti.
 
 \begin{lstlisting}[language=prolog, caption={Vincoli su garanti a tempo indeterminato e determinato.}]
  :- conta_garanti_indeterminato(Corso, Numero),
@@ -293,7 +286,7 @@ Il modello include vincoli che controllano i pesi assegnati ai garanti. La somma
 pesi per ciascun corso deve essere almeno 10 volte il numero minimo di garanti richiesti, 
 poiché un docente è considerato \textit{effettivo} solo se il suo peso totale raggiunge il valore 
 massimo di 10. Inoltre, tale somma deve essere un multiplo di 10 per garantire la coerenza 
-nell’assegnazione del garante stesso.
+nell'assegnazione del garante stesso.
 
 \begin{lstlisting}[language=prolog, caption={Vincoli sui pesi assegnati ai garanti.}]
  :- somma_pesi_corso(Corso, Somma),
@@ -316,15 +309,15 @@ sommati, superano 10.
       garante(Docente, Corso2, Peso2, Fascia),
       Somma = Peso1 + Peso2,
       Somma > 10,
-      Corso1 != Corso2,
-      Fascia != c.
+      Fascia != c,
+      Corso1 != Corso2.
 
  :- garante(Docente, Corso1, Peso1, Fascia),
       garante(Docente, Corso1, Peso2, Fascia),
       Somma = Peso1 + Peso2,
       Somma > 10,
-      Peso1 != Peso2,
-      Fascia != c.
+      Fascia != c,
+      Peso1 != Peso2.
 \end{lstlisting}
 
 Per mantenere la coerenza tra i garanti e gli SSD caratterizzanti di ciascun corso, almeno 
@@ -364,9 +357,6 @@ di ricorrere ai docenti a contratto, che sono utilizzati solo quando strettament
 Per ottimizzare la gestione, abbiamo preferito che i docenti assumessero il ruolo di 
 garanti per un solo corso, evitando situazioni in cui un docente fosse impegnato come 
 garante per più corsi contemporaneamente al 50\%.
-
-Abbiamo implementato queste priorità nel nostro modello con l'ausilio di regole di 
-massimizzazione e minimizzazione, come mostrato di seguito:
 
 \begin{lstlisting}[language=prolog, caption=Gestione delle priorità dei docenti.]
  % Docenti a tempo determinato (ricercatori)

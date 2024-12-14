@@ -14,7 +14,8 @@ l'analisi. Nel file contenente i dati di docenti e ricercatori, sono state prese
 considerazione solo le informazioni riguardanti la matricola, la fascia contrattuale 
 e l'SSD. Per quanto riguarda il file sulle coperture, sono stati mantenuti i campi 
 relativi alla matricola del docente, al codice del tipo di corso, al codice 
-di laurea e all'SSD. Questa selezione dei dati è stata essenziale per ridurre la complessità e concentrarsi 
+di laurea, all'SSD e alla Tipologia di Attività Formativa (TAF). 
+Questa selezione dei dati è stata essenziale per ridurre la complessità e concentrarsi 
 sugli elementi chiave necessari per costruire il modello ASP e verificare il rispetto 
 dei vincoli ministeriali. Tutto questo è stato realizzato utilizzando diversi script in 
 Python, supportati dai moduli \texttt{pandas}\footnote{\url{https://pandas.pydata.org/}} 
@@ -25,7 +26,7 @@ le coperture degli insegnamenti, articolandosi in diverse attività principali.
 In primo luogo, abbiamo gestito le righe contenenti una o più colonne vuote, 
 eliminando quelle completamente prive di informazioni, in quanto non rilevanti 
 per l'analisi. Le righe in cui mancavano i dati relativi al docente (i.e., matricola, 
-nome e cognome) sono state invece isolate in un file separato. Questa scelta è stata 
+nome e cognome) sono state invece spostate in un file separato. Questa scelta è stata 
 necessaria per identificare e analizzare in modo specifico gli insegnamenti non 
 ancora assegnati ad alcun docente.
 
@@ -37,11 +38,9 @@ univoco e automatizzato i casi particolari, consentendo di creare un dataset uni
 e privo di anomalie, adatto all'analisi e all'implementazione del modello ASP.
 
 Per migliorare ulteriormente la gestibilità dei dati, abbiamo proceduto con la creazione 
-di sottoinsiemi minimali e distinti. Il primo passo è consistito nella separazione delle 
+di sottoinsiemi minimali e distinti. Il primo passo riguarda la separazione delle 
 righe relative agli insegnamenti tenuti da docenti o ricercatori da quelle tenute dai 
-docenti a contratto.
-
-Questa suddivisione è stata effettuata utilizzando il file dei docenti fornito, 
+docenti a contratto. Questa suddivisione è stata effettuata utilizzando il file dei docenti fornito, 
 sfruttando la colonna contenente la matricola come criterio discriminante. In particolare, 
 le righe associate ai docenti a contratto sono state estratte e archiviate in un file separato, 
 al fine di garantire un maggiore ordine e facilitare eventuali ispezioni manuali. 
@@ -87,37 +86,4 @@ sostituito il codice del tipo di corso precedentemente identificato come \texttt
     \caption{Tabella che riassume i numeri di docenti per i corsi di studio.}
     \label{tab:casi-particolari}
 \end{table}
-    
-\mmerenda{
-    probabilmente da rimuovere
 
-\subsection{Analisi post incontro con l'ufficio}
-\label{sec:analisi-post-call}
-
-Venerdì 6 dicembre 2024 si è tenuto un incontro con l’ufficio responsabile della gestione 
-dei dati accademici, durante il quale sono stati affrontati alcuni punti critici emersi 
-nella fase di analisi preliminare. Questo confronto si è rivelato decisivo per ottenere 
-chiarimenti essenziali e per affinare ulteriormente il processo di preprocessing dei dati.
-
-Uno dei temi principali discussi riguarda la gestione delle situazioni in cui il numero di 
-immatricolazioni ai corsi di laurea supera il limite massimo teorico consentito. Questo 
-problema ha richiesto una revisione accurata per garantire che il modello potesse gestire 
-tali anomalie in modo efficace.
-
-Un altro aspetto di rilievo è stato la definizione delle preferenze relative ai docenti 
-incaricati del ruolo di garante. È stata stabilita una chiara gerarchia di priorità per 
-la selezione, partendo dai docenti con copertura al 100\% per un singolo corso, seguiti 
-dai docenti a contratto con copertura esclusivamente al 100\% per un singolo corso e, 
-infine, dai docenti a contratto con copertura al 100\% per due corsi distinti. Inoltre, 
-è stata espressa una preferenza secondaria che privilegia l’assegnazione del ruolo di 
-garante per un corso al presidente dello stesso corso di laurea.
-
-Questi criteri, emersi durante l’incontro, sono stati integrati nel processo di 
-preprocessing per garantire una gestione più coerente dei dati, allineata alle preferenze 
-e ai vincoli stabiliti. Sono stati introdotti controlli aggiuntivi per assicurare la 
-consistenza dei dati elaborati, migliorando così l’efficacia complessiva del modello 
-ASP nella fase di assegnazione.
-}
-
-
-\mmerenda{aggiungere la questione relativa all'esclusione dei corsi interateneo}

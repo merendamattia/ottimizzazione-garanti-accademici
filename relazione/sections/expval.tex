@@ -21,11 +21,11 @@ Una volta generati i file, l'analisi è stata eseguita utilizzando Clingo.
  clingo -n 15 --parallel-mode 8 --time-limit=180 lp/* main.lp
 \end{lstlisting}
 
-Il modello ha prodotto una soluzione ottima in un \textit{centesimo di un secondo}, 
+Il modello ha prodotto una soluzione ottima in un \textit{centesimo di secondo}, 
 dimostrando tempi di computazione estremamente brevi. Per il corso di Informatica 
-(codice: 3027) sono stati assegnati 9 garanti in conformità ai requisiti. Per il corso di 
+(codice: 3027) sono stati assegnati 9 garanti in conformità ai requisiti, mentre per il corso di 
 Scienze Informatiche (codice: 5069) sono stati assegnati 6 garanti, sempre in conformità ai 
-requisiti
+requisiti.
 
 È stata inoltre verificata la coerenza tra i garanti assegnati e gli SSD caratterizzanti, 
 con 5 docenti afferenti per Informatica e 4 per Scienze Informatiche.
@@ -67,15 +67,16 @@ macrosettore caratterizzante, rendendo impossibile il rispetto di questa condizi
 
 La prima analisi è stata condotta utilizzando la configurazione con solo pesi pari a 10, 
 ma questa si è rivelata insoddisfacibile a causa di due corsi specifici, rispettivamente 
-il 5079 e il 5080. Rimossi questi corsi problematici, il modello è stato rilanciato con 
-la configurazione basata esclusivamente su pesi pari a 10, risultando soddisfacibile in 
-tempi minimi \mmerenda{scrivi quanto ci mette}. Questa prima fase ha dimostrato che, eliminando i corsi che introducono 
-situazioni particolarmente complesse, il modello è in grado di produrre soluzioni valide e 
-coerenti in modo estremamente rapido.
+il corso a ciclo unico di Farmacia (codice: 5079) e il corso a ciclo unico di Chimica e 
+Tecnologia Farmaceutiche (codice: 5080). Rimossi questi corsi problematici, il modello 
+è stato rilanciato con la configurazione basata esclusivamente su pesi pari a 10, 
+risultando soddisfacibile in pochi secondi. Questa prima fase ha dimostrato che, 
+eliminando i corsi che introducono situazioni particolarmente complesse, il modello 
+è in grado di produrre soluzioni valide e coerenti in modo estremamente rapido.
 
-Successivamente, per includere anche i corsi 5079 e 5080 che in precedenza avevano reso 
-insoddisfacibile il benchmark, è stata effettuata una nuova run abilitando l’opzione dei 
-pesi pari a 5. Entrambe le configurazioni sono state lanciate con il seguente comando:
+Successivamente, per includere anche i corsi precedentemente rimossi, è stata 
+effettuata una nuova run abilitando l'opzione dei pesi pari a 5. 
+Entrambe le configurazioni sono state lanciate con il seguente comando:
 
 \begin{lstlisting}[language=bash]
  clingo -n 15 --parallel-mode 10 --time-limit=3000 lp/* main.lp
