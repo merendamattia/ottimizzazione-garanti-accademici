@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Valori predefiniti
-models=1
+models=16
 threads=$(nproc)
 threads=$((threads - 2))
 timeLimit=60
@@ -28,4 +28,4 @@ echo "Numero di thread: $threads"
 echo "Limite di tempo: $timeLimit"
 
 # Esegui il comando clingo
-clingo -n "$models" --parallel-mode "$threads" --time-limit="$timeLimit" lp/* main-ottimizzato.lp
+clingo -n "$models" --parallel-mode "$threads" --time-limit="$timeLimit" lp/* main.lp
