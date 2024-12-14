@@ -66,8 +66,16 @@ soddisfare tale requisito: in alcuni casi, solo due docenti su venti erano affer
 macrosettore caratterizzante, rendendo impossibile il rispetto di questa condizione.
 
 La prima analisi è stata condotta utilizzando la configurazione con solo pesi pari a 10, 
-che è risultata insoddisfacibile per il dataset completo. Successivamente, è stata 
-effettuata una nuova run abilitando anche l'opzione dei pesi pari a 5.
+ma questa si è rivelata insoddisfacibile a causa di due corsi specifici, rispettivamente 
+il 5079 e il 5080. Rimossi questi corsi problematici, il modello è stato rilanciato con 
+la configurazione basata esclusivamente su pesi pari a 10, risultando soddisfacibile in 
+tempi minimi \mmerenda{scrivi quanto ci mette}. Questa prima fase ha dimostrato che, eliminando i corsi che introducono 
+situazioni particolarmente complesse, il modello è in grado di produrre soluzioni valide e 
+coerenti in modo estremamente rapido.
+
+Successivamente, per includere anche i corsi 5079 e 5080 che in precedenza avevano reso 
+insoddisfacibile il benchmark, è stata effettuata una nuova run abilitando l’opzione dei 
+pesi pari a 5. Entrambe le configurazioni sono state lanciate con il seguente comando:
 
 \begin{lstlisting}[language=bash]
  clingo -n 15 --parallel-mode 10 --time-limit=3000 lp/* main.lp
@@ -78,6 +86,4 @@ sono stati generati 10 modelli, tra cui uno ottimale rispetto ai vincoli soddisf
 L'aggiunta del peso 5 ha aumentato significativamente la flessibilità del modello, ma ha 
 anche comportato un'esplosione esponenziale del costo computazionale. Questa crescita è 
 stata causata dal maggiore numero di combinazioni generate, che hanno richiesto un tempo di 
-elaborazione considerevolmente superiore. I risultati ottenuti dimostrano che il modello 
-è in grado di gestire dataset complessi, sebbene con alcune limitazioni legate alla 
-configurazione e ai tempi di computazione. 
+elaborazione considerevolmente superiore.
