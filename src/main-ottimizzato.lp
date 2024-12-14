@@ -1,6 +1,6 @@
 % Predicati di base per definire i pesi possibili.
 % In questo caso, i pesi disponibili sono 5 e 10.
-% peso(5). % TODO la soluzione attuale è sound anche con pesi solo a 5
+peso(5). % TODO la soluzione attuale è sound anche con pesi solo a 5
 peso(10).
 
 Minimo{
@@ -141,9 +141,9 @@ numero_garanti_di_riferimento(Numero, Corso) :-
 % Vincolo: il numero di garanti che afferiscono al settore scientifico-disciplinare (SSD)
 % di un corso deve essere almeno pari alla metà del numero totale di docenti di riferimento
 % assegnati al corso. Se non soddisfatto, la soluzione viene scartata.
-:- numero_garanti_che_afferiscono(Aff, Corso), 
-      numero_garanti_di_riferimento(Tot, Corso),
-      2 * Aff <= Tot. 
+% :- numero_garanti_che_afferiscono(Aff, Corso), 
+%       numero_garanti_di_riferimento(Tot, Corso),
+%       2 * Aff <= Tot. 
 
 #show numero_garanti_di_riferimento/2.
 
