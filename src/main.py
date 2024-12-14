@@ -98,6 +98,7 @@ def main():
     
     filters_corsi ["Cod. Corso di Studio"] = list(set(filters_corsi ["Cod. Corso di Studio"]) - excluded)
     
+    # Esclusione manuale dei corsi che con richiedo garanti al 50% per funzionare
     hand_exluded = set(["5079", "5080"])
     filters_corsi ["Cod. Corso di Studio"] = list(set(filters_corsi ["Cod. Corso di Studio"]) - hand_exluded)
     
