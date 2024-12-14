@@ -3,7 +3,6 @@
 % peso(5).
 peso(10).
 
-
 % Determina il numero minimo e massimo di garanti per un corso, come richiesto dalla normativa ministeriale.
 % L'aggregato considera i docenti assegnati alle cattedre del corso, escludendo quelli nella fascia 'c' 
 % (docenti a contratto), poiché la fascia è già filtrata implicitamente dalla definizione di `docente/4`.
@@ -22,7 +21,6 @@ Minimo{
       ministeriale(Corso, Minimo, _, _, _),
       Massimo = Minimo.
 
-
 % Generazione dei docenti a contratto come possibili garanti.
 % Questa regola considera i docenti indicati come 'jolly', ovvero quelli che 
 % possono essere assegnati come garanti a qualsiasi corso, indipendentemente dal settore.
@@ -35,8 +33,6 @@ Minimo{
             peso(10)
 }Massimo :- ministeriale(Corso, _, _, _, Massimo).
 
-#show garante/4.
-
 % Calcola il numero di docenti a tempo indeterminato assegnati come garanti a un determinato corso.
 % Il numero è calcolato sommando i pesi di tutti i docenti nella fascia 'ti' associati al corso 
 % e dividendo il risultato per 10.
@@ -45,8 +41,6 @@ conta_garanti_indeterminato(Corso, NumeroGaranti) :-
       codice_corso(Corso),
       NumeroGaranti = Numero / 10.
 
-% #show conta_garanti_indeterminato/2.
-
 % Calcola il numero di docenti a tempo determinato assegnati come garanti a un determinato corso.
 % Il numero è calcolato sommando i pesi di tutti i docenti nella fascia 'td' associati al corso 
 % e dividendo il risultato per 10.
@@ -54,8 +48,6 @@ conta_garanti_determinato(Corso, NumeroGaranti) :-
       Numero = #sum { Peso, Docente : garante(Docente, Corso, Peso, td)},
       codice_corso(Corso),
       NumeroGaranti = Numero / 10.
-
-% #show conta_garanti_determinato/2.
 
 % Vincolo: il numero di docenti a tempo indeterminato per un corso deve essere almeno pari
 % al minimo richiesto dalla normativa ministeriale per quel corso. Se non soddisfatto, 
@@ -71,7 +63,6 @@ conta_garanti_determinato(Corso, NumeroGaranti) :-
       ministeriale(Corso, _, _, Massimo_det, _),
       Numero > Massimo_det.
 
-
 % Calcola la somma totale dei pesi assegnati ai docenti per ciascun corso.
 % La somma è ottenuta considerando i pesi di tutti i garanti (docenti) associati al corso.
 % Questo predicato è utilizzato per verificare il rispetto dei vincoli di somma e multipli.
@@ -80,8 +71,6 @@ somma_pesi_corso(Corso, Somma) :-
       Somma = #sum{
             Peso, Docente : garante(Docente, Corso, Peso, _)
       }.
-
-% #show somma_pesi_corso/2.
 
 % Vincolo: la somma totale dei pesi deve essere almeno 10 volte il minimo ministeriale del corso.
 % Questo assicura che il numero complessivo di garanti sia sufficiente per soddisfare i requisiti ministeriali.
@@ -137,8 +126,6 @@ numero_garanti_che_afferiscono(Numero, Corso) :-
       codice_corso(Corso),
       Numero = SommaPesi / 10.
 
-% #show numero_garanti_che_afferiscono/2.
-
 % Calcola il numero totale di docenti di riferimento assegnati a un corso.
 % Esclude i docenti a contratto (fascia 'c') e conta il numero di docenti in altre fasce
 % che sono assegnati al corso.
@@ -153,16 +140,12 @@ numero_garanti_di_riferimento(Numero, Corso) :-
 %       numero_garanti_di_riferimento(Tot, Corso),
 %       2 * Aff <= Tot. 
 
-% #show numero_garanti_di_riferimento/2.
-
 % Calcola il numero di docenti a contratto assegnati a ciascun corso.
 % Questo predicato è utilizzato per verificare che il numero massimo di docenti
 % a contratto non superi il valore specificato dalla regola ministeriale.
 jolly_per_corso(Corso, Numero) :- 
       codice_corso(Corso),
       Numero = #count { Docente : garante(Docente, Corso, _, c) }.
-
-% #show jolly_per_corso/2.
 
 % Calcola il numero di garanti effettivi per ciascun corso.
 % Il numero di garanti viene determinato dividendo la somma totale
@@ -172,8 +155,6 @@ garanti_per_corso(Corso, Numero) :-
       codice_corso(Corso),
       somma_pesi_corso(Corso, Somma),
       Numero = Somma / 10.
-
-% #show garanti_per_corso/2.
 
 % Vincolo: il numero totale di garanti assegnati a un corso deve essere uguale
 % al minimo richiesto dalla normativa ministeriale per quel corso. Se non soddisfatto,
@@ -226,3 +207,13 @@ garanti_per_corso(Corso, Numero) :-
 
 % Minimizzo il numero di garanti per ogni corso
 #minimize { Penalita : garanti_per_corso(Corso, Numero), Penalita = Numero * 10 }.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% ! Show
+% #show garanti_per_corso/2.
+% #show jolly_per_corso/2.
+% #show numero_garanti_che_afferiscono/2.
+% #show numero_garanti_di_riferimento/2.
+% #show somma_pesi_corso/2.
+% #show conta_garanti_determinato/2.
+% #show conta_garanti_indeterminato/2.
+#show garante/4.
