@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Valori predefiniti
-models=15
+models=1
 threads=$(nproc)
 threads=$((threads - 2))
 timeLimit=60

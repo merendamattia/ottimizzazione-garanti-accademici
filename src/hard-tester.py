@@ -195,6 +195,26 @@ def main():
 
     filters_corsi ["Cod. Corso di Studio"] = list(set(filters_corsi ["Cod. Corso di Studio"]))
     
+    NUMERO_MINIMO_DI_INSEGNAMENTI = 9
+    
+    dsl = DatasetLoader(path_coperture)
+    df_tmp = dsl.filter_by_values(filters=filters_corsi, only_prefix=False)
+    
+    # Raggruppa per codice corso e conta le occorrenze
+    conteggi = df_tmp['Cod. Corso di Studio'].value_counts()
+
+    # Filtra il DataFrame mantenendo solo i codici corso con almeno 9 occorrenze
+    codici_non_validi = conteggi[conteggi <= NUMERO_MINIMO_DI_INSEGNAMENTI].index
+    df_tmp = df_tmp[df_tmp['Cod. Corso di Studio'].isin(codici_non_validi)]
+    
+    excluded = set(df_tmp["Cod. Corso di Studio"].unique())
+    #print(excluded)
+    #print(filters_corsi)
+    
+    filters_corsi ["Cod. Corso di Studio"] = list(set(filters_corsi ["Cod. Corso di Studio"]) - excluded)
+    #print(filters_corsi)
+
+    
     
     all_codes = filters_corsi["Cod. Corso di Studio"]
     

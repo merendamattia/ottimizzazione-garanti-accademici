@@ -150,6 +150,8 @@ class DatasetManager:
         try:
             with open(filepath, "w") as file:
                 file.write(f"{comment_character} SEZIONE: Garanti minimi per corso (codice_corso, minimo_complessivo, docenti_ti, docenti_td, max_docenti_contratto)\n")
+
+                # print(df)
                 
                 for _, row in df.iterrows():
                     tipo_corso = row["Cod. Tipo Corso"].lower()
@@ -161,19 +163,19 @@ class DatasetManager:
                         raise ValueError(f"Cod. Tipo Corso ({tipo_corso} ) non coerente per il corso {codice_corso}")
                     
                     if pd.isna(row['Immatricolati']):
-                        continue
-                    
-                    immatricolati = int(row["Immatricolati"])
+                        pass
+                    else:
+                        immatricolati = int(row["Immatricolati"])
 
-                    massimo_teorico = int(row["Massimo Teorico"])
-                    w = (immatricolati / (1.0 * massimo_teorico)) - 1
-                    
-                    if w < 0:
-                        w = 0
+                        massimo_teorico = int(row["Massimo Teorico"])
+                        w = (immatricolati / (1.0 * massimo_teorico)) - 1
+                        
+                        if w < 0:
+                            w = 0
 
-                    minimo_complessivo = math.floor(minimo_complessivo * (1 + w))
-                    minimo_ti = math.floor(minimo_ti * (1 + w))
-                    massimo_contratti = math.floor(massimo_contratti * (1 + w))
+                        minimo_complessivo = math.floor(minimo_complessivo * (1 + w))
+                        minimo_ti = math.floor(minimo_ti * (1 + w))
+                        massimo_contratti = math.floor(massimo_contratti * (1 + w))
 
                     file.write(f"ministeriale({codice_corso}, {minimo_complessivo}, {minimo_ti}, {massimo_td}, {massimo_contratti}).\n")
             
@@ -213,6 +215,9 @@ class DatasetManager:
         # Filtra il DataFrame mantenendo solo i codici corso con almeno 9 occorrenze
         codici_validi = conteggi[conteggi > NUMERO_MINIMO_DI_INSEGNAMENTI].index
         df = df[df['Cod. Corso di Studio'].isin(codici_validi)]
+
+        print(conteggi)
+        print(codici_validi)
 
         try:
             with open(filepath, 'w') as file:
