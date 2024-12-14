@@ -1,3 +1,7 @@
 matplotlib
 pandas
 numpy
+openpyxl
+tqdm
+python-docx
+odfpy
