@@ -3,6 +3,8 @@
 % peso(5).
 peso(10).
 
+% Assegna i docenti come garanti di un corso, specificando il peso e la fascia del docente.
+% Questa regola si applica ai docenti a tempo indeterminato ('ti').
 garante(Docente, Corso, Peso, Fascia) :- 
       cattedra(Corso, Docente, _, _),
       peso(Peso),
@@ -11,6 +13,8 @@ garante(Docente, Corso, Peso, Fascia) :-
       Fascia = ti,
       Docente = #min {D : cattedra(Corso, D, _, _)}.
 
+% Assegna i docenti come garanti di un corso, specificando il peso e la fascia del docente.
+% Questa regola si applica ai docenti a tempo determinato ('td').
 garante(Docente, Corso, Peso, Fascia) :- 
       cattedra(Corso, Docente, _, _),
       peso(Peso),
@@ -19,6 +23,9 @@ garante(Docente, Corso, Peso, Fascia) :-
       Fascia = td,
       Docente = #min {D : cattedra(Corso, D, _, _)}.
 
+% Determina il numero minimo e massimo di docenti a tempo indeterminato assegnabili come garanti per un corso.
+% L'aggregato considera i docenti nella fascia 'ti' (tempo indeterminato) associati al corso,
+% ordinandoli in base alla loro matricola. Sono incluse verifiche per evitare la duplicazione di docenti.
 MinimoIndeterminato{
       garante(Docente, Corso, Peso, Fascia) :
             fascia(Fascia),
@@ -41,7 +48,9 @@ MinimoIndeterminato{
       Massimo = MassimoIndeterminato * 2.
 
 
-
+% Determina il numero massimo di docenti a tempo determinato assegnabili come garanti per un corso.
+% L'aggregato considera i docenti nella fascia 'td' (tempo determinato) associati al corso,
+% ordinandoli in base alla loro matricola. Sono incluse verifiche per evitare la duplicazione di docenti.
 {
       garante(Docente, Corso, Peso, Fascia) :
             fascia(Fascia),
