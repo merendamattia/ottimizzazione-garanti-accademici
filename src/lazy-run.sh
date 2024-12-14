@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Valori predefiniti
-models=15
+models=16
 threads=$(nproc)
 threads=$((threads - 2))
-timeLimit=200
+timeLimit=60
 
 # Parsing degli argomenti con getopts
 while getopts "t:m:p:h" opt; do

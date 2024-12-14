@@ -5,35 +5,27 @@ import math
 class DatasetManager:
     """
     Classe per la gestione di file di dataset e la generazione di file ASP strutturati.
+
+    La classe permette di:
+    - Recuperare informazioni sui corsi e sui professori da file dataset.
+    - Generare file ASP (.lp) contenenti i dati processati e strutturati.
     """
 
     def __init__(self, dataset_path="dataset/"):
         """
         Inizializza la classe DatasetManager con il percorso della cartella contenente i file di dataset.
-        :param dataset_path: Path alla cartella contenente i file di dataset (default: "dataset/").
+
+        :param dataset_path: Percorso alla cartella contenente i file di dataset. Default: "dataset/".
+        :type dataset_path: str
         """
         self.dataset_path = dataset_path
 
-    def get_departments(self):
-        """
-        Ottiene la lista dei dipartimenti basandosi sui file presenti nella cartella del dataset.
-        :return: Una lista di dipartimenti (nomi dei file senza estensione).
-        :raises FileNotFoundError: Se la cartella del dataset non esiste.
-        """
-        if not os.path.exists(self.dataset_path):
-            raise FileNotFoundError(f"Errore: la cartella '{self.dataset_path}' non esiste.")
-
-        departments = [
-            os.path.splitext(filename)[0]
-            for filename in os.listdir(self.dataset_path)
-            if filename.endswith(".csv")
-        ]
-        return departments
-    
     def get_courses(self):
         """
-        Ottiene und dizionario {"codice_corso": "corso"} basandosi sui file presenti nella cartella del dataset.
-        :return: Un dizionario di corsi.
+        Ottiene un dizionario dei corsi basandosi sui file presenti nella cartella del dataset.
+
+        :return: Dizionario con chiavi come "Cod. Corso di Studio" e valori come "Overview".
+        :rtype: dict
         :raises FileNotFoundError: Se la cartella del dataset non esiste.
         """
         if not os.path.exists(self.dataset_path):
@@ -45,8 +37,10 @@ class DatasetManager:
     
     def get_professors(self):
         """
-        Ottiene und dizionario {"codice_corso": {"matricola"}} basandosi sui file presenti nella cartella del dataset.
-        :return: Un dizionario di corsi: set_matricole.
+        Ottiene un dizionario che associa ciascun corso ai professori tramite la loro matricola.
+
+        :return: Dizionario con chiavi come "Cod. Corso di Studio" e valori come insiemi di matricole.
+        :rtype: dict
         :raises FileNotFoundError: Se la cartella del dataset non esiste.
         """
         if not os.path.exists(self.dataset_path):
@@ -64,65 +58,15 @@ class DatasetManager:
                 profs[code].add(mat)
             return profs
 
-    def get_sectors(self, SSD = None):
-        """
-        Ottiene la lista dei settori partendo da una lista di SSD.
-
-        Ogni SSD è rappresentato nel formato "SETTORE/CODICE". Questa funzione estrae
-        e restituisce solo la parte relativa al settore (prima del separatore '/').
-        
-        :param SSD: Una lista di stringhe rappresentanti i SSD. Ad esempio, ["INF/01", "MAT/03"].
-        :type SSD: list[str], optional
-        :return: Un set di settori se la lista passata come parametro è non vuota. 
-                Ritorna un set vuoto se il parametro è None o vuoto.
-        :rtype: set[str]
-
-        :example:
-        input: ["INF/01", "MAT/03", "FIS/07"]
-        output: {"INF", "MAT", "FIS"}
-        """
-        if SSD:
-            # print(SSD)
-            items = set()
-            for code in SSD:
-                # Escludere None, NaN, o stringhe vuote
-                if not code or not isinstance(code, str) or code.strip().lower() == 'nan':
-                    continue
-                # Estrae la parte prima di `/` per ogni elemento della lista
-                spl = code.split('/')
-                if len(spl) > 1:
-                    items.add(spl[0])
-            return items
-        else:
-            return set()
-        
-    def load_data(self, filename):
-        """
-        Legge i dati da un file di testo e li stampa.
-        :param filename: Nome del file (senza estensione) da cui leggere i dati.
-        :raises FileNotFoundError: Se il file specificato non esiste.
-        :raises Exception: Per altri errori durante la lettura del file.
-        """
-        path = os.path.join(self.dataset_path, f'{filename}.csv')
-        if not os.path.exists(path):
-            raise FileNotFoundError(f"Errore: il file '{path}' non esiste.")
-
-        try:
-            with open(path, 'r') as file:
-                content = file.read().strip()
-                print(f"Contenuto di '{path}':")
-                print(content)
-        except Exception as e:
-            raise Exception(f"Errore durante la lettura del file '{path}': {e}")
-
     def scrivi_ministeriali(self, df, filename):
         """
-        Scrive i dati del DataFrame in un file ASP (.lp), organizzandoli per sezioni con eliminazione di duplicati.
-        :param df: DataFrame contenente i dati da salvare. Deve contenere una colonna con il codice del corso,
-                    il tipo di laurea secondo lo standard introdotto (ltss, lssm, ecc...), il numero di iscritti effettivi,
-                    il numero massimo teorico (utilizzato per il calcolo della W)
+        Genera un file ASP contenente i parametri ministeriali per i corsi.
+
+        :param df: DataFrame contenente i dati relativi ai corsi.
+        :type df: pandas.DataFrame
         :param filename: Nome del file di output (senza estensione).
-        :raises Exception: Per errori durante la scrittura del file.
+        :type filename: str
+        :raises Exception: Se si verifica un errore durante la scrittura del file.
         """
         
         output_dir = 'lp'
@@ -134,8 +78,8 @@ class DatasetManager:
         parametri_ministeriali_minimi = {
             "lt": (9, 5, 4, 2),
             "lm": (6, 4, 2, 1),
-            "lm5": (15, 8, 3),
-            "lm6": (18, 10, 4),
+            "lm5": (15, 8, 7, 3),
+            "lm6": (18, 10, 8, 4),
             "ltss": (5, 3, 2, 1),
             "ltsm": (5, 3, 2, 1),
             "ltps": (4, 2, 2, 1),
@@ -148,6 +92,8 @@ class DatasetManager:
         try:
             with open(filepath, "w") as file:
                 file.write(f"{comment_character} SEZIONE: Garanti minimi per corso (codice_corso, minimo_complessivo, docenti_ti, docenti_td, max_docenti_contratto)\n")
+
+                # print(df)
                 
                 for _, row in df.iterrows():
                     tipo_corso = row["Cod. Tipo Corso"].lower()
@@ -158,20 +104,21 @@ class DatasetManager:
                     else:
                         raise ValueError(f"Cod. Tipo Corso ({tipo_corso} ) non coerente per il corso {codice_corso}")
                     
-                    immatricolati = int(row["Immatricolati"])
-                    massimo_teorico = int(row["Massimo Teorico"])
-                    w = (immatricolati / (1.0 * massimo_teorico)) - 1
-                    
-                    if w < 0:
-                        w = 0
+                    if pd.isna(row['Immatricolati']):
+                        pass
+                    else:
+                        immatricolati = int(row["Immatricolati"])
 
-                    minimo_complessivo = math.floor(minimo_complessivo * (1 + w))
-                    minimo_ti = math.floor(minimo_ti * (1 + w))
+                        massimo_teorico = int(row["Massimo Teorico"])
+                        w = (immatricolati / (1.0 * massimo_teorico)) - 1
+                        
+                        if w < 0:
+                            w = 0
 
+                        minimo_complessivo = math.floor(minimo_complessivo * (1 + w))
+                        minimo_ti = math.floor(minimo_ti * (1 + w))
+                        massimo_contratti = math.floor(massimo_contratti * (1 + w))
 
-                    # TODO aggiungere formula di calcolo per i contratti: 
-                    # TODO  ->  attualmente il documento dell'università fornisce un calcolo sbagliato ( (10 - 6) / 4 = 2 )
-                    # TODO  ->  quindi il calcolo non viene fatto
                     file.write(f"ministeriale({codice_corso}, {minimo_complessivo}, {minimo_ti}, {massimo_td}, {massimo_contratti}).\n")
             
             print(f"Dati salvati con successo in: {filepath}")
@@ -180,10 +127,13 @@ class DatasetManager:
         
     def scrivi_coperture(self, df, filename):
         """
-        Scrive i dati del DataFrame in un file ASP (.lp), organizzandoli per sezioni con eliminazione di duplicati.
-        :param df: DataFrame contenente i dati da salvare.
+        Genera un file ASP contenente informazioni sui corsi, TAF e SSD.
+
+        :param df: DataFrame contenente i dati relativi ai corsi.
+        :type df: pandas.DataFrame
         :param filename: Nome del file di output (senza estensione).
-        :raises Exception: Per errori durante la scrittura del file.
+        :type filename: str
+        :raises Exception: Se si verifica un errore durante la scrittura del file.
         """
         # Crea la cartella 'lp' se non esiste
         output_dir = 'lp'
@@ -200,6 +150,9 @@ class DatasetManager:
         tipi_corso_aggiunti = set()
         ssd_aggiunti = set()
         taf_aggiunti = set()
+
+        # Rimuove eventuali NaN e converte i valori in numeri interi
+        df['Cod. Corso di Studio'] = df['Cod. Corso di Studio'].fillna(0).astype(int)
 
         try:
             with open(filepath, 'w') as file:
@@ -218,7 +171,6 @@ class DatasetManager:
                 # Scrive la sezione dei vari SSD
                 file.write(f"{comment_character} SEZIONE: SSD\n")
                 for _, row in df.iterrows():
-                    # Non posso usare le lettere in maiuscolo perchè possono essere scambiate per variabili e non atomi
                     
                     ssd = row['SSD'].split('/')
                     if len(ssd) < 2:
@@ -279,6 +231,7 @@ class DatasetManager:
 
                 file.write("\n")
                 
+                
                 # Scrive le relazioni tra corsi e docenti
                 file.write(f"{comment_character} SEZIONE: Relazioni Corsi-Docenti\n")
                 for _, row in df.iterrows():
@@ -302,10 +255,13 @@ class DatasetManager:
     
     def scrivi_docenti(self, df, filename):
         """
-        Scrive i dati del DataFrame in un file ASP (.lp), organizzandoli per sezioni con eliminazione di duplicati.
-        :param df: DataFrame contenente i dati da salvare.
+        Genera un file ASP contenente informazioni sui docenti.
+
+        :param df: DataFrame contenente i dati relativi ai docenti.
+        :type df: pandas.DataFrame
         :param filename: Nome del file di output (senza estensione).
-        :raises Exception: Per errori durante la scrittura del file.
+        :type filename: str
+        :raises Exception: Se si verifica un errore durante la scrittura del file.
         """
         # Crea la cartella 'lp' se non esiste
         output_dir = 'lp'
@@ -410,11 +366,16 @@ class DatasetManager:
         
     def scrivi_docenti_a_contratto(self, df, filename):
         """
-        Scrive i dati del DataFrame in un file ASP (.lp), organizzandoli per sezioni con eliminazione di duplicati.
-        :param df: DataFrame contenente i dati da salvare.
+        Genera un file ASP contenente informazioni sui docenti a contratto.
+
+        :param df: DataFrame contenente i dati relativi ai docenti a contratto.
+        :type df: pandas.DataFrame
         :param filename: Nome del file di output (senza estensione).
-        :raises Exception: Per errori durante la scrittura del file.
+        :type filename: str
+        :raises Exception: Se si verifica un errore durante la scrittura del file.
         """
+        SKIP = True
+
         # Crea la cartella 'lp' se non esiste
         output_dir = 'lp'
         if not os.path.exists(output_dir):
@@ -437,21 +398,25 @@ class DatasetManager:
 
                 # Scrive la sezione dei docenti
                 file.write(f"{comment_character} SEZIONE: Docenti\n")
-                for _, row in df.iterrows():
-                    if not row['Matricola'] or row['Matricola'] is None or str(row['Matricola']).lower() == 'nan':
-                        continue
-                    else:
-                        matricola_docente = int(float(row['Matricola']))
+                
+                if SKIP:
+                    file.write(f"jolly(1).\n")
+                else:
+                    for _, row in df.iterrows():
+                        if not row['Matricola'] or row['Matricola'] is None or str(row['Matricola']).lower() == 'nan':
+                            continue
+                        else:
+                            matricola_docente = int(float(row['Matricola']))
 
-                    nome_docente = row['Cognome'] + " " + row['Nome']
+                        nome_docente = row['Cognome'] + " " + row['Nome']
 
-                    if matricola_docente not in docenti_aggiunti:
-                        file.write(f"{comment_character} {nome_docente} ({matricola_docente}), docente a contratto\n")
-                        file.write(f"matricola_docente({matricola_docente}).\n")
-                        file.write(f"jolly({matricola_docente}).\n")
-                        docenti_aggiunti.add(matricola_docente)
-                docenti_aggiunti = set() # reset docenti aggiunti
-                file.write("\n")
+                        if matricola_docente not in docenti_aggiunti:
+                            file.write(f"{comment_character} {nome_docente} ({matricola_docente}), docente a contratto\n")
+                            file.write(f"matricola_docente({matricola_docente}).\n")
+                            file.write(f"jolly({matricola_docente}).\n")
+                            docenti_aggiunti.add(matricola_docente)
+                    docenti_aggiunti = set() # reset docenti aggiunti
+                    file.write("\n")        
 
             print(f"Dati salvati con successo in: {filepath}")
         except Exception as e:
