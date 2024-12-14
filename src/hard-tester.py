@@ -5,6 +5,10 @@ from modules.course_parser import CourseParser
 from modules.dataset_loader import DatasetLoader
 import subprocess
 
+############################## VARIABILI GLOBALI #################################
+
+
+# Percorsi dei file per i corsi, docenti, e immatricolati
 dataset_corsi_dir = 'dataset/corsi/'
 filepathCorsi = dataset_corsi_dir + 'codici-corsi.csv'
 filepathProf = dataset_corsi_dir + 'codici-matricole.csv'
@@ -14,10 +18,17 @@ path_docenti = "dataset/docenti.xlsx"
 path_docenti_a_contratto = "dataset/docenti_a_contratto.xlsx"
 paths_immatricolati = ["dataset/immatricolati/LT.xlsx", "dataset/immatricolati/LM.xlsx", "dataset/immatricolati/CU.xlsx"]
 
+NUMERO_MINIMO_DI_INSEGNAMENTI = 9
 
+###################################### FUNZIONI PRINCIPALI ######################################
 
 def write(filters_corsi):
+    """
+    Funzione per scrivere i dati relativi ai corsi, docenti, docenti a contratto e ministeriali.
 
+    @param filters_corsi: Dizionario contenente i filtri per i corsi da includere.
+    @type filters_corsi: dict
+    """
     filters_docenti = {"Matricola": list()}
     
     dataset_manager = DatasetManager(dataset_path=filepathProf)
@@ -81,6 +92,13 @@ def write(filters_corsi):
 
 
 def init_matricole(filename):
+    """
+    Inizializza e salva le matricole dei docenti non a contratto.
+
+    @param filename: Nome del file di output per le matricole.
+    @type filename: str
+    """
+    
     dsl = DatasetLoader(path_docenti)
     
     # Prende le matricole dei docenti non a contratto rimuovendo possibili duplicati
@@ -95,6 +113,12 @@ def init_matricole(filename):
     dsl.save_to_file(ds_min, filename)
     
 def init_corsi(filename):
+    """
+    Inizializza e salva i corsi con descrizione e codice tipo corso.
+
+    @param filename: Nome del file di output per i corsi.
+    @type filename: str
+    """
     dsl = DatasetLoader(path_coperture)
     
     df = dsl.get_values(columns=["Cod. Corso di Studio", "Des. Corso di Studio", "Cod. Tipo Corso"])
@@ -110,12 +134,27 @@ def init_corsi(filename):
     dsl.save_to_file(ds_min, filename)
 
 def init_corsi_matricole(filepathCorsi, filepathProf):
+    """
+    Inizializza i file dei corsi e delle matricole.
+    
+    @param filepathCorsi: Percorso per il file dei corsi.
+    @type filepathCorsi: str
+    @param filepathProf: Percorso per il file delle matricole.
+    @type filepathProf: str
+    """
+    
     init_corsi(filepathCorsi)
     init_matricole(filepathProf)
     print("Estrazione completata. Rieseguire il programma.")
     exit()
 
 def run():
+    """
+    Esegue un processo esterno (script bash) e analizza l'output.
+
+    @return: -1 se l'output contiene "UNSATISFIABLE", 1 se contiene "OPTIMUM FOUND", 0 per altri casi.
+    @rtype: int
+    """
     print("Running program...")
     output_file = "output.txt"
     ret = 0
@@ -134,15 +173,6 @@ def run():
         # Attende la terminazione del processo
         process.wait()
         
-    # process = subprocess.Popen(["bash", "execute.sh"], stdout=subprocess.PIPE)
-    
-    # for line in process.stdout:
-    #     print(line.decode().strip())
-    #     with open(output_file, "a") as f:
-    #         f.write(line.decode().strip() + "\n")
-            
-    # process.wait()
-    
     with open(output_file, "r") as f:
         content = f.read()
         if "UNSATISFIABLE" in content:
@@ -158,13 +188,15 @@ def run():
 
 
 def main():
-    
+    """
+    Funzione principale che esegue l'inizializzazione dei corsi e delle matricole, 
+    filtra i corsi e gestisce i test con esecuzione di script esterni.
+    """
     
     if not os.path.exists(dataset_corsi_dir):
         os.makedirs(dataset_corsi_dir)
     if not os.path.exists(filepathCorsi) or not os.path.exists(filepathProf):
         init_corsi_matricole(filepathCorsi, filepathProf)
-    
     
     # Inizializza il Dataset Manager
     dataset_manager = DatasetManager(dataset_path=filepathCorsi)
@@ -175,8 +207,6 @@ def main():
     parser = CourseParser()
     parser.add_courses(courses)
     args = parser.parse()
-    
-    # print(courses)
     
     filters_corsi = {"Cod. Corso di Studio" : list()}
     if not any(vars(args).values()):
@@ -194,8 +224,6 @@ def main():
 
     filters_corsi ["Cod. Corso di Studio"] = list(set(filters_corsi ["Cod. Corso di Studio"]))
     
-    NUMERO_MINIMO_DI_INSEGNAMENTI = 9
-    
     dsl = DatasetLoader(path_coperture)
     df_tmp = dsl.filter_by_values(filters=filters_corsi, only_prefix=False)
     
@@ -207,16 +235,10 @@ def main():
     df_tmp = df_tmp[df_tmp['Cod. Corso di Studio'].isin(codici_non_validi)]
     
     excluded = set(df_tmp["Cod. Corso di Studio"].unique())
-    #print(excluded)
-    #print(filters_corsi)
     
     filters_corsi ["Cod. Corso di Studio"] = list(set(filters_corsi ["Cod. Corso di Studio"]) - excluded)
-    #print(filters_corsi)
 
-    
-    
     all_codes = filters_corsi["Cod. Corso di Studio"]
-    
     
     print(f"Testing one-by-one")
     banned_codes = list()
@@ -230,7 +252,6 @@ def main():
         if res == -1:
             print(f"Errore con {code}")
             banned_codes.append(code)
-        
     
     # scrive la lista di codici da escludere in un file (one-by-one.txt)
     banned_codes_file = "one-by-one-banned.txt"

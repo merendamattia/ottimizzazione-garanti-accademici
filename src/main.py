@@ -28,8 +28,17 @@ def init_matricole(filename):
     """
     Carica e salva le matricole dei docenti non a contratto.
     
+    Questa funzione:
+    1. Carica le matricole dei docenti dal file `path_docenti`.
+    2. Rimuove i duplicati e le salva.
+    3. Carica i dati dalle coperture e filtra in base alle matricole dei docenti.
+    4. Salva i dati filtrati nel file specificato da `filename`.
+    
     Args:
-        filename (str): Nome del file di output.
+        filename (str): Nome del file di output dove salvare le matricole dei docenti.
+    
+    :return: None
+    :rtype: None
     """
     dsl = DatasetLoader(path_docenti)
     
@@ -48,8 +57,17 @@ def init_corsi(filename):
     """
     Inizializza e salva un file con i codici e le descrizioni dei corsi.
     
+    Questa funzione:
+    1. Carica i dati delle coperture.
+    2. Crea una colonna "Overview" che unisce la descrizione del corso e il tipo di corso.
+    3. Estrae i codici dei corsi e rimuove i duplicati.
+    4. Filtra i corsi sulla base dei codici unici e salva i risultati nel file specificato.
+    
     Args:
-        filename (str): Nome del file di output.
+        filename (str): Nome del file di output dove salvare i codici dei corsi.
+    
+    :return: None
+    :rtype: None
     """
     dsl = DatasetLoader(path_coperture)
     
@@ -68,10 +86,18 @@ def init_corsi(filename):
 def init_corsi_matricole(filepathCorsi, filepathProf):
     """
     Inizializza i file relativi ai corsi e alle matricole.
-    
+
+    Questa funzione:
+    1. Inizializza e salva i dati relativi ai corsi e alle matricole.
+    2. Se i file di output non esistono, li crea e li salva.
+    3. Visualizza un messaggio di completamento e termina l'esecuzione.
+
     Args:
         filepathCorsi (str): Percorso del file di output per i corsi.
         filepathProf (str): Percorso del file di output per le matricole.
+    
+    :return: Nessuno. Il programma termina dopo l'esecuzione.
+    :rtype: None
     """
     init_corsi(filepathCorsi)
     init_matricole(filepathProf)
@@ -81,10 +107,17 @@ def init_corsi_matricole(filepathCorsi, filepathProf):
 def main():
     """
     Funzione principale per l'elaborazione e la gestione dei dati.
+
+    La funzione esegue le seguenti operazioni:
+    1. Inizializza i dataset dei corsi e delle matricole se non esistono.
+    2. Filtra e salva i dati dei corsi, docenti e coperture.
+    3. Genera i file richiesti in base ai parametri specificati (corsi, docenti, coperture, immatricolati).
     
-    - Inizializza i dataset dei corsi e delle matricole se non esistono.
-    - Filtra e salva i dati dei corsi, docenti e coperture.
-    - Genera i file richiesti in base ai parametri specificati.
+    - Crea e gestisce i filtri per i corsi in base ai parametri di input.
+    - Gestisce i file di dati e li salva nella struttura appropriata.
+    
+    :return: Nessuno. Il flusso di elaborazione termina.
+    :rtype: None
     """
     dataset_dir = 'dataset/corsi/'
     filepathCorsi = dataset_dir + 'codici-corsi.csv'
