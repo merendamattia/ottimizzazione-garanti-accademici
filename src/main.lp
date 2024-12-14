@@ -1,8 +1,16 @@
 % Predicati di base per definire i pesi possibili.
 % In questo caso, i pesi disponibili sono 5 e 10.
-% peso(5). % TODO la soluzione attuale è sound anche con pesi solo a 5
+% peso(5).
 peso(10).
 
+
+% Determina il numero minimo e massimo di garanti per un corso, come richiesto dalla normativa ministeriale.
+% L'aggregato considera i docenti assegnati alle cattedre del corso, escludendo quelli nella fascia 'c' 
+% (docenti a contratto), poiché la fascia è già filtrata implicitamente dalla definizione di `docente/4`.
+% 
+% - `Minimo`: rappresenta il numero minimo di garanti richiesto dal ministeriale per il corso.
+% - `Massimo`: in questo contesto, è posto uguale a `Minimo`, ma può essere aggiornato in una versione successiva
+%   per gestire un intervallo flessibile di garanti.
 Minimo{
       garante(Docente, Corso, Peso, Fascia) :
             cattedra(Corso, Docente, _, _),
@@ -12,7 +20,7 @@ Minimo{
             Fascia != c % Non serve perche' docente/4 usa solo fascie del tipo 'td' e 'ti' 
 }Massimo :-
       ministeriale(Corso, Minimo, _, _, _),
-      Massimo = Minimo. % TODO trovare una soluzione migliore
+      Massimo = Minimo.
 
 
 % Generazione dei docenti a contratto come possibili garanti.
