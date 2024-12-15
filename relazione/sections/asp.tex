@@ -136,7 +136,7 @@ meglio nella Sezione~\ref{sec:priorita}.
  %  SEZIONE: FASCIE
  fascia(c).
 
- jolly(1).
+ jolly(1..5).
 \end{lstlisting}
 
 
@@ -250,12 +250,21 @@ di codice seguente.
 {     
       garante(Docente, Corso, 10, c) :
             jolly(Docente),
-            codice_corso(Corso)
+            codice_corso(Corso),
+            peso(10),
+
+            jolly(Docente2),
+            codice_corso(Corso),
+            peso(10),
+
+            Docente > Docente2
 }Massimo :- ministeriale(Corso, _, _, _, Massimo).
 \end{lstlisting}
 
 Questa regola garantisce che il numero di docenti a contratto utilizzati come garanti non ecceda il 
 valore massimo consentito, specificato dal valore \texttt{Massimo} associato al corso.
+Inoltre, è stata fissata una relazione d'ordine sul numero di matricola (\texttt{Docente > Docente2}): 
+in questo modo, si vanno ad eliminare le possibili permutazioni in fase di generazione.
 
 
 \subsection{Vincoli}\label{sec:constraints}

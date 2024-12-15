@@ -43,7 +43,7 @@ docker compose build --no-cache
 Per eseguire il container:
 
 ```bash
-docker compose run ottimizzazione-garanti-accademici
+docker compose run --rm ottimizzazione-garanti-accademici
 ```
 
 > Potrebbe essere necessario aggiornare i permessi della cartella `src` con `chmod -R 777 src`.

@@ -400,7 +400,7 @@ class DatasetManager:
                 file.write(f"{comment_character} SEZIONE: Docenti\n")
                 
                 if SKIP:
-                    file.write(f"jolly(1).\n")
+                    file.write(f"jolly(1..5).\n")
                 else:
                     for _, row in df.iterrows():
                         if not row['Matricola'] or row['Matricola'] is None or str(row['Matricola']).lower() == 'nan':
