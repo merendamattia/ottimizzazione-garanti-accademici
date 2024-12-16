@@ -30,7 +30,14 @@ Minimo{
       garante(Docente, Corso, 10, c) :
             jolly(Docente),
             codice_corso(Corso),
-            peso(10)
+            peso(10),
+
+            jolly(Docente2),
+            codice_corso(Corso),
+            peso(10),
+
+            Docente > Docente2
+
 }Massimo :- ministeriale(Corso, _, _, _, Massimo).
 
 % Calcola il numero di docenti a tempo indeterminato assegnati come garanti a un determinato corso.

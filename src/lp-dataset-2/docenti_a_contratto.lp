@@ -2,4 +2,4 @@
 fascia(c).
 
 %  SEZIONE: Docenti
-jolly(1).
+jolly(1..5).

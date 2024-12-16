@@ -6,3 +6,20 @@
 src/dataset/ssd
 src/dataset/corsi
 src/lp/*
+
+# Latex
+**/*.synctex.gz
+**/*.log
+**/*.dvi
+**/*.bbl
+**/main.pdf
+**/*.blg
+**/*.aux
+**/*.log
+**/*.out
+**/*.bcf
+**/*.run.xml
+**/comment.cut
+**/main.out
+**/*.fdb_latexmk
+**/*.fls
