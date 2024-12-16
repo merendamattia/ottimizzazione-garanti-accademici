@@ -80,13 +80,9 @@ class DatasetManager:
             "lm": (6, 4, 2, 1),
             "lm5": (15, 8, 7, 3),
             "lm6": (18, 10, 8, 4),
-            "ltss": (5, 3, 2, 1),
-            "ltsm": (5, 3, 2, 1),
-            "ltps": (4, 2, 2, 1),
-            "ltop": (4, 2, 2, 1),
-            "lmss": (4, 2, 2, 1),
-            "lmsm": (4, 2, 2, 1),
-            "lmi": (3, 1, 2, 1)
+            "lcpa": (5, 3, 2, 1),
+            "lcpb": (4, 2, 2, 1),
+            "lcpc": (3, 1, 2, 1)
         }
 
         try:
@@ -110,14 +106,18 @@ class DatasetManager:
                         immatricolati = int(row["Immatricolati"])
 
                         massimo_teorico = int(row["Massimo Teorico"])
-                        w = (immatricolati / (1.0 * massimo_teorico)) - 1
-                        
-                        if w < 0:
-                            w = 0
-
-                        minimo_complessivo = math.floor(minimo_complessivo * (1 + w))
-                        minimo_ti = math.floor(minimo_ti * (1 + w))
-                        massimo_contratti = math.floor(massimo_contratti * (1 + w))
+                        # il calcolo della W si applica solo se si superano i massimi teorici
+                        if immatricolati > massimo_teorico:
+                            w = (immatricolati / (1.0 * massimo_teorico)) - 1
+                            if w < 0:
+                                raise ValueError("w < 0")
+                            
+                            minimo_complessivo = math.floor(minimo_complessivo * (1 + w))
+                            # variano solo i docenti a tempo indeterminato
+                            minimo_ti = math.floor(minimo_ti * (1 + w))
+                            
+                            # il massimo dei contratti non viene aumentato
+                            # massimo_contratti = math.floor(massimo_contratti * (1 + w))
 
                     file.write(f"ministeriale({codice_corso}, {minimo_complessivo}, {minimo_ti}, {massimo_td}, {massimo_contratti}).\n")
             
