@@ -14,7 +14,7 @@ Minimo{
       garante(Docente, Corso, Peso, Fascia) :
             cattedra(Corso, Docente, _, _),
             peso(Peso),
-            docente(Docente, Fascia, _, _),
+            docente(Docente, Fascia, _),
             fascia(Fascia),
             Fascia != c % Non serve perche' docente/4 usa solo fascie del tipo 'td' e 'ti' 
 }Massimo :-
@@ -127,8 +127,8 @@ somma_pesi_corso(Corso, Somma) :-
 numero_garanti_che_afferiscono(Numero, Corso) :- 
       SommaPesi = #sum {
             Peso ,Docente : garante(Docente, Corso, Peso, _),
-                        docente(Docente, _, SettoreSSD, _),
-                        corso(Corso, _, SettoreSSD, _)
+                        docente(Docente, _, SettoreSSD),
+                        corso(Corso, _, SettoreSSD)
       },
       codice_corso(Corso),
       Numero = SommaPesi / 10.
@@ -143,9 +143,9 @@ numero_garanti_di_riferimento(Numero, Corso) :-
 % Vincolo: il numero di garanti che afferiscono al settore scientifico-disciplinare (SSD)
 % di un corso deve essere almeno pari alla metà del numero totale di docenti di riferimento
 % assegnati al corso. Se non soddisfatto, la soluzione viene scartata.
-% :- numero_garanti_che_afferiscono(Aff, Corso), 
-%       numero_garanti_di_riferimento(Tot, Corso),
-%       2 * Aff <= Tot. 
+:- numero_garanti_che_afferiscono(Aff, Corso), 
+      numero_garanti_di_riferimento(Tot, Corso),
+      2 * Aff <= Tot. 
 
 % Calcola il numero di docenti a contratto assegnati a ciascun corso.
 % Questo predicato è utilizzato per verificare che il numero massimo di docenti
@@ -174,7 +174,7 @@ garanti_per_corso(Corso, Numero) :-
 % il valore massimo specificato dalla regola ministeriale.
 % Se il numero di docenti a contratto assegnati supera il massimo consentito, la soluzione viene scartata.
 :- jolly_per_corso(Corso, Numero),
-      corso(Corso, Laurea, _, _),
+      corso(Corso, Laurea, _),
       ministeriale(Corso, _, _, _, Massimo_numero_docenti_a_contratto),
       Numero > Massimo_numero_docenti_a_contratto.
 
@@ -209,8 +209,8 @@ garanti_per_corso(Corso, Numero) :-
 
 % Ottimizzare i garanti con SSD caratterizzante
 #maximize { 20 : garante(Docente, Corso, _, _), 
-                  docente(Docente, _, SettoreSSD, _), 
-                  corso(Corso, _, SettoreSSD, _) }.
+                  docente(Docente, _, SettoreSSD), 
+                  corso(Corso, _, SettoreSSD) }.
 
 % Minimizzo il numero di garanti per ogni corso
 #minimize { Penalita : garanti_per_corso(Corso, Numero), Penalita = Numero * 10 }.

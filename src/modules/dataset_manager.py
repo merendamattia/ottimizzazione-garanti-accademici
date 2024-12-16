@@ -154,6 +154,30 @@ class DatasetManager:
         # Rimuove eventuali NaN e converte i valori in numeri interi
         df['Cod. Corso di Studio'] = df['Cod. Corso di Studio'].fillna(0).astype(int)
 
+        accepted_tafs = set(["a", "b"])
+        
+        # Dict per memorizzare gli ssd di un corso di laurea (il codice è l'identificativo)
+        corso_ssds = dict()
+        for _, row in df.iterrows():
+            
+            if not (row["TAF"].lower() in accepted_tafs):
+                continue
+            
+            if not (row["Cod. Corso di Studio"] in corso_ssds):
+                corso_ssds[row["Cod. Corso di Studio"]] = set()
+            
+            ssd = row["SSD"].split("/")
+            if len(ssd) < 2:
+                # print(f"Errore: {row['Cod. Corso di Studio']} non ha un SSD valido")
+                raise Exception(f"Errore: {row['Cod. Corso di Studio']} non ha un SSD valido")
+                # continue
+            
+            
+            ssd[0] = ssd[0].strip().replace("-", "")
+            corso_ssds[row["Cod. Corso di Studio"]].add(ssd[0])
+        
+        # print(corso_ssds)
+        
         try:
             with open(filepath, 'w') as file:
                 
@@ -178,12 +202,10 @@ class DatasetManager:
                     
                     settore = ssd[0].lower()
                     settore = settore.replace('-', '')
-                    numero = int(ssd[1])
-                    
-                    ssd = str(ssd)
-                    if ssd not in ssd_aggiunti:
-                        file.write(f"ssd({settore}, {numero}).\n")
-                        ssd_aggiunti.add(ssd)
+
+                    if settore not in ssd_aggiunti:
+                        file.write(f"ssd({settore}).\n")
+                        ssd_aggiunti.add(settore)
                 file.write("\n")
 
                 # Scrive la sezione dei TAF
@@ -215,19 +237,20 @@ class DatasetManager:
                 file.write(f"{comment_character} SEZIONE: Informazioni Corsi\n")
                 for _, row in df.iterrows():
                     codice_corso = int(float(row['Cod. Corso di Studio']))
-                    prof = row['Cognome'] + " " + row['Nome']
                     tipo_corso = row['Cod. Tipo Corso'].lower()
                     
-                    ssd = row['SSD'].split('/')
-                    if len(ssd) < 2:
-                        continue
-                    settore = ssd[0].lower()
-                    settore = settore.replace('-', '')
-                    numero = int(ssd[1])
                     if codice_corso not in corsi_aggiunti:
-                        file.write(f"{comment_character} Corso: {codice_corso} ({tipo_corso})\n")
-                        file.write(f"corso({codice_corso}, {tipo_corso}, {settore}, {numero}) :- codice_corso({codice_corso}), laurea({tipo_corso}), ssd({settore}, {numero}).\n")
-                        corsi_aggiunti.add(codice_corso)
+                        # print("Codice corso:", codice_corso)
+                        if not codice_corso in corso_ssds:
+                            print(f"Errore: il corso {codice_corso} non ha SSD validi")
+                            continue
+                        
+                        settori = corso_ssds[codice_corso]
+                        for ssd in settori:
+                            settore = ssd.lower()
+                            file.write(f"{comment_character} Corso: {codice_corso} ({tipo_corso})\n")
+                            file.write(f"corso({codice_corso}, {tipo_corso}, {settore}) :- codice_corso({codice_corso}), laurea({tipo_corso}), ssd({settore}).\n")
+                            corsi_aggiunti.add(codice_corso)
 
                 file.write("\n")
                 
@@ -289,10 +312,12 @@ class DatasetManager:
                     settore = settore.replace('-', '')
                     numero = int(ssd[1])
                     
-                    ssd = str(ssd)
-                    if ssd not in ssd_aggiunti:
-                        file.write(f"ssd({settore}, {numero}).\n")
-                        ssd_aggiunti.add(ssd)
+                    # ssd = str(ssd)
+                    # if ssd not in ssd_aggiunti:
+                    if settore not in ssd_aggiunti:
+                        file.write(f"ssd({settore}).\n")
+                        ssd_aggiunti.add(settore)
+                        
                 file.write("\n")
 
                 # Scrive la sezione delle fasce dei contratti
@@ -331,11 +356,12 @@ class DatasetManager:
                         docenti_aggiunti.add(matricola_docente)
                 docenti_aggiunti = set() # reset docenti aggiunti
                 file.write("\n")
-
+                
                 # Scrive la sezione dei docenti
                 file.write(f"{comment_character} SEZIONE: SSD caratterizzante dei docenti\n")
                 for _, row in df.iterrows():
                     if not row['Matricola'] or row['Matricola'] is None or row['Matricola'].lower() == 'nan':
+                        raise Exception("Matricola non trovata")
                         continue
                     else:
                         matricola_docente = int(float(row['Matricola']))
@@ -356,7 +382,7 @@ class DatasetManager:
 
                     if matricola_docente not in docenti_aggiunti:
                         file.write(f"{comment_character} {nome_docente} ({matricola_docente}), SSD caratterizzante: {settore}/{numero}\n")
-                        file.write(f"docente({matricola_docente}, {fascia}, {settore}, {numero}) :- matricola_docente({matricola_docente}), fascia({fascia}), ssd({settore}, {numero}).\n")
+                        file.write(f"docente({matricola_docente}, {fascia}, {settore}) :- matricola_docente({matricola_docente}), fascia({fascia}), ssd({settore}).\n")
                         docenti_aggiunti.add(matricola_docente)
                 file.write("\n")
 
