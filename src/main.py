@@ -19,8 +19,13 @@ path_docenti_a_contratto = "dataset/docenti_a_contratto.xlsx"
 # Elenco dei file contenenti i dati degli immatricolati (LT, LM, CU)
 paths_immatricolati = ["dataset/immatricolati/LT.xlsx", "dataset/immatricolati/LM.xlsx", "dataset/immatricolati/CU.xlsx"]
 
+
+# Percorso del file contenente l'elenco dei corsi con i rispettivi massimi teorici
+path_elenco_allegato = "dataset/elenco_allegato.xlsx"
+
 # Numero minimo di insegnamenti richiesti per considerare valido un corso
 NUMERO_MINIMO_DI_INSEGNAMENTI = 9
+
 
 ###################################### FUNZIONI PRINCIPALI ######################################
 
@@ -208,6 +213,10 @@ def main():
     data = dataset_loader.filter_by_values(filters=filters_corsi, only_prefix=True)
     data = data[["Cod. Corso di Studio", "Cod. Tipo Corso"]].drop_duplicates()
     
+    # TODO aggiungere scrittura presidenti corsi di laurea
+    ### SCRITTURA PRESIDENTI -> preferenza
+    
+    
     # Carica i file strutturalmente identici e li combina in un unico DataFrame
     immatricolati_dfs = []
     for path in paths_immatricolati:
@@ -227,9 +236,15 @@ def main():
     )
     data = data.rename(columns={"Valore Indicatore": "Immatricolati"})
     
-    # TODO Aggiornare quando si avranno i massimi teorici per ciascun corso
-    # data["Massimo Teorico"] = 250
-    data["Massimo Teorico"] = data["Immatricolati"]
+    # carica il df al path di "path_elenco_allegato" e mappa su "Massimo Teorico" del df "data"
+    # i valori contenuti nella colonna "N. max" dove il "Cod. Corso di Studio" (data) è uguale a "CODICE U-GOV"(df_allegato)
+    df_allegato = pd.read_excel(path_elenco_allegato, engine="openpyxl", dtype=str)
+    mapping_massimo_teorico = df_allegato.set_index("CODICE U-GOV")["N. max"].to_dict()
+    data["Massimo Teorico"] = data["Cod. Corso di Studio"].map(mapping_massimo_teorico)
+    # se il valore di "Massimo Teorico" è nullo, allora sostituisci con il valore di "Immatricolati"
+    data["Massimo Teorico"] = data["Massimo Teorico"].fillna(data["Immatricolati"])
+
+    # data.to_excel("tmp.xlsx", index=False)
     
     dataset_manager = DatasetManager()
     dataset_manager.scrivi_ministeriali(data, "minesteriali")

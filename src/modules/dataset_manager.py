@@ -98,7 +98,7 @@ class DatasetManager:
                     if tipo_corso in parametri_ministeriali_minimi:
                         minimo_complessivo, minimo_ti, massimo_td, massimo_contratti = parametri_ministeriali_minimi[tipo_corso]
                     else:
-                        raise ValueError(f"Cod. Tipo Corso ({tipo_corso} ) non coerente per il corso {codice_corso}")
+                        raise ValueError(f"Cod. Tipo Corso ({tipo_corso}) non coerente per il corso {codice_corso}")
                     
                     if pd.isna(row['Immatricolati']):
                         pass
@@ -124,6 +124,17 @@ class DatasetManager:
             print(f"Dati salvati con successo in: {filepath}")
         except Exception as e:
             raise Exception(f"Errore durante il salvataggio dei dati su '{filepath}': {e}")
+    
+    def scrivi_presidenti(self, df, filename):
+        output_dir = 'lp'
+        if not os.path.exists(output_dir):
+            os.makedirs(output_dir)
+
+        comment_character = '% '
+        # filepath = os.path.join(self.dataset_path, filename + '.lp')
+        filepath = os.path.join(output_dir, filename + '.lp')
+        # todo: continuare qui
+        
         
     def scrivi_coperture(self, df, filename):
         """
@@ -175,8 +186,6 @@ class DatasetManager:
             
             ssd[0] = ssd[0].strip().replace("-", "")
             corso_ssds[row["Cod. Corso di Studio"]].add(ssd[0])
-        
-        # print(corso_ssds)
         
         try:
             with open(filepath, 'w') as file:

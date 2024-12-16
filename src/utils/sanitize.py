@@ -60,10 +60,10 @@ def sanitize_codici_corso(df):
     """
     
     # Sostituzione l con lt
-    df.loc[df["Cod. Tipo Corso"].str.lower() == "l", "Cod. Tipo Corso"] = "LT"
 
     df_allegato = pd.read_excel(path_elenco_allegato, engine="openpyxl", dtype=str)
     df["Cod. Tipo Corso"] = df.apply(lambda row: aggiorna_cod_tipo_corso(row, df_allegato), axis=1)
+    df.loc[df["Cod. Tipo Corso"].str.lower() == "l", "Cod. Tipo Corso"] = "LT"
     
     
     return df
