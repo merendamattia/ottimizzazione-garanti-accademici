@@ -233,10 +233,13 @@ def merge_elenco_allegato():
             return None
         docenza = str(docenza)
         if re.search(r"\b5\b.*\b3\b", docenza):
+            # Laurea caso particolare A
             return "LCPA"
         elif re.search(r"\b4\b.*\b2\b", docenza):
+            # Laurea caso particolare B
             return "LCPB"
         elif re.search(r"\b3\b.*\b1\b", docenza):
+            # Laurea caso particolare C
             return "LCPC"
         return None
     
