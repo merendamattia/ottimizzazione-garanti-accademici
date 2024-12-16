@@ -10,7 +10,7 @@ peso(10).
 % - `Minimo`: rappresenta il numero minimo di garanti richiesto dal ministeriale per il corso.
 % - `Massimo`: in questo contesto, è posto uguale a `Minimo`, ma può essere aggiornato in una versione successiva
 %   per gestire un intervallo flessibile di garanti.
-Minimo{
+{
       garante(Docente, Corso, Peso, Fascia) :
             cattedra(Corso, Docente, _, _),
             peso(Peso),
