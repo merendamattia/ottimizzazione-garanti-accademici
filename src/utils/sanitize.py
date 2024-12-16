@@ -5,12 +5,13 @@ import re
 
 path_ns_coperture = "../dataset/originali/coperture.xlsx"
 path_ns_docenti = "../dataset/originali/docenti.xlsx"
-
+path_ns_elenco_24_25 = "../dataset/originali/elenco_2024-2025.xlsx"
 
 path_coperture = "../dataset/coperture.xlsx"
 path_docenti = "../dataset/docenti.xlsx"
 path_coperture_contratti = "../dataset/docenti_a_contratto.xlsx"
 path_coperture_rimaste = "../dataset/insegnamenti_senza_docente.xlsx"
+path_elenco_24_25 = "../dataset/elenco_2024-2025.xlsx"
 
 def aggiorna_cod_tipo_corso(row):
     """
@@ -37,15 +38,20 @@ def aggiorna_cod_tipo_corso(row):
             return 'LTSS'
         elif tipo_corso == 'lm':
             return 'LMSS'
-    elif 'scienze motorie' in descrizione and tipo_corso == 'lt':
-        return 'LTSM'
     elif 'professione sanitaria' in descrizione and tipo_corso == 'lt':
         return 'LTPS'
+    
+    # elif 'professione sanitaria' in descrizione and tipo_corso == 'lt':
+    #     return 'LTPS'
+    
     elif 'infermieristic' in descrizione and tipo_corso == 'lm':
         return 'LMI'
     
-    elif re.search(r'(?i)(?=.*scienz)(?=.*motor)', descrizione) and tipo_corso == 'lm':
-        return 'LMSM'
+    elif re.search(r'(?i)(?=.*scienz)(?=.*motor)', descrizione):
+        if tipo_corso == 'lt':
+            return 'LTSM'
+        elif tipo_corso == 'lm':
+            return 'LMSM'
     
     raise ValueError(f"Valore non mappato: {descrizione.lower()}, {tipo_corso.lower()}")
 
@@ -209,6 +215,13 @@ def compute_remained():
 
     df_full.dropna(how="all", inplace=True)
     df_full.to_excel(path_coperture_rimaste, index=False)
+    
+    
+def sanitize_elenco_24_25():
+    df = pd.read_excel(path_ns_elenco_24_25, engine="openpyxl", dtype=str)
+    # tiene solo le righe che hanno la colonna "NOTE" vuota
+    df = df[df["NOTE"].isna()]
+    df.to_excel(path_elenco_24_25, index=False)
 # %%
 def sanitize():
     """
@@ -230,5 +243,6 @@ def sanitize():
 
 # %%
 if __name__ == "__main__":
-    sanitize()
+    # sanitize()
+    sanitize_elenco_24_25()
 # %%
