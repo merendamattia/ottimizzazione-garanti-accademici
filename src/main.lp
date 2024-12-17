@@ -19,11 +19,19 @@ peso(10).
 % - Massimo garanti non a contratto = 9
 Minimo{
       garante(Docente, Corso, Peso, Fascia) :
-            cattedra(Corso, Docente, _, _),
             peso(Peso),
-            docente(Docente, Fascia, _),
             fascia(Fascia),
-            Fascia != c % Non serve perche' docente/4 usa solo fascie del tipo 'td' e 'ti' 
+            Fascia != c,
+
+            % Docente 1
+            cattedra(Corso, Docente, _, _),
+            docente(Docente, Fascia, _),
+            
+            % Docente 2
+            cattedra(Corso, Docente2, _, _),
+            docente(Docente2, Fascia, _),
+
+            Docente >= Docente2
 }Massimo :-
       ministeriale(Corso, MinimoComplessivo, _, _, MassimoDocentiContratto),
       Minimo = MinimoComplessivo - MassimoDocentiContratto,
@@ -37,14 +45,11 @@ Minimo{
 {     
       garante(Docente, Corso, 10, c) :
             jolly(Docente),
-            codice_corso(Corso),
-            peso(10),
-
             jolly(Docente2),
+      
             codice_corso(Corso),
-            peso(10),
 
-            Docente > Docente2
+            Docente >= Docente2
 
 }MassimoDocentiContratto :- ministeriale(Corso, _, _, _, MassimoDocentiContratto).
 

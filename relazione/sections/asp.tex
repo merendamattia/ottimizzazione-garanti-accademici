@@ -43,24 +43,24 @@ La sezione relativa ai docenti include l'elenco completo dei docenti, ciascuno
 identificato da una matricola unica. Per ogni docente, vengono indicate la fascia 
 contrattuale e il settore scientifico disciplinare caratterizzante, che ne 
 definisce il dominio di competenza. Queste informazioni sono formalizzate tramite 
-il predicato \texttt{docente/4}, che associa la matricola del docente, la fascia, 
+il predicato \texttt{docente/3}, che associa la matricola del docente, la fascia, 
 il settore disciplinare e il livello SSD.
 
 \begin{lstlisting}[language=prolog, caption={Esempio struttura dati di \texttt{docenti.lp}.}]    
  %  SEZIONE: SSD
- ssd(inf, 1).
+ ssd(inf).
 
  %  SEZIONE: FASCIE
  fascia(td).
  fascia(ti).
 
  %  SEZIONE: Docenti
- %  Rossi Mario (1234), SSD caratterizzante: inf/1
+ %  Rossi Mario (1234), SSD caratterizzante: inf
  matricola_docente(1234).
 
  %  SEZIONE: SSD caratterizzante dei docenti
- %  Rossi Mario (1234), SSD caratterizzante: inf/1
- docente(1234, td, inf, 1) :- matricola_docente(1234), fascia(td), ssd(inf, 1).
+ %  Rossi Mario (1234), SSD caratterizzante: inf
+ docente(1234, td, inf) :- matricola_docente(1234), fascia(td), ssd(inf).
 \end{lstlisting}
 
 
@@ -71,18 +71,22 @@ associate a ciascun corso. Questo file contiene diverse sezioni organizzate per
 garantire chiarezza e modularità nella definizione delle informazioni.
 
 La prima parte del file introduce i tipi di corso (\texttt{laurea/1}) e i relativi 
-SSD utilizzati per caratterizzare i corsi e i docenti. Successivamente, vengono 
-definiti i TAF che classificano ulteriormente gli insegnamenti.
+SSD utilizzati per caratterizzare i corsi e i docenti. Gli SSD caratterizzanti di 
+un corso vengono estratti dinamicamente dagli SSD degli insegnamenti di quel corso 
+che sono classificati come TAF A. Questa scelta consente di identificare in modo 
+coerente i macrosettori scientifico-disciplinari fondamentali per ciascun corso, 
+basandosi sui suoi insegnamenti di base. Successivamente, vengono definiti i TAF 
+che classificano ulteriormente gli insegnamenti.
 
 Le informazioni sui corsi sono strutturate in due livelli: i codici identificativi 
 di ciascun corso (\texttt{codice\_corso/1}) e la loro descrizione dettagliata 
-tramite il predicato \texttt{corso/4}. Quest'ultimo associa il codice del corso, 
+tramite il predicato \texttt{corso/3}. Quest'ultimo associa il codice del corso, 
 il tipo di laurea, il SSD caratterizzante e il livello del settore disciplinare.
 
-Una parte cruciale del file riguarda la relazione tra corsi e docenti, formalizzata 
-tramite il predicato \texttt{cattedra/4}. Questo predicato associa un docente 
-(identificato tramite la matricola) a un corso specifico, includendo il tipo di 
-laurea e il TAF relativo. 
+Un'altra parte importante del file riguarda la relazione tra corsi e docenti, 
+formalizzata tramite il predicato \texttt{cattedra/4}. Questo predicato associa 
+un docente (identificato tramite la matricola) a un corso specifico, includendo 
+il tipo di laurea e il TAF relativo. 
 
 Di seguito, un esempio rappresentativo del contenuto del file.
 
@@ -101,8 +105,10 @@ Di seguito, un esempio rappresentativo del contenuto del file.
  codice_corso(3027).
 
  %  SEZIONE: Informazioni Corsi
- corso(3027, lt, inf, 1) :- codice_corso(3027), laurea(lt), ssd(inf, 1).
-
+ corso(3027, lt, fis) :- codice_corso(3027), laurea(lt), ssd(fis).
+ corso(3027, lt, mat) :- codice_corso(3027), laurea(lt), ssd(mat).
+ corso(3027, lt, inf) :- codice_corso(3027), laurea(lt), ssd(inf).
+ 
  %  SEZIONE: Relazioni Corsi-Docenti
  %  Corso: 3027, Docente: Rossi Mario
  cattedra(3027, 1234, lt, b) :- codice_corso(3027), 
@@ -227,17 +233,25 @@ Minimo{
       garante(Docente, Corso, Peso, Fascia) :
             cattedra(Corso, Docente, _, _),
             peso(Peso),
-            docente(Docente, Fascia, _, _),
+            docente(Docente, Fascia, _),
             fascia(Fascia),
             Fascia != c
-      } :-
-            ministeriale(Corso, Minimo, _, _, _).
+}Massimo :-
+      ministeriale(Corso, MinimoComplessivo, _, _, MassimoDocentiContratto),
+      Minimo = MinimoComplessivo - MassimoDocentiContratto,
+      Massimo = MinimoComplessivo.
 \end{lstlisting}
 
-In questa regola, il numero minimo di garanti per ciascun corso è regolato dal valore \texttt{Minimo} 
-specificato dalla normativa ministeriale, in quanto una soluzione con un numero di garanti minore al 
-minimo ministeriale verrebbe scartata, mentre il peso associato ai garanti può assumere i valori 5 o 
-10, come definito dal predicato \texttt{peso/1}.
+In questa regola, il numero minimo di garanti non a contratto per ciascun corso (\texttt{Minimo}) 
+viene calcolato sottraendo il numero massimo di docenti a contratto consentiti
+dal numero minimo complessivo di garanti richiesto per il corso. 
+Questo approccio permette di definire un sottoinsieme minimo di garanti che devono necessariamente 
+appartenere alle fasce \texttt{td} e \texttt{ti}. 
+
+Il numero massimo di garanti non a contratto (\texttt{Massimo}), invece, coincide con il valore 
+minimo dei garanti richiesti per quel corso, garantendo che la somma totale dei garanti sia 
+conforme ai requisiti ministeriali.
+
 
 \paragraph{Docenti a contratto.}
 I docenti \textit{a contratto} vengono considerati come una risorsa ausiliaria, identificati tramite 
