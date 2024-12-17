@@ -3,14 +3,21 @@
 % peso(5).
 peso(10).
 
-% Determina il numero minimo e massimo di garanti per un corso, come richiesto dalla normativa ministeriale.
-% L'aggregato considera i docenti assegnati alle cattedre del corso, escludendo quelli nella fascia 'c' 
-% (docenti a contratto), poiché la fascia è già filtrata implicitamente dalla definizione di `docente/4`.
-% 
-% - `Minimo`: rappresenta il numero minimo di garanti richiesto dal ministeriale per il corso.
-% - `Massimo`: in questo contesto, è posto uguale a `Minimo`, ma può essere aggiornato in una versione successiva
-%   per gestire un intervallo flessibile di garanti.
-{
+% Generazione dei garanti non a contratto come possibili garanti.
+% Questa regola considera i docenti appartenenti alle fasce 'td' (tempo determinato) 
+% e 'ti' (tempo indeterminato) per l'assegnazione come garanti di un corso. 
+% I docenti a contratto (fascia 'c') sono esclusi dal predicato tramite la condizione `Fascia != c`.
+%
+% Il numero minimo di garanti è calcolato sottraendo dal minimo complessivo richiesto per il corso 
+% (MinimoComplessivo) il numero massimo di docenti a contratto consentiti (MassimoDocentiContratto).
+% Il numero massimo di garanti non a contratto coincide con il minimo complessivo richiesto per il corso 
+% (MinimoComplessivo).
+%
+% Esempio:
+% Per un corso con un minimo complessivo di 9 garanti e un massimo di 2 docenti a contratto:
+% - Minimo garanti non a contratto = 9 - 2 = 7
+% - Massimo garanti non a contratto = 9
+Minimo{
       garante(Docente, Corso, Peso, Fascia) :
             cattedra(Corso, Docente, _, _),
             peso(Peso),
@@ -18,8 +25,9 @@ peso(10).
             fascia(Fascia),
             Fascia != c % Non serve perche' docente/4 usa solo fascie del tipo 'td' e 'ti' 
 }Massimo :-
-      ministeriale(Corso, Minimo, _, _, _),
-      Massimo = Minimo.
+      ministeriale(Corso, MinimoComplessivo, _, _, MassimoDocentiContratto),
+      Minimo = MinimoComplessivo - MassimoDocentiContratto,
+      Massimo = MinimoComplessivo.
 
 % Generazione dei docenti a contratto come possibili garanti.
 % Questa regola considera i docenti indicati come 'jolly', ovvero quelli che 
@@ -38,7 +46,7 @@ peso(10).
 
             Docente > Docente2
 
-}Massimo :- ministeriale(Corso, _, _, _, Massimo).
+}MassimoDocentiContratto :- ministeriale(Corso, _, _, _, MassimoDocentiContratto).
 
 % Calcola il numero di docenti a tempo indeterminato assegnati come garanti a un determinato corso.
 % Il numero è calcolato sommando i pesi di tutti i docenti nella fascia 'ti' associati al corso 
@@ -137,8 +145,9 @@ numero_garanti_che_afferiscono(Numero, Corso) :-
 % Esclude i docenti a contratto (fascia 'c') e conta il numero di docenti in altre fasce
 % che sono assegnati al corso.
 numero_garanti_di_riferimento(Numero, Corso) :- 
-      Numero = #count {Docente, Corso : garante(Docente, Corso, _, Fascia), Fascia != c },
-      codice_corso(Corso).
+      codice_corso(Corso),
+      Numero = #count {Docente : garante(Docente, Corso, _, Fascia), Fascia != c }.
+      
 
 % Vincolo: il numero di garanti che afferiscono al settore scientifico-disciplinare (SSD)
 % di un corso deve essere almeno pari alla metà del numero totale di docenti di riferimento

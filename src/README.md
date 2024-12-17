@@ -14,12 +14,12 @@ Il secondo dataset (`lp-dataset-2`) include un insieme ridotto di corsi apparten
 
 Comando per lanciare l'analisi:
 ```bash
-clingo -n 15 --parallel-mode 10 --time-limit=180 lp-dataset-2/* main.lp
+clingo -n 15 --parallel-mode 8 --time-limit=180 lp-dataset-2/* main.lp
 ```
 
 ## Dataset 3: Tutti i Corsi del Dipartimento
 Il terzo dataset (`lp-dataset-3`) comprende tutti i corsi di studio del dipartimento, rappresentando il caso più complesso tra i tre. 
 Comando per lanciare l'analisi:
 ```bash
-clingo -n 15 --parallel-mode 10 --time-limit=3600 lp-dataset-3/* main.lp
+clingo -n 15 --parallel-mode 8 --time-limit=180 lp-dataset-3/* main.lp
 ```
