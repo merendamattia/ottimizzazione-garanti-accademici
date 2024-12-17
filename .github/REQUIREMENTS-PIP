@@ -1,7 +1,7 @@
-matplotlib
-pandas
-numpy
-openpyxl
-tqdm
-python-docx
-odfpy
+matplotlib==3.10.0
+pandas==2.2.3
+numpy==2.2.0
+openpyxl==3.1.5
+tqdm==4.67.1
+python-docx==1.1.2
+odfpy==1.4.1
