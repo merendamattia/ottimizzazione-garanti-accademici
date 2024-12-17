@@ -5,3 +5,5 @@ openpyxl
 tqdm
 python-docx
 odfpy
+fuzzywuzzy
+python-Levenshtein
