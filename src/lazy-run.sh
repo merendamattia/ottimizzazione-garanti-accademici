@@ -28,4 +28,4 @@ echo "Numero di thread: $threads"
 echo "Limite di tempo: $timeLimit"
 
 # Esegui il comando clingo
-clingo -n "$models" --parallel-mode "$threads" --time-limit="$timeLimit" lp/* main.lp
+clingo -n "$models" --parallel-mode "$threads" --time-limit="$timeLimit" lp/* main.lp --heuristic=Domain --stats
