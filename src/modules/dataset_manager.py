@@ -117,7 +117,7 @@ class DatasetManager:
                             minimo_ti = math.floor(minimo_ti * (1 + w))
                             
                             # il massimo dei contratti non viene aumentato
-                            # massimo_contratti = math.floor(massimo_contratti * (1 + w))
+                            massimo_contratti = math.floor(massimo_contratti * (1 + w))
 
                     file.write(f"ministeriale({codice_corso}, {minimo_complessivo}, {minimo_ti}, {massimo_td}, {massimo_contratti}).\n")
             
