@@ -248,24 +248,24 @@ def main():
         # se non c'è match ritorna none
         return None
     
-    #TODO merge dei due df basandosi su "CODICE U-GOV" e "Cod. Corso di Studio"
-    merged_df = dsc.merge(
-        dsa,
-        how="left",
-        left_on="Cod. Corso di Studio",
-        right_on="CODICE U-GOV"
-    )
-    merged_df.to_excel("merged_df.xlsx", index = False)
+    # #TODO merge dei due df basandosi su "CODICE U-GOV" e "Cod. Corso di Studio"
+    # merged_df = dsc.merge(
+    #     dsa,
+    #     how="left",
+    #     left_on="Cod. Corso di Studio",
+    #     right_on="CODICE U-GOV"
+    # )
+    # merged_df.to_excel("merged_df.xlsx", index = False)
     
-    #TODO scartare le righe che non hanno un match al 60% tra il valore "Nome e Cognome" e "PRESIDENTE"
+    # #TODO scartare le righe che non hanno un match al 60% tra il valore "Nome e Cognome" e "PRESIDENTE"
     
-    merged_df["Match PRESIDENTE"] = merged_df.apply(
-        lambda row: most_similar(row["Nome e Cognome"], [row["PRESIDENTE"]], fuzz.token_sort_ratio, threshold=60)
-        if pd.notna(row["PRESIDENTE"]) and pd.notna(row["Nome e Cognome"]) else None,
-        axis=1
-    )
-    filtered_df = merged_df[merged_df["Match PRESIDENTE"].notna()]
-    filtered_df.to_excel("presidenti.xlsx", index=False)
+    # merged_df["Match PRESIDENTE"] = merged_df.apply(
+    #     lambda row: most_similar(row["Nome e Cognome"], [row["PRESIDENTE"]], fuzz.token_sort_ratio, threshold=90)
+    #     if pd.notna(row["PRESIDENTE"]) and pd.notna(row["Nome e Cognome"]) else None,
+    #     axis=1
+    # )
+    # filtered_df = merged_df[merged_df["Match PRESIDENTE"].notna()]
+    # filtered_df.to_excel("presidenti.xlsx", index=False)
 
     # dsc["Match presidente"] = dsc["Nome e Cognome"].apply(
     #     lambda x: most_similar(x, dsa["PRESIDENTE"].to_list(), fuzz.token_sort_ratio, threshold=70)
