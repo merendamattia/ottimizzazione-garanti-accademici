@@ -78,6 +78,20 @@ bash lazy-run.sh
 
 ---
 
+## Generazione del file Excel contenente i risultati delle analisi
+1. Ridirigere l'output dell'analisi in un file di testo. Ad esempio:
+    ```bash
+    clingo -n 0 lp/* main.lp > res.txt
+    ```
+2. Eseguire lo script `src/utils/post-proc.py`. Ad esempio:
+    ```bash
+    cd utils
+    python3 post-proc.py ../res.txt
+    ```
+3. Vengono generati i file contenenti i garanti per ciascun corso.
+
+---
+
 ## Documentazione
 Per generare la documentazione è necessario avere installato:
 - [Doxygen](https://doxygen.nl)
