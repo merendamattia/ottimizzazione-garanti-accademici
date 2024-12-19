@@ -1,0 +1,49 @@
+\section{Introduzione}
+\label{sec:introduction}
+
+L'assegnazione dei garanti nei corsi universitari costituisce una 
+questione fondamentale per la gestione ottimale delle risorse accademiche. 
+Nell'ambito universitario, il \textit{garante} è un docente responsabile 
+di rappresentare e tutelare la qualità didattica di un corso, garantendo 
+il rispetto dei requisiti disciplinari e istituzionali. I garanti possono 
+appartenere a diverse categorie contrattuali: docenti a tempo indeterminato, 
+docenti a tempo determinato e, in casi eccezionali, docenti a contratto.
+La sfida principale consiste nel soddisfare i vincoli ministeriali 
+relativi ai garanti, garantendo al contempo un'allocazione equilibrata 
+e sostenibile delle risorse. Ogni corso deve essere supportato da un 
+numero minimo di garanti, suddivisi tra le diverse fasce contrattuali, 
+per assicurare un livello adeguato di competenza e rappresentatività. 
+Inoltre, è indispensabile che almeno il 50\% dei garanti afferisca al 
+Settore Scientifico Disciplinare (SSD) caratterizzante del corso, al 
+fine di garantire la coerenza tra l'offerta formativa e le competenze 
+disciplinari.
+
+Un'ulteriore complessità è rappresentata dall'impiego di docenti a 
+contratto, il cui utilizzo deve essere limitato e subordinato alle 
+sole situazioni in cui non sia possibile soddisfare i requisiti 
+attraverso i docenti strutturati. La necessità di rispettare questi 
+vincoli, combinata con la disponibilità limitata di personale e la 
+necessità di bilanciare il carico di lavoro, rende questo problema 
+una sfida organizzativa e computazionale significativa.
+
+Un primo ostacolo affrontato in questo progetto riguarda la fase di 
+pre-elaborazione dei dati forniti dall'università, descritta nella 
+Sezione~\ref{sec:pre-proc} di questo elaborato. I dati risultano 
+disomogenei e incompleti, richiedendo una significativa pulizia e 
+riorganizzazione prima di poter essere utilizzati efficacemente nel 
+modello ASP. Questa fase ha richiesto lo sviluppo di strumenti 
+dedicati per uniformare e validare i dati.
+
+La Sezione~\ref{sec:asp} esplora il cuore del nostro approccio, 
+ovvero la costruzione del modello ASP. Qui abbiamo implementato 
+regole logiche per soddisfare i vincoli ministeriali e massimizzare 
+l'efficienza dell'assegnazione dei garanti, tenendo conto delle 
+limitazioni sulle fasce contrattuali e sull'impiego dei docenti a contratto.
+
+Successivamente, nella Sezione~\ref{sec:expval}, presentiamo 
+i risultati ottenuti su un esempio ridotto, un test che ha permesso 
+di validare il modello in un ambiente controllato e di analizzare la qualità 
+delle soluzioni generate. Infine, la Sezione~\ref{sec:dataset-tutti-dipartimenti} descrive 
+l'applicazione del modello su un dataset completo contenente tutti i corsi 
+universitari, eseguendo un benchmark su larga scala per valutare la 
+capacità del nostro approccio di risolvere problemi reali e complessi.

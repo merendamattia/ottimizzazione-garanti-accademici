@@ -1,10 +1,10 @@
 services:
-    pd-project:
-        hostname: pd-project
-        container_name: pd-project
-        image: pd-project
+    ottimizzazione-garanti-accademici:
+        hostname: oga
+        container_name: oga
+        image: ottimizzazione-garanti-accademici
         build:
             context: .
             dockerfile: Dockerfile
         volumes:
-            - ./src:/home/clingo/code
+            - ./src:/home/clingo/src

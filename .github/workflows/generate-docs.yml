@@ -1,4 +1,4 @@
-name: Generate Python Documentation
+name: Generate Python Documentation [PDF]
 
 on:
   push:
@@ -37,7 +37,7 @@ jobs:
           git config --global user.name "GitHub Actions Bot"
           git config --global user.email "actions@github.com"
           git add doc/documentazione.pdf
-          git commit -m "Aggiornata documentazione (PDF)"
+          git commit -m "Aggiornata documentazione [PDF]"
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,73 @@
+\section{Validazione della soluzione proposta}
+\label{sec:expval}
+
+Per testare l'efficacia e la correttezza del modello sviluppato, è stato creato un esempio 
+giocattolo basato sui corsi di laurea in Informatica (LT) e Scienze Informatiche (LM). 
+Questo dataset ridotto è stato progettato per verificare la capacità del modello ASP di 
+generare soluzioni valide, rispettando i vincoli definiti e implementando correttamente 
+le ottimizzazioni.
+
+I dati di input per il modello sono stati generati attraverso un comando Python, che ha 
+generato i file necessari contenenti i fatti relativi ai docenti, alle coperture, ai 
+docenti a contratto e ai limiti ministeriali.
+
+\begin{lstlisting}[language=bash]
+ python3 main.py --3027 --5069
+\end{lstlisting}
+
+Una volta generati i file, l'analisi è stata eseguita utilizzando Clingo.
+
+\begin{lstlisting}[language=bash]
+ clingo -n 0 --parallel-mode 8 --time-limit=180 lp/* main.lp
+\end{lstlisting}
+
+Il modello ha prodotto una soluzione ottima in meno di un \textit{decimo di secondo}, 
+dimostrando tempi di computazione estremamente brevi. Per il corso di Informatica 
+(codice: 3027) sono stati assegnati 9 garanti in conformità ai requisiti, mentre per il corso di 
+Scienze Informatiche (codice: 5069) sono stati assegnati 6 garanti, sempre in conformità ai 
+requisiti.
+
+È stata inoltre verificata la coerenza tra i garanti assegnati e gli SSD caratterizzanti, 
+con 5 docenti afferenti per Informatica e 4 per Scienze Informatiche.
+
+\subsection{Dataset ridotto: Dipartimento SMFI}
+\label{sec:-dataset-dipartimento-smfi}
+
+Per valutare la scalabilità del modello, è stato eseguito un test utilizzando un dataset 
+ridotto relativo al Dipartimento di Scienze Matematiche, Fisiche e Informatiche (SMFI), 
+comprendente sei corsi di studio. Anche in questo caso, i file di input sono stati generati 
+tramite Python.
+
+\begin{lstlisting}[language=bash]
+ python3 main.py --3027 --5069 --3026 --5036 --3030 --5037
+\end{lstlisting}
+
+L'analisi è stata eseguita con Clingo utilizzando lo stesso comando precedentemente indicato, 
+ma con un timer impostato a un'ora. Sebbene non sia stata trovata una soluzione ottimale 
+entro il limite di tempo, il modello ha generato 23 soluzioni in pochissimi secondi, 
+tra cui un modello ottimale rispetto ai vincoli soddisfacibili. Questo modello ottimale, 
+tra quelli generati, ha assegnato zero docenti a contratto come garanti su un totale di 45 
+garanti, dimostrando la capacità del sistema di rispettare i vincoli più stringenti.
+
+Durante il test, è stata utilizzata la configurazione che prevede solo pesi pari a 10, al 
+fine di ridurre la complessità computazionale. Tuttavia, il modello supporta anche l'opzione 
+di pesi pari a 5, che, pur aumentando significativamente i tempi di computazione, offre 
+maggiore flessibilità nella generazione delle soluzioni.
+
+
+\subsection{Dataset grande: tutti i dipartimenti}
+\label{sec:dataset-tutti-dipartimenti}
+
+Come ultima valutazione del modello, è stato utilizzato un dataset comprendente tutti i corsi 
+di studio dell'ateneo. Prima dell'elaborazione, sono stati esclusi i casi particolari relativi 
+ai corsi inter-atenei, poiché non erano considerati rilevanti per questa analisi.
+Anche in quest'ultimo caso, i file di input sono stati generati tramite Python.
+\begin{lstlisting}[language=bash]
+ python3 main.py --all
+\end{lstlisting}
+
+Durante questa valutazione, è stato impostato un limite di tempo di un'ora. Sebbene non sia stato 
+trovato un modello ottimale entro il limite stabilito, il modello ha generato 283 soluzioni, 
+tra cui un modello ottimale rispetto ai vincoli soddisfacibili. Questo modello finale includeva 
+solo 11 docenti a contratto su un totale di 869 garanti assegnati, dimostrando una notevole 
+efficienza nell'ottimizzazione delle risorse e una forte preferenza per l'utilizzo di docenti non a contratto.
