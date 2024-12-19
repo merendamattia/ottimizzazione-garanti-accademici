@@ -23,72 +23,10 @@ NUMERO_MINIMO_DI_INSEGNAMENTI = 9
 ###################################### FUNZIONI PRINCIPALI ######################################
 
 def write(filters_corsi):
-    """
-    Funzione per scrivere i dati relativi ai corsi, docenti, docenti a contratto e ministeriali.
-
-    @param filters_corsi: Dizionario contenente i filtri per i corsi da includere.
-    @type filters_corsi: dict
-    """
-    filters_docenti = {"Matricola": list()}
-    
-    dataset_manager = DatasetManager(dataset_path=filepathProf)
-    profs = dataset_manager.get_professors()
-    
-    for code in filters_corsi["Cod. Corso di Studio"]:
-        if profs[code]:
-            for p in profs[code]:
-                filters_docenti["Matricola"].append(p)
-                
-    filters_docenti ["Matricola"] = list(set(filters_docenti ["Matricola"]))
-    
-    ### SCRITTURA DOCENTI 
-    dataset_loader = DatasetLoader(path_docenti)
-    data = dataset_loader.filter_by_values(filters=filters_docenti, only_prefix=False)
-    dataset_manager = DatasetManager()
-    dataset_manager.scrivi_docenti(data, 'docenti')
-
-    ### SCRITTURA CORSI
-    dataset_loader = DatasetLoader(path_coperture)
-    data = dataset_loader.filter_by_values(filters=filters_corsi, only_prefix=True)
-    dataset_manager = DatasetManager()
-    dataset_manager.scrivi_coperture(data, 'coperture')
-
-    ### SCRITTURA DOCENTI A CONTRATTO
-    dataset_loader = DatasetLoader(path_docenti_a_contratto)
-    data = dataset_loader.get_values()
-    dataset_manager = DatasetManager()
-    dataset_manager.scrivi_docenti_a_contratto(data, 'docenti_a_contratto')
-    
-    ### SCRITTURA MINISTERIALE
-    dataset_loader = DatasetLoader(path_coperture)
-    data = dataset_loader.filter_by_values(filters=filters_corsi, only_prefix=True)
-    data = data[["Cod. Corso di Studio", "Cod. Tipo Corso"]].drop_duplicates()
-    
-    # Carica i file strutturalmente identici e li combina in un unico DataFrame
-    immatricolati_dfs = []
-    for path in paths_immatricolati:
-        immatricolati_dfs.append(pd.read_excel(path, engine="openpyxl", dtype=str))
-
-    # Combina tutti i DataFrame caricati in uno unico
-    immatricolati_df = pd.concat(immatricolati_dfs, ignore_index=True)
-    immatricolati_df = immatricolati_df[["Codice CdL", "Valore Indicatore"]]
-    immatricolati_df = immatricolati_df.rename(columns={"Codice CdL" : "Cod. Corso di Studio"})
-    
-    immatricolati_df["Valore Indicatore"] = immatricolati_df["Valore Indicatore"].astype(int)
-    
-    data = data.merge(
-        immatricolati_df,
-        on="Cod. Corso di Studio",
-        how="left"
-    )
-    data = data.rename(columns={"Valore Indicatore": "Immatricolati"})
-    
-    # TODO Aggiornare quando si avranno i massimi teorici per ciascun corso
-    # data["Massimo Teorico"] = 250
-    data["Massimo Teorico"] = data["Immatricolati"]
-    
-    dataset_manager = DatasetManager()
-    dataset_manager.scrivi_ministeriali(data, "minesteriali")
+    # esegue il main mettendo come arg il valore di filters_corsi preceduti da --
+    print("Writing...")
+    courses = filters_corsi["Cod. Corso di Studio"]
+    os.system("python3 main.py --" + " --".join(courses))
 
 
 def init_matricole(filename):
@@ -98,6 +36,7 @@ def init_matricole(filename):
     @param filename: Nome del file di output per le matricole.
     @type filename: str
     """
+    
     
     dsl = DatasetLoader(path_docenti)
     
@@ -252,6 +191,8 @@ def main():
         if res == -1:
             print(f"Errore con {code}")
             banned_codes.append(code)
+        else:
+            print(f"OK {code}")
     
     # scrive la lista di codici da escludere in un file (one-by-one.txt)
     banned_codes_file = "one-by-one-banned.txt"

@@ -3,14 +3,10 @@ laurea(lt).
 laurea(lm).
 
 %  SEZIONE: SSD
-ssd(inf, 1).
-ssd(mat, 3).
-ssd(chim, 3).
-ssd(fis, 3).
-ssd(mat, 5).
-ssd(fis, 2).
-ssd(mat, 8).
-ssd(mat, 6).
+ssd(inf).
+ssd(mat).
+ssd(chim).
+ssd(fis).
 
 %  SEZIONE: TAF
 taf(b).
@@ -25,9 +21,13 @@ codice_corso(5069).
 
 %  SEZIONE: Informazioni Corsi
 %  Corso: 3027 (lt)
-corso(3027, lt, inf, 1) :- codice_corso(3027), laurea(lt), ssd(inf, 1).
+corso(3027, lt, fis) :- codice_corso(3027), laurea(lt), ssd(fis).
+%  Corso: 3027 (lt)
+corso(3027, lt, inf) :- codice_corso(3027), laurea(lt), ssd(inf).
+%  Corso: 3027 (lt)
+corso(3027, lt, mat) :- codice_corso(3027), laurea(lt), ssd(mat).
 %  Corso: 5069 (lm)
-corso(5069, lm, inf, 1) :- codice_corso(5069), laurea(lm), ssd(inf, 1).
+corso(5069, lm, inf) :- codice_corso(5069), laurea(lm), ssd(inf).
 
 %  SEZIONE: Relazioni Corsi-Docenti
 %  Corso: 3027, Docente: ARCERI Vincenzo

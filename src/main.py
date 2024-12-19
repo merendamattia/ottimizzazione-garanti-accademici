@@ -3,6 +3,8 @@ from modules.course_parser import CourseParser
 from modules.dataset_loader import DatasetLoader
 import os
 import pandas as pd
+from fuzzywuzzy import process, fuzz
+
 
 
 ############################## VARIABILI GLOBALI #################################
@@ -19,8 +21,13 @@ path_docenti_a_contratto = "dataset/docenti_a_contratto.xlsx"
 # Elenco dei file contenenti i dati degli immatricolati (LT, LM, CU)
 paths_immatricolati = ["dataset/immatricolati/LT.xlsx", "dataset/immatricolati/LM.xlsx", "dataset/immatricolati/CU.xlsx"]
 
+
+# Percorso del file contenente l'elenco dei corsi con i rispettivi massimi teorici
+path_elenco_allegato = "dataset/elenco_allegato.xlsx"
+
 # Numero minimo di insegnamenti richiesti per considerare valido un corso
 NUMERO_MINIMO_DI_INSEGNAMENTI = 9
+
 
 ###################################### FUNZIONI PRINCIPALI ######################################
 
@@ -103,6 +110,11 @@ def init_corsi_matricole(filepathCorsi, filepathProf):
     init_matricole(filepathProf)
     print("Estrazione completata. Rieseguire il programma.")
     exit()
+
+
+
+def clean_text(text):
+    return text.lower().strip().replace("'", "").replace("à", "a").replace("è", "e").replace("é", "e").replace("ì", "i").replace("ò", "o").replace("ù", "u")
 
 def main():
     """
@@ -208,6 +220,48 @@ def main():
     data = dataset_loader.filter_by_values(filters=filters_corsi, only_prefix=True)
     data = data[["Cod. Corso di Studio", "Cod. Tipo Corso"]].drop_duplicates()
     
+    # TODO aggiungere scrittura presidenti corsi di laurea
+    ### SCRITTURA PRESIDENTI -> preferenza
+    dsl_coperture = DatasetLoader(path_coperture)
+    dsl_allegato = DatasetLoader(path_elenco_allegato)
+    
+    
+    
+    dsc = dsl_coperture.filter_by_values(filters=filters_corsi, only_prefix=True)
+    dsc = dsc[["Cod. Corso di Studio", "Cognome", "Nome", "Matricola"]]
+    
+    dsc["Nome e Cognome"] = dsc["Nome"].apply(clean_text) + " " + dsc["Cognome"].apply(clean_text)
+    filter_corsi2  = dict()
+    filter_corsi2["CODICE U-GOV"] = filters_corsi["Cod. Corso di Studio"]
+    dsa = dsl_allegato.filter_by_values(filters=filter_corsi2, only_prefix=True)
+    dsa = dsa[["CODICE U-GOV", "PRESIDENTE"]]
+    dsa["PRESIDENTE"] = dsa["PRESIDENTE"].apply(clean_text)
+    # print(dsa)
+    
+    def most_similar(name, choices, scorer, threshold=90):
+        """
+        Effettua il fuzzy matching tra una stringa e una lista di scelte.
+        Restituisce la corrispondenza migliore se supera la soglia.
+        """
+        best_match, score = process.extractOne(name, choices, scorer=scorer)
+        if score >= threshold:
+            return best_match
+        # se non c'è match ritorna none
+        return None
+    
+    dsc["Match presidente"] = dsc["Nome e Cognome"].apply(
+        lambda x: most_similar(x, dsa["PRESIDENTE"].to_list(), fuzz.token_sort_ratio)
+    )
+    merged_df = dsa.merge(dsc, how="left", left_on="PRESIDENTE", right_on="Match presidente")
+    
+    
+    merged_df = merged_df[merged_df["CODICE U-GOV"] == merged_df["Cod. Corso di Studio"]]
+    # merged_df.to_excel("presidenti.xlsx", index=False)
+    
+    dataset_manager = DatasetManager()
+    dataset_manager.scrivi_presidenti(merged_df, "presidenti")
+    
+    
     # Carica i file strutturalmente identici e li combina in un unico DataFrame
     immatricolati_dfs = []
     for path in paths_immatricolati:
@@ -227,9 +281,15 @@ def main():
     )
     data = data.rename(columns={"Valore Indicatore": "Immatricolati"})
     
-    # TODO Aggiornare quando si avranno i massimi teorici per ciascun corso
-    # data["Massimo Teorico"] = 250
-    data["Massimo Teorico"] = data["Immatricolati"]
+    # carica il df al path di "path_elenco_allegato" e mappa su "Massimo Teorico" del df "data"
+    # i valori contenuti nella colonna "N. max" dove il "Cod. Corso di Studio" (data) è uguale a "CODICE U-GOV"(df_allegato)
+    df_allegato = pd.read_excel(path_elenco_allegato, engine="openpyxl", dtype=str)
+    mapping_massimo_teorico = df_allegato.set_index("CODICE U-GOV")["N. max"].to_dict()
+    data["Massimo Teorico"] = data["Cod. Corso di Studio"].map(mapping_massimo_teorico)
+    # se il valore di "Massimo Teorico" è nullo, allora sostituisci con il valore di "Immatricolati"
+    data["Massimo Teorico"] = data["Massimo Teorico"].fillna(data["Immatricolati"])
+
+    # data.to_excel("tmp.xlsx", index=False)
     
     dataset_manager = DatasetManager()
     dataset_manager.scrivi_ministeriali(data, "minesteriali")

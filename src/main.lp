@@ -3,23 +3,39 @@
 % peso(5).
 peso(10).
 
-% Determina il numero minimo e massimo di garanti per un corso, come richiesto dalla normativa ministeriale.
-% L'aggregato considera i docenti assegnati alle cattedre del corso, escludendo quelli nella fascia 'c' 
-% (docenti a contratto), poiché la fascia è già filtrata implicitamente dalla definizione di `docente/4`.
-% 
-% - `Minimo`: rappresenta il numero minimo di garanti richiesto dal ministeriale per il corso.
-% - `Massimo`: in questo contesto, è posto uguale a `Minimo`, ma può essere aggiornato in una versione successiva
-%   per gestire un intervallo flessibile di garanti.
+% Generazione dei garanti non a contratto come possibili garanti.
+% Questa regola considera i docenti appartenenti alle fasce 'td' (tempo determinato) 
+% e 'ti' (tempo indeterminato) per l'assegnazione come garanti di un corso. 
+% I docenti a contratto (fascia 'c') sono esclusi dal predicato tramite la condizione `Fascia != c`.
+%
+% Il numero minimo di garanti è calcolato sottraendo dal minimo complessivo richiesto per il corso 
+% (MinimoComplessivo) il numero massimo di docenti a contratto consentiti (MassimoDocentiContratto).
+% Il numero massimo di garanti non a contratto coincide con il minimo complessivo richiesto per il corso 
+% (MinimoComplessivo).
+%
+% Esempio:
+% Per un corso con un minimo complessivo di 9 garanti e un massimo di 2 docenti a contratto:
+% - Minimo garanti non a contratto = 9 - 2 = 7
+% - Massimo garanti non a contratto = 9
 Minimo{
       garante(Docente, Corso, Peso, Fascia) :
-            cattedra(Corso, Docente, _, _),
             peso(Peso),
-            docente(Docente, Fascia, _, _),
             fascia(Fascia),
-            Fascia != c % Non serve perche' docente/4 usa solo fascie del tipo 'td' e 'ti' 
+            Fascia != c,
+
+            % Docente 1
+            cattedra(Corso, Docente, _, _),
+            docente(Docente, Fascia, _),
+            
+            % Docente 2
+            cattedra(Corso, Docente2, _, _),
+            docente(Docente2, Fascia, _),
+
+            Docente >= Docente2
 }Massimo :-
-      ministeriale(Corso, Minimo, _, _, _),
-      Massimo = Minimo.
+      ministeriale(Corso, MinimoComplessivo, _, _, MassimoDocentiContratto),
+      Minimo = MinimoComplessivo - MassimoDocentiContratto,
+      Massimo = MinimoComplessivo.
 
 % Generazione dei docenti a contratto come possibili garanti.
 % Questa regola considera i docenti indicati come 'jolly', ovvero quelli che 
@@ -29,16 +45,13 @@ Minimo{
 {     
       garante(Docente, Corso, 10, c) :
             jolly(Docente),
-            codice_corso(Corso),
-            peso(10),
-
             jolly(Docente2),
+      
             codice_corso(Corso),
-            peso(10),
 
-            Docente > Docente2
+            Docente >= Docente2
 
-}Massimo :- ministeriale(Corso, _, _, _, Massimo).
+}MassimoDocentiContratto :- ministeriale(Corso, _, _, _, MassimoDocentiContratto).
 
 % Calcola il numero di docenti a tempo indeterminato assegnati come garanti a un determinato corso.
 % Il numero è calcolato sommando i pesi di tutti i docenti nella fascia 'ti' associati al corso 
@@ -127,8 +140,8 @@ somma_pesi_corso(Corso, Somma) :-
 numero_garanti_che_afferiscono(Numero, Corso) :- 
       SommaPesi = #sum {
             Peso ,Docente : garante(Docente, Corso, Peso, _),
-                        docente(Docente, _, SettoreSSD, _),
-                        corso(Corso, _, SettoreSSD, _)
+                        docente(Docente, _, SettoreSSD),
+                        corso(Corso, _, SettoreSSD)
       },
       codice_corso(Corso),
       Numero = SommaPesi / 10.
@@ -137,15 +150,16 @@ numero_garanti_che_afferiscono(Numero, Corso) :-
 % Esclude i docenti a contratto (fascia 'c') e conta il numero di docenti in altre fasce
 % che sono assegnati al corso.
 numero_garanti_di_riferimento(Numero, Corso) :- 
-      Numero = #count {Docente, Corso : garante(Docente, Corso, _, Fascia), Fascia != c },
-      codice_corso(Corso).
+      codice_corso(Corso),
+      Numero = #count {Docente : garante(Docente, Corso, _, Fascia), Fascia != c }.
+      
 
 % Vincolo: il numero di garanti che afferiscono al settore scientifico-disciplinare (SSD)
 % di un corso deve essere almeno pari alla metà del numero totale di docenti di riferimento
 % assegnati al corso. Se non soddisfatto, la soluzione viene scartata.
-% :- numero_garanti_che_afferiscono(Aff, Corso), 
-%       numero_garanti_di_riferimento(Tot, Corso),
-%       2 * Aff <= Tot. 
+:- numero_garanti_che_afferiscono(Aff, Corso), 
+      numero_garanti_di_riferimento(Tot, Corso),
+      2 * Aff <= Tot. 
 
 % Calcola il numero di docenti a contratto assegnati a ciascun corso.
 % Questo predicato è utilizzato per verificare che il numero massimo di docenti
@@ -174,46 +188,49 @@ garanti_per_corso(Corso, Numero) :-
 % il valore massimo specificato dalla regola ministeriale.
 % Se il numero di docenti a contratto assegnati supera il massimo consentito, la soluzione viene scartata.
 :- jolly_per_corso(Corso, Numero),
-      corso(Corso, Laurea, _, _),
+      corso(Corso, Laurea, _),
       ministeriale(Corso, _, _, _, Massimo_numero_docenti_a_contratto),
       Numero > Massimo_numero_docenti_a_contratto.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% ! Priorità generali
 % Massimizzare i docenti a tempo determinato (ricercatori)
-#maximize { 50 : garante(_, _, _, td) }.
+#maximize { 50, Docente : garante(Docente, _, _, td) }.
 
 % Massimizzare i docenti a tempo indeterminato
-#maximize { 40 : garante(_, _, _, ti) }.
+#maximize { 40, Docente : garante(Docente, _, _, ti) }.
 
 % Minimizzare i docenti a contratto
-#maximize { 32 : garante(_, _, _, c) }.
+#maximize { 32, Docente : garante(Docente, _, _, c) }.
 
 % Massimizzare i docenti con peso 10
-#maximize { 25 : garante(_, _, Peso, _), Peso = 10 }.
+#maximize { 25, Docente : garante(Docente, _, Peso, _), Peso = 10 }.
 
 % Minimizzare i docenti con peso 5
 #minimize { 100, Docente : garante(Docente, _, Peso, _), Peso = 5 }.
+
+% % Massimizza i presidenti che sono garanti nel loro corso di laurea
+#maximize { 50, Docente, Corso :  garante(Docente, Corso, _, _), presidente(Docente, Corso) }.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% ! 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% ! Massimizzo i docenti con TAF maggiore
-#maximize { 25 : garante(Docente, Corso, _, _), 
+#maximize { 25, Docente : garante(Docente, Corso, _, _), 
                   cattedra(Corso, Docente, _, TAF), 
                   TAF = a}.
-#maximize { 18 : garante(Docente, Corso, _, _), 
+#maximize { 18, Docente : garante(Docente, Corso, _, _), 
                   cattedra(Corso, Docente, _, TAF), 
                   TAF = b}.
-#maximize { 10 : garante(Docente, Corso, _, _), 
+#maximize { 10, Docente : garante(Docente, Corso, _, _), 
                   cattedra(Corso, Docente, _, TAF), 
                   TAF = c}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% ! 
 
 % Ottimizzare i garanti con SSD caratterizzante
-#maximize { 20 : garante(Docente, Corso, _, _), 
-                  docente(Docente, _, SettoreSSD, _), 
-                  corso(Corso, _, SettoreSSD, _) }.
+#maximize { 20, Docente : garante(Docente, Corso, _, _), 
+                  docente(Docente, _, SettoreSSD), 
+                  corso(Corso, _, SettoreSSD) }.
 
 % Minimizzo il numero di garanti per ogni corso
-#minimize { Penalita : garanti_per_corso(Corso, Numero), Penalita = Numero * 10 }.
+#minimize { Penalita, Corso : garanti_per_corso(Corso, Numero), Penalita = Numero * 10 }.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% ! Show
 % #show garanti_per_corso/2.

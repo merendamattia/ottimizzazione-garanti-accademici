@@ -1,284 +1,41 @@
 %  SEZIONE: Tipi di Corso
 laurea(lt).
 laurea(lm).
-laurea(ltps).
+laurea(lcpb).
 laurea(lm6).
-laurea(lmsm).
-laurea(ltsm).
+laurea(lcpa).
 laurea(lm5).
-laurea(ltss).
-laurea(lmi).
-laurea(lmss).
+laurea(lcpc).
 
 %  SEZIONE: SSD
-ssd(fis, 7).
-ssd(fis, 3).
-ssd(agr, 19).
-ssd(agr, 17).
-ssd(mat, 5).
-ssd(lart, 3).
-ssd(ius, 1).
-ssd(bio, 14).
-ssd(med, 42).
-ssd(lfillet, 4).
-ssd(med, 10).
-ssd(mat, 8).
-ssd(secsp, 8).
-ssd(mpsi, 2).
-ssd(inginf, 5).
-ssd(med, 4).
-ssd(agr, 15).
-ssd(secss, 6).
-ssd(fis, 1).
-ssd(mfil, 8).
-ssd(med, 21).
-ssd(secsp, 7).
-ssd(med, 50).
-ssd(med, 44).
-ssd(ius, 11).
-ssd(ius, 5).
-ssd(ius, 20).
-ssd(llin, 10).
-ssd(chim, 8).
-ssd(mped, 3).
-ssd(mat, 2).
-ssd(bio, 10).
-ssd(med, 7).
-ssd(med, 46).
-ssd(bio, 16).
-ssd(inf, 1).
-ssd(secsp, 11).
-ssd(mpsi, 8).
-ssd(agr, 1).
-ssd(vet, 3).
-ssd(sps, 10).
-ssd(geo, 2).
-ssd(geo, 5).
-ssd(geo, 3).
-ssd(llin, 1).
-ssd(icar, 2).
-ssd(icar, 5).
-ssd(chim, 3).
-ssd(vet, 4).
-ssd(med, 31).
-ssd(med, 32).
-ssd(med, 41).
-ssd(sps, 7).
-ssd(secsp, 1).
-ssd(secsp, 2).
-ssd(chim, 6).
-ssd(agr, 16).
-ssd(bio, 9).
-ssd(vet, 2).
-ssd(secsp, 12).
-ssd(med, 3).
-ssd(med, 5).
-ssd(bio, 7).
-ssd(bio, 13).
-ssd(mped, 4).
-ssd(bio, 18).
-ssd(ingind, 12).
-ssd(agr, 3).
-ssd(inginf, 2).
-ssd(icar, 9).
-ssd(inginf, 3).
-ssd(mat, 4).
-ssd(ius, 4).
-ssd(ius, 12).
-ssd(mat, 3).
-ssd(llin, 13).
-ssd(chim, 7).
-ssd(icar, 8).
-ssd(med, 40).
-ssd(icar, 18).
-ssd(chim, 11).
-ssd(vet, 7).
-ssd(chim, 1).
-ssd(sps, 11).
-ssd(llin, 12).
-ssd(chim, 9).
-ssd(vet, 8).
-ssd(ius, 15).
-ssd(ius, 17).
-ssd(inginf, 1).
-ssd(mfil, 5).
-ssd(med, 49).
-ssd(med, 38).
-ssd(ingind, 35).
-ssd(mat, 7).
-ssd(bio, 11).
-ssd(ius, 19).
-ssd(sps, 13).
-ssd(med, 45).
-ssd(med, 17).
-ssd(fis, 2).
-ssd(ius, 18).
-ssd(lart, 5).
-ssd(geo, 8).
-ssd(ingind, 17).
-ssd(ingind, 10).
-ssd(vet, 10).
-ssd(bio, 2).
-ssd(mpsi, 1).
-ssd(med, 43).
-ssd(med, 6).
-ssd(llin, 21).
-ssd(med, 9).
-ssd(vet, 5).
-ssd(vet, 1).
-ssd(med, 28).
-ssd(chim, 10).
-ssd(chim, 2).
-ssd(chim, 4).
-ssd(bio, 8).
-ssd(secsp, 6).
-ssd(lart, 7).
-ssd(bio, 3).
-ssd(mpsi, 5).
-ssd(med, 23).
-ssd(ius, 13).
-ssd(med, 30).
-ssd(lant, 2).
-ssd(icar, 20).
-ssd(icar, 3).
-ssd(ingind, 8).
-ssd(chim, 12).
-ssd(ius, 16).
-ssd(sps, 6).
-ssd(sps, 4).
-ssd(sps, 2).
-ssd(lfillet, 10).
-ssd(ingind, 11).
-ssd(med, 33).
-ssd(lfillet, 13).
-ssd(secss, 1).
-ssd(ingind, 21).
-ssd(geo, 4).
-ssd(sps, 8).
-ssd(icar, 1).
-ssd(inginf, 7).
-ssd(mpsi, 4).
-ssd(ius, 10).
-ssd(icar, 19).
-ssd(ingind, 14).
-ssd(ingind, 32).
-ssd(medf, 1).
-ssd(medf, 2).
-ssd(inginf, 4).
-ssd(secss, 3).
-ssd(med, 8).
-ssd(icar, 15).
-ssd(med, 34).
-ssd(med, 18).
-ssd(icar, 14).
-ssd(med, 15).
-ssd(med, 36).
-ssd(ius, 8).
-ssd(med, 47).
-ssd(llin, 2).
-ssd(msto, 1).
-ssd(msto, 9).
-ssd(med, 25).
-ssd(mpsi, 7).
-ssd(med, 13).
-ssd(llin, 4).
-ssd(fis, 8).
-ssd(med, 35).
-ssd(med, 19).
-ssd(agr, 18).
-ssd(mfil, 6).
-ssd(lart, 2).
-ssd(lor, 21).
-ssd(ingind, 15).
-ssd(mped, 1).
-ssd(bio, 12).
-ssd(med, 29).
-ssd(lart, 4).
-ssd(med, 14).
-ssd(mfil, 3).
-ssd(icar, 13).
-ssd(ingind, 34).
-ssd(ingind, 9).
-ssd(ius, 21).
-ssd(geo, 11).
-ssd(med, 22).
-ssd(med, 12).
-ssd(bio, 17).
-ssd(ingind, 22).
-ssd(agr, 2).
-ssd(bio, 1).
-ssd(ingind, 13).
-ssd(mggr, 1).
-ssd(vet, 6).
-ssd(msto, 4).
-ssd(icar, 10).
-ssd(vet, 9).
-ssd(icar, 17).
-ssd(bio, 5).
-ssd(mdea, 1).
-ssd(icar, 4).
-ssd(ius, 7).
-ssd(agr, 7).
-ssd(lfillet, 14).
-ssd(geo, 10).
-ssd(ius, 14).
-ssd(lant, 3).
-ssd(med, 37).
-ssd(secss, 2).
-ssd(mat, 9).
-ssd(llin, 14).
-ssd(mat, 6).
-ssd(bio, 19).
-ssd(bio, 6).
-ssd(ingind, 16).
-ssd(mped, 2).
-ssd(med, 24).
-ssd(lfillet, 2).
-ssd(ius, 9).
-ssd(med, 1).
-ssd(lart, 6).
-ssd(secss, 4).
-ssd(geo, 6).
-ssd(lfillet, 12).
-ssd(llin, 9).
-ssd(llin, 8).
-ssd(mfil, 4).
-ssd(lart, 1).
-ssd(geo, 1).
-ssd(geo, 7).
-ssd(lant, 7).
-ssd(lant, 9).
-ssd(bio, 4).
-ssd(mggr, 2).
-ssd(icar, 12).
-ssd(med, 11).
-ssd(ius, 3).
-ssd(mpsi, 6).
-ssd(med, 26).
-ssd(mpsi, 3).
-ssd(med, 39).
-ssd(llin, 5).
-ssd(llin, 3).
-ssd(lfillet, 11).
-ssd(fis, 4).
-ssd(lfillet, 9).
-ssd(icar, 6).
-ssd(lfillet, 6).
-ssd(med, 2).
-ssd(msto, 8).
-ssd(sps, 12).
-ssd(med, 16).
-ssd(icar, 7).
-ssd(secsp, 10).
-ssd(mfil, 1).
-ssd(mfil, 2).
-ssd(ingind, 31).
-ssd(secsp, 3).
-ssd(llin, 7).
-ssd(lant, 10).
-ssd(lant, 6).
-ssd(lfillet, 8).
-ssd(msto, 2).
+ssd(fis).
+ssd(agr).
+ssd(mat).
+ssd(lart).
+ssd(ius).
+ssd(bio).
+ssd(med).
+ssd(lfillet).
+ssd(secsp).
+ssd(mpsi).
+ssd(inginf).
+ssd(secss).
+ssd(mfil).
+ssd(llin).
+ssd(chim).
+ssd(mped).
+ssd(inf).
+ssd(vet).
+ssd(sps).
+ssd(geo).
+ssd(icar).
+ssd(ingind).
+ssd(lant).
+ssd(medf).
+ssd(msto).
+ssd(lor).
+ssd(mggr).
+ssd(mdea).
 
 %  SEZIONE: TAF
 taf(a).
@@ -494,205 +251,677 @@ codice_corso(5010).
 
 %  SEZIONE: Informazioni Corsi
 %  Corso: 3023 (lt)
-corso(3023, lt, fis, 7) :- codice_corso(3023), laurea(lt), ssd(fis, 7).
+corso(3023, lt, fis) :- codice_corso(3023), laurea(lt), ssd(fis).
+%  Corso: 3023 (lt)
+corso(3023, lt, chim) :- codice_corso(3023), laurea(lt), ssd(chim).
+%  Corso: 3023 (lt)
+corso(3023, lt, mat) :- codice_corso(3023), laurea(lt), ssd(mat).
+%  Corso: 3023 (lt)
+corso(3023, lt, bio) :- codice_corso(3023), laurea(lt), ssd(bio).
 %  Corso: 3026 (lt)
-corso(3026, lt, fis, 7) :- codice_corso(3026), laurea(lt), ssd(fis, 7).
+corso(3026, lt, fis) :- codice_corso(3026), laurea(lt), ssd(fis).
+%  Corso: 3026 (lt)
+corso(3026, lt, chim) :- codice_corso(3026), laurea(lt), ssd(chim).
+%  Corso: 3026 (lt)
+corso(3026, lt, mat) :- codice_corso(3026), laurea(lt), ssd(mat).
 %  Corso: 5036 (lm)
-corso(5036, lm, fis, 3) :- codice_corso(5036), laurea(lm), ssd(fis, 3).
+corso(5036, lm, fis) :- codice_corso(5036), laurea(lm), ssd(fis).
 %  Corso: 5045 (lm)
-corso(5045, lm, agr, 19) :- codice_corso(5045), laurea(lm), ssd(agr, 19).
+corso(5045, lm, chim) :- codice_corso(5045), laurea(lm), ssd(chim).
+%  Corso: 5045 (lm)
+corso(5045, lm, bio) :- codice_corso(5045), laurea(lm), ssd(bio).
+%  Corso: 5045 (lm)
+corso(5045, lm, vet) :- codice_corso(5045), laurea(lm), ssd(vet).
+%  Corso: 5045 (lm)
+corso(5045, lm, med) :- codice_corso(5045), laurea(lm), ssd(med).
 %  Corso: 5065 (lm)
-corso(5065, lm, agr, 17) :- codice_corso(5065), laurea(lm), ssd(agr, 17).
-%  Corso: 3068 (lt)
-corso(3068, lt, agr, 17) :- codice_corso(3068), laurea(lt), ssd(agr, 17).
+corso(5065, lm, agr) :- codice_corso(5065), laurea(lm), ssd(agr).
+%  Corso: 5065 (lm)
+corso(5065, lm, inginf) :- codice_corso(5065), laurea(lm), ssd(inginf).
+%  Corso: 5065 (lm)
+corso(5065, lm, vet) :- codice_corso(5065), laurea(lm), ssd(vet).
+%  Corso: 3068 (lcpb)
+corso(3068, lcpb, agr) :- codice_corso(3068), laurea(lcpb), ssd(agr).
+%  Corso: 3068 (lcpb)
+corso(3068, lcpb, chim) :- codice_corso(3068), laurea(lcpb), ssd(chim).
+%  Corso: 3068 (lcpb)
+corso(3068, lcpb, vet) :- codice_corso(3068), laurea(lcpb), ssd(vet).
 %  Corso: 3011 (lt)
-corso(3011, lt, mat, 5) :- codice_corso(3011), laurea(lt), ssd(mat, 5).
+corso(3011, lt, icar) :- codice_corso(3011), laurea(lt), ssd(icar).
+%  Corso: 3011 (lt)
+corso(3011, lt, fis) :- codice_corso(3011), laurea(lt), ssd(fis).
+%  Corso: 3011 (lt)
+corso(3011, lt, mat) :- codice_corso(3011), laurea(lt), ssd(mat).
+%  Corso: 3011 (lt)
+corso(3011, lt, ingind) :- codice_corso(3011), laurea(lt), ssd(ingind).
+%  Corso: 3011 (lt)
+corso(3011, lt, chim) :- codice_corso(3011), laurea(lt), ssd(chim).
 %  Corso: 3057 (lt)
-corso(3057, lt, lart, 3) :- codice_corso(3057), laurea(lt), ssd(lart, 3).
+corso(3057, lt, lart) :- codice_corso(3057), laurea(lt), ssd(lart).
+%  Corso: 3057 (lt)
+corso(3057, lt, icar) :- codice_corso(3057), laurea(lt), ssd(icar).
+%  Corso: 3057 (lt)
+corso(3057, lt, chim) :- codice_corso(3057), laurea(lt), ssd(chim).
+%  Corso: 3057 (lt)
+corso(3057, lt, ingind) :- codice_corso(3057), laurea(lt), ssd(ingind).
 %  Corso: 5048 (lm)
-corso(5048, lm, lart, 3) :- codice_corso(5048), laurea(lm), ssd(lart, 3).
+corso(5048, lm, lart) :- codice_corso(5048), laurea(lm), ssd(lart).
+%  Corso: 5048 (lm)
+corso(5048, lm, icar) :- codice_corso(5048), laurea(lm), ssd(icar).
+%  Corso: 5048 (lm)
+corso(5048, lm, msto) :- codice_corso(5048), laurea(lm), ssd(msto).
+%  Corso: 5048 (lm)
+corso(5048, lm, ius) :- codice_corso(5048), laurea(lm), ssd(ius).
 %  Corso: 5078 (lm)
-corso(5078, lm, lart, 3) :- codice_corso(5078), laurea(lm), ssd(lart, 3).
+corso(5078, lm, lfillet) :- codice_corso(5078), laurea(lm), ssd(lfillet).
+%  Corso: 5078 (lm)
+corso(5078, lm, mdea) :- codice_corso(5078), laurea(lm), ssd(mdea).
+%  Corso: 5078 (lm)
+corso(5078, lm, lart) :- codice_corso(5078), laurea(lm), ssd(lart).
+%  Corso: 5078 (lm)
+corso(5078, lm, msto) :- codice_corso(5078), laurea(lm), ssd(msto).
+%  Corso: 5078 (lm)
+corso(5078, lm, mggr) :- codice_corso(5078), laurea(lm), ssd(mggr).
+%  Corso: 5078 (lm)
+corso(5078, lm, sps) :- codice_corso(5078), laurea(lm), ssd(sps).
+%  Corso: 5078 (lm)
+corso(5078, lm, ius) :- codice_corso(5078), laurea(lm), ssd(ius).
 %  Corso: 3051 (lt)
-corso(3051, lt, lart, 3) :- codice_corso(3051), laurea(lt), ssd(lart, 3).
+corso(3051, lt, lart) :- codice_corso(3051), laurea(lt), ssd(lart).
+%  Corso: 3051 (lt)
+corso(3051, lt, msto) :- codice_corso(3051), laurea(lt), ssd(msto).
+%  Corso: 3051 (lt)
+corso(3051, lt, sps) :- codice_corso(3051), laurea(lt), ssd(sps).
+%  Corso: 3051 (lt)
+corso(3051, lt, secsp) :- codice_corso(3051), laurea(lt), ssd(secsp).
+%  Corso: 3051 (lt)
+corso(3051, lt, mpsi) :- codice_corso(3051), laurea(lt), ssd(mpsi).
+%  Corso: 3051 (lt)
+corso(3051, lt, mfil) :- codice_corso(3051), laurea(lt), ssd(mfil).
 %  Corso: 3004 (lt)
-corso(3004, lt, ius, 1) :- codice_corso(3004), laurea(lt), ssd(ius, 1).
+corso(3004, lt, secss) :- codice_corso(3004), laurea(lt), ssd(secss).
+%  Corso: 3004 (lt)
+corso(3004, lt, secsp) :- codice_corso(3004), laurea(lt), ssd(secsp).
+%  Corso: 3004 (lt)
+corso(3004, lt, ius) :- codice_corso(3004), laurea(lt), ssd(ius).
 %  Corso: 3062 (lt)
-corso(3062, lt, mat, 5) :- codice_corso(3062), laurea(lt), ssd(mat, 5).
-%  Corso: 3071 (ltps)
-corso(3071, ltps, bio, 14) :- codice_corso(3071), laurea(ltps), ssd(bio, 14).
+corso(3062, lt, fis) :- codice_corso(3062), laurea(lt), ssd(fis).
+%  Corso: 3062 (lt)
+corso(3062, lt, chim) :- codice_corso(3062), laurea(lt), ssd(chim).
+%  Corso: 3062 (lt)
+corso(3062, lt, mat) :- codice_corso(3062), laurea(lt), ssd(mat).
+%  Corso: 3071 (lt)
+corso(3071, lt, fis) :- codice_corso(3071), laurea(lt), ssd(fis).
+%  Corso: 3071 (lt)
+corso(3071, lt, mpsi) :- codice_corso(3071), laurea(lt), ssd(mpsi).
+%  Corso: 3071 (lt)
+corso(3071, lt, bio) :- codice_corso(3071), laurea(lt), ssd(bio).
+%  Corso: 3071 (lt)
+corso(3071, lt, med) :- codice_corso(3071), laurea(lt), ssd(med).
 %  Corso: 5053 (lm)
-corso(5053, lm, bio, 14) :- codice_corso(5053), laurea(lm), ssd(bio, 14).
-%  Corso: 3044 (ltps)
-corso(3044, ltps, bio, 14) :- codice_corso(3044), laurea(ltps), ssd(bio, 14).
-%  Corso: 3049 (ltps)
-corso(3049, ltps, bio, 14) :- codice_corso(3049), laurea(ltps), ssd(bio, 14).
+corso(5053, lm, mpsi) :- codice_corso(5053), laurea(lm), ssd(mpsi).
+%  Corso: 3044 (lcpb)
+corso(3044, lcpb, fis) :- codice_corso(3044), laurea(lcpb), ssd(fis).
+%  Corso: 3044 (lcpb)
+corso(3044, lcpb, mpsi) :- codice_corso(3044), laurea(lcpb), ssd(mpsi).
+%  Corso: 3044 (lcpb)
+corso(3044, lcpb, bio) :- codice_corso(3044), laurea(lcpb), ssd(bio).
+%  Corso: 3044 (lcpb)
+corso(3044, lcpb, med) :- codice_corso(3044), laurea(lcpb), ssd(med).
+%  Corso: 3049 (lcpb)
+corso(3049, lcpb, vet) :- codice_corso(3049), laurea(lcpb), ssd(vet).
+%  Corso: 3049 (lcpb)
+corso(3049, lcpb, fis) :- codice_corso(3049), laurea(lcpb), ssd(fis).
+%  Corso: 3049 (lcpb)
+corso(3049, lcpb, agr) :- codice_corso(3049), laurea(lcpb), ssd(agr).
+%  Corso: 3049 (lcpb)
+corso(3049, lcpb, sps) :- codice_corso(3049), laurea(lcpb), ssd(sps).
+%  Corso: 3049 (lcpb)
+corso(3049, lcpb, inginf) :- codice_corso(3049), laurea(lcpb), ssd(inginf).
+%  Corso: 3049 (lcpb)
+corso(3049, lcpb, ingind) :- codice_corso(3049), laurea(lcpb), ssd(ingind).
+%  Corso: 3049 (lcpb)
+corso(3049, lcpb, med) :- codice_corso(3049), laurea(lcpb), ssd(med).
+%  Corso: 3049 (lcpb)
+corso(3049, lcpb, chim) :- codice_corso(3049), laurea(lcpb), ssd(chim).
+%  Corso: 3049 (lcpb)
+corso(3049, lcpb, bio) :- codice_corso(3049), laurea(lcpb), ssd(bio).
 %  Corso: 5074 (lm6)
-corso(5074, lm6, bio, 14) :- codice_corso(5074), laurea(lm6), ssd(bio, 14).
+corso(5074, lm6, fis) :- codice_corso(5074), laurea(lm6), ssd(fis).
+%  Corso: 5074 (lm6)
+corso(5074, lm6, ingind) :- codice_corso(5074), laurea(lm6), ssd(ingind).
+%  Corso: 5074 (lm6)
+corso(5074, lm6, bio) :- codice_corso(5074), laurea(lm6), ssd(bio).
+%  Corso: 5074 (lm6)
+corso(5074, lm6, med) :- codice_corso(5074), laurea(lm6), ssd(med).
 %  Corso: 5027 (lm6)
-corso(5027, lm6, bio, 14) :- codice_corso(5027), laurea(lm6), ssd(bio, 14).
-%  Corso: 3041 (ltps)
-corso(3041, ltps, med, 42) :- codice_corso(3041), laurea(ltps), ssd(med, 42).
-%  Corso: 3067 (ltps)
-corso(3067, ltps, med, 42) :- codice_corso(3067), laurea(ltps), ssd(med, 42).
-%  Corso: 3047 (ltps)
-corso(3047, ltps, med, 42) :- codice_corso(3047), laurea(ltps), ssd(med, 42).
-%  Corso: 5028 (lmsm)
-corso(5028, lmsm, med, 42) :- codice_corso(5028), laurea(lmsm), ssd(med, 42).
-%  Corso: 3042 (ltps)
-corso(3042, ltps, med, 42) :- codice_corso(3042), laurea(ltps), ssd(med, 42).
-%  Corso: 3048 (ltps)
-corso(3048, ltps, med, 42) :- codice_corso(3048), laurea(ltps), ssd(med, 42).
+corso(5027, lm6, fis) :- codice_corso(5027), laurea(lm6), ssd(fis).
+%  Corso: 5027 (lm6)
+corso(5027, lm6, inf) :- codice_corso(5027), laurea(lm6), ssd(inf).
+%  Corso: 5027 (lm6)
+corso(5027, lm6, med) :- codice_corso(5027), laurea(lm6), ssd(med).
+%  Corso: 5027 (lm6)
+corso(5027, lm6, mpsi) :- codice_corso(5027), laurea(lm6), ssd(mpsi).
+%  Corso: 5027 (lm6)
+corso(5027, lm6, bio) :- codice_corso(5027), laurea(lm6), ssd(bio).
+%  Corso: 3041 (lcpb)
+corso(3041, lcpb, mdea) :- codice_corso(3041), laurea(lcpb), ssd(mdea).
+%  Corso: 3041 (lcpb)
+corso(3041, lcpb, fis) :- codice_corso(3041), laurea(lcpb), ssd(fis).
+%  Corso: 3041 (lcpb)
+corso(3041, lcpb, med) :- codice_corso(3041), laurea(lcpb), ssd(med).
+%  Corso: 3041 (lcpb)
+corso(3041, lcpb, mpsi) :- codice_corso(3041), laurea(lcpb), ssd(mpsi).
+%  Corso: 3041 (lcpb)
+corso(3041, lcpb, bio) :- codice_corso(3041), laurea(lcpb), ssd(bio).
+%  Corso: 3067 (lcpb)
+corso(3067, lcpb, mped) :- codice_corso(3067), laurea(lcpb), ssd(mped).
+%  Corso: 3067 (lcpb)
+corso(3067, lcpb, sps) :- codice_corso(3067), laurea(lcpb), ssd(sps).
+%  Corso: 3067 (lcpb)
+corso(3067, lcpb, secsp) :- codice_corso(3067), laurea(lcpb), ssd(secsp).
+%  Corso: 3067 (lcpb)
+corso(3067, lcpb, med) :- codice_corso(3067), laurea(lcpb), ssd(med).
+%  Corso: 3067 (lcpb)
+corso(3067, lcpb, mpsi) :- codice_corso(3067), laurea(lcpb), ssd(mpsi).
+%  Corso: 3067 (lcpb)
+corso(3067, lcpb, bio) :- codice_corso(3067), laurea(lcpb), ssd(bio).
+%  Corso: 3047 (lcpb)
+corso(3047, lcpb, mpsi) :- codice_corso(3047), laurea(lcpb), ssd(mpsi).
+%  Corso: 3047 (lcpb)
+corso(3047, lcpb, bio) :- codice_corso(3047), laurea(lcpb), ssd(bio).
+%  Corso: 3047 (lcpb)
+corso(3047, lcpb, med) :- codice_corso(3047), laurea(lcpb), ssd(med).
+%  Corso: 5028 (lcpb)
+corso(5028, lcpb, mped) :- codice_corso(5028), laurea(lcpb), ssd(mped).
+%  Corso: 5028 (lcpb)
+corso(5028, lcpb, bio) :- codice_corso(5028), laurea(lcpb), ssd(bio).
+%  Corso: 5028 (lcpb)
+corso(5028, lcpb, medf) :- codice_corso(5028), laurea(lcpb), ssd(medf).
+%  Corso: 5028 (lcpb)
+corso(5028, lcpb, med) :- codice_corso(5028), laurea(lcpb), ssd(med).
+%  Corso: 3042 (lcpb)
+corso(3042, lcpb, fis) :- codice_corso(3042), laurea(lcpb), ssd(fis).
+%  Corso: 3042 (lcpb)
+corso(3042, lcpb, sps) :- codice_corso(3042), laurea(lcpb), ssd(sps).
+%  Corso: 3042 (lcpb)
+corso(3042, lcpb, med) :- codice_corso(3042), laurea(lcpb), ssd(med).
+%  Corso: 3042 (lcpb)
+corso(3042, lcpb, mpsi) :- codice_corso(3042), laurea(lcpb), ssd(mpsi).
+%  Corso: 3042 (lcpb)
+corso(3042, lcpb, bio) :- codice_corso(3042), laurea(lcpb), ssd(bio).
+%  Corso: 3048 (lcpb)
+corso(3048, lcpb, fis) :- codice_corso(3048), laurea(lcpb), ssd(fis).
+%  Corso: 3048 (lcpb)
+corso(3048, lcpb, mpsi) :- codice_corso(3048), laurea(lcpb), ssd(mpsi).
+%  Corso: 3048 (lcpb)
+corso(3048, lcpb, bio) :- codice_corso(3048), laurea(lcpb), ssd(bio).
+%  Corso: 3048 (lcpb)
+corso(3048, lcpb, med) :- codice_corso(3048), laurea(lcpb), ssd(med).
 %  Corso: 3014 (lt)
-corso(3014, lt, lfillet, 4) :- codice_corso(3014), laurea(lt), ssd(lfillet, 4).
+corso(3014, lt, lfillet) :- codice_corso(3014), laurea(lt), ssd(lfillet).
+%  Corso: 3014 (lt)
+corso(3014, lt, msto) :- codice_corso(3014), laurea(lt), ssd(msto).
+%  Corso: 3014 (lt)
+corso(3014, lt, lart) :- codice_corso(3014), laurea(lt), ssd(lart).
+%  Corso: 3014 (lt)
+corso(3014, lt, mggr) :- codice_corso(3014), laurea(lt), ssd(mggr).
+%  Corso: 3014 (lt)
+corso(3014, lt, llin) :- codice_corso(3014), laurea(lt), ssd(llin).
+%  Corso: 3014 (lt)
+corso(3014, lt, lant) :- codice_corso(3014), laurea(lt), ssd(lant).
 %  Corso: 5049 (lm)
-corso(5049, lm, lfillet, 4) :- codice_corso(5049), laurea(lm), ssd(lfillet, 4).
+corso(5049, lm, lfillet) :- codice_corso(5049), laurea(lm), ssd(lfillet).
+%  Corso: 5049 (lm)
+corso(5049, lm, msto) :- codice_corso(5049), laurea(lm), ssd(msto).
+%  Corso: 5049 (lm)
+corso(5049, lm, lart) :- codice_corso(5049), laurea(lm), ssd(lart).
+%  Corso: 5049 (lm)
+corso(5049, lm, llin) :- codice_corso(5049), laurea(lm), ssd(llin).
+%  Corso: 5049 (lm)
+corso(5049, lm, lant) :- codice_corso(5049), laurea(lm), ssd(lant).
 %  Corso: 5026 (lm6)
-corso(5026, lm6, med, 10) :- codice_corso(5026), laurea(lm6), ssd(med, 10).
-%  Corso: 3046 (ltps)
-corso(3046, ltps, med, 10) :- codice_corso(3046), laurea(ltps), ssd(med, 10).
+corso(5026, lm6, fis) :- codice_corso(5026), laurea(lm6), ssd(fis).
+%  Corso: 5026 (lm6)
+corso(5026, lm6, secsp) :- codice_corso(5026), laurea(lm6), ssd(secsp).
+%  Corso: 5026 (lm6)
+corso(5026, lm6, med) :- codice_corso(5026), laurea(lm6), ssd(med).
+%  Corso: 5026 (lm6)
+corso(5026, lm6, mpsi) :- codice_corso(5026), laurea(lm6), ssd(mpsi).
+%  Corso: 5026 (lm6)
+corso(5026, lm6, bio) :- codice_corso(5026), laurea(lm6), ssd(bio).
+%  Corso: 5026 (lm6)
+corso(5026, lm6, medf) :- codice_corso(5026), laurea(lm6), ssd(medf).
+%  Corso: 3046 (lcpb)
+corso(3046, lcpb, mpsi) :- codice_corso(3046), laurea(lcpb), ssd(mpsi).
+%  Corso: 3046 (lcpb)
+corso(3046, lcpb, bio) :- codice_corso(3046), laurea(lcpb), ssd(bio).
+%  Corso: 3046 (lcpb)
+corso(3046, lcpb, ius) :- codice_corso(3046), laurea(lcpb), ssd(ius).
+%  Corso: 3046 (lcpb)
+corso(3046, lcpb, med) :- codice_corso(3046), laurea(lcpb), ssd(med).
 %  Corso: 3030 (lt)
-corso(3030, lt, mat, 8) :- codice_corso(3030), laurea(lt), ssd(mat, 8).
+corso(3030, lt, mat) :- codice_corso(3030), laurea(lt), ssd(mat).
+%  Corso: 3030 (lt)
+corso(3030, lt, inf) :- codice_corso(3030), laurea(lt), ssd(inf).
 %  Corso: 5037 (lm)
-corso(5037, lm, mat, 8) :- codice_corso(5037), laurea(lm), ssd(mat, 8).
+corso(5037, lm, mat) :- codice_corso(5037), laurea(lm), ssd(mat).
 %  Corso: 5077 (lm)
-corso(5077, lm, secsp, 8) :- codice_corso(5077), laurea(lm), ssd(secsp, 8).
+corso(5077, lm, ius) :- codice_corso(5077), laurea(lm), ssd(ius).
+%  Corso: 5077 (lm)
+corso(5077, lm, secsp) :- codice_corso(5077), laurea(lm), ssd(secsp).
 %  Corso: 5059 (lm)
-corso(5059, lm, secsp, 8) :- codice_corso(5059), laurea(lm), ssd(secsp, 8).
-%  Corso: 3019 (ltsm)
-corso(3019, ltsm, med, 42) :- codice_corso(3019), laurea(ltsm), ssd(med, 42).
+corso(5059, lm, secss) :- codice_corso(5059), laurea(lm), ssd(secss).
+%  Corso: 5059 (lm)
+corso(5059, lm, ius) :- codice_corso(5059), laurea(lm), ssd(ius).
+%  Corso: 5059 (lm)
+corso(5059, lm, secsp) :- codice_corso(5059), laurea(lm), ssd(secsp).
+%  Corso: 3019 (lcpa)
+corso(3019, lcpa, med) :- codice_corso(3019), laurea(lcpa), ssd(med).
+%  Corso: 3019 (lcpa)
+corso(3019, lcpa, ius) :- codice_corso(3019), laurea(lcpa), ssd(ius).
+%  Corso: 3019 (lcpa)
+corso(3019, lcpa, mpsi) :- codice_corso(3019), laurea(lcpa), ssd(mpsi).
+%  Corso: 3019 (lcpa)
+corso(3019, lcpa, bio) :- codice_corso(3019), laurea(lcpa), ssd(bio).
+%  Corso: 3019 (lcpa)
+corso(3019, lcpa, medf) :- codice_corso(3019), laurea(lcpa), ssd(medf).
 %  Corso: 5015 (lm)
-corso(5015, lm, inginf, 5) :- codice_corso(5015), laurea(lm), ssd(inginf, 5).
+corso(5015, lm, inginf) :- codice_corso(5015), laurea(lm), ssd(inginf).
 %  Corso: 3061 (lt)
-corso(3061, lt, inginf, 5) :- codice_corso(3061), laurea(lt), ssd(inginf, 5).
+corso(3061, lt, fis) :- codice_corso(3061), laurea(lt), ssd(fis).
+%  Corso: 3061 (lt)
+corso(3061, lt, mat) :- codice_corso(3061), laurea(lt), ssd(mat).
+%  Corso: 3061 (lt)
+corso(3061, lt, inginf) :- codice_corso(3061), laurea(lt), ssd(inginf).
 %  Corso: 5008 (lm5)
-corso(5008, lm5, med, 4) :- codice_corso(5008), laurea(lm5), ssd(med, 4).
+corso(5008, lm5, chim) :- codice_corso(5008), laurea(lm5), ssd(chim).
+%  Corso: 5008 (lm5)
+corso(5008, lm5, bio) :- codice_corso(5008), laurea(lm5), ssd(bio).
+%  Corso: 5008 (lm5)
+corso(5008, lm5, med) :- codice_corso(5008), laurea(lm5), ssd(med).
 %  Corso: 5009 (lm5)
-corso(5009, lm5, med, 4) :- codice_corso(5009), laurea(lm5), ssd(med, 4).
+corso(5009, lm5, chim) :- codice_corso(5009), laurea(lm5), ssd(chim).
+%  Corso: 5009 (lm5)
+corso(5009, lm5, bio) :- codice_corso(5009), laurea(lm5), ssd(bio).
+%  Corso: 5009 (lm5)
+corso(5009, lm5, med) :- codice_corso(5009), laurea(lm5), ssd(med).
 %  Corso: 3000 (lt)
-corso(3000, lt, agr, 15) :- codice_corso(3000), laurea(lt), ssd(agr, 15).
+corso(3000, lt, vet) :- codice_corso(3000), laurea(lt), ssd(vet).
+%  Corso: 3000 (lt)
+corso(3000, lt, fis) :- codice_corso(3000), laurea(lt), ssd(fis).
+%  Corso: 3000 (lt)
+corso(3000, lt, agr) :- codice_corso(3000), laurea(lt), ssd(agr).
+%  Corso: 3000 (lt)
+corso(3000, lt, mat) :- codice_corso(3000), laurea(lt), ssd(mat).
+%  Corso: 3000 (lt)
+corso(3000, lt, med) :- codice_corso(3000), laurea(lt), ssd(med).
+%  Corso: 3000 (lt)
+corso(3000, lt, chim) :- codice_corso(3000), laurea(lt), ssd(chim).
+%  Corso: 3000 (lt)
+corso(3000, lt, bio) :- codice_corso(3000), laurea(lt), ssd(bio).
 %  Corso: 5068 (lm)
-corso(5068, lm, agr, 15) :- codice_corso(5068), laurea(lm), ssd(agr, 15).
+corso(5068, lm, agr) :- codice_corso(5068), laurea(lm), ssd(agr).
+%  Corso: 5068 (lm)
+corso(5068, lm, chim) :- codice_corso(5068), laurea(lm), ssd(chim).
+%  Corso: 5068 (lm)
+corso(5068, lm, bio) :- codice_corso(5068), laurea(lm), ssd(bio).
+%  Corso: 5068 (lm)
+corso(5068, lm, med) :- codice_corso(5068), laurea(lm), ssd(med).
 %  Corso: 3007 (lt)
-corso(3007, lt, fis, 1) :- codice_corso(3007), laurea(lt), ssd(fis, 1).
-%  Corso: 3006 (ltss)
-corso(3006, ltss, ius, 1) :- codice_corso(3006), laurea(ltss), ssd(ius, 1).
-%  Corso: 5050 (lmi)
-corso(5050, lmi, ius, 1) :- codice_corso(5050), laurea(lmi), ssd(ius, 1).
+corso(3007, lt, icar) :- codice_corso(3007), laurea(lt), ssd(icar).
+%  Corso: 3007 (lt)
+corso(3007, lt, fis) :- codice_corso(3007), laurea(lt), ssd(fis).
+%  Corso: 3007 (lt)
+corso(3007, lt, mat) :- codice_corso(3007), laurea(lt), ssd(mat).
+%  Corso: 3007 (lt)
+corso(3007, lt, geo) :- codice_corso(3007), laurea(lt), ssd(geo).
+%  Corso: 3007 (lt)
+corso(3007, lt, chim) :- codice_corso(3007), laurea(lt), ssd(chim).
+%  Corso: 3006 (lcpa)
+corso(3006, lcpa, ius) :- codice_corso(3006), laurea(lcpa), ssd(ius).
+%  Corso: 3006 (lcpa)
+corso(3006, lcpa, med) :- codice_corso(3006), laurea(lcpa), ssd(med).
+%  Corso: 3006 (lcpa)
+corso(3006, lcpa, sps) :- codice_corso(3006), laurea(lcpa), ssd(sps).
+%  Corso: 3006 (lcpa)
+corso(3006, lcpa, secsp) :- codice_corso(3006), laurea(lcpa), ssd(secsp).
+%  Corso: 5050 (lcpc)
+corso(5050, lcpc, fis) :- codice_corso(5050), laurea(lcpc), ssd(fis).
+%  Corso: 5050 (lcpc)
+corso(5050, lcpc, mped) :- codice_corso(5050), laurea(lcpc), ssd(mped).
+%  Corso: 5050 (lcpc)
+corso(5050, lcpc, secsp) :- codice_corso(5050), laurea(lcpc), ssd(secsp).
+%  Corso: 5050 (lcpc)
+corso(5050, lcpc, inginf) :- codice_corso(5050), laurea(lcpc), ssd(inginf).
+%  Corso: 5050 (lcpc)
+corso(5050, lcpc, med) :- codice_corso(5050), laurea(lcpc), ssd(med).
+%  Corso: 5050 (lcpc)
+corso(5050, lcpc, mpsi) :- codice_corso(5050), laurea(lcpc), ssd(mpsi).
+%  Corso: 5050 (lcpc)
+corso(5050, lcpc, bio) :- codice_corso(5050), laurea(lcpc), ssd(bio).
+%  Corso: 5050 (lcpc)
+corso(5050, lcpc, ius) :- codice_corso(5050), laurea(lcpc), ssd(ius).
 %  Corso: 5025 (lm)
-corso(5025, lm, mfil, 8) :- codice_corso(5025), laurea(lm), ssd(mfil, 8).
+corso(5025, lm, mfil) :- codice_corso(5025), laurea(lm), ssd(mfil).
+%  Corso: 5025 (lm)
+corso(5025, lm, mdea) :- codice_corso(5025), laurea(lm), ssd(mdea).
+%  Corso: 5025 (lm)
+corso(5025, lm, lant) :- codice_corso(5025), laurea(lm), ssd(lant).
 %  Corso: 3013 (lt)
-corso(3013, lt, mfil, 8) :- codice_corso(3013), laurea(lt), ssd(mfil, 8).
-%  Corso: 3040 (ltps)
-corso(3040, ltps, med, 21) :- codice_corso(3040), laurea(ltps), ssd(med, 21).
+corso(3013, lt, mfil) :- codice_corso(3013), laurea(lt), ssd(mfil).
+%  Corso: 3013 (lt)
+corso(3013, lt, sps) :- codice_corso(3013), laurea(lt), ssd(sps).
+%  Corso: 3040 (lcpb)
+corso(3040, lcpb, mpsi) :- codice_corso(3040), laurea(lcpb), ssd(mpsi).
+%  Corso: 3040 (lcpb)
+corso(3040, lcpb, inginf) :- codice_corso(3040), laurea(lcpb), ssd(inginf).
+%  Corso: 3040 (lcpb)
+corso(3040, lcpb, bio) :- codice_corso(3040), laurea(lcpb), ssd(bio).
+%  Corso: 3040 (lcpb)
+corso(3040, lcpb, med) :- codice_corso(3040), laurea(lcpb), ssd(med).
 %  Corso: 5003 (lm)
-corso(5003, lm, secsp, 7) :- codice_corso(5003), laurea(lm), ssd(secsp, 7).
-%  Corso: 3043 (ltps)
-corso(3043, ltps, med, 44) :- codice_corso(3043), laurea(ltps), ssd(med, 44).
+corso(5003, lm, secss) :- codice_corso(5003), laurea(lm), ssd(secss).
+%  Corso: 5003 (lm)
+corso(5003, lm, ius) :- codice_corso(5003), laurea(lm), ssd(ius).
+%  Corso: 5003 (lm)
+corso(5003, lm, secsp) :- codice_corso(5003), laurea(lm), ssd(secsp).
+%  Corso: 3043 (lcpb)
+corso(3043, lcpb, fis) :- codice_corso(3043), laurea(lcpb), ssd(fis).
+%  Corso: 3043 (lcpb)
+corso(3043, lcpb, mpsi) :- codice_corso(3043), laurea(lcpb), ssd(mpsi).
+%  Corso: 3043 (lcpb)
+corso(3043, lcpb, bio) :- codice_corso(3043), laurea(lcpb), ssd(bio).
+%  Corso: 3043 (lcpb)
+corso(3043, lcpb, med) :- codice_corso(3043), laurea(lcpb), ssd(med).
 %  Corso: 5047 (lm)
-corso(5047, lm, ius, 5) :- codice_corso(5047), laurea(lm), ssd(ius, 5).
+corso(5047, lm, secss) :- codice_corso(5047), laurea(lm), ssd(secss).
+%  Corso: 5047 (lm)
+corso(5047, lm, secsp) :- codice_corso(5047), laurea(lm), ssd(secsp).
+%  Corso: 5047 (lm)
+corso(5047, lm, ius) :- codice_corso(5047), laurea(lm), ssd(ius).
 %  Corso: 3017 (lt)
-corso(3017, lt, llin, 10) :- codice_corso(3017), laurea(lt), ssd(llin, 10).
+corso(3017, lt, lfillet) :- codice_corso(3017), laurea(lt), ssd(lfillet).
+%  Corso: 3017 (lt)
+corso(3017, lt, msto) :- codice_corso(3017), laurea(lt), ssd(msto).
+%  Corso: 3017 (lt)
+corso(3017, lt, lor) :- codice_corso(3017), laurea(lt), ssd(lor).
+%  Corso: 3017 (lt)
+corso(3017, lt, llin) :- codice_corso(3017), laurea(lt), ssd(llin).
 %  Corso: 3038 (lt)
-corso(3038, lt, mped, 3) :- codice_corso(3038), laurea(lt), ssd(mped, 3).
+corso(3038, lt, mped) :- codice_corso(3038), laurea(lt), ssd(mped).
+%  Corso: 3038 (lt)
+corso(3038, lt, mggr) :- codice_corso(3038), laurea(lt), ssd(mggr).
+%  Corso: 3038 (lt)
+corso(3038, lt, sps) :- codice_corso(3038), laurea(lt), ssd(sps).
+%  Corso: 3038 (lt)
+corso(3038, lt, mpsi) :- codice_corso(3038), laurea(lt), ssd(mpsi).
+%  Corso: 3038 (lt)
+corso(3038, lt, mfil) :- codice_corso(3038), laurea(lt), ssd(mfil).
 %  Corso: 5046 (lm)
-corso(5046, lm, mped, 3) :- codice_corso(5046), laurea(lm), ssd(mped, 3).
-%  Corso: 3066 (lt)
-corso(3066, lt, mped, 3) :- codice_corso(3066), laurea(lt), ssd(mped, 3).
-%  Corso: 3063 (lt)
-corso(3063, lt, bio, 10) :- codice_corso(3063), laurea(lt), ssd(bio, 10).
+corso(5046, lm, msto) :- codice_corso(5046), laurea(lm), ssd(msto).
+%  Corso: 5046 (lm)
+corso(5046, lm, mped) :- codice_corso(5046), laurea(lm), ssd(mped).
+%  Corso: 5046 (lm)
+corso(5046, lm, mggr) :- codice_corso(5046), laurea(lm), ssd(mggr).
+%  Corso: 5046 (lm)
+corso(5046, lm, sps) :- codice_corso(5046), laurea(lm), ssd(sps).
+%  Corso: 5046 (lm)
+corso(5046, lm, secsp) :- codice_corso(5046), laurea(lm), ssd(secsp).
+%  Corso: 3066 (lcpa)
+corso(3066, lcpa, lfillet) :- codice_corso(3066), laurea(lcpa), ssd(lfillet).
+%  Corso: 3066 (lcpa)
+corso(3066, lcpa, llin) :- codice_corso(3066), laurea(lcpa), ssd(llin).
+%  Corso: 3063 (lcpb)
+corso(3063, lcpb, bio) :- codice_corso(3063), laurea(lcpb), ssd(bio).
+%  Corso: 3063 (lcpb)
+corso(3063, lcpb, med) :- codice_corso(3063), laurea(lcpb), ssd(med).
 %  Corso: 3027 (lt)
-corso(3027, lt, inf, 1) :- codice_corso(3027), laurea(lt), ssd(inf, 1).
+corso(3027, lt, fis) :- codice_corso(3027), laurea(lt), ssd(fis).
+%  Corso: 3027 (lt)
+corso(3027, lt, mat) :- codice_corso(3027), laurea(lt), ssd(mat).
+%  Corso: 3027 (lt)
+corso(3027, lt, inf) :- codice_corso(3027), laurea(lt), ssd(inf).
 %  Corso: 3052 (lt)
-corso(3052, lt, secsp, 11) :- codice_corso(3052), laurea(lt), ssd(secsp, 11).
+corso(3052, lt, agr) :- codice_corso(3052), laurea(lt), ssd(agr).
+%  Corso: 3052 (lt)
+corso(3052, lt, secss) :- codice_corso(3052), laurea(lt), ssd(secss).
+%  Corso: 3052 (lt)
+corso(3052, lt, ius) :- codice_corso(3052), laurea(lt), ssd(ius).
+%  Corso: 3052 (lt)
+corso(3052, lt, secsp) :- codice_corso(3052), laurea(lt), ssd(secsp).
 %  Corso: 3021 (lt)
-corso(3021, lt, mpsi, 8) :- codice_corso(3021), laurea(lt), ssd(mpsi, 8).
-%  Corso: 3029 (lt)
-corso(3029, lt, geo, 2) :- codice_corso(3029), laurea(lt), ssd(geo, 2).
-%  Corso: 5072 (lm)
-corso(5072, lm, geo, 2) :- codice_corso(5072), laurea(lm), ssd(geo, 2).
-%  Corso: 5061 (lm)
-corso(5061, lm, geo, 2) :- codice_corso(5061), laurea(lm), ssd(geo, 2).
-%  Corso: 5018 (lm)
-corso(5018, lm, icar, 2) :- codice_corso(5018), laurea(lm), ssd(icar, 2).
-%  Corso: 5011 (lm)
-corso(5011, lm, icar, 2) :- codice_corso(5011), laurea(lm), ssd(icar, 2).
-%  Corso: 5066 (lm)
-corso(5066, lm, icar, 5) :- codice_corso(5066), laurea(lm), ssd(icar, 5).
-%  Corso: 5039 (lm)
-corso(5039, lm, chim, 3) :- codice_corso(5039), laurea(lm), ssd(chim, 3).
-%  Corso: 3024 (lt)
-corso(3024, lt, chim, 3) :- codice_corso(3024), laurea(lt), ssd(chim, 3).
+corso(3021, lt, mpsi) :- codice_corso(3021), laurea(lt), ssd(mpsi).
 %  Corso: 5029 (lm5)
-corso(5029, lm5, vet, 4) :- codice_corso(5029), laurea(lm5), ssd(vet, 4).
+corso(5029, lm5, vet) :- codice_corso(5029), laurea(lm5), ssd(vet).
+%  Corso: 5029 (lm5)
+corso(5029, lm5, fis) :- codice_corso(5029), laurea(lm5), ssd(fis).
+%  Corso: 5029 (lm5)
+corso(5029, lm5, agr) :- codice_corso(5029), laurea(lm5), ssd(agr).
+%  Corso: 5029 (lm5)
+corso(5029, lm5, mat) :- codice_corso(5029), laurea(lm5), ssd(mat).
+%  Corso: 5029 (lm5)
+corso(5029, lm5, inginf) :- codice_corso(5029), laurea(lm5), ssd(inginf).
+%  Corso: 5029 (lm5)
+corso(5029, lm5, chim) :- codice_corso(5029), laurea(lm5), ssd(chim).
+%  Corso: 5029 (lm5)
+corso(5029, lm5, bio) :- codice_corso(5029), laurea(lm5), ssd(bio).
+%  Corso: 3029 (lt)
+corso(3029, lt, fis) :- codice_corso(3029), laurea(lt), ssd(fis).
+%  Corso: 3029 (lt)
+corso(3029, lt, mat) :- codice_corso(3029), laurea(lt), ssd(mat).
+%  Corso: 3029 (lt)
+corso(3029, lt, inf) :- codice_corso(3029), laurea(lt), ssd(inf).
+%  Corso: 3029 (lt)
+corso(3029, lt, geo) :- codice_corso(3029), laurea(lt), ssd(geo).
+%  Corso: 3029 (lt)
+corso(3029, lt, chim) :- codice_corso(3029), laurea(lt), ssd(chim).
+%  Corso: 5072 (lm)
+corso(5072, lm, geo) :- codice_corso(5072), laurea(lm), ssd(geo).
+%  Corso: 5061 (lm)
+corso(5061, lm, secss) :- codice_corso(5061), laurea(lm), ssd(secss).
+%  Corso: 5061 (lm)
+corso(5061, lm, bio) :- codice_corso(5061), laurea(lm), ssd(bio).
+%  Corso: 5018 (lm)
+corso(5018, lm, icar) :- codice_corso(5018), laurea(lm), ssd(icar).
+%  Corso: 5011 (lm)
+corso(5011, lm, icar) :- codice_corso(5011), laurea(lm), ssd(icar).
+%  Corso: 5066 (lm)
+corso(5066, lm, ingind) :- codice_corso(5066), laurea(lm), ssd(ingind).
+%  Corso: 5066 (lm)
+corso(5066, lm, icar) :- codice_corso(5066), laurea(lm), ssd(icar).
+%  Corso: 5066 (lm)
+corso(5066, lm, ius) :- codice_corso(5066), laurea(lm), ssd(ius).
+%  Corso: 5039 (lm)
+corso(5039, lm, chim) :- codice_corso(5039), laurea(lm), ssd(chim).
+%  Corso: 3024 (lt)
+corso(3024, lt, fis) :- codice_corso(3024), laurea(lt), ssd(fis).
+%  Corso: 3024 (lt)
+corso(3024, lt, chim) :- codice_corso(3024), laurea(lt), ssd(chim).
+%  Corso: 3024 (lt)
+corso(3024, lt, mat) :- codice_corso(3024), laurea(lt), ssd(mat).
+%  Corso: 3024 (lt)
+corso(3024, lt, bio) :- codice_corso(3024), laurea(lt), ssd(bio).
 %  Corso: 3020 (lt)
-corso(3020, lt, vet, 4) :- codice_corso(3020), laurea(lt), ssd(vet, 4).
+corso(3020, lt, vet) :- codice_corso(3020), laurea(lt), ssd(vet).
+%  Corso: 3020 (lt)
+corso(3020, lt, fis) :- codice_corso(3020), laurea(lt), ssd(fis).
+%  Corso: 3020 (lt)
+corso(3020, lt, agr) :- codice_corso(3020), laurea(lt), ssd(agr).
+%  Corso: 3020 (lt)
+corso(3020, lt, mat) :- codice_corso(3020), laurea(lt), ssd(mat).
+%  Corso: 3020 (lt)
+corso(3020, lt, inginf) :- codice_corso(3020), laurea(lt), ssd(inginf).
+%  Corso: 3020 (lt)
+corso(3020, lt, chim) :- codice_corso(3020), laurea(lt), ssd(chim).
+%  Corso: 3020 (lt)
+corso(3020, lt, bio) :- codice_corso(3020), laurea(lt), ssd(bio).
 %  Corso: 5069 (lm)
-corso(5069, lm, inf, 1) :- codice_corso(5069), laurea(lm), ssd(inf, 1).
+corso(5069, lm, inf) :- codice_corso(5069), laurea(lm), ssd(inf).
 %  Corso: 5075 (lm)
-corso(5075, lm, agr, 16) :- codice_corso(5075), laurea(lm), ssd(agr, 16).
+corso(5075, lm, ingind) :- codice_corso(5075), laurea(lm), ssd(ingind).
 %  Corso: 5000 (lm)
-corso(5000, lm, agr, 16) :- codice_corso(5000), laurea(lm), ssd(agr, 16).
+corso(5000, lm, agr) :- codice_corso(5000), laurea(lm), ssd(agr).
+%  Corso: 5000 (lm)
+corso(5000, lm, chim) :- codice_corso(5000), laurea(lm), ssd(chim).
+%  Corso: 5000 (lm)
+corso(5000, lm, bio) :- codice_corso(5000), laurea(lm), ssd(bio).
 %  Corso: 3010 (lt)
-corso(3010, lt, fis, 1) :- codice_corso(3010), laurea(lt), ssd(fis, 1).
+corso(3010, lt, fis) :- codice_corso(3010), laurea(lt), ssd(fis).
+%  Corso: 3010 (lt)
+corso(3010, lt, ingind) :- codice_corso(3010), laurea(lt), ssd(ingind).
+%  Corso: 3010 (lt)
+corso(3010, lt, mat) :- codice_corso(3010), laurea(lt), ssd(mat).
+%  Corso: 3010 (lt)
+corso(3010, lt, chim) :- codice_corso(3010), laurea(lt), ssd(chim).
 %  Corso: 5071 (lm)
-corso(5071, lm, bio, 9) :- codice_corso(5071), laurea(lm), ssd(bio, 9).
-%  Corso: 3064 (lt)
-corso(3064, lt, vet, 2) :- codice_corso(3064), laurea(lt), ssd(vet, 2).
+corso(5071, lm, bio) :- codice_corso(5071), laurea(lm), ssd(bio).
+%  Corso: 5071 (lm)
+corso(5071, lm, med) :- codice_corso(5071), laurea(lm), ssd(med).
+%  Corso: 3064 (lcpb)
+corso(3064, lcpb, agr) :- codice_corso(3064), laurea(lcpb), ssd(agr).
+%  Corso: 3064 (lcpb)
+corso(3064, lcpb, bio) :- codice_corso(3064), laurea(lcpb), ssd(bio).
+%  Corso: 3064 (lcpb)
+corso(3064, lcpb, vet) :- codice_corso(3064), laurea(lcpb), ssd(vet).
+%  Corso: 3064 (lcpb)
+corso(3064, lcpb, ingind) :- codice_corso(3064), laurea(lcpb), ssd(ingind).
 %  Corso: 3022 (lt)
-corso(3022, lt, vet, 2) :- codice_corso(3022), laurea(lt), ssd(vet, 2).
+corso(3022, lt, chim) :- codice_corso(3022), laurea(lt), ssd(chim).
+%  Corso: 3022 (lt)
+corso(3022, lt, mat) :- codice_corso(3022), laurea(lt), ssd(mat).
+%  Corso: 3022 (lt)
+corso(3022, lt, agr) :- codice_corso(3022), laurea(lt), ssd(agr).
+%  Corso: 3022 (lt)
+corso(3022, lt, bio) :- codice_corso(3022), laurea(lt), ssd(bio).
 %  Corso: 3054 (lt)
-corso(3054, lt, mat, 5) :- codice_corso(3054), laurea(lt), ssd(mat, 5).
+corso(3054, lt, ingind) :- codice_corso(3054), laurea(lt), ssd(ingind).
+%  Corso: 3054 (lt)
+corso(3054, lt, mat) :- codice_corso(3054), laurea(lt), ssd(mat).
+%  Corso: 3054 (lt)
+corso(3054, lt, icar) :- codice_corso(3054), laurea(lt), ssd(icar).
 %  Corso: 5043 (lm)
-corso(5043, lm, bio, 7) :- codice_corso(5043), laurea(lm), ssd(bio, 7).
+corso(5043, lm, icar) :- codice_corso(5043), laurea(lm), ssd(icar).
+%  Corso: 5043 (lm)
+corso(5043, lm, agr) :- codice_corso(5043), laurea(lm), ssd(agr).
+%  Corso: 5043 (lm)
+corso(5043, lm, geo) :- codice_corso(5043), laurea(lm), ssd(geo).
+%  Corso: 5043 (lm)
+corso(5043, lm, chim) :- codice_corso(5043), laurea(lm), ssd(chim).
+%  Corso: 5043 (lm)
+corso(5043, lm, bio) :- codice_corso(5043), laurea(lm), ssd(bio).
 %  Corso: 3028 (lt)
-corso(3028, lt, bio, 7) :- codice_corso(3028), laurea(lt), ssd(bio, 7).
+corso(3028, lt, agr) :- codice_corso(3028), laurea(lt), ssd(agr).
+%  Corso: 3028 (lt)
+corso(3028, lt, chim) :- codice_corso(3028), laurea(lt), ssd(chim).
+%  Corso: 3028 (lt)
+corso(3028, lt, bio) :- codice_corso(3028), laurea(lt), ssd(bio).
+%  Corso: 3028 (lt)
+corso(3028, lt, geo) :- codice_corso(3028), laurea(lt), ssd(geo).
 %  Corso: 5073 (lm)
-corso(5073, lm, mped, 3) :- codice_corso(5073), laurea(lm), ssd(mped, 3).
+corso(5073, lm, llin) :- codice_corso(5073), laurea(lm), ssd(llin).
 %  Corso: 5062 (lm)
-corso(5062, lm, bio, 18) :- codice_corso(5062), laurea(lm), ssd(bio, 18).
+corso(5062, lm, bio) :- codice_corso(5062), laurea(lm), ssd(bio).
 %  Corso: 995 (lm5)
-corso(995, lm5, ius, 1) :- codice_corso(995), laurea(lm5), ssd(ius, 1).
+corso(995, lm5, secsp) :- codice_corso(995), laurea(lm5), ssd(secsp).
+%  Corso: 995 (lm5)
+corso(995, lm5, ius) :- codice_corso(995), laurea(lm5), ssd(ius).
 %  Corso: 3050 (lt)
-corso(3050, lt, inginf, 2) :- codice_corso(3050), laurea(lt), ssd(inginf, 2).
+corso(3050, lt, fis) :- codice_corso(3050), laurea(lt), ssd(fis).
+%  Corso: 3050 (lt)
+corso(3050, lt, mat) :- codice_corso(3050), laurea(lt), ssd(mat).
+%  Corso: 3050 (lt)
+corso(3050, lt, inginf) :- codice_corso(3050), laurea(lt), ssd(inginf).
 %  Corso: 5052 (lm)
-corso(5052, lm, inginf, 2) :- codice_corso(5052), laurea(lm), ssd(inginf, 2).
+corso(5052, lm, inginf) :- codice_corso(5052), laurea(lm), ssd(inginf).
 %  Corso: 3069 (lt)
-corso(3069, lt, fis, 3) :- codice_corso(3069), laurea(lt), ssd(fis, 3).
+corso(3069, lt, fis) :- codice_corso(3069), laurea(lt), ssd(fis).
+%  Corso: 3069 (lt)
+corso(3069, lt, agr) :- codice_corso(3069), laurea(lt), ssd(agr).
+%  Corso: 3069 (lt)
+corso(3069, lt, mat) :- codice_corso(3069), laurea(lt), ssd(mat).
+%  Corso: 3069 (lt)
+corso(3069, lt, chim) :- codice_corso(3069), laurea(lt), ssd(chim).
+%  Corso: 3069 (lt)
+corso(3069, lt, bio) :- codice_corso(3069), laurea(lt), ssd(bio).
 %  Corso: 5064 (lm)
-corso(5064, lm, agr, 16) :- codice_corso(5064), laurea(lm), ssd(agr, 16).
+corso(5064, lm, agr) :- codice_corso(5064), laurea(lm), ssd(agr).
+%  Corso: 5064 (lm)
+corso(5064, lm, chim) :- codice_corso(5064), laurea(lm), ssd(chim).
 %  Corso: 3065 (lt)
-corso(3065, lt, med, 40) :- codice_corso(3065), laurea(lt), ssd(med, 40).
+corso(3065, lt, bio) :- codice_corso(3065), laurea(lt), ssd(bio).
+%  Corso: 3065 (lt)
+corso(3065, lt, med) :- codice_corso(3065), laurea(lt), ssd(med).
 %  Corso: 3060 (lt)
-corso(3060, lt, fis, 3) :- codice_corso(3060), laurea(lt), ssd(fis, 3).
+corso(3060, lt, lfillet) :- codice_corso(3060), laurea(lt), ssd(lfillet).
+%  Corso: 3060 (lt)
+corso(3060, lt, mdea) :- codice_corso(3060), laurea(lt), ssd(mdea).
+%  Corso: 3060 (lt)
+corso(3060, lt, lart) :- codice_corso(3060), laurea(lt), ssd(lart).
+%  Corso: 3060 (lt)
+corso(3060, lt, msto) :- codice_corso(3060), laurea(lt), ssd(msto).
+%  Corso: 3060 (lt)
+corso(3060, lt, mggr) :- codice_corso(3060), laurea(lt), ssd(mggr).
+%  Corso: 3060 (lt)
+corso(3060, lt, ius) :- codice_corso(3060), laurea(lt), ssd(ius).
 %  Corso: 5055 (lm)
-corso(5055, lm, chim, 1) :- codice_corso(5055), laurea(lm), ssd(chim, 1).
+corso(5055, lm, chim) :- codice_corso(5055), laurea(lm), ssd(chim).
+%  Corso: 5055 (lm)
+corso(5055, lm, secss) :- codice_corso(5055), laurea(lm), ssd(secss).
+%  Corso: 5055 (lm)
+corso(5055, lm, bio) :- codice_corso(5055), laurea(lm), ssd(bio).
 %  Corso: 5013 (lm)
-corso(5013, lm, inginf, 1) :- codice_corso(5013), laurea(lm), ssd(inginf, 1).
+corso(5013, lm, inginf) :- codice_corso(5013), laurea(lm), ssd(inginf).
 %  Corso: 5041 (lm)
-corso(5041, lm, chim, 1) :- codice_corso(5041), laurea(lm), ssd(chim, 1).
+corso(5041, lm, chim) :- codice_corso(5041), laurea(lm), ssd(chim).
 %  Corso: 5014 (lm)
-corso(5014, lm, ingind, 35) :- codice_corso(5014), laurea(lm), ssd(ingind, 35).
+corso(5014, lm, ingind) :- codice_corso(5014), laurea(lm), ssd(ingind).
 %  Corso: 5081 (lm)
-corso(5081, lm, ius, 19) :- codice_corso(5081), laurea(lm), ssd(ius, 19).
+corso(5081, lm, ius) :- codice_corso(5081), laurea(lm), ssd(ius).
 %  Corso: 3055 (lt)
-corso(3055, lt, bio, 7) :- codice_corso(3055), laurea(lt), ssd(bio, 7).
+corso(3055, lt, agr) :- codice_corso(3055), laurea(lt), ssd(agr).
+%  Corso: 3055 (lt)
+corso(3055, lt, bio) :- codice_corso(3055), laurea(lt), ssd(bio).
+%  Corso: 3055 (lt)
+corso(3055, lt, vet) :- codice_corso(3055), laurea(lt), ssd(vet).
 %  Corso: 5016 (lm)
-corso(5016, lm, ingind, 10) :- codice_corso(5016), laurea(lm), ssd(ingind, 10).
+corso(5016, lm, ingind) :- codice_corso(5016), laurea(lm), ssd(ingind).
 %  Corso: 5005 (lm)
-corso(5005, lm, secsp, 11) :- codice_corso(5005), laurea(lm), ssd(secsp, 11).
+corso(5005, lm, secss) :- codice_corso(5005), laurea(lm), ssd(secss).
+%  Corso: 5005 (lm)
+corso(5005, lm, ius) :- codice_corso(5005), laurea(lm), ssd(ius).
+%  Corso: 5005 (lm)
+corso(5005, lm, secsp) :- codice_corso(5005), laurea(lm), ssd(secsp).
 %  Corso: 5082 (lm)
-corso(5082, lm, chim, 3) :- codice_corso(5082), laurea(lm), ssd(chim, 3).
+corso(5082, lm, fis) :- codice_corso(5082), laurea(lm), ssd(fis).
+%  Corso: 5082 (lm)
+corso(5082, lm, chim) :- codice_corso(5082), laurea(lm), ssd(chim).
 %  Corso: 5054 (lm)
-corso(5054, lm, mpsi, 5) :- codice_corso(5054), laurea(lm), ssd(mpsi, 5).
+corso(5054, lm, mpsi) :- codice_corso(5054), laurea(lm), ssd(mpsi).
 %  Corso: 5044 (lm)
-corso(5044, lm, ius, 13) :- codice_corso(5044), laurea(lm), ssd(ius, 13).
+corso(5044, lm, secsp) :- codice_corso(5044), laurea(lm), ssd(secsp).
+%  Corso: 5044 (lm)
+corso(5044, lm, sps) :- codice_corso(5044), laurea(lm), ssd(sps).
+%  Corso: 5044 (lm)
+corso(5044, lm, ius) :- codice_corso(5044), laurea(lm), ssd(ius).
 %  Corso: 3032 (lt)
-corso(3032, lt, ius, 13) :- codice_corso(3032), laurea(lt), ssd(ius, 13).
-%  Corso: 5010 (lmss)
-corso(5010, lmss, ius, 8) :- codice_corso(5010), laurea(lmss), ssd(ius, 8).
+corso(3032, lt, secsp) :- codice_corso(3032), laurea(lt), ssd(secsp).
+%  Corso: 3032 (lt)
+corso(3032, lt, msto) :- codice_corso(3032), laurea(lt), ssd(msto).
+%  Corso: 3032 (lt)
+corso(3032, lt, sps) :- codice_corso(3032), laurea(lt), ssd(sps).
+%  Corso: 3032 (lt)
+corso(3032, lt, ius) :- codice_corso(3032), laurea(lt), ssd(ius).
 %  Corso: 3059 (lt)
-corso(3059, lt, icar, 8) :- codice_corso(3059), laurea(lt), ssd(icar, 8).
+corso(3059, lt, fis) :- codice_corso(3059), laurea(lt), ssd(fis).
+%  Corso: 3059 (lt)
+corso(3059, lt, mat) :- codice_corso(3059), laurea(lt), ssd(mat).
+%  Corso: 3059 (lt)
+corso(3059, lt, icar) :- codice_corso(3059), laurea(lt), ssd(icar).
+%  Corso: 5010 (lcpb)
+corso(5010, lcpb, sps) :- codice_corso(5010), laurea(lcpb), ssd(sps).
+%  Corso: 5010 (lcpb)
+corso(5010, lcpb, ius) :- codice_corso(5010), laurea(lcpb), ssd(ius).
 
 %  SEZIONE: Relazioni Corsi-Docenti
 %  Corso: 3023, Docente: ABBRUZZETTI Stefania
@@ -706,7 +935,7 @@ cattedra(5045, 22345, lm, d) :- codice_corso(5045), matricola_docente(22345), la
 %  Corso: 5065, Docente: ABLONDI MICHELA
 cattedra(5065, 22345, lm, b) :- codice_corso(5065), matricola_docente(22345), laurea(lm), taf(b).
 %  Corso: 3068, Docente: ABLONDI MICHELA
-cattedra(3068, 22345, lt, f) :- codice_corso(3068), matricola_docente(22345), laurea(lt), taf(f).
+cattedra(3068, 22345, lcpb, f) :- codice_corso(3068), matricola_docente(22345), laurea(lcpb), taf(f).
 %  Corso: 3026, Docente: ACERBI Emilio Daniele Giovanni
 cattedra(3026, 4397, lt, a) :- codice_corso(3026), matricola_docente(4397), laurea(lt), taf(a).
 %  Corso: 3011, Docente: ACERBI Emilio Daniele Giovanni
@@ -724,31 +953,31 @@ cattedra(3004, 34500, lt, a) :- codice_corso(3004), matricola_docente(34500), la
 %  Corso: 3062, Docente: ADDONA DAVIDE
 cattedra(3062, 15950, lt, a) :- codice_corso(3062), matricola_docente(15950), laurea(lt), taf(a).
 %  Corso: 3071, Docente: ADORNI Maria Pia
-cattedra(3071, 8816, ltps, a) :- codice_corso(3071), matricola_docente(8816), laurea(ltps), taf(a).
+cattedra(3071, 8816, lt, a) :- codice_corso(3071), matricola_docente(8816), laurea(lt), taf(a).
 %  Corso: 5053, Docente: ADORNI Maria Pia
 cattedra(5053, 8816, lm, c) :- codice_corso(5053), matricola_docente(8816), laurea(lm), taf(c).
 %  Corso: 3044, Docente: ADORNI Maria Pia
-cattedra(3044, 8816, ltps, a) :- codice_corso(3044), matricola_docente(8816), laurea(ltps), taf(a).
+cattedra(3044, 8816, lcpb, a) :- codice_corso(3044), matricola_docente(8816), laurea(lcpb), taf(a).
 %  Corso: 3049, Docente: ADORNI Maria Pia
-cattedra(3049, 8816, ltps, a) :- codice_corso(3049), matricola_docente(8816), laurea(ltps), taf(a).
+cattedra(3049, 8816, lcpb, a) :- codice_corso(3049), matricola_docente(8816), laurea(lcpb), taf(a).
 %  Corso: 5074, Docente: ADORNI Maria Pia
 cattedra(5074, 8816, lm6, b) :- codice_corso(5074), matricola_docente(8816), laurea(lm6), taf(b).
 %  Corso: 5027, Docente: ADORNI Maria Pia
 cattedra(5027, 8816, lm6, b) :- codice_corso(5027), matricola_docente(8816), laurea(lm6), taf(b).
 %  Corso: 3041, Docente: AFFANNI Paola
-cattedra(3041, 4282, ltps, a) :- codice_corso(3041), matricola_docente(4282), laurea(ltps), taf(a).
+cattedra(3041, 4282, lcpb, a) :- codice_corso(3041), matricola_docente(4282), laurea(lcpb), taf(a).
 %  Corso: 3067, Docente: AFFANNI Paola
-cattedra(3067, 4282, ltps, b) :- codice_corso(3067), matricola_docente(4282), laurea(ltps), taf(b).
+cattedra(3067, 4282, lcpb, b) :- codice_corso(3067), matricola_docente(4282), laurea(lcpb), taf(b).
 %  Corso: 3047, Docente: AFFANNI Paola
-cattedra(3047, 4282, ltps, b) :- codice_corso(3047), matricola_docente(4282), laurea(ltps), taf(b).
+cattedra(3047, 4282, lcpb, b) :- codice_corso(3047), matricola_docente(4282), laurea(lcpb), taf(b).
 %  Corso: 5028, Docente: AFFANNI Paola
-cattedra(5028, 4282, lmsm, b) :- codice_corso(5028), matricola_docente(4282), laurea(lmsm), taf(b).
+cattedra(5028, 4282, lcpb, b) :- codice_corso(5028), matricola_docente(4282), laurea(lcpb), taf(b).
 %  Corso: 3042, Docente: AFFANNI Paola
-cattedra(3042, 4282, ltps, b) :- codice_corso(3042), matricola_docente(4282), laurea(ltps), taf(b).
+cattedra(3042, 4282, lcpb, b) :- codice_corso(3042), matricola_docente(4282), laurea(lcpb), taf(b).
 %  Corso: 3041, Docente: AFFANNI Paola
-cattedra(3041, 4282, ltps, a) :- codice_corso(3041), matricola_docente(4282), laurea(ltps), taf(a).
+cattedra(3041, 4282, lcpb, a) :- codice_corso(3041), matricola_docente(4282), laurea(lcpb), taf(a).
 %  Corso: 3048, Docente: AFFANNI Paola
-cattedra(3048, 4282, ltps, b) :- codice_corso(3048), matricola_docente(4282), laurea(ltps), taf(b).
+cattedra(3048, 4282, lcpb, b) :- codice_corso(3048), matricola_docente(4282), laurea(lcpb), taf(b).
 %  Corso: 3014, Docente: AGNESINI Alex
 cattedra(3014, 6508, lt, a) :- codice_corso(3014), matricola_docente(6508), laurea(lt), taf(a).
 %  Corso: 3014, Docente: AGNESINI Alex
@@ -760,11 +989,11 @@ cattedra(3014, 6508, lt, a) :- codice_corso(3014), matricola_docente(6508), laur
 %  Corso: 5026, Docente: AIELLO Marina
 cattedra(5026, 6598, lm6, f) :- codice_corso(5026), matricola_docente(6598), laurea(lm6), taf(f).
 %  Corso: 3042, Docente: AIELLO Marina
-cattedra(3042, 6598, ltps, b) :- codice_corso(3042), matricola_docente(6598), laurea(ltps), taf(b).
+cattedra(3042, 6598, lcpb, b) :- codice_corso(3042), matricola_docente(6598), laurea(lcpb), taf(b).
 %  Corso: 3048, Docente: AIELLO Marina
-cattedra(3048, 6598, ltps, b) :- codice_corso(3048), matricola_docente(6598), laurea(ltps), taf(b).
+cattedra(3048, 6598, lcpb, b) :- codice_corso(3048), matricola_docente(6598), laurea(lcpb), taf(b).
 %  Corso: 3046, Docente: AIELLO Marina
-cattedra(3046, 6598, ltps, b) :- codice_corso(3046), matricola_docente(6598), laurea(ltps), taf(b).
+cattedra(3046, 6598, lcpb, b) :- codice_corso(3046), matricola_docente(6598), laurea(lcpb), taf(b).
 %  Corso: 3030, Docente: AIMI Alessandra
 cattedra(3030, 4642, lt, b) :- codice_corso(3030), matricola_docente(4642), laurea(lt), taf(b).
 %  Corso: 5037, Docente: AIMI Alessandra
@@ -774,11 +1003,11 @@ cattedra(5077, 15493, lm, b) :- codice_corso(5077), matricola_docente(15493), la
 %  Corso: 5059, Docente: AIOLFI SIMONE
 cattedra(5059, 15493, lm, b) :- codice_corso(5059), matricola_docente(15493), laurea(lm), taf(b).
 %  Corso: 3047, Docente: ALBERTINI Roberto
-cattedra(3047, 3848, ltps, d) :- codice_corso(3047), matricola_docente(3848), laurea(ltps), taf(d).
+cattedra(3047, 3848, lcpb, d) :- codice_corso(3047), matricola_docente(3848), laurea(lcpb), taf(d).
 %  Corso: 3019, Docente: ALBERTINI Roberto
-cattedra(3019, 3848, ltsm, a) :- codice_corso(3019), matricola_docente(3848), laurea(ltsm), taf(a).
+cattedra(3019, 3848, lcpa, a) :- codice_corso(3019), matricola_docente(3848), laurea(lcpa), taf(a).
 %  Corso: 3049, Docente: ALBERTINI Roberto
-cattedra(3049, 3848, ltps, b) :- codice_corso(3049), matricola_docente(3848), laurea(ltps), taf(b).
+cattedra(3049, 3848, lcpb, b) :- codice_corso(3049), matricola_docente(3848), laurea(lcpb), taf(b).
 %  Corso: 5053, Docente: ALBERTINI DAVIDE
 cattedra(5053, 20361, lm, d) :- codice_corso(5053), matricola_docente(20361), laurea(lm), taf(d).
 %  Corso: 5015, Docente: ALEOTTI Jacopo
@@ -788,7 +1017,7 @@ cattedra(3061, 207089, lt, b) :- codice_corso(3061), matricola_docente(207089), 
 %  Corso: 5026, Docente: ALFIERI Roberta
 cattedra(5026, 5565, lm6, b) :- codice_corso(5026), matricola_docente(5565), laurea(lm6), taf(b).
 %  Corso: 3041, Docente: ALFIERI Roberta
-cattedra(3041, 5565, ltps, a) :- codice_corso(3041), matricola_docente(5565), laurea(ltps), taf(a).
+cattedra(3041, 5565, lcpb, a) :- codice_corso(3041), matricola_docente(5565), laurea(lcpb), taf(a).
 %  Corso: 5008, Docente: ALFIERI Roberta
 cattedra(5008, 5565, lm5, a) :- codice_corso(5008), matricola_docente(5565), laurea(lm5), taf(a).
 %  Corso: 5009, Docente: ALFIERI Roberta
@@ -796,7 +1025,7 @@ cattedra(5009, 5565, lm5, a) :- codice_corso(5009), matricola_docente(5565), lau
 %  Corso: 5026, Docente: ALFIERI Roberta
 cattedra(5026, 5565, lm6, b) :- codice_corso(5026), matricola_docente(5565), laurea(lm6), taf(b).
 %  Corso: 3068, Docente: ALINOVI MARCELLO
-cattedra(3068, 18477, lt, b) :- codice_corso(3068), matricola_docente(18477), laurea(lt), taf(b).
+cattedra(3068, 18477, lcpb, b) :- codice_corso(3068), matricola_docente(18477), laurea(lcpb), taf(b).
 %  Corso: 3000, Docente: ALINOVI MARCELLO
 cattedra(3000, 18477, lt, b) :- codice_corso(3000), matricola_docente(18477), laurea(lt), taf(b).
 %  Corso: 5068, Docente: ALINOVI MARCELLO
@@ -812,9 +1041,9 @@ cattedra(3026, 6627, lt, b) :- codice_corso(3026), matricola_docente(6627), laur
 %  Corso: 5036, Docente: ALLODI Giuseppe
 cattedra(5036, 6627, lm, b) :- codice_corso(5036), matricola_docente(6627), laurea(lm), taf(b).
 %  Corso: 3006, Docente: AMBANELLI Alessandra
-cattedra(3006, 5885, ltss, c) :- codice_corso(3006), matricola_docente(5885), laurea(ltss), taf(c).
+cattedra(3006, 5885, lcpa, c) :- codice_corso(3006), matricola_docente(5885), laurea(lcpa), taf(c).
 %  Corso: 5050, Docente: AMBANELLI Alessandra
-cattedra(5050, 5885, lmi, b) :- codice_corso(5050), matricola_docente(5885), laurea(lmi), taf(b).
+cattedra(5050, 5885, lcpc, b) :- codice_corso(5050), matricola_docente(5885), laurea(lcpc), taf(b).
 %  Corso: 5025, Docente: AMERINI Fabrizio
 cattedra(5025, 6652, lm, b) :- codice_corso(5025), matricola_docente(6652), laurea(lm), taf(b).
 %  Corso: 3013, Docente: AMERINI Fabrizio
@@ -824,9 +1053,9 @@ cattedra(3061, 207094, lt, b) :- codice_corso(3061), matricola_docente(207094), 
 %  Corso: 5015, Docente: AMORETTI Michele
 cattedra(5015, 207094, lm, b) :- codice_corso(5015), matricola_docente(207094), laurea(lm), taf(b).
 %  Corso: 3040, Docente: AMPOLLINI Luca
-cattedra(3040, 164218, ltps, b) :- codice_corso(3040), matricola_docente(164218), laurea(ltps), taf(b).
+cattedra(3040, 164218, lcpb, b) :- codice_corso(3040), matricola_docente(164218), laurea(lcpb), taf(b).
 %  Corso: 3048, Docente: AMPOLLINI Luca
-cattedra(3048, 164218, ltps, b) :- codice_corso(3048), matricola_docente(164218), laurea(ltps), taf(b).
+cattedra(3048, 164218, lcpb, b) :- codice_corso(3048), matricola_docente(164218), laurea(lcpb), taf(b).
 %  Corso: 5026, Docente: AMPOLLINI Luca
 cattedra(5026, 164218, lm6, b) :- codice_corso(5026), matricola_docente(164218), laurea(lm6), taf(b).
 %  Corso: 5074, Docente: AMPOLLINI Luca
@@ -836,23 +1065,23 @@ cattedra(5003, 4468, lm, d) :- codice_corso(5003), matricola_docente(4468), laur
 %  Corso: 3004, Docente: ANDREI Paolo
 cattedra(3004, 4468, lt, a) :- codice_corso(3004), matricola_docente(4468), laurea(lt), taf(a).
 %  Corso: 3049, Docente: ANDREOLI Roberta
-cattedra(3049, 5788, ltps, b) :- codice_corso(3049), matricola_docente(5788), laurea(ltps), taf(b).
+cattedra(3049, 5788, lcpb, b) :- codice_corso(3049), matricola_docente(5788), laurea(lcpb), taf(b).
 %  Corso: 3049, Docente: ANDREOLI Roberta
-cattedra(3049, 5788, ltps, b) :- codice_corso(3049), matricola_docente(5788), laurea(ltps), taf(b).
+cattedra(3049, 5788, lcpb, b) :- codice_corso(3049), matricola_docente(5788), laurea(lcpb), taf(b).
 %  Corso: 3049, Docente: ANDREOLI Roberta
-cattedra(3049, 5788, ltps, b) :- codice_corso(3049), matricola_docente(5788), laurea(ltps), taf(b).
+cattedra(3049, 5788, lcpb, b) :- codice_corso(3049), matricola_docente(5788), laurea(lcpb), taf(b).
 %  Corso: 3049, Docente: ANDREOLI Roberta
-cattedra(3049, 5788, ltps, b) :- codice_corso(3049), matricola_docente(5788), laurea(ltps), taf(b).
+cattedra(3049, 5788, lcpb, b) :- codice_corso(3049), matricola_docente(5788), laurea(lcpb), taf(b).
 %  Corso: 3049, Docente: ANDREOLI Roberta
-cattedra(3049, 5788, ltps, b) :- codice_corso(3049), matricola_docente(5788), laurea(ltps), taf(b).
+cattedra(3049, 5788, lcpb, b) :- codice_corso(3049), matricola_docente(5788), laurea(lcpb), taf(b).
 %  Corso: 3049, Docente: ANDREOLI Roberta
-cattedra(3049, 5788, ltps, b) :- codice_corso(3049), matricola_docente(5788), laurea(ltps), taf(b).
+cattedra(3049, 5788, lcpb, b) :- codice_corso(3049), matricola_docente(5788), laurea(lcpb), taf(b).
 %  Corso: 3049, Docente: ANDREOLI Roberta
-cattedra(3049, 5788, ltps, b) :- codice_corso(3049), matricola_docente(5788), laurea(ltps), taf(b).
+cattedra(3049, 5788, lcpb, b) :- codice_corso(3049), matricola_docente(5788), laurea(lcpb), taf(b).
 %  Corso: 3046, Docente: ANDREOLI Roberta
-cattedra(3046, 5788, ltps, b) :- codice_corso(3046), matricola_docente(5788), laurea(ltps), taf(b).
+cattedra(3046, 5788, lcpb, b) :- codice_corso(3046), matricola_docente(5788), laurea(lcpb), taf(b).
 %  Corso: 3043, Docente: ANDREOLI Roberta
-cattedra(3043, 5788, ltps, b) :- codice_corso(3043), matricola_docente(5788), laurea(ltps), taf(b).
+cattedra(3043, 5788, lcpb, b) :- codice_corso(3043), matricola_docente(5788), laurea(lcpb), taf(b).
 %  Corso: 3051, Docente: ANELLO Giancarlo
 cattedra(3051, 6504, lt, c) :- codice_corso(3051), matricola_docente(6504), laurea(lt), taf(c).
 %  Corso: 5047, Docente: ANELLO Giancarlo
@@ -874,7 +1103,7 @@ cattedra(3038, 28994, lt, b) :- codice_corso(3038), matricola_docente(28994), la
 %  Corso: 5046, Docente: ANTONIETTI Maja
 cattedra(5046, 28994, lm, b) :- codice_corso(5046), matricola_docente(28994), laurea(lm), taf(b).
 %  Corso: 3066, Docente: ANTONIETTI Maja
-cattedra(3066, 28994, lt, c) :- codice_corso(3066), matricola_docente(28994), laurea(lt), taf(c).
+cattedra(3066, 28994, lcpa, c) :- codice_corso(3066), matricola_docente(28994), laurea(lcpa), taf(c).
 %  Corso: 3030, Docente: APPEL Andrea
 cattedra(3030, 29217, lt, a) :- codice_corso(3030), matricola_docente(29217), laurea(lt), taf(a).
 %  Corso: 5037, Docente: APPEL Andrea
@@ -882,35 +1111,35 @@ cattedra(5037, 29217, lm, b) :- codice_corso(5037), matricola_docente(29217), la
 %  Corso: 3030, Docente: APPEL Andrea
 cattedra(3030, 29217, lt, d) :- codice_corso(3030), matricola_docente(29217), laurea(lt), taf(d).
 %  Corso: 3063, Docente: ARALDI Elisa
-cattedra(3063, 38138, lt, a) :- codice_corso(3063), matricola_docente(38138), laurea(lt), taf(a).
+cattedra(3063, 38138, lcpb, a) :- codice_corso(3063), matricola_docente(38138), laurea(lcpb), taf(a).
 %  Corso: 5074, Docente: ARALDI Elisa
 cattedra(5074, 38138, lm6, a) :- codice_corso(5074), matricola_docente(38138), laurea(lm6), taf(a).
 %  Corso: 3071, Docente: ARALDI Elisa
-cattedra(3071, 38138, ltps, a) :- codice_corso(3071), matricola_docente(38138), laurea(ltps), taf(a).
+cattedra(3071, 38138, lt, a) :- codice_corso(3071), matricola_docente(38138), laurea(lt), taf(a).
 %  Corso: 5027, Docente: ARALDI Elisa
 cattedra(5027, 38138, lm6, a) :- codice_corso(5027), matricola_docente(38138), laurea(lm6), taf(a).
 %  Corso: 3046, Docente: ARALDI Elisa
-cattedra(3046, 38138, ltps, a) :- codice_corso(3046), matricola_docente(38138), laurea(ltps), taf(a).
+cattedra(3046, 38138, lcpb, a) :- codice_corso(3046), matricola_docente(38138), laurea(lcpb), taf(a).
 %  Corso: 3044, Docente: ARALDI Elisa
-cattedra(3044, 38138, ltps, a) :- codice_corso(3044), matricola_docente(38138), laurea(ltps), taf(a).
+cattedra(3044, 38138, lcpb, a) :- codice_corso(3044), matricola_docente(38138), laurea(lcpb), taf(a).
 %  Corso: 5045, Docente: ARCANGELETTI Maria Cristina
 cattedra(5045, 5813, lm, b) :- codice_corso(5045), matricola_docente(5813), laurea(lm), taf(b).
 %  Corso: 3047, Docente: ARCANGELETTI Maria Cristina
-cattedra(3047, 5813, ltps, b) :- codice_corso(3047), matricola_docente(5813), laurea(ltps), taf(b).
+cattedra(3047, 5813, lcpb, b) :- codice_corso(3047), matricola_docente(5813), laurea(lcpb), taf(b).
 %  Corso: 3040, Docente: ARCANGELETTI Maria Cristina
-cattedra(3040, 5813, ltps, a) :- codice_corso(3040), matricola_docente(5813), laurea(ltps), taf(a).
+cattedra(3040, 5813, lcpb, a) :- codice_corso(3040), matricola_docente(5813), laurea(lcpb), taf(a).
 %  Corso: 3047, Docente: ARCANGELETTI Maria Cristina
-cattedra(3047, 5813, ltps, b) :- codice_corso(3047), matricola_docente(5813), laurea(ltps), taf(b).
+cattedra(3047, 5813, lcpb, b) :- codice_corso(3047), matricola_docente(5813), laurea(lcpb), taf(b).
 %  Corso: 3047, Docente: ARCANGELETTI Maria Cristina
-cattedra(3047, 5813, ltps, b) :- codice_corso(3047), matricola_docente(5813), laurea(ltps), taf(b).
+cattedra(3047, 5813, lcpb, b) :- codice_corso(3047), matricola_docente(5813), laurea(lcpb), taf(b).
 %  Corso: 3047, Docente: ARCANGELETTI Maria Cristina
-cattedra(3047, 5813, ltps, b) :- codice_corso(3047), matricola_docente(5813), laurea(ltps), taf(b).
+cattedra(3047, 5813, lcpb, b) :- codice_corso(3047), matricola_docente(5813), laurea(lcpb), taf(b).
 %  Corso: 3047, Docente: ARCANGELETTI Maria Cristina
-cattedra(3047, 5813, ltps, b) :- codice_corso(3047), matricola_docente(5813), laurea(ltps), taf(b).
+cattedra(3047, 5813, lcpb, b) :- codice_corso(3047), matricola_docente(5813), laurea(lcpb), taf(b).
 %  Corso: 5028, Docente: ARCARI Maria Luisa
-cattedra(5028, 5087, lmsm, b) :- codice_corso(5028), matricola_docente(5087), laurea(lmsm), taf(b).
+cattedra(5028, 5087, lcpb, b) :- codice_corso(5028), matricola_docente(5087), laurea(lcpb), taf(b).
 %  Corso: 3019, Docente: ARCARI Maria Luisa
-cattedra(3019, 5087, ltsm, a) :- codice_corso(3019), matricola_docente(5087), laurea(ltsm), taf(a).
+cattedra(3019, 5087, lcpa, a) :- codice_corso(3019), matricola_docente(5087), laurea(lcpa), taf(a).
 %  Corso: 3027, Docente: ARCERI Vincenzo
 cattedra(3027, 33657, lt, b) :- codice_corso(3027), matricola_docente(33657), laurea(lt), taf(b).
 %  Corso: 3027, Docente: ARCERI Vincenzo
@@ -924,13 +1153,13 @@ cattedra(3004, 20533, lt, b) :- codice_corso(3004), matricola_docente(20533), la
 %  Corso: 3021, Docente: ARDIZZI MARTINA
 cattedra(3021, 11792, lt, b) :- codice_corso(3021), matricola_docente(11792), laurea(lt), taf(b).
 %  Corso: 3043, Docente: ARDIZZI MARTINA
-cattedra(3043, 11792, ltps, b) :- codice_corso(3043), matricola_docente(11792), laurea(ltps), taf(b).
+cattedra(3043, 11792, lcpb, b) :- codice_corso(3043), matricola_docente(11792), laurea(lcpb), taf(b).
 %  Corso: 3019, Docente: ARDIZZI MARTINA
-cattedra(3019, 11792, ltsm, d) :- codice_corso(3019), matricola_docente(11792), laurea(ltsm), taf(d).
+cattedra(3019, 11792, lcpa, d) :- codice_corso(3019), matricola_docente(11792), laurea(lcpa), taf(d).
 %  Corso: 3021, Docente: ARDIZZI MARTINA
 cattedra(3021, 11792, lt, d) :- codice_corso(3021), matricola_docente(11792), laurea(lt), taf(d).
 %  Corso: 3043, Docente: ARDIZZI MARTINA
-cattedra(3043, 11792, ltps, b) :- codice_corso(3043), matricola_docente(11792), laurea(ltps), taf(b).
+cattedra(3043, 11792, lcpb, b) :- codice_corso(3043), matricola_docente(11792), laurea(lcpb), taf(b).
 %  Corso: 3052, Docente: ARFINI Filippo
 cattedra(3052, 4535, lt, b) :- codice_corso(3052), matricola_docente(4535), laurea(lt), taf(b).
 %  Corso: 3004, Docente: ARFINI Filippo
@@ -946,7 +1175,7 @@ cattedra(3038, 14634, lt, c) :- codice_corso(3038), matricola_docente(14634), la
 %  Corso: 5046, Docente: ARGIROPOULOS DIMITRIS
 cattedra(5046, 14634, lm, b) :- codice_corso(5046), matricola_docente(14634), laurea(lm), taf(b).
 %  Corso: 3067, Docente: ARGIROPOULOS DIMITRIS
-cattedra(3067, 14634, ltps, b) :- codice_corso(3067), matricola_docente(14634), laurea(ltps), taf(b).
+cattedra(3067, 14634, lcpb, b) :- codice_corso(3067), matricola_docente(14634), laurea(lcpb), taf(b).
 %  Corso: 5029, Docente: ARMANDO FEDERICO
 cattedra(5029, 17651, lm5, d) :- codice_corso(5029), matricola_docente(17651), laurea(lm5), taf(d).
 %  Corso: 5045, Docente: ARMANDO FEDERICO
@@ -968,13 +1197,13 @@ cattedra(5061, 5442, lm, c) :- codice_corso(5061), matricola_docente(5442), laur
 %  Corso: 5049, Docente: ASTORI Davide
 cattedra(5049, 5526, lm, b) :- codice_corso(5049), matricola_docente(5526), laurea(lm), taf(b).
 %  Corso: 3066, Docente: ASTORI Davide
-cattedra(3066, 5526, lt, a) :- codice_corso(3066), matricola_docente(5526), laurea(lt), taf(a).
+cattedra(3066, 5526, lcpa, a) :- codice_corso(3066), matricola_docente(5526), laurea(lcpa), taf(a).
 %  Corso: 3014, Docente: ASTORI Davide
 cattedra(3014, 5526, lt, a) :- codice_corso(3014), matricola_docente(5526), laurea(lt), taf(a).
 %  Corso: 3066, Docente: ASTORI Davide
-cattedra(3066, 5526, lt, b) :- codice_corso(3066), matricola_docente(5526), laurea(lt), taf(b).
+cattedra(3066, 5526, lcpa, b) :- codice_corso(3066), matricola_docente(5526), laurea(lcpa), taf(b).
 %  Corso: 3066, Docente: ASTORI Davide
-cattedra(3066, 5526, lt, a) :- codice_corso(3066), matricola_docente(5526), laurea(lt), taf(a).
+cattedra(3066, 5526, lcpa, a) :- codice_corso(3066), matricola_docente(5526), laurea(lcpa), taf(a).
 %  Corso: 5018, Docente: AURELI Francesca
 cattedra(5018, 5634, lm, b) :- codice_corso(5018), matricola_docente(5634), laurea(lm), taf(b).
 %  Corso: 5018, Docente: AURELI Francesca
@@ -996,33 +1225,33 @@ cattedra(3024, 5320, lt, a) :- codice_corso(3024), matricola_docente(5320), laur
 %  Corso: 5029, Docente: BACCI Cristina
 cattedra(5029, 5837, lm5, b) :- codice_corso(5029), matricola_docente(5837), laurea(lm5), taf(b).
 %  Corso: 3049, Docente: BACCI Cristina
-cattedra(3049, 5837, ltps, b) :- codice_corso(3049), matricola_docente(5837), laurea(ltps), taf(b).
+cattedra(3049, 5837, lcpb, b) :- codice_corso(3049), matricola_docente(5837), laurea(lcpb), taf(b).
 %  Corso: 3020, Docente: BACCI Cristina
 cattedra(3020, 5837, lt, b) :- codice_corso(3020), matricola_docente(5837), laurea(lt), taf(b).
 %  Corso: 3043, Docente: BACCIU Andrea
-cattedra(3043, 6642, ltps, b) :- codice_corso(3043), matricola_docente(6642), laurea(ltps), taf(b).
+cattedra(3043, 6642, lcpb, b) :- codice_corso(3043), matricola_docente(6642), laurea(lcpb), taf(b).
 %  Corso: 3046, Docente: BACCIU Andrea
-cattedra(3046, 6642, ltps, b) :- codice_corso(3046), matricola_docente(6642), laurea(ltps), taf(b).
+cattedra(3046, 6642, lcpb, b) :- codice_corso(3046), matricola_docente(6642), laurea(lcpb), taf(b).
 %  Corso: 3066, Docente: BACCIU Andrea
-cattedra(3066, 6642, lt, c) :- codice_corso(3066), matricola_docente(6642), laurea(lt), taf(c).
+cattedra(3066, 6642, lcpa, c) :- codice_corso(3066), matricola_docente(6642), laurea(lcpa), taf(c).
 %  Corso: 5026, Docente: BACCIU Andrea
 cattedra(5026, 6642, lm6, b) :- codice_corso(5026), matricola_docente(6642), laurea(lm6), taf(b).
 %  Corso: 3046, Docente: BACCIU Andrea
-cattedra(3046, 6642, ltps, b) :- codice_corso(3046), matricola_docente(6642), laurea(ltps), taf(b).
+cattedra(3046, 6642, lcpb, b) :- codice_corso(3046), matricola_docente(6642), laurea(lcpb), taf(b).
 %  Corso: 3040, Docente: BACIARELLO Marco
-cattedra(3040, 172930, ltps, b) :- codice_corso(3040), matricola_docente(172930), laurea(ltps), taf(b).
+cattedra(3040, 172930, lcpb, b) :- codice_corso(3040), matricola_docente(172930), laurea(lcpb), taf(b).
 %  Corso: 5074, Docente: BACIARELLO Marco
 cattedra(5074, 172930, lm6, b) :- codice_corso(5074), matricola_docente(172930), laurea(lm6), taf(b).
 %  Corso: 5050, Docente: BACIARELLO Marco
-cattedra(5050, 172930, lmi, f) :- codice_corso(5050), matricola_docente(172930), laurea(lmi), taf(f).
+cattedra(5050, 172930, lcpc, f) :- codice_corso(5050), matricola_docente(172930), laurea(lcpc), taf(f).
 %  Corso: 5026, Docente: BACIARELLO Marco
 cattedra(5026, 172930, lm6, b) :- codice_corso(5026), matricola_docente(172930), laurea(lm6), taf(b).
 %  Corso: 3040, Docente: BACIARELLO Marco
-cattedra(3040, 172930, ltps, b) :- codice_corso(3040), matricola_docente(172930), laurea(ltps), taf(b).
+cattedra(3040, 172930, lcpb, b) :- codice_corso(3040), matricola_docente(172930), laurea(lcpb), taf(b).
 %  Corso: 3041, Docente: BACIARELLO Marco
-cattedra(3041, 172930, ltps, b) :- codice_corso(3041), matricola_docente(172930), laurea(ltps), taf(b).
+cattedra(3041, 172930, lcpb, b) :- codice_corso(3041), matricola_docente(172930), laurea(lcpb), taf(b).
 %  Corso: 3042, Docente: BACIARELLO Marco
-cattedra(3042, 172930, ltps, f) :- codice_corso(3042), matricola_docente(172930), laurea(ltps), taf(f).
+cattedra(3042, 172930, lcpb, f) :- codice_corso(3042), matricola_docente(172930), laurea(lcpb), taf(f).
 %  Corso: 5077, Docente: BAGLIONI SIMONE
 cattedra(5077, 11305, lm, c) :- codice_corso(5077), matricola_docente(11305), laurea(lm), taf(c).
 %  Corso: 5047, Docente: BAGLIONI SIMONE
@@ -1058,7 +1287,7 @@ cattedra(5072, 10592, lm, c) :- codice_corso(5072), matricola_docente(10592), la
 %  Corso: 5072, Docente: BALSAMO Fabrizio
 cattedra(5072, 10592, lm, d) :- codice_corso(5072), matricola_docente(10592), laurea(lm), taf(d).
 %  Corso: 3068, Docente: BANCALARI Elena
-cattedra(3068, 11130, lt, f) :- codice_corso(3068), matricola_docente(11130), laurea(lt), taf(f).
+cattedra(3068, 11130, lcpb, f) :- codice_corso(3068), matricola_docente(11130), laurea(lcpb), taf(f).
 %  Corso: 3000, Docente: BANCALARI Elena
 cattedra(3000, 11130, lt, b) :- codice_corso(3000), matricola_docente(11130), laurea(lt), taf(b).
 %  Corso: 3000, Docente: BANCALARI Elena
@@ -1074,7 +1303,7 @@ cattedra(3026, 5428, lt, b) :- codice_corso(3026), matricola_docente(5428), laur
 %  Corso: 5071, Docente: BARATTA Mario
 cattedra(5071, 4702, lm, b) :- codice_corso(5071), matricola_docente(4702), laurea(lm), taf(b).
 %  Corso: 3064, Docente: BARATTA Mario
-cattedra(3064, 4702, lt, b) :- codice_corso(3064), matricola_docente(4702), laurea(lt), taf(b).
+cattedra(3064, 4702, lcpb, b) :- codice_corso(3064), matricola_docente(4702), laurea(lcpb), taf(b).
 %  Corso: 3000, Docente: BARATTA Mario
 cattedra(3000, 4702, lt, d) :- codice_corso(3000), matricola_docente(4702), laurea(lt), taf(d).
 %  Corso: 3022, Docente: BARATTA Mario
@@ -1092,25 +1321,25 @@ cattedra(5027, 11157, lm6, a) :- codice_corso(5027), matricola_docente(11157), l
 %  Corso: 5045, Docente: BARBARO Fulvio
 cattedra(5045, 11157, lm, d) :- codice_corso(5045), matricola_docente(11157), laurea(lm), taf(d).
 %  Corso: 3019, Docente: BARBARO Fulvio
-cattedra(3019, 11157, ltsm, b) :- codice_corso(3019), matricola_docente(11157), laurea(ltsm), taf(b).
+cattedra(3019, 11157, lcpa, b) :- codice_corso(3019), matricola_docente(11157), laurea(lcpa), taf(b).
 %  Corso: 3044, Docente: BARBARO Fulvio
-cattedra(3044, 11157, ltps, a) :- codice_corso(3044), matricola_docente(11157), laurea(ltps), taf(a).
+cattedra(3044, 11157, lcpb, a) :- codice_corso(3044), matricola_docente(11157), laurea(lcpb), taf(a).
 %  Corso: 3040, Docente: BARBARO Fulvio
-cattedra(3040, 11157, ltps, a) :- codice_corso(3040), matricola_docente(11157), laurea(ltps), taf(a).
+cattedra(3040, 11157, lcpb, a) :- codice_corso(3040), matricola_docente(11157), laurea(lcpb), taf(a).
 %  Corso: 3040, Docente: BARBARO Fulvio
-cattedra(3040, 11157, ltps, a) :- codice_corso(3040), matricola_docente(11157), laurea(ltps), taf(a).
+cattedra(3040, 11157, lcpb, a) :- codice_corso(3040), matricola_docente(11157), laurea(lcpb), taf(a).
 %  Corso: 3004, Docente: BARGELLI Claudio
 cattedra(3004, 4880, lt, d) :- codice_corso(3004), matricola_docente(4880), laurea(lt), taf(d).
 %  Corso: 5045, Docente: BARILI VALERIA
 cattedra(5045, 23210, lm, d) :- codice_corso(5045), matricola_docente(23210), laurea(lm), taf(d).
 %  Corso: 3046, Docente: BARILI VALERIA
-cattedra(3046, 23210, ltps, a) :- codice_corso(3046), matricola_docente(23210), laurea(ltps), taf(a).
+cattedra(3046, 23210, lcpb, a) :- codice_corso(3046), matricola_docente(23210), laurea(lcpb), taf(a).
 %  Corso: 3047, Docente: BARILI VALERIA
-cattedra(3047, 23210, ltps, b) :- codice_corso(3047), matricola_docente(23210), laurea(ltps), taf(b).
+cattedra(3047, 23210, lcpb, b) :- codice_corso(3047), matricola_docente(23210), laurea(lcpb), taf(b).
 %  Corso: 3047, Docente: BARILI VALERIA
-cattedra(3047, 23210, ltps, b) :- codice_corso(3047), matricola_docente(23210), laurea(ltps), taf(b).
+cattedra(3047, 23210, lcpb, b) :- codice_corso(3047), matricola_docente(23210), laurea(lcpb), taf(b).
 %  Corso: 3071, Docente: BARILI VALERIA
-cattedra(3071, 23210, ltps, a) :- codice_corso(3071), matricola_docente(23210), laurea(ltps), taf(a).
+cattedra(3071, 23210, lt, a) :- codice_corso(3071), matricola_docente(23210), laurea(lt), taf(a).
 %  Corso: 5026, Docente: BARILLI Amelia
 cattedra(5026, 6544, lm6, b) :- codice_corso(5026), matricola_docente(6544), laurea(lm6), taf(b).
 %  Corso: 5074, Docente: BARILLI Amelia
@@ -1118,13 +1347,13 @@ cattedra(5074, 6544, lm6, b) :- codice_corso(5074), matricola_docente(6544), lau
 %  Corso: 5027, Docente: BARILLI Amelia
 cattedra(5027, 6544, lm6, b) :- codice_corso(5027), matricola_docente(6544), laurea(lm6), taf(b).
 %  Corso: 3019, Docente: BARILLI Amelia
-cattedra(3019, 6544, ltsm, c) :- codice_corso(3019), matricola_docente(6544), laurea(ltsm), taf(c).
+cattedra(3019, 6544, lcpa, c) :- codice_corso(3019), matricola_docente(6544), laurea(lcpa), taf(c).
 %  Corso: 3049, Docente: BARILLI Amelia
-cattedra(3049, 6544, ltps, b) :- codice_corso(3049), matricola_docente(6544), laurea(ltps), taf(b).
+cattedra(3049, 6544, lcpb, b) :- codice_corso(3049), matricola_docente(6544), laurea(lcpb), taf(b).
 %  Corso: 3048, Docente: BARILLI Amelia
-cattedra(3048, 6544, ltps, b) :- codice_corso(3048), matricola_docente(6544), laurea(ltps), taf(b).
+cattedra(3048, 6544, lcpb, b) :- codice_corso(3048), matricola_docente(6544), laurea(lcpb), taf(b).
 %  Corso: 3040, Docente: BARILLI Amelia
-cattedra(3040, 6544, ltps, b) :- codice_corso(3040), matricola_docente(6544), laurea(ltps), taf(b).
+cattedra(3040, 6544, lcpb, b) :- codice_corso(3040), matricola_docente(6544), laurea(lcpb), taf(b).
 %  Corso: 5009, Docente: BAROCELLI Elisabetta
 cattedra(5009, 3697, lm5, b) :- codice_corso(5009), matricola_docente(3697), laurea(lm5), taf(b).
 %  Corso: 5008, Docente: BAROCELLI Elisabetta
@@ -1152,7 +1381,7 @@ cattedra(5074, 6754, lm6, a) :- codice_corso(5074), matricola_docente(6754), lau
 %  Corso: 5073, Docente: BARTOLUCCI Marco
 cattedra(5073, 33517, lm, c) :- codice_corso(5073), matricola_docente(33517), laurea(lm), taf(c).
 %  Corso: 5050, Docente: BARTOLUCCI Marco
-cattedra(5050, 33517, lmi, b) :- codice_corso(5050), matricola_docente(33517), laurea(lmi), taf(b).
+cattedra(5050, 33517, lcpc, b) :- codice_corso(5050), matricola_docente(33517), laurea(lcpc), taf(b).
 %  Corso: 3038, Docente: BARTOLUCCI Marco
 cattedra(3038, 33517, lt, c) :- codice_corso(3038), matricola_docente(33517), laurea(lt), taf(c).
 %  Corso: 3038, Docente: BARTOLUCCI Marco
@@ -1180,17 +1409,17 @@ cattedra(3010, 32717, lt, b) :- codice_corso(3010), matricola_docente(32717), la
 %  Corso: 3011, Docente: BATTISTA GIANMARCO
 cattedra(3011, 32717, lt, b) :- codice_corso(3011), matricola_docente(32717), laurea(lt), taf(b).
 %  Corso: 3068, Docente: BATTISTINI Lucia
-cattedra(3068, 5541, lt, f) :- codice_corso(3068), matricola_docente(5541), laurea(lt), taf(f).
+cattedra(3068, 5541, lcpb, f) :- codice_corso(3068), matricola_docente(5541), laurea(lcpb), taf(f).
 %  Corso: 3020, Docente: BATTISTINI Lucia
 cattedra(3020, 5541, lt, a) :- codice_corso(3020), matricola_docente(5541), laurea(lt), taf(a).
 %  Corso: 3068, Docente: BATTISTINI Lucia
-cattedra(3068, 5541, lt, a) :- codice_corso(3068), matricola_docente(5541), laurea(lt), taf(a).
+cattedra(3068, 5541, lcpb, a) :- codice_corso(3068), matricola_docente(5541), laurea(lcpb), taf(a).
 %  Corso: 5077, Docente: BEGHE' Deborah
 cattedra(5077, 205007, lm, c) :- codice_corso(5077), matricola_docente(205007), laurea(lm), taf(c).
 %  Corso: 3052, Docente: BEGHE' Deborah
 cattedra(3052, 205007, lt, c) :- codice_corso(3052), matricola_docente(205007), laurea(lt), taf(c).
 %  Corso: 3064, Docente: BEGHE' Deborah
-cattedra(3064, 205007, lt, f) :- codice_corso(3064), matricola_docente(205007), laurea(lt), taf(f).
+cattedra(3064, 205007, lcpb, f) :- codice_corso(3064), matricola_docente(205007), laurea(lcpb), taf(f).
 %  Corso: 3050, Docente: BELARDI WALTER
 cattedra(3050, 41972, lt, c) :- codice_corso(3050), matricola_docente(41972), laurea(lt), taf(c).
 %  Corso: 3050, Docente: BELARDI WALTER
@@ -1208,7 +1437,7 @@ cattedra(3050, 11111, lt, f) :- codice_corso(3050), matricola_docente(11111), la
 %  Corso: 3069, Docente: BELLINGERI MICHELE
 cattedra(3069, 12185, lt, a) :- codice_corso(3069), matricola_docente(12185), laurea(lt), taf(a).
 %  Corso: 3063, Docente: BELLINI VALENTINA
-cattedra(3063, 14669, lt, a) :- codice_corso(3063), matricola_docente(14669), laurea(lt), taf(a).
+cattedra(3063, 14669, lcpb, a) :- codice_corso(3063), matricola_docente(14669), laurea(lcpb), taf(a).
 %  Corso: 5059, Docente: BELLINI Silvia
 cattedra(5059, 6507, lm, c) :- codice_corso(5059), matricola_docente(6507), laurea(lm), taf(c).
 %  Corso: 5059, Docente: BELLINI Silvia
@@ -1216,7 +1445,7 @@ cattedra(5059, 6507, lm, d) :- codice_corso(5059), matricola_docente(6507), laur
 %  Corso: 5027, Docente: BELLINI VALENTINA
 cattedra(5027, 14669, lm6, b) :- codice_corso(5027), matricola_docente(14669), laurea(lm6), taf(b).
 %  Corso: 3040, Docente: BELLINI VALENTINA
-cattedra(3040, 14669, ltps, a) :- codice_corso(3040), matricola_docente(14669), laurea(ltps), taf(a).
+cattedra(3040, 14669, lcpb, a) :- codice_corso(3040), matricola_docente(14669), laurea(lcpb), taf(a).
 %  Corso: 3004, Docente: BELLINI Silvia
 cattedra(3004, 6507, lt, c) :- codice_corso(3004), matricola_docente(6507), laurea(lt), taf(c).
 %  Corso: 5037, Docente: BELLONI Marino
@@ -1272,17 +1501,17 @@ cattedra(5064, 204061, lm, b) :- codice_corso(5064), matricola_docente(204061), 
 %  Corso: 5000, Docente: BERNINI Valentina
 cattedra(5000, 204061, lm, b) :- codice_corso(5000), matricola_docente(204061), laurea(lm), taf(b).
 %  Corso: 3041, Docente: BERRETTA Roberto
-cattedra(3041, 149461, ltps, b) :- codice_corso(3041), matricola_docente(149461), laurea(ltps), taf(b).
+cattedra(3041, 149461, lcpb, b) :- codice_corso(3041), matricola_docente(149461), laurea(lcpb), taf(b).
 %  Corso: 3041, Docente: BERRETTA Roberto
-cattedra(3041, 149461, ltps, b) :- codice_corso(3041), matricola_docente(149461), laurea(ltps), taf(b).
+cattedra(3041, 149461, lcpb, b) :- codice_corso(3041), matricola_docente(149461), laurea(lcpb), taf(b).
 %  Corso: 3040, Docente: BERRETTA Roberto
-cattedra(3040, 149461, ltps, b) :- codice_corso(3040), matricola_docente(149461), laurea(ltps), taf(b).
+cattedra(3040, 149461, lcpb, b) :- codice_corso(3040), matricola_docente(149461), laurea(lcpb), taf(b).
 %  Corso: 5026, Docente: BERRETTA Roberto
 cattedra(5026, 149461, lm6, b) :- codice_corso(5026), matricola_docente(149461), laurea(lm6), taf(b).
 %  Corso: 5045, Docente: BERRETTA Roberto
 cattedra(5045, 149461, lm, c) :- codice_corso(5045), matricola_docente(149461), laurea(lm), taf(c).
 %  Corso: 3041, Docente: BERRETTA Roberto
-cattedra(3041, 149461, ltps, b) :- codice_corso(3041), matricola_docente(149461), laurea(ltps), taf(b).
+cattedra(3041, 149461, lcpb, b) :- codice_corso(3041), matricola_docente(149461), laurea(lcpb), taf(b).
 %  Corso: 3065, Docente: BERRETTA Roberto
 cattedra(3065, 149461, lt, c) :- codice_corso(3065), matricola_docente(149461), laurea(lt), taf(c).
 %  Corso: 5036, Docente: BERSANI Danilo
@@ -1334,21 +1563,21 @@ cattedra(5073, 6585, lm, b) :- codice_corso(5073), matricola_docente(6585), laur
 %  Corso: 3017, Docente: BESEGHI Micol
 cattedra(3017, 6585, lt, b) :- codice_corso(3017), matricola_docente(6585), laurea(lt), taf(b).
 %  Corso: 3049, Docente: BETTATI Stefano
-cattedra(3049, 5613, ltps, a) :- codice_corso(3049), matricola_docente(5613), laurea(ltps), taf(a).
+cattedra(3049, 5613, lcpb, a) :- codice_corso(3049), matricola_docente(5613), laurea(lcpb), taf(a).
 %  Corso: 3048, Docente: BETTATI Stefano
-cattedra(3048, 5613, ltps, a) :- codice_corso(3048), matricola_docente(5613), laurea(ltps), taf(a).
+cattedra(3048, 5613, lcpb, a) :- codice_corso(3048), matricola_docente(5613), laurea(lcpb), taf(a).
 %  Corso: 3049, Docente: BETTATI Stefano
-cattedra(3049, 5613, ltps, a) :- codice_corso(3049), matricola_docente(5613), laurea(ltps), taf(a).
+cattedra(3049, 5613, lcpb, a) :- codice_corso(3049), matricola_docente(5613), laurea(lcpb), taf(a).
 %  Corso: 5026, Docente: BETTATI Stefano
 cattedra(5026, 5613, lm6, a) :- codice_corso(5026), matricola_docente(5613), laurea(lm6), taf(a).
 %  Corso: 5074, Docente: BETTATI Stefano
 cattedra(5074, 5613, lm6, a) :- codice_corso(5074), matricola_docente(5613), laurea(lm6), taf(a).
 %  Corso: 3042, Docente: BETTATI Stefano
-cattedra(3042, 5613, ltps, b) :- codice_corso(3042), matricola_docente(5613), laurea(ltps), taf(b).
+cattedra(3042, 5613, lcpb, b) :- codice_corso(3042), matricola_docente(5613), laurea(lcpb), taf(b).
 %  Corso: 3064, Docente: BETTERA LUCA
-cattedra(3064, 20907, lt, f) :- codice_corso(3064), matricola_docente(20907), laurea(lt), taf(f).
+cattedra(3064, 20907, lcpb, f) :- codice_corso(3064), matricola_docente(20907), laurea(lcpb), taf(f).
 %  Corso: 3064, Docente: BETTERA LUCA
-cattedra(3064, 20907, lt, b) :- codice_corso(3064), matricola_docente(20907), laurea(lt), taf(b).
+cattedra(3064, 20907, lcpb, b) :- codice_corso(3064), matricola_docente(20907), laurea(lcpb), taf(b).
 %  Corso: 5009, Docente: BETTINI Ruggero
 cattedra(5009, 5146, lm5, d) :- codice_corso(5009), matricola_docente(5146), laurea(lm5), taf(d).
 %  Corso: 5009, Docente: BETTINI Ruggero
@@ -1376,7 +1605,7 @@ cattedra(995, 206829, lm5, b) :- codice_corso(995), matricola_docente(206829), l
 %  Corso: 5029, Docente: BIANCHI Ezio
 cattedra(5029, 5655, lm5, b) :- codice_corso(5029), matricola_docente(5655), laurea(lm5), taf(b).
 %  Corso: 5028, Docente: BIANCHI Valentina
-cattedra(5028, 8765, lmsm, c) :- codice_corso(5028), matricola_docente(8765), laurea(lmsm), taf(c).
+cattedra(5028, 8765, lcpb, c) :- codice_corso(5028), matricola_docente(8765), laurea(lcpb), taf(c).
 %  Corso: 5013, Docente: BIANCHI Valentina
 cattedra(5013, 8765, lm, b) :- codice_corso(5013), matricola_docente(8765), laurea(lm), taf(b).
 %  Corso: 5041, Docente: BIANCHI Federica
@@ -1390,7 +1619,7 @@ cattedra(3013, 6782, lt, b) :- codice_corso(3013), matricola_docente(6782), laur
 %  Corso: 5043, Docente: BIANCHI Federica
 cattedra(5043, 6191, lm, c) :- codice_corso(5043), matricola_docente(6191), laurea(lm), taf(c).
 %  Corso: 5028, Docente: BIANCHI Massimiliano
-cattedra(5028, 205005, lmsm, c) :- codice_corso(5028), matricola_docente(205005), laurea(lmsm), taf(c).
+cattedra(5028, 205005, lcpb, c) :- codice_corso(5028), matricola_docente(205005), laurea(lcpb), taf(c).
 %  Corso: 3038, Docente: BIANCHI Malaika
 cattedra(3038, 206829, lt, c) :- codice_corso(3038), matricola_docente(206829), laurea(lt), taf(c).
 %  Corso: 5074, Docente: BIANCHI Massimiliano
@@ -1400,9 +1629,9 @@ cattedra(3051, 6782, lt, b) :- codice_corso(3051), matricola_docente(6782), laur
 %  Corso: 5074, Docente: BIANCHI Massimiliano
 cattedra(5074, 205005, lm6, b) :- codice_corso(5074), matricola_docente(205005), laurea(lm6), taf(b).
 %  Corso: 3006, Docente: BIANCHI Malaika
-cattedra(3006, 206829, ltss, c) :- codice_corso(3006), matricola_docente(206829), laurea(ltss), taf(c).
+cattedra(3006, 206829, lcpa, c) :- codice_corso(3006), matricola_docente(206829), laurea(lcpa), taf(c).
 %  Corso: 3006, Docente: BIANCHI Malaika
-cattedra(3006, 206829, ltss, d) :- codice_corso(3006), matricola_docente(206829), laurea(ltss), taf(d).
+cattedra(3006, 206829, lcpa, d) :- codice_corso(3006), matricola_docente(206829), laurea(lcpa), taf(d).
 %  Corso: 5025, Docente: BIANCHI Andrea
 cattedra(5025, 6782, lm, b) :- codice_corso(5025), matricola_docente(6782), laurea(lm), taf(b).
 %  Corso: 5077, Docente: BIASINI BEATRICE
@@ -1410,7 +1639,7 @@ cattedra(5077, 15764, lm, c) :- codice_corso(5077), matricola_docente(15764), la
 %  Corso: 5026, Docente: BIASUCCI GIACOMO
 cattedra(5026, 7306, lm6, f) :- codice_corso(5026), matricola_docente(7306), laurea(lm6), taf(f).
 %  Corso: 3040, Docente: BIASUCCI GIACOMO
-cattedra(3040, 7306, ltps, b) :- codice_corso(3040), matricola_docente(7306), laurea(ltps), taf(b).
+cattedra(3040, 7306, lcpb, b) :- codice_corso(3040), matricola_docente(7306), laurea(lcpb), taf(b).
 %  Corso: 3024, Docente: BIGI Franca
 cattedra(3024, 3698, lt, b) :- codice_corso(3024), matricola_docente(3698), laurea(lt), taf(b).
 %  Corso: 5055, Docente: BIGI Franca
@@ -1422,17 +1651,17 @@ cattedra(3010, 6578, lt, b) :- codice_corso(3010), matricola_docente(6578), laur
 %  Corso: 5014, Docente: BIGLIARDI Barbara
 cattedra(5014, 6578, lm, b) :- codice_corso(5014), matricola_docente(6578), laurea(lm), taf(b).
 %  Corso: 3040, Docente: BIGNAMI Elena Giovanna
-cattedra(3040, 22836, ltps, a) :- codice_corso(3040), matricola_docente(22836), laurea(ltps), taf(a).
+cattedra(3040, 22836, lcpb, a) :- codice_corso(3040), matricola_docente(22836), laurea(lcpb), taf(a).
 %  Corso: 3065, Docente: BIGNAMI Elena Giovanna
 cattedra(3065, 22836, lt, a) :- codice_corso(3065), matricola_docente(22836), laurea(lt), taf(a).
 %  Corso: 3040, Docente: BIGNAMI Elena Giovanna
-cattedra(3040, 22836, ltps, a) :- codice_corso(3040), matricola_docente(22836), laurea(ltps), taf(a).
+cattedra(3040, 22836, lcpb, a) :- codice_corso(3040), matricola_docente(22836), laurea(lcpb), taf(a).
 %  Corso: 3040, Docente: BIGNAMI Elena Giovanna
-cattedra(3040, 22836, ltps, a) :- codice_corso(3040), matricola_docente(22836), laurea(ltps), taf(a).
+cattedra(3040, 22836, lcpb, a) :- codice_corso(3040), matricola_docente(22836), laurea(lcpb), taf(a).
 %  Corso: 3040, Docente: BIGNAMI Elena Giovanna
-cattedra(3040, 22836, ltps, a) :- codice_corso(3040), matricola_docente(22836), laurea(ltps), taf(a).
+cattedra(3040, 22836, lcpb, a) :- codice_corso(3040), matricola_docente(22836), laurea(lcpb), taf(a).
 %  Corso: 3071, Docente: BIGNAMI Elena Giovanna
-cattedra(3071, 22836, ltps, a) :- codice_corso(3071), matricola_docente(22836), laurea(ltps), taf(a).
+cattedra(3071, 22836, lt, a) :- codice_corso(3071), matricola_docente(22836), laurea(lt), taf(a).
 %  Corso: 5026, Docente: BIGNAMI Elena Giovanna
 cattedra(5026, 22836, lm6, b) :- codice_corso(5026), matricola_docente(22836), laurea(lm6), taf(b).
 %  Corso: 5026, Docente: BIGNAMI Elena Giovanna
@@ -1440,7 +1669,7 @@ cattedra(5026, 22836, lm6, f) :- codice_corso(5026), matricola_docente(22836), l
 %  Corso: 5027, Docente: BIGNAMI Elena Giovanna
 cattedra(5027, 22836, lm6, f) :- codice_corso(5027), matricola_docente(22836), laurea(lm6), taf(f).
 %  Corso: 3041, Docente: BIGNAMI Elena Giovanna
-cattedra(3041, 22836, ltps, b) :- codice_corso(3041), matricola_docente(22836), laurea(ltps), taf(b).
+cattedra(3041, 22836, lcpb, b) :- codice_corso(3041), matricola_docente(22836), laurea(lcpb), taf(b).
 %  Corso: 3026, Docente: BILIOTTI Leonardo
 cattedra(3026, 7136, lt, a) :- codice_corso(3026), matricola_docente(7136), laurea(lt), taf(a).
 %  Corso: 5037, Docente: BILIOTTI Leonardo
@@ -1496,17 +1725,17 @@ cattedra(5046, 46719, lm, c) :- codice_corso(5046), matricola_docente(46719), la
 %  Corso: 5078, Docente: BOMPANI BARBARA
 cattedra(5078, 46719, lm, d) :- codice_corso(5078), matricola_docente(46719), laurea(lm), taf(d).
 %  Corso: 3040, Docente: BONACARO ANTONIO
-cattedra(3040, 38830, ltps, b) :- codice_corso(3040), matricola_docente(38830), laurea(ltps), taf(b).
+cattedra(3040, 38830, lcpb, b) :- codice_corso(3040), matricola_docente(38830), laurea(lcpb), taf(b).
 %  Corso: 3040, Docente: BONACARO ANTONIO
-cattedra(3040, 38830, ltps, b) :- codice_corso(3040), matricola_docente(38830), laurea(ltps), taf(b).
+cattedra(3040, 38830, lcpb, b) :- codice_corso(3040), matricola_docente(38830), laurea(lcpb), taf(b).
 %  Corso: 3040, Docente: BONACARO ANTONIO
-cattedra(3040, 38830, ltps, f) :- codice_corso(3040), matricola_docente(38830), laurea(ltps), taf(f).
+cattedra(3040, 38830, lcpb, f) :- codice_corso(3040), matricola_docente(38830), laurea(lcpb), taf(f).
 %  Corso: 5074, Docente: BONACARO ANTONIO
 cattedra(5074, 38830, lm6, b) :- codice_corso(5074), matricola_docente(38830), laurea(lm6), taf(b).
 %  Corso: 3040, Docente: BONACARO ANTONIO
-cattedra(3040, 38830, ltps, b) :- codice_corso(3040), matricola_docente(38830), laurea(ltps), taf(b).
+cattedra(3040, 38830, lcpb, b) :- codice_corso(3040), matricola_docente(38830), laurea(lcpb), taf(b).
 %  Corso: 5050, Docente: BONACARO ANTONIO
-cattedra(5050, 38830, lmi, b) :- codice_corso(5050), matricola_docente(38830), laurea(lmi), taf(b).
+cattedra(5050, 38830, lcpc, b) :- codice_corso(5050), matricola_docente(38830), laurea(lcpc), taf(b).
 %  Corso: 5081, Docente: BONAMINI Tommaso
 cattedra(5081, 15482, lm, b) :- codice_corso(5081), matricola_docente(15482), laurea(lm), taf(b).
 %  Corso: 995, Docente: BONAMINI Tommaso
@@ -1520,9 +1749,9 @@ cattedra(5026, 5721, lm6, b) :- codice_corso(5026), matricola_docente(5721), lau
 %  Corso: 5071, Docente: BONELLI Mara
 cattedra(5071, 5721, lm, b) :- codice_corso(5071), matricola_docente(5721), laurea(lm), taf(b).
 %  Corso: 3040, Docente: BONELLI Mara
-cattedra(3040, 5721, ltps, a) :- codice_corso(3040), matricola_docente(5721), laurea(ltps), taf(a).
+cattedra(3040, 5721, lcpb, a) :- codice_corso(3040), matricola_docente(5721), laurea(lcpb), taf(a).
 %  Corso: 3043, Docente: BONELLI Mara
-cattedra(3043, 5721, ltps, a) :- codice_corso(3043), matricola_docente(5721), laurea(ltps), taf(a).
+cattedra(3043, 5721, lcpb, a) :- codice_corso(3043), matricola_docente(5721), laurea(lcpb), taf(a).
 %  Corso: 5074, Docente: BONI CAROLINA
 cattedra(5074, 42168, lm6, b) :- codice_corso(5074), matricola_docente(42168), laurea(lm6), taf(b).
 %  Corso: 5013, Docente: BONI Andrea
@@ -1562,11 +1791,11 @@ cattedra(5029, 4501, lm5, b) :- codice_corso(5029), matricola_docente(4501), lau
 %  Corso: 5045, Docente: BORGHETTI Paolo
 cattedra(5045, 4501, lm, b) :- codice_corso(5045), matricola_docente(4501), laurea(lm), taf(b).
 %  Corso: 5028, Docente: BORRA Elena
-cattedra(5028, 204071, lmsm, b) :- codice_corso(5028), matricola_docente(204071), laurea(lmsm), taf(b).
+cattedra(5028, 204071, lcpb, b) :- codice_corso(5028), matricola_docente(204071), laurea(lcpb), taf(b).
 %  Corso: 3019, Docente: BORRA Elena
-cattedra(3019, 204071, ltsm, b) :- codice_corso(3019), matricola_docente(204071), laurea(ltsm), taf(b).
+cattedra(3019, 204071, lcpa, b) :- codice_corso(3019), matricola_docente(204071), laurea(lcpa), taf(b).
 %  Corso: 3063, Docente: BORRA Elena
-cattedra(3063, 204071, lt, a) :- codice_corso(3063), matricola_docente(204071), laurea(lt), taf(a).
+cattedra(3063, 204071, lcpb, a) :- codice_corso(3063), matricola_docente(204071), laurea(lcpb), taf(a).
 %  Corso: 5027, Docente: BORRA Elena
 cattedra(5027, 204071, lm6, a) :- codice_corso(5027), matricola_docente(204071), laurea(lm6), taf(a).
 %  Corso: 3060, Docente: BORTOLETTI Francesca
@@ -1584,7 +1813,7 @@ cattedra(3026, 4271, lt, c) :- codice_corso(3026), matricola_docente(4271), laur
 %  Corso: 3062, Docente: BOSIO Alessio
 cattedra(3062, 4271, lt, b) :- codice_corso(3062), matricola_docente(4271), laurea(lt), taf(b).
 %  Corso: 3064, Docente: BOT Francesca
-cattedra(3064, 35350, lt, f) :- codice_corso(3064), matricola_docente(35350), laurea(lt), taf(f).
+cattedra(3064, 35350, lcpb, f) :- codice_corso(3064), matricola_docente(35350), laurea(lcpb), taf(f).
 %  Corso: 3055, Docente: BOT Francesca
 cattedra(3055, 35350, lt, b) :- codice_corso(3055), matricola_docente(35350), laurea(lt), taf(b).
 %  Corso: 5014, Docente: BOTTANI Eleonora
@@ -1594,7 +1823,7 @@ cattedra(3010, 6513, lt, b) :- codice_corso(3010), matricola_docente(6513), laur
 %  Corso: 5014, Docente: BOTTANI Eleonora
 cattedra(5014, 6513, lm, b) :- codice_corso(5014), matricola_docente(6513), laurea(lm), taf(b).
 %  Corso: 3068, Docente: BOTTARI Benedetta
-cattedra(3068, 206006, lt, b) :- codice_corso(3068), matricola_docente(206006), laurea(lt), taf(b).
+cattedra(3068, 206006, lcpb, b) :- codice_corso(3068), matricola_docente(206006), laurea(lcpb), taf(b).
 %  Corso: 3055, Docente: BOTTARI Benedetta
 cattedra(3055, 206006, lt, b) :- codice_corso(3055), matricola_docente(206006), laurea(lt), taf(b).
 %  Corso: 5068, Docente: BOTTARI Benedetta
@@ -1622,19 +1851,19 @@ cattedra(5029, 6603, lm5, b) :- codice_corso(5029), matricola_docente(6603), lau
 %  Corso: 3020, Docente: BRESCIANI Carla
 cattedra(3020, 6603, lt, b) :- codice_corso(3020), matricola_docente(6603), laurea(lt), taf(b).
 %  Corso: 3064, Docente: BRESCIANI Letizia
-cattedra(3064, 11083, lt, f) :- codice_corso(3064), matricola_docente(11083), laurea(lt), taf(f).
+cattedra(3064, 11083, lcpb, f) :- codice_corso(3064), matricola_docente(11083), laurea(lcpb), taf(f).
 %  Corso: 3064, Docente: BRESCIANI Letizia
-cattedra(3064, 11083, lt, c) :- codice_corso(3064), matricola_docente(11083), laurea(lt), taf(c).
+cattedra(3064, 11083, lcpb, c) :- codice_corso(3064), matricola_docente(11083), laurea(lcpb), taf(c).
 %  Corso: 5029, Docente: BRESCIANI Carla
 cattedra(5029, 6603, lm5, d) :- codice_corso(5029), matricola_docente(6603), laurea(lm5), taf(d).
 %  Corso: 3069, Docente: BRUNI Renato
 cattedra(3069, 6126, lt, a) :- codice_corso(3069), matricola_docente(6126), laurea(lt), taf(a).
 %  Corso: 3046, Docente: BRUNO Nicola
-cattedra(3046, 8732, ltps, b) :- codice_corso(3046), matricola_docente(8732), laurea(ltps), taf(b).
+cattedra(3046, 8732, lcpb, b) :- codice_corso(3046), matricola_docente(8732), laurea(lcpb), taf(b).
 %  Corso: 5053, Docente: BRUNO Nicola
 cattedra(5053, 8732, lm, b) :- codice_corso(5053), matricola_docente(8732), laurea(lm), taf(b).
 %  Corso: 3048, Docente: BRUNO Nicola
-cattedra(3048, 8732, ltps, b) :- codice_corso(3048), matricola_docente(8732), laurea(ltps), taf(b).
+cattedra(3048, 8732, lcpb, b) :- codice_corso(3048), matricola_docente(8732), laurea(lcpb), taf(b).
 %  Corso: 5009, Docente: BRUNO Stefano
 cattedra(5009, 6391, lm5, b) :- codice_corso(5009), matricola_docente(6391), laurea(lm5), taf(b).
 %  Corso: 5026, Docente: BUGELLI VALENTINA
@@ -1650,11 +1879,11 @@ cattedra(3065, 43777, lt, b) :- codice_corso(3065), matricola_docente(43777), la
 %  Corso: 5026, Docente: BUGELLI VALENTINA
 cattedra(5026, 43777, lm6, b) :- codice_corso(5026), matricola_docente(43777), laurea(lm6), taf(b).
 %  Corso: 3044, Docente: BUGELLI VALENTINA
-cattedra(3044, 43777, ltps, b) :- codice_corso(3044), matricola_docente(43777), laurea(ltps), taf(b).
+cattedra(3044, 43777, lcpb, b) :- codice_corso(3044), matricola_docente(43777), laurea(lcpb), taf(b).
 %  Corso: 3047, Docente: BUGELLI VALENTINA
-cattedra(3047, 43777, ltps, d) :- codice_corso(3047), matricola_docente(43777), laurea(ltps), taf(d).
+cattedra(3047, 43777, lcpb, d) :- codice_corso(3047), matricola_docente(43777), laurea(lcpb), taf(d).
 %  Corso: 3047, Docente: BUGELLI VALENTINA
-cattedra(3047, 43777, ltps, b) :- codice_corso(3047), matricola_docente(43777), laurea(ltps), taf(b).
+cattedra(3047, 43777, lcpb, b) :- codice_corso(3047), matricola_docente(43777), laurea(lcpb), taf(b).
 %  Corso: 3024, Docente: BURIONI Raffaella
 cattedra(3024, 5555, lt, a) :- codice_corso(3024), matricola_docente(5555), laurea(lt), taf(a).
 %  Corso: 5036, Docente: BURIONI Raffaella
@@ -1676,7 +1905,7 @@ cattedra(5074, 4328, lm6, b) :- codice_corso(5074), matricola_docente(4328), lau
 %  Corso: 5026, Docente: BUSSOLATI Ovidio
 cattedra(5026, 4328, lm6, b) :- codice_corso(5026), matricola_docente(4328), laurea(lm6), taf(b).
 %  Corso: 5028, Docente: BUSSOLATI Ovidio
-cattedra(5028, 4328, lmsm, c) :- codice_corso(5028), matricola_docente(4328), laurea(lmsm), taf(c).
+cattedra(5028, 4328, lcpb, c) :- codice_corso(5028), matricola_docente(4328), laurea(lcpb), taf(c).
 %  Corso: 3022, Docente: BUSSOLATI Ovidio
 cattedra(3022, 4328, lt, c) :- codice_corso(3022), matricola_docente(4328), laurea(lt), taf(c).
 %  Corso: 5026, Docente: BUSSOLATI Ovidio
@@ -1684,7 +1913,7 @@ cattedra(5026, 4328, lm6, b) :- codice_corso(5026), matricola_docente(4328), lau
 %  Corso: 3065, Docente: BUTI Sebastiano
 cattedra(3065, 164267, lt, b) :- codice_corso(3065), matricola_docente(164267), laurea(lt), taf(b).
 %  Corso: 3041, Docente: BUTI Sebastiano
-cattedra(3041, 164267, ltps, b) :- codice_corso(3041), matricola_docente(164267), laurea(ltps), taf(b).
+cattedra(3041, 164267, lcpb, b) :- codice_corso(3041), matricola_docente(164267), laurea(lcpb), taf(b).
 %  Corso: 5074, Docente: BUTI Sebastiano
 cattedra(5074, 164267, lm6, b) :- codice_corso(5074), matricola_docente(164267), laurea(lm6), taf(b).
 %  Corso: 5008, Docente: BUTTINI Francesca
@@ -1696,7 +1925,7 @@ cattedra(3017, 6433, lt, b) :- codice_corso(3017), matricola_docente(6433), laur
 %  Corso: 3017, Docente: CABASSI Nicoletta
 cattedra(3017, 6433, lt, b) :- codice_corso(3017), matricola_docente(6433), laurea(lt), taf(b).
 %  Corso: 3042, Docente: CABASSI Aderville
-cattedra(3042, 5548, ltps, a) :- codice_corso(3042), matricola_docente(5548), laurea(ltps), taf(a).
+cattedra(3042, 5548, lcpb, a) :- codice_corso(3042), matricola_docente(5548), laurea(lcpb), taf(a).
 %  Corso: 5026, Docente: CABASSI Aderville
 cattedra(5026, 5548, lm6, f) :- codice_corso(5026), matricola_docente(5548), laurea(lm6), taf(f).
 %  Corso: 5026, Docente: CABASSI Aderville
@@ -1706,15 +1935,15 @@ cattedra(5029, 4526, lm5, b) :- codice_corso(5029), matricola_docente(4526), lau
 %  Corso: 5073, Docente: CABASSI Nicoletta
 cattedra(5073, 6433, lm, c) :- codice_corso(5073), matricola_docente(6433), laurea(lm), taf(c).
 %  Corso: 5050, Docente: CABASSI Aderville
-cattedra(5050, 5548, lmi, b) :- codice_corso(5050), matricola_docente(5548), laurea(lmi), taf(b).
+cattedra(5050, 5548, lcpc, b) :- codice_corso(5050), matricola_docente(5548), laurea(lcpc), taf(b).
 %  Corso: 3040, Docente: CABASSI Aderville
-cattedra(3040, 5548, ltps, b) :- codice_corso(3040), matricola_docente(5548), laurea(ltps), taf(b).
+cattedra(3040, 5548, lcpb, b) :- codice_corso(3040), matricola_docente(5548), laurea(lcpb), taf(b).
 %  Corso: 5028, Docente: CABASSI Aderville
-cattedra(5028, 5548, lmsm, d) :- codice_corso(5028), matricola_docente(5548), laurea(lmsm), taf(d).
+cattedra(5028, 5548, lcpb, d) :- codice_corso(5028), matricola_docente(5548), laurea(lcpb), taf(d).
 %  Corso: 5029, Docente: CABASSI Clotilde Silvia
 cattedra(5029, 4526, lm5, b) :- codice_corso(5029), matricola_docente(4526), laurea(lm5), taf(b).
 %  Corso: 3066, Docente: CABASSI Nicoletta
-cattedra(3066, 6433, lt, b) :- codice_corso(3066), matricola_docente(6433), laurea(lt), taf(b).
+cattedra(3066, 6433, lcpa, b) :- codice_corso(3066), matricola_docente(6433), laurea(lcpa), taf(b).
 %  Corso: 5029, Docente: CABASSI Clotilde Silvia
 cattedra(5029, 4526, lm5, d) :- codice_corso(5029), matricola_docente(4526), laurea(lm5), taf(d).
 %  Corso: 3022, Docente: CABASSI Clotilde Silvia
@@ -1746,13 +1975,13 @@ cattedra(5026, 4369, lm6, b) :- codice_corso(5026), matricola_docente(4369), lau
 %  Corso: 5027, Docente: CAFFARELLI Carlo
 cattedra(5027, 4369, lm6, b) :- codice_corso(5027), matricola_docente(4369), laurea(lm6), taf(b).
 %  Corso: 5028, Docente: CAFFARELLI Carlo
-cattedra(5028, 4369, lmsm, c) :- codice_corso(5028), matricola_docente(4369), laurea(lmsm), taf(c).
+cattedra(5028, 4369, lcpb, c) :- codice_corso(5028), matricola_docente(4369), laurea(lcpb), taf(c).
 %  Corso: 3040, Docente: CAFFARELLI Carlo
-cattedra(3040, 4369, ltps, b) :- codice_corso(3040), matricola_docente(4369), laurea(ltps), taf(b).
+cattedra(3040, 4369, lcpb, b) :- codice_corso(3040), matricola_docente(4369), laurea(lcpb), taf(b).
 %  Corso: 5026, Docente: CAFFARELLI Carlo
 cattedra(5026, 4369, lm6, b) :- codice_corso(5026), matricola_docente(4369), laurea(lm6), taf(b).
 %  Corso: 3046, Docente: CAFFARELLI Carlo
-cattedra(3046, 4369, ltps, f) :- codice_corso(3046), matricola_docente(4369), laurea(ltps), taf(f).
+cattedra(3046, 4369, lcpb, f) :- codice_corso(3046), matricola_docente(4369), laurea(lcpb), taf(f).
 %  Corso: 3029, Docente: Cagnetti Filippo
 cattedra(3029, 41973, lt, a) :- codice_corso(3029), matricola_docente(41973), laurea(lt), taf(a).
 %  Corso: 3030, Docente: Cagnetti Filippo
@@ -1776,7 +2005,7 @@ cattedra(5027, 15245, lm6, f) :- codice_corso(5027), matricola_docente(15245), l
 %  Corso: 5027, Docente: CALCIOLARI Elena
 cattedra(5027, 15245, lm6, f) :- codice_corso(5027), matricola_docente(15245), laurea(lm6), taf(f).
 %  Corso: 3063, Docente: CALCIOLARI Elena
-cattedra(3063, 15245, lt, b) :- codice_corso(3063), matricola_docente(15245), laurea(lt), taf(b).
+cattedra(3063, 15245, lcpb, b) :- codice_corso(3063), matricola_docente(15245), laurea(lcpb), taf(b).
 %  Corso: 5027, Docente: CALCIOLARI Elena
 cattedra(5027, 15245, lm6, b) :- codice_corso(5027), matricola_docente(15245), laurea(lm6), taf(b).
 %  Corso: 5027, Docente: CALCIOLARI Elena
@@ -1802,13 +2031,13 @@ cattedra(3052, 40347, lt, c) :- codice_corso(3052), matricola_docente(40347), la
 %  Corso: 3004, Docente: CALVIA Alessandro
 cattedra(3004, 40347, lt, a) :- codice_corso(3004), matricola_docente(40347), laurea(lt), taf(a).
 %  Corso: 5028, Docente: CALZETTA Luigino
-cattedra(5028, 30445, lmsm, c) :- codice_corso(5028), matricola_docente(30445), laurea(lmsm), taf(c).
+cattedra(5028, 30445, lcpb, c) :- codice_corso(5028), matricola_docente(30445), laurea(lcpb), taf(c).
 %  Corso: 3048, Docente: CALZETTA Luigino
-cattedra(3048, 30445, ltps, b) :- codice_corso(3048), matricola_docente(30445), laurea(ltps), taf(b).
+cattedra(3048, 30445, lcpb, b) :- codice_corso(3048), matricola_docente(30445), laurea(lcpb), taf(b).
 %  Corso: 3042, Docente: CALZETTA Luigino
-cattedra(3042, 30445, ltps, b) :- codice_corso(3042), matricola_docente(30445), laurea(ltps), taf(b).
+cattedra(3042, 30445, lcpb, b) :- codice_corso(3042), matricola_docente(30445), laurea(lcpb), taf(b).
 %  Corso: 3019, Docente: CALZETTA Luigino
-cattedra(3019, 30445, ltsm, c) :- codice_corso(3019), matricola_docente(30445), laurea(ltsm), taf(c).
+cattedra(3019, 30445, lcpa, c) :- codice_corso(3019), matricola_docente(30445), laurea(lcpa), taf(c).
 %  Corso: 5039, Docente: CAMMI Roberto
 cattedra(5039, 3700, lm, b) :- codice_corso(5039), matricola_docente(3700), laurea(lm), taf(b).
 %  Corso: 3024, Docente: CAMMI Roberto
@@ -1828,9 +2057,9 @@ cattedra(5073, 6407, lm, b) :- codice_corso(5073), matricola_docente(6407), laur
 %  Corso: 3017, Docente: CANEPARI Michela
 cattedra(3017, 6407, lt, b) :- codice_corso(3017), matricola_docente(6407), laurea(lt), taf(b).
 %  Corso: 3040, Docente: CANNONE Valentina
-cattedra(3040, 20424, ltps, b) :- codice_corso(3040), matricola_docente(20424), laurea(ltps), taf(b).
+cattedra(3040, 20424, lcpb, b) :- codice_corso(3040), matricola_docente(20424), laurea(lcpb), taf(b).
 %  Corso: 3046, Docente: CANNONE Valentina
-cattedra(3046, 20424, ltps, a) :- codice_corso(3046), matricola_docente(20424), laurea(ltps), taf(a).
+cattedra(3046, 20424, lcpb, a) :- codice_corso(3046), matricola_docente(20424), laurea(lcpb), taf(a).
 %  Corso: 5026, Docente: CANNONE Valentina
 cattedra(5026, 20424, lm6, b) :- codice_corso(5026), matricola_docente(20424), laurea(lm6), taf(b).
 %  Corso: 5027, Docente: CANNONE Valentina
@@ -1892,9 +2121,9 @@ cattedra(3024, 4575, lt, b) :- codice_corso(3024), matricola_docente(4575), laur
 %  Corso: 3062, Docente: CARERI Maria
 cattedra(3062, 4575, lt, b) :- codice_corso(3062), matricola_docente(4575), laurea(lt), taf(b).
 %  Corso: 5050, Docente: CARICATI Luca
-cattedra(5050, 206019, lmi, b) :- codice_corso(5050), matricola_docente(206019), laurea(lmi), taf(b).
+cattedra(5050, 206019, lcpc, b) :- codice_corso(5050), matricola_docente(206019), laurea(lcpc), taf(b).
 %  Corso: 3044, Docente: CARICATI Luca
-cattedra(3044, 206019, ltps, b) :- codice_corso(3044), matricola_docente(206019), laurea(ltps), taf(b).
+cattedra(3044, 206019, lcpb, b) :- codice_corso(3044), matricola_docente(206019), laurea(lcpb), taf(b).
 %  Corso: 5054, Docente: CARICATI Luca
 cattedra(5054, 206019, lm, f) :- codice_corso(5054), matricola_docente(206019), laurea(lm), taf(f).
 %  Corso: 5054, Docente: CARICATI Luca
@@ -1908,13 +2137,13 @@ cattedra(3051, 206019, lt, b) :- codice_corso(3051), matricola_docente(206019), 
 %  Corso: 5000, Docente: CARINI Eleonora
 cattedra(5000, 205064, lm, b) :- codice_corso(5000), matricola_docente(205064), laurea(lm), taf(b).
 %  Corso: 3064, Docente: CARINI Eleonora
-cattedra(3064, 205064, lt, b) :- codice_corso(3064), matricola_docente(205064), laurea(lt), taf(b).
+cattedra(3064, 205064, lcpb, b) :- codice_corso(3064), matricola_docente(205064), laurea(lcpb), taf(b).
 %  Corso: 3055, Docente: CARINI Eleonora
 cattedra(3055, 205064, lt, d) :- codice_corso(3055), matricola_docente(205064), laurea(lt), taf(d).
 %  Corso: 3000, Docente: CARINI Eleonora
 cattedra(3000, 205064, lt, b) :- codice_corso(3000), matricola_docente(205064), laurea(lt), taf(b).
 %  Corso: 3064, Docente: CARINI Eleonora
-cattedra(3064, 205064, lt, b) :- codice_corso(3064), matricola_docente(205064), laurea(lt), taf(b).
+cattedra(3064, 205064, lcpb, b) :- codice_corso(3064), matricola_docente(205064), laurea(lcpb), taf(b).
 %  Corso: 5074, Docente: CARINO Davide
 cattedra(5074, 41944, lm6, b) :- codice_corso(5074), matricola_docente(41944), laurea(lm6), taf(b).
 %  Corso: 5071, Docente: CARNEVALI Luca
@@ -1936,13 +2165,13 @@ cattedra(5036, 206887, lm, b) :- codice_corso(5036), matricola_docente(206887), 
 %  Corso: 3026, Docente: CARRETTA Stefano
 cattedra(3026, 206887, lt, a) :- codice_corso(3026), matricola_docente(206887), laurea(lt), taf(a).
 %  Corso: 3044, Docente: CARTA Arturo
-cattedra(3044, 5547, ltps, b) :- codice_corso(3044), matricola_docente(5547), laurea(ltps), taf(b).
+cattedra(3044, 5547, lcpb, b) :- codice_corso(3044), matricola_docente(5547), laurea(lcpb), taf(b).
 %  Corso: 3044, Docente: CARTA Arturo
-cattedra(3044, 5547, ltps, b) :- codice_corso(3044), matricola_docente(5547), laurea(ltps), taf(b).
+cattedra(3044, 5547, lcpb, b) :- codice_corso(3044), matricola_docente(5547), laurea(lcpb), taf(b).
 %  Corso: 3044, Docente: CARTA Arturo
-cattedra(3044, 5547, ltps, b) :- codice_corso(3044), matricola_docente(5547), laurea(ltps), taf(b).
+cattedra(3044, 5547, lcpb, b) :- codice_corso(3044), matricola_docente(5547), laurea(lcpb), taf(b).
 %  Corso: 3044, Docente: CARTA Arturo
-cattedra(3044, 5547, ltps, b) :- codice_corso(3044), matricola_docente(5547), laurea(ltps), taf(b).
+cattedra(3044, 5547, lcpb, b) :- codice_corso(3044), matricola_docente(5547), laurea(lcpb), taf(b).
 %  Corso: 5074, Docente: CARTA Arturo
 cattedra(5074, 5547, lm6, b) :- codice_corso(5074), matricola_docente(5547), laurea(lm6), taf(b).
 %  Corso: 5026, Docente: CARUBBI Cecilia
@@ -2058,7 +2287,7 @@ cattedra(3030, 13727, lt, b) :- codice_corso(3030), matricola_docente(13727), la
 %  Corso: 995, Docente: CATTANI Luca
 cattedra(995, 47362, lm5, b) :- codice_corso(995), matricola_docente(47362), laurea(lm5), taf(b).
 %  Corso: 3006, Docente: CATTANI Luca
-cattedra(3006, 47362, ltss, a) :- codice_corso(3006), matricola_docente(47362), laurea(ltss), taf(a).
+cattedra(3006, 47362, lcpa, a) :- codice_corso(3006), matricola_docente(47362), laurea(lcpa), taf(a).
 %  Corso: 3010, Docente: CATTANI Luca
 cattedra(3010, 10712, lt, c) :- codice_corso(3010), matricola_docente(10712), laurea(lt), taf(c).
 %  Corso: 5075, Docente: CATTANI Luca
@@ -2078,13 +2307,13 @@ cattedra(3024, 7165, lt, b) :- codice_corso(3024), matricola_docente(7165), laur
 %  Corso: 3022, Docente: CAVAZZA Antonella
 cattedra(3022, 7165, lt, b) :- codice_corso(3022), matricola_docente(7165), laurea(lt), taf(b).
 %  Corso: 3047, Docente: CAVAZZONI Andrea
-cattedra(3047, 253674, ltps, b) :- codice_corso(3047), matricola_docente(253674), laurea(ltps), taf(b).
+cattedra(3047, 253674, lcpb, b) :- codice_corso(3047), matricola_docente(253674), laurea(lcpb), taf(b).
 %  Corso: 3040, Docente: CAVAZZONI Andrea
-cattedra(3040, 253674, ltps, a) :- codice_corso(3040), matricola_docente(253674), laurea(ltps), taf(a).
+cattedra(3040, 253674, lcpb, a) :- codice_corso(3040), matricola_docente(253674), laurea(lcpb), taf(a).
 %  Corso: 3046, Docente: CAVAZZONI Andrea
-cattedra(3046, 253674, ltps, a) :- codice_corso(3046), matricola_docente(253674), laurea(ltps), taf(a).
+cattedra(3046, 253674, lcpb, a) :- codice_corso(3046), matricola_docente(253674), laurea(lcpb), taf(a).
 %  Corso: 3049, Docente: CAVAZZONI Andrea
-cattedra(3049, 253674, ltps, a) :- codice_corso(3049), matricola_docente(253674), laurea(ltps), taf(a).
+cattedra(3049, 253674, lcpb, a) :- codice_corso(3049), matricola_docente(253674), laurea(lcpb), taf(a).
 %  Corso: 5008, Docente: CAVAZZONI Andrea
 cattedra(5008, 253674, lm5, d) :- codice_corso(5008), matricola_docente(253674), laurea(lm5), taf(d).
 %  Corso: 5065, Docente: CAVIRANI Sandro
@@ -2092,11 +2321,11 @@ cattedra(5065, 3704, lm, b) :- codice_corso(5065), matricola_docente(3704), laur
 %  Corso: 5029, Docente: CAVIRANI Sandro
 cattedra(5029, 3704, lm5, b) :- codice_corso(5029), matricola_docente(3704), laurea(lm5), taf(b).
 %  Corso: 3048, Docente: CECCARELLI Francesco
-cattedra(3048, 6496, ltps, b) :- codice_corso(3048), matricola_docente(6496), laurea(ltps), taf(b).
+cattedra(3048, 6496, lcpb, b) :- codice_corso(3048), matricola_docente(6496), laurea(lcpb), taf(b).
 %  Corso: 5026, Docente: CECCARELLI Francesco
 cattedra(5026, 6496, lm6, b) :- codice_corso(5026), matricola_docente(6496), laurea(lm6), taf(b).
 %  Corso: 3019, Docente: CECCARELLI Francesco
-cattedra(3019, 6496, ltsm, b) :- codice_corso(3019), matricola_docente(6496), laurea(ltsm), taf(b).
+cattedra(3019, 6496, lcpa, b) :- codice_corso(3019), matricola_docente(6496), laurea(lcpa), taf(b).
 %  Corso: 3022, Docente: CECCATELLI BERTI Camilla
 cattedra(3022, 11367, lt, c) :- codice_corso(3022), matricola_docente(11367), laurea(lt), taf(c).
 %  Corso: 3022, Docente: CECCATELLI BERTI Camilla
@@ -2116,11 +2345,11 @@ cattedra(5043, 100652, lm, c) :- codice_corso(5043), matricola_docente(100652), 
 %  Corso: 3007, Docente: CELICO Fulvio
 cattedra(3007, 100652, lt, b) :- codice_corso(3007), matricola_docente(100652), laurea(lt), taf(b).
 %  Corso: 3066, Docente: CELO PIETRO
-cattedra(3066, 35758, lt, a) :- codice_corso(3066), matricola_docente(35758), laurea(lt), taf(a).
+cattedra(3066, 35758, lcpa, a) :- codice_corso(3066), matricola_docente(35758), laurea(lcpa), taf(a).
 %  Corso: 3066, Docente: CELO PIETRO
-cattedra(3066, 35758, lt, b) :- codice_corso(3066), matricola_docente(35758), laurea(lt), taf(b).
+cattedra(3066, 35758, lcpa, b) :- codice_corso(3066), matricola_docente(35758), laurea(lcpa), taf(b).
 %  Corso: 3066, Docente: CELO PIETRO
-cattedra(3066, 35758, lt, a) :- codice_corso(3066), matricola_docente(35758), laurea(lt), taf(a).
+cattedra(3066, 35758, lcpa, a) :- codice_corso(3066), matricola_docente(35758), laurea(lcpa), taf(a).
 %  Corso: 3014, Docente: CENTENARI Margherita
 cattedra(3014, 10709, lt, b) :- codice_corso(3014), matricola_docente(10709), laurea(lt), taf(b).
 %  Corso: 3060, Docente: CENTENARI Margherita
@@ -2136,7 +2365,7 @@ cattedra(3024, 22263, lt, a) :- codice_corso(3024), matricola_docente(22263), la
 %  Corso: 5041, Docente: CERA GIANPIERO
 cattedra(5041, 22263, lm, b) :- codice_corso(5041), matricola_docente(22263), laurea(lm), taf(b).
 %  Corso: 3040, Docente: CERESINI Graziano
-cattedra(3040, 4270, ltps, b) :- codice_corso(3040), matricola_docente(4270), laurea(ltps), taf(b).
+cattedra(3040, 4270, lcpb, b) :- codice_corso(3040), matricola_docente(4270), laurea(lcpb), taf(b).
 %  Corso: 5026, Docente: CERESINI Graziano
 cattedra(5026, 4270, lm6, f) :- codice_corso(5026), matricola_docente(4270), laurea(lm6), taf(f).
 %  Corso: 5026, Docente: CERESINI Graziano
@@ -2172,7 +2401,7 @@ cattedra(3000, 13968, lt, c) :- codice_corso(3000), matricola_docente(13968), la
 %  Corso: 3000, Docente: CHIANCONE Benedetta
 cattedra(3000, 13968, lt, d) :- codice_corso(3000), matricola_docente(13968), laurea(lt), taf(d).
 %  Corso: 3064, Docente: CHIANCONE Benedetta
-cattedra(3064, 13968, lt, b) :- codice_corso(3064), matricola_docente(13968), laurea(lt), taf(b).
+cattedra(3064, 13968, lcpb, b) :- codice_corso(3064), matricola_docente(13968), laurea(lcpb), taf(b).
 %  Corso: 5018, Docente: CHIAPPONI Luca
 cattedra(5018, 6912, lm, b) :- codice_corso(5018), matricola_docente(6912), laurea(lm), taf(b).
 %  Corso: 5011, Docente: CHIAPPONI Luca
@@ -2184,7 +2413,7 @@ cattedra(3069, 6054, lt, b) :- codice_corso(3069), matricola_docente(6054), laur
 %  Corso: 3000, Docente: CHIAVARO Emma
 cattedra(3000, 6054, lt, b) :- codice_corso(3000), matricola_docente(6054), laurea(lt), taf(b).
 %  Corso: 3049, Docente: CHIAVARO Emma
-cattedra(3049, 6054, ltps, b) :- codice_corso(3049), matricola_docente(6054), laurea(ltps), taf(b).
+cattedra(3049, 6054, lcpb, b) :- codice_corso(3049), matricola_docente(6054), laurea(lcpb), taf(b).
 %  Corso: 5069, Docente: CHIESA Alessandro
 cattedra(5069, 11047, lm, c) :- codice_corso(5069), matricola_docente(11047), laurea(lm), taf(c).
 %  Corso: 5013, Docente: CHIORBOLI Giovanni
@@ -2196,7 +2425,7 @@ cattedra(5027, 12923, lm6, c) :- codice_corso(5027), matricola_docente(12923), l
 %  Corso: 3022, Docente: CHIU Martina
 cattedra(3022, 12923, lt, c) :- codice_corso(3022), matricola_docente(12923), laurea(lt), taf(c).
 %  Corso: 3063, Docente: CHIU Martina
-cattedra(3063, 12923, lt, a) :- codice_corso(3063), matricola_docente(12923), laurea(lt), taf(a).
+cattedra(3063, 12923, lcpb, a) :- codice_corso(3063), matricola_docente(12923), laurea(lcpb), taf(a).
 %  Corso: 5026, Docente: CHIU Martina
 cattedra(5026, 12923, lm6, b) :- codice_corso(5026), matricola_docente(12923), laurea(lm6), taf(b).
 %  Corso: 3050, Docente: CIAMPOLINI Paolo
@@ -2226,23 +2455,23 @@ cattedra(5077, 5214, lm, b) :- codice_corso(5077), matricola_docente(5214), laur
 %  Corso: 3004, Docente: CILLONI Andrea
 cattedra(3004, 5214, lt, d) :- codice_corso(3004), matricola_docente(5214), laurea(lt), taf(d).
 %  Corso: 3019, Docente: CIOCIOLA Tecla
-cattedra(3019, 7258, ltsm, c) :- codice_corso(3019), matricola_docente(7258), laurea(ltsm), taf(c).
+cattedra(3019, 7258, lcpa, c) :- codice_corso(3019), matricola_docente(7258), laurea(lcpa), taf(c).
 %  Corso: 5009, Docente: CIOCIOLA Tecla
 cattedra(5009, 7258, lm5, a) :- codice_corso(5009), matricola_docente(7258), laurea(lm5), taf(a).
 %  Corso: 5027, Docente: CIOCIOLA Tecla
 cattedra(5027, 7258, lm6, b) :- codice_corso(5027), matricola_docente(7258), laurea(lm6), taf(b).
 %  Corso: 3042, Docente: CIOCIOLA Tecla
-cattedra(3042, 7258, ltps, a) :- codice_corso(3042), matricola_docente(7258), laurea(ltps), taf(a).
+cattedra(3042, 7258, lcpb, a) :- codice_corso(3042), matricola_docente(7258), laurea(lcpb), taf(a).
 %  Corso: 3020, Docente: CIPOLAT GOTET CLAUDIO
 cattedra(3020, 21089, lt, c) :- codice_corso(3020), matricola_docente(21089), laurea(lt), taf(c).
 %  Corso: 3064, Docente: CIPOLAT GOTET CLAUDIO
-cattedra(3064, 21089, lt, f) :- codice_corso(3064), matricola_docente(21089), laurea(lt), taf(f).
+cattedra(3064, 21089, lcpb, f) :- codice_corso(3064), matricola_docente(21089), laurea(lcpb), taf(f).
 %  Corso: 3064, Docente: CIPOLAT GOTET CLAUDIO
-cattedra(3064, 21089, lt, b) :- codice_corso(3064), matricola_docente(21089), laurea(lt), taf(b).
+cattedra(3064, 21089, lcpb, b) :- codice_corso(3064), matricola_docente(21089), laurea(lcpb), taf(b).
 %  Corso: 3068, Docente: CIPOLAT GOTET CLAUDIO
-cattedra(3068, 21089, lt, b) :- codice_corso(3068), matricola_docente(21089), laurea(lt), taf(b).
+cattedra(3068, 21089, lcpb, b) :- codice_corso(3068), matricola_docente(21089), laurea(lcpb), taf(b).
 %  Corso: 3068, Docente: CIPOLAT GOTET CLAUDIO
-cattedra(3068, 21089, lt, f) :- codice_corso(3068), matricola_docente(21089), laurea(lt), taf(f).
+cattedra(3068, 21089, lcpb, f) :- codice_corso(3068), matricola_docente(21089), laurea(lcpb), taf(f).
 %  Corso: 3000, Docente: CIRLINI Martina
 cattedra(3000, 100560, lt, b) :- codice_corso(3000), matricola_docente(100560), laurea(lt), taf(b).
 %  Corso: 3000, Docente: CIRLINI Martina
@@ -2278,7 +2507,7 @@ cattedra(3011, 6514, lt, b) :- codice_corso(3011), matricola_docente(6514), laur
 %  Corso: 5027, Docente: COLUCCI Maria Eugenia
 cattedra(5027, 207037, lm6, b) :- codice_corso(5027), matricola_docente(207037), laurea(lm6), taf(b).
 %  Corso: 3040, Docente: COLUCCI Maria Eugenia
-cattedra(3040, 207037, ltps, a) :- codice_corso(3040), matricola_docente(207037), laurea(ltps), taf(a).
+cattedra(3040, 207037, lcpb, a) :- codice_corso(3040), matricola_docente(207037), laurea(lcpb), taf(a).
 %  Corso: 995, Docente: COMELLI Alberto
 cattedra(995, 6519, lm5, b) :- codice_corso(995), matricola_docente(6519), laurea(lm5), taf(b).
 %  Corso: 3032, Docente: COMELLI Alberto
@@ -2298,19 +2527,19 @@ cattedra(3050, 207095, lt, c) :- codice_corso(3050), matricola_docente(207095), 
 %  Corso: 3050, Docente: CONCARI Carlo
 cattedra(3050, 207095, lt, c) :- codice_corso(3050), matricola_docente(207095), laurea(lt), taf(c).
 %  Corso: 3019, Docente: CONDELLO Giancarlo
-cattedra(3019, 34196, ltsm, a) :- codice_corso(3019), matricola_docente(34196), laurea(ltsm), taf(a).
+cattedra(3019, 34196, lcpa, a) :- codice_corso(3019), matricola_docente(34196), laurea(lcpa), taf(a).
 %  Corso: 5028, Docente: CONDELLO Giancarlo
-cattedra(5028, 34196, lmsm, d) :- codice_corso(5028), matricola_docente(34196), laurea(lmsm), taf(d).
+cattedra(5028, 34196, lcpb, d) :- codice_corso(5028), matricola_docente(34196), laurea(lcpb), taf(d).
 %  Corso: 3019, Docente: CONDELLO Giancarlo
-cattedra(3019, 34196, ltsm, a) :- codice_corso(3019), matricola_docente(34196), laurea(ltsm), taf(a).
+cattedra(3019, 34196, lcpa, a) :- codice_corso(3019), matricola_docente(34196), laurea(lcpa), taf(a).
 %  Corso: 5028, Docente: CONDELLO Giancarlo
-cattedra(5028, 34196, lmsm, d) :- codice_corso(5028), matricola_docente(34196), laurea(lmsm), taf(d).
+cattedra(5028, 34196, lcpb, d) :- codice_corso(5028), matricola_docente(34196), laurea(lcpb), taf(d).
 %  Corso: 5028, Docente: CONDELLO Giancarlo
-cattedra(5028, 34196, lmsm, d) :- codice_corso(5028), matricola_docente(34196), laurea(lmsm), taf(d).
+cattedra(5028, 34196, lcpb, d) :- codice_corso(5028), matricola_docente(34196), laurea(lcpb), taf(d).
 %  Corso: 3019, Docente: CONDELLO Giancarlo
-cattedra(3019, 34196, ltsm, b) :- codice_corso(3019), matricola_docente(34196), laurea(ltsm), taf(b).
+cattedra(3019, 34196, lcpa, b) :- codice_corso(3019), matricola_docente(34196), laurea(lcpa), taf(b).
 %  Corso: 5028, Docente: CONDELLO Giancarlo
-cattedra(5028, 34196, lmsm, b) :- codice_corso(5028), matricola_docente(34196), laurea(lmsm), taf(b).
+cattedra(5028, 34196, lcpb, b) :- codice_corso(5028), matricola_docente(34196), laurea(lcpb), taf(b).
 %  Corso: 5015, Docente: CONSOLINI Luca
 cattedra(5015, 6570, lm, b) :- codice_corso(5015), matricola_docente(6570), laurea(lm), taf(b).
 %  Corso: 5016, Docente: CONSOLINI Luca
@@ -2318,17 +2547,17 @@ cattedra(5016, 6570, lm, c) :- codice_corso(5016), matricola_docente(6570), laur
 %  Corso: 3038, Docente: CONSORTE Francesca
 cattedra(3038, 48562, lt, c) :- codice_corso(3038), matricola_docente(48562), laurea(lt), taf(c).
 %  Corso: 3006, Docente: CONSORTE Francesca
-cattedra(3006, 48562, ltss, c) :- codice_corso(3006), matricola_docente(48562), laurea(ltss), taf(c).
+cattedra(3006, 48562, lcpa, c) :- codice_corso(3006), matricola_docente(48562), laurea(lcpa), taf(c).
 %  Corso: 3068, Docente: CONTER Mauro
-cattedra(3068, 6112, lt, f) :- codice_corso(3068), matricola_docente(6112), laurea(lt), taf(f).
+cattedra(3068, 6112, lcpb, f) :- codice_corso(3068), matricola_docente(6112), laurea(lcpb), taf(f).
 %  Corso: 5065, Docente: CONTER Mauro
 cattedra(5065, 6112, lm, c) :- codice_corso(5065), matricola_docente(6112), laurea(lm), taf(c).
 %  Corso: 3068, Docente: CONTER Mauro
-cattedra(3068, 6112, lt, b) :- codice_corso(3068), matricola_docente(6112), laurea(lt), taf(b).
+cattedra(3068, 6112, lcpb, b) :- codice_corso(3068), matricola_docente(6112), laurea(lcpb), taf(b).
 %  Corso: 3068, Docente: CONTER Mauro
-cattedra(3068, 6112, lt, f) :- codice_corso(3068), matricola_docente(6112), laurea(lt), taf(f).
+cattedra(3068, 6112, lcpb, f) :- codice_corso(3068), matricola_docente(6112), laurea(lcpb), taf(f).
 %  Corso: 3068, Docente: CONTER Mauro
-cattedra(3068, 6112, lt, b) :- codice_corso(3068), matricola_docente(6112), laurea(lt), taf(b).
+cattedra(3068, 6112, lcpb, b) :- codice_corso(3068), matricola_docente(6112), laurea(lcpb), taf(b).
 %  Corso: 3065, Docente: CONTI Stefania
 cattedra(3065, 4474, lt, a) :- codice_corso(3065), matricola_docente(4474), laurea(lt), taf(a).
 %  Corso: 5008, Docente: CONTI Stefania
@@ -2354,25 +2583,25 @@ cattedra(5029, 3707, lm5, b) :- codice_corso(5029), matricola_docente(3707), lau
 %  Corso: 5029, Docente: CORRADI Attilio
 cattedra(5029, 3707, lm5, b) :- codice_corso(5029), matricola_docente(3707), laurea(lm5), taf(b).
 %  Corso: 3047, Docente: CORRADI Domenico
-cattedra(3047, 5728, ltps, d) :- codice_corso(3047), matricola_docente(5728), laurea(ltps), taf(d).
+cattedra(3047, 5728, lcpb, d) :- codice_corso(3047), matricola_docente(5728), laurea(lcpb), taf(d).
 %  Corso: 3047, Docente: CORRADI Domenico
-cattedra(3047, 5728, ltps, b) :- codice_corso(3047), matricola_docente(5728), laurea(ltps), taf(b).
+cattedra(3047, 5728, lcpb, b) :- codice_corso(3047), matricola_docente(5728), laurea(lcpb), taf(b).
 %  Corso: 3047, Docente: CORRADI Domenico
-cattedra(3047, 5728, ltps, b) :- codice_corso(3047), matricola_docente(5728), laurea(ltps), taf(b).
+cattedra(3047, 5728, lcpb, b) :- codice_corso(3047), matricola_docente(5728), laurea(lcpb), taf(b).
 %  Corso: 5026, Docente: CORRADI Massimo
 cattedra(5026, 6285, lm6, b) :- codice_corso(5026), matricola_docente(6285), laurea(lm6), taf(b).
 %  Corso: 5074, Docente: CORRADI Massimo
 cattedra(5074, 6285, lm6, c) :- codice_corso(5074), matricola_docente(6285), laurea(lm6), taf(c).
 %  Corso: 5050, Docente: CORRADI Massimo
-cattedra(5050, 6285, lmi, b) :- codice_corso(5050), matricola_docente(6285), laurea(lmi), taf(b).
+cattedra(5050, 6285, lcpc, b) :- codice_corso(5050), matricola_docente(6285), laurea(lcpc), taf(b).
 %  Corso: 5045, Docente: CORRADI Attilio
 cattedra(5045, 3707, lm, d) :- codice_corso(5045), matricola_docente(3707), laurea(lm), taf(d).
 %  Corso: 3047, Docente: CORRADI Domenico
-cattedra(3047, 5728, ltps, b) :- codice_corso(3047), matricola_docente(5728), laurea(ltps), taf(b).
+cattedra(3047, 5728, lcpb, b) :- codice_corso(3047), matricola_docente(5728), laurea(lcpb), taf(b).
 %  Corso: 3049, Docente: CORRADI Massimo
-cattedra(3049, 6285, ltps, b) :- codice_corso(3049), matricola_docente(6285), laurea(ltps), taf(b).
+cattedra(3049, 6285, lcpb, b) :- codice_corso(3049), matricola_docente(6285), laurea(lcpb), taf(b).
 %  Corso: 3049, Docente: CORRADI Massimo
-cattedra(3049, 6285, ltps, b) :- codice_corso(3049), matricola_docente(6285), laurea(ltps), taf(b).
+cattedra(3049, 6285, lcpb, b) :- codice_corso(3049), matricola_docente(6285), laurea(lcpb), taf(b).
 %  Corso: 5026, Docente: CORRADI Domenico
 cattedra(5026, 5728, lm6, c) :- codice_corso(5026), matricola_docente(5728), laurea(lm6), taf(c).
 %  Corso: 5026, Docente: CORRADI Massimo
@@ -2388,7 +2617,7 @@ cattedra(5054, 4537, lm, b) :- codice_corso(5054), matricola_docente(4537), laur
 %  Corso: 3038, Docente: CORSANO Paola
 cattedra(3038, 4537, lt, c) :- codice_corso(3038), matricola_docente(4537), laurea(lt), taf(c).
 %  Corso: 5050, Docente: CORSANO Paola
-cattedra(5050, 4537, lmi, b) :- codice_corso(5050), matricola_docente(4537), laurea(lmi), taf(b).
+cattedra(5050, 4537, lcpc, b) :- codice_corso(5050), matricola_docente(4537), laurea(lcpc), taf(b).
 %  Corso: 5054, Docente: CORSANO Paola
 cattedra(5054, 4537, lm, f) :- codice_corso(5054), matricola_docente(4537), laurea(lm), taf(f).
 %  Corso: 5054, Docente: CORSANO Paola
@@ -2410,43 +2639,43 @@ cattedra(3010, 4611, lt, a) :- codice_corso(3010), matricola_docente(4611), laur
 %  Corso: 3054, Docente: COSCIA Alessandra
 cattedra(3054, 4611, lt, c) :- codice_corso(3054), matricola_docente(4611), laurea(lt), taf(c).
 %  Corso: 3042, Docente: COSTANTINO Cosimo
-cattedra(3042, 6105, ltps, b) :- codice_corso(3042), matricola_docente(6105), laurea(ltps), taf(b).
+cattedra(3042, 6105, lcpb, b) :- codice_corso(3042), matricola_docente(6105), laurea(lcpb), taf(b).
 %  Corso: 5026, Docente: COSTANTINO Cosimo
 cattedra(5026, 6105, lm6, b) :- codice_corso(5026), matricola_docente(6105), laurea(lm6), taf(b).
 %  Corso: 5028, Docente: COSTANTINO Cosimo
-cattedra(5028, 6105, lmsm, b) :- codice_corso(5028), matricola_docente(6105), laurea(lmsm), taf(b).
+cattedra(5028, 6105, lcpb, b) :- codice_corso(5028), matricola_docente(6105), laurea(lcpb), taf(b).
 %  Corso: 5077, Docente: COSTANTINO Gabriele
 cattedra(5077, 6917, lm, c) :- codice_corso(5077), matricola_docente(6917), laurea(lm), taf(c).
 %  Corso: 5045, Docente: COSTANTINO Gabriele
 cattedra(5045, 6917, lm, b) :- codice_corso(5045), matricola_docente(6917), laurea(lm), taf(b).
 %  Corso: 3019, Docente: COSTANTINO Cosimo
-cattedra(3019, 6105, ltsm, b) :- codice_corso(3019), matricola_docente(6105), laurea(ltsm), taf(b).
+cattedra(3019, 6105, lcpa, b) :- codice_corso(3019), matricola_docente(6105), laurea(lcpa), taf(b).
 %  Corso: 5009, Docente: COSTANTINO Gabriele
 cattedra(5009, 6917, lm5, b) :- codice_corso(5009), matricola_docente(6917), laurea(lm5), taf(b).
 %  Corso: 3048, Docente: COSTANTINO Cosimo
-cattedra(3048, 6105, ltps, b) :- codice_corso(3048), matricola_docente(6105), laurea(ltps), taf(b).
+cattedra(3048, 6105, lcpb, b) :- codice_corso(3048), matricola_docente(6105), laurea(lcpb), taf(b).
 %  Corso: 3042, Docente: COSTANTINO Cosimo
-cattedra(3042, 6105, ltps, b) :- codice_corso(3042), matricola_docente(6105), laurea(ltps), taf(b).
+cattedra(3042, 6105, lcpb, b) :- codice_corso(3042), matricola_docente(6105), laurea(lcpb), taf(b).
 %  Corso: 3042, Docente: COSTANTINO Cosimo
-cattedra(3042, 6105, ltps, b) :- codice_corso(3042), matricola_docente(6105), laurea(ltps), taf(b).
+cattedra(3042, 6105, lcpb, b) :- codice_corso(3042), matricola_docente(6105), laurea(lcpb), taf(b).
 %  Corso: 3042, Docente: COSTANTINO Cosimo
-cattedra(3042, 6105, ltps, b) :- codice_corso(3042), matricola_docente(6105), laurea(ltps), taf(b).
+cattedra(3042, 6105, lcpb, b) :- codice_corso(3042), matricola_docente(6105), laurea(lcpb), taf(b).
 %  Corso: 3043, Docente: COSTANTINO Cosimo
-cattedra(3043, 6105, ltps, b) :- codice_corso(3043), matricola_docente(6105), laurea(ltps), taf(b).
+cattedra(3043, 6105, lcpb, b) :- codice_corso(3043), matricola_docente(6105), laurea(lcpb), taf(b).
 %  Corso: 5026, Docente: COSTI Renato
 cattedra(5026, 5795, lm6, b) :- codice_corso(5026), matricola_docente(5795), laurea(lm6), taf(b).
 %  Corso: 5026, Docente: COSTI Renato
 cattedra(5026, 5795, lm6, f) :- codice_corso(5026), matricola_docente(5795), laurea(lm6), taf(f).
 %  Corso: 3042, Docente: COSTI Renato
-cattedra(3042, 5795, ltps, b) :- codice_corso(3042), matricola_docente(5795), laurea(ltps), taf(b).
+cattedra(3042, 5795, lcpb, b) :- codice_corso(3042), matricola_docente(5795), laurea(lcpb), taf(b).
 %  Corso: 3040, Docente: COSTI Renato
-cattedra(3040, 5795, ltps, f) :- codice_corso(3040), matricola_docente(5795), laurea(ltps), taf(f).
+cattedra(3040, 5795, lcpb, f) :- codice_corso(3040), matricola_docente(5795), laurea(lcpb), taf(f).
 %  Corso: 5066, Docente: COSTI Dario
 cattedra(5066, 6067, lm, b) :- codice_corso(5066), matricola_docente(6067), laurea(lm), taf(b).
 %  Corso: 3054, Docente: COSTI Dario
 cattedra(3054, 6067, lt, b) :- codice_corso(3054), matricola_docente(6067), laurea(lt), taf(b).
 %  Corso: 5050, Docente: COSTI Renato
-cattedra(5050, 5795, lmi, b) :- codice_corso(5050), matricola_docente(5795), laurea(lmi), taf(b).
+cattedra(5050, 5795, lcpc, b) :- codice_corso(5050), matricola_docente(5795), laurea(lcpc), taf(b).
 %  Corso: 5026, Docente: COSTI Renato
 cattedra(5026, 5795, lm6, b) :- codice_corso(5026), matricola_docente(5795), laurea(lm6), taf(b).
 %  Corso: 5066, Docente: COSTI Dario
@@ -2458,7 +2687,7 @@ cattedra(5013, 4915, lm, b) :- codice_corso(5013), matricola_docente(4915), laur
 %  Corso: 3061, Docente: COVA Paolo
 cattedra(3061, 4915, lt, b) :- codice_corso(3061), matricola_docente(4915), laurea(lt), taf(b).
 %  Corso: 3063, Docente: CRAFA Pellegrino
-cattedra(3063, 4530, lt, b) :- codice_corso(3063), matricola_docente(4530), laurea(lt), taf(b).
+cattedra(3063, 4530, lcpb, b) :- codice_corso(3063), matricola_docente(4530), laurea(lcpb), taf(b).
 %  Corso: 5026, Docente: CRAFA Pellegrino
 cattedra(5026, 4530, lm6, b) :- codice_corso(5026), matricola_docente(4530), laurea(lm6), taf(b).
 %  Corso: 5027, Docente: CRAFA Pellegrino
@@ -2468,11 +2697,11 @@ cattedra(5027, 4530, lm6, f) :- codice_corso(5027), matricola_docente(4530), lau
 %  Corso: 5026, Docente: CRAVIOTTO Luisa
 cattedra(5026, 4375, lm6, f) :- codice_corso(5026), matricola_docente(4375), laurea(lm6), taf(f).
 %  Corso: 3041, Docente: CRESTANI Carlo
-cattedra(3041, 6516, ltps, b) :- codice_corso(3041), matricola_docente(6516), laurea(ltps), taf(b).
+cattedra(3041, 6516, lcpb, b) :- codice_corso(3041), matricola_docente(6516), laurea(lcpb), taf(b).
 %  Corso: 3048, Docente: CRESTANI Carlo
-cattedra(3048, 6516, ltps, f) :- codice_corso(3048), matricola_docente(6516), laurea(ltps), taf(f).
+cattedra(3048, 6516, lcpb, f) :- codice_corso(3048), matricola_docente(6516), laurea(lcpb), taf(f).
 %  Corso: 3048, Docente: CRESTANI Carlo
-cattedra(3048, 6516, ltps, b) :- codice_corso(3048), matricola_docente(6516), laurea(ltps), taf(b).
+cattedra(3048, 6516, lcpb, b) :- codice_corso(3048), matricola_docente(6516), laurea(lcpb), taf(b).
 %  Corso: 3052, Docente: CRISTINI Guido
 cattedra(3052, 4533, lt, b) :- codice_corso(3052), matricola_docente(4533), laurea(lt), taf(b).
 %  Corso: 5036, Docente: CRISTOFOLINI Luigi
@@ -2488,21 +2717,21 @@ cattedra(5077, 42181, lm, b) :- codice_corso(5077), matricola_docente(42181), la
 %  Corso: 3004, Docente: CRIVELLI BENEDETTA MARIA
 cattedra(3004, 42181, lt, c) :- codice_corso(3004), matricola_docente(42181), laurea(lt), taf(c).
 %  Corso: 3049, Docente: CROCI Simonetta
-cattedra(3049, 6120, ltps, a) :- codice_corso(3049), matricola_docente(6120), laurea(ltps), taf(a).
+cattedra(3049, 6120, lcpb, a) :- codice_corso(3049), matricola_docente(6120), laurea(lcpb), taf(a).
 %  Corso: 3071, Docente: CROCI Simonetta
-cattedra(3071, 6120, ltps, a) :- codice_corso(3071), matricola_docente(6120), laurea(ltps), taf(a).
+cattedra(3071, 6120, lt, a) :- codice_corso(3071), matricola_docente(6120), laurea(lt), taf(a).
 %  Corso: 3049, Docente: CROCI Simonetta
-cattedra(3049, 6120, ltps, b) :- codice_corso(3049), matricola_docente(6120), laurea(ltps), taf(b).
+cattedra(3049, 6120, lcpb, b) :- codice_corso(3049), matricola_docente(6120), laurea(lcpb), taf(b).
 %  Corso: 3041, Docente: CROCI Simonetta
-cattedra(3041, 6120, ltps, a) :- codice_corso(3041), matricola_docente(6120), laurea(ltps), taf(a).
+cattedra(3041, 6120, lcpb, a) :- codice_corso(3041), matricola_docente(6120), laurea(lcpb), taf(a).
 %  Corso: 3048, Docente: CROCI Simonetta
-cattedra(3048, 6120, ltps, a) :- codice_corso(3048), matricola_docente(6120), laurea(ltps), taf(a).
+cattedra(3048, 6120, lcpb, a) :- codice_corso(3048), matricola_docente(6120), laurea(lcpb), taf(a).
 %  Corso: 3048, Docente: CROCI Simonetta
-cattedra(3048, 6120, ltps, f) :- codice_corso(3048), matricola_docente(6120), laurea(ltps), taf(f).
+cattedra(3048, 6120, lcpb, f) :- codice_corso(3048), matricola_docente(6120), laurea(lcpb), taf(f).
 %  Corso: 3048, Docente: CROCI Simonetta
-cattedra(3048, 6120, ltps, d) :- codice_corso(3048), matricola_docente(6120), laurea(ltps), taf(d).
+cattedra(3048, 6120, lcpb, d) :- codice_corso(3048), matricola_docente(6120), laurea(lcpb), taf(d).
 %  Corso: 3019, Docente: CROCI Simonetta
-cattedra(3019, 6120, ltsm, d) :- codice_corso(3019), matricola_docente(6120), laurea(ltsm), taf(d).
+cattedra(3019, 6120, lcpa, d) :- codice_corso(3019), matricola_docente(6120), laurea(lcpa), taf(d).
 %  Corso: 5026, Docente: CROCI Simonetta
 cattedra(5026, 6120, lm6, a) :- codice_corso(5026), matricola_docente(6120), laurea(lm6), taf(a).
 %  Corso: 5029, Docente: CROSARA Serena
@@ -2556,9 +2785,9 @@ cattedra(5082, 4326, lm, b) :- codice_corso(5082), matricola_docente(4326), laur
 %  Corso: 5082, Docente: DALCANALE Enrico
 cattedra(5082, 4326, lm, b) :- codice_corso(5082), matricola_docente(4326), laurea(lm), taf(b).
 %  Corso: 3040, Docente: DALLA VALLE Raffaele
-cattedra(3040, 4274, ltps, b) :- codice_corso(3040), matricola_docente(4274), laurea(ltps), taf(b).
+cattedra(3040, 4274, lcpb, b) :- codice_corso(3040), matricola_docente(4274), laurea(lcpb), taf(b).
 %  Corso: 3046, Docente: DALLA VALLE Raffaele
-cattedra(3046, 4274, ltps, a) :- codice_corso(3046), matricola_docente(4274), laurea(ltps), taf(a).
+cattedra(3046, 4274, lcpb, a) :- codice_corso(3046), matricola_docente(4274), laurea(lcpb), taf(a).
 %  Corso: 3022, Docente: DALLABONA Cristina
 cattedra(3022, 6994, lt, b) :- codice_corso(3022), matricola_docente(6994), laurea(lt), taf(b).
 %  Corso: 3022, Docente: DALLABONA Cristina
@@ -2574,27 +2803,27 @@ cattedra(5064, 6382, lm, b) :- codice_corso(5064), matricola_docente(6382), laur
 %  Corso: 5026, Docente: DALL'ASTA Andrea
 cattedra(5026, 10549, lm6, b) :- codice_corso(5026), matricola_docente(10549), laurea(lm6), taf(b).
 %  Corso: 3041, Docente: DALL'ASTA Andrea
-cattedra(3041, 10549, ltps, b) :- codice_corso(3041), matricola_docente(10549), laurea(ltps), taf(b).
+cattedra(3041, 10549, lcpb, b) :- codice_corso(3041), matricola_docente(10549), laurea(lcpb), taf(b).
 %  Corso: 3040, Docente: DALL'ASTA Andrea
-cattedra(3040, 10549, ltps, b) :- codice_corso(3040), matricola_docente(10549), laurea(ltps), taf(b).
+cattedra(3040, 10549, lcpb, b) :- codice_corso(3040), matricola_docente(10549), laurea(lcpb), taf(b).
 %  Corso: 3069, Docente: DALL'ASTA Chiara
 cattedra(3069, 6382, lt, b) :- codice_corso(3069), matricola_docente(6382), laurea(lt), taf(b).
 %  Corso: 3069, Docente: DALL'ASTA Chiara
 cattedra(3069, 6382, lt, c) :- codice_corso(3069), matricola_docente(6382), laurea(lt), taf(c).
 %  Corso: 3041, Docente: DALL'ASTA Andrea
-cattedra(3041, 10549, ltps, b) :- codice_corso(3041), matricola_docente(10549), laurea(ltps), taf(b).
+cattedra(3041, 10549, lcpb, b) :- codice_corso(3041), matricola_docente(10549), laurea(lcpb), taf(b).
 %  Corso: 3041, Docente: DALL'ASTA Andrea
-cattedra(3041, 10549, ltps, b) :- codice_corso(3041), matricola_docente(10549), laurea(ltps), taf(b).
+cattedra(3041, 10549, lcpb, b) :- codice_corso(3041), matricola_docente(10549), laurea(lcpb), taf(b).
 %  Corso: 5081, Docente: DALL'ASTA Chiara
 cattedra(5081, 6382, lm, c) :- codice_corso(5081), matricola_docente(6382), laurea(lm), taf(c).
 %  Corso: 5050, Docente: DALL'ASTA Andrea
-cattedra(5050, 10549, lmi, b) :- codice_corso(5050), matricola_docente(10549), laurea(lmi), taf(b).
+cattedra(5050, 10549, lcpc, b) :- codice_corso(5050), matricola_docente(10549), laurea(lcpc), taf(b).
 %  Corso: 5009, Docente: DALL'ASTA Chiara
 cattedra(5009, 6382, lm5, b) :- codice_corso(5009), matricola_docente(6382), laurea(lm5), taf(b).
 %  Corso: 3041, Docente: DALL'ASTA Andrea
-cattedra(3041, 10549, ltps, b) :- codice_corso(3041), matricola_docente(10549), laurea(ltps), taf(b).
+cattedra(3041, 10549, lcpb, b) :- codice_corso(3041), matricola_docente(10549), laurea(lcpb), taf(b).
 %  Corso: 3041, Docente: DALL'ASTA Andrea
-cattedra(3041, 10549, ltps, b) :- codice_corso(3041), matricola_docente(10549), laurea(ltps), taf(b).
+cattedra(3041, 10549, lcpb, b) :- codice_corso(3041), matricola_docente(10549), laurea(lcpb), taf(b).
 %  Corso: 995, Docente: D'ALOIA Antonio
 cattedra(995, 5711, lm5, a) :- codice_corso(995), matricola_docente(5711), laurea(lm5), taf(a).
 %  Corso: 995, Docente: D'ALOIA Antonio
@@ -2602,7 +2831,7 @@ cattedra(995, 5711, lm5, d) :- codice_corso(995), matricola_docente(5711), laure
 %  Corso: 995, Docente: D'ALOIA Antonio
 cattedra(995, 5711, lm5, d) :- codice_corso(995), matricola_docente(5711), laurea(lm5), taf(d).
 %  Corso: 3041, Docente: D'ALOIA Antonio
-cattedra(3041, 5711, ltps, b) :- codice_corso(3041), matricola_docente(5711), laurea(ltps), taf(b).
+cattedra(3041, 5711, lcpb, b) :- codice_corso(3041), matricola_docente(5711), laurea(lcpb), taf(b).
 %  Corso: 5073, Docente: DALOISO Michele
 cattedra(5073, 23816, lm, b) :- codice_corso(5073), matricola_docente(23816), laurea(lm), taf(b).
 %  Corso: 5073, Docente: DALOISO Michele
@@ -2628,17 +2857,17 @@ cattedra(5011, 11057, lm, b) :- codice_corso(5011), matricola_docente(11057), la
 %  Corso: 5026, Docente: DE CONTO Flora
 cattedra(5026, 5475, lm6, f) :- codice_corso(5026), matricola_docente(5475), laurea(lm6), taf(f).
 %  Corso: 3047, Docente: DE CONTO Flora
-cattedra(3047, 5475, ltps, b) :- codice_corso(3047), matricola_docente(5475), laurea(ltps), taf(b).
+cattedra(3047, 5475, lcpb, b) :- codice_corso(3047), matricola_docente(5475), laurea(lcpb), taf(b).
 %  Corso: 5045, Docente: DE CONTO Flora
 cattedra(5045, 5475, lm, b) :- codice_corso(5045), matricola_docente(5475), laurea(lm), taf(b).
 %  Corso: 3047, Docente: DE CONTO Flora
-cattedra(3047, 5475, ltps, b) :- codice_corso(3047), matricola_docente(5475), laurea(ltps), taf(b).
+cattedra(3047, 5475, lcpb, b) :- codice_corso(3047), matricola_docente(5475), laurea(lcpb), taf(b).
 %  Corso: 5028, Docente: DE CONTO Flora
-cattedra(5028, 5475, lmsm, c) :- codice_corso(5028), matricola_docente(5475), laurea(lmsm), taf(c).
+cattedra(5028, 5475, lcpb, c) :- codice_corso(5028), matricola_docente(5475), laurea(lcpb), taf(c).
 %  Corso: 3041, Docente: DE CONTO Flora
-cattedra(3041, 5475, ltps, a) :- codice_corso(3041), matricola_docente(5475), laurea(ltps), taf(a).
+cattedra(3041, 5475, lcpb, a) :- codice_corso(3041), matricola_docente(5475), laurea(lcpb), taf(a).
 %  Corso: 3047, Docente: DE CONTO Flora
-cattedra(3047, 5475, ltps, b) :- codice_corso(3047), matricola_docente(5475), laurea(ltps), taf(b).
+cattedra(3047, 5475, lcpb, b) :- codice_corso(3047), matricola_docente(5475), laurea(lcpb), taf(b).
 %  Corso: 5026, Docente: DE CONTO Flora
 cattedra(5026, 5475, lm6, b) :- codice_corso(5026), matricola_docente(5475), laurea(lm6), taf(b).
 %  Corso: 3027, Docente: DE FILIPPIS Cristiana
@@ -2646,19 +2875,19 @@ cattedra(3027, 34499, lt, a) :- codice_corso(3027), matricola_docente(34499), la
 %  Corso: 3029, Docente: DE FILIPPIS Cristiana
 cattedra(3029, 34499, lt, a) :- codice_corso(3029), matricola_docente(34499), laurea(lt), taf(a).
 %  Corso: 3048, Docente: DE FILIPPO Massimo
-cattedra(3048, 6522, ltps, b) :- codice_corso(3048), matricola_docente(6522), laurea(ltps), taf(b).
+cattedra(3048, 6522, lcpb, b) :- codice_corso(3048), matricola_docente(6522), laurea(lcpb), taf(b).
 %  Corso: 5074, Docente: DE FILIPPO Massimo
 cattedra(5074, 6522, lm6, b) :- codice_corso(5074), matricola_docente(6522), laurea(lm6), taf(b).
 %  Corso: 3048, Docente: DE FILIPPO Massimo
-cattedra(3048, 6522, ltps, b) :- codice_corso(3048), matricola_docente(6522), laurea(ltps), taf(b).
+cattedra(3048, 6522, lcpb, b) :- codice_corso(3048), matricola_docente(6522), laurea(lcpb), taf(b).
 %  Corso: 3048, Docente: DE FILIPPO Massimo
-cattedra(3048, 6522, ltps, e) :- codice_corso(3048), matricola_docente(6522), laurea(ltps), taf(e).
+cattedra(3048, 6522, lcpb, e) :- codice_corso(3048), matricola_docente(6522), laurea(lcpb), taf(e).
 %  Corso: 5026, Docente: DE FILIPPO Massimo
 cattedra(5026, 6522, lm6, b) :- codice_corso(5026), matricola_docente(6522), laurea(lm6), taf(b).
 %  Corso: 3048, Docente: DE FILIPPO Massimo
-cattedra(3048, 6522, ltps, e) :- codice_corso(3048), matricola_docente(6522), laurea(ltps), taf(e).
+cattedra(3048, 6522, lcpb, e) :- codice_corso(3048), matricola_docente(6522), laurea(lcpb), taf(e).
 %  Corso: 3048, Docente: DE FILIPPO Massimo
-cattedra(3048, 6522, ltps, b) :- codice_corso(3048), matricola_docente(6522), laurea(ltps), taf(b).
+cattedra(3048, 6522, lcpb, b) :- codice_corso(3048), matricola_docente(6522), laurea(lcpb), taf(b).
 %  Corso: 3017, Docente: DE FLORIO GIULIA
 cattedra(3017, 13331, lt, b) :- codice_corso(3017), matricola_docente(13331), laurea(lt), taf(b).
 %  Corso: 3017, Docente: DE FLORIO GIULIA
@@ -2680,11 +2909,11 @@ cattedra(3004, 4850, lt, d) :- codice_corso(3004), matricola_docente(4850), laur
 %  Corso: 5068, Docente: DE PANFILIS Chiara
 cattedra(5068, 102887, lm, c) :- codice_corso(5068), matricola_docente(102887), laurea(lm), taf(c).
 %  Corso: 3043, Docente: DE PANFILIS Chiara
-cattedra(3043, 102887, ltps, b) :- codice_corso(3043), matricola_docente(102887), laurea(ltps), taf(b).
+cattedra(3043, 102887, lcpb, b) :- codice_corso(3043), matricola_docente(102887), laurea(lcpb), taf(b).
 %  Corso: 5053, Docente: DE PANFILIS Chiara
 cattedra(5053, 102887, lm, b) :- codice_corso(5053), matricola_docente(102887), laurea(lm), taf(b).
 %  Corso: 3067, Docente: DE PANFILIS Chiara
-cattedra(3067, 102887, ltps, b) :- codice_corso(3067), matricola_docente(102887), laurea(ltps), taf(b).
+cattedra(3067, 102887, lcpb, b) :- codice_corso(3067), matricola_docente(102887), laurea(lcpb), taf(b).
 %  Corso: 5026, Docente: DE PANFILIS Chiara
 cattedra(5026, 102887, lm6, f) :- codice_corso(5026), matricola_docente(102887), laurea(lm6), taf(f).
 %  Corso: 5054, Docente: DE PANFILIS Chiara
@@ -2720,9 +2949,9 @@ cattedra(5026, 103159, lm6, b) :- codice_corso(5026), matricola_docente(103159),
 %  Corso: 5026, Docente: DEI CAS Alessandra
 cattedra(5026, 103159, lm6, b) :- codice_corso(5026), matricola_docente(103159), laurea(lm6), taf(b).
 %  Corso: 5028, Docente: DEI CAS Alessandra
-cattedra(5028, 103159, lmsm, c) :- codice_corso(5028), matricola_docente(103159), laurea(lmsm), taf(c).
+cattedra(5028, 103159, lcpb, c) :- codice_corso(5028), matricola_docente(103159), laurea(lcpb), taf(c).
 %  Corso: 3041, Docente: DEI CAS Alessandra
-cattedra(3041, 103159, ltps, f) :- codice_corso(3041), matricola_docente(103159), laurea(ltps), taf(f).
+cattedra(3041, 103159, lcpb, f) :- codice_corso(3041), matricola_docente(103159), laurea(lcpb), taf(f).
 %  Corso: 5074, Docente: DEI CAS Alessandra
 cattedra(5074, 103159, lm6, b) :- codice_corso(5074), matricola_docente(103159), laurea(lm6), taf(b).
 %  Corso: 5026, Docente: DEL RIO Paolo
@@ -2738,7 +2967,7 @@ cattedra(5026, 6093, lm6, b) :- codice_corso(5026), matricola_docente(6093), lau
 %  Corso: 5026, Docente: DEL RIO Paolo
 cattedra(5026, 6093, lm6, f) :- codice_corso(5026), matricola_docente(6093), laurea(lm6), taf(f).
 %  Corso: 3041, Docente: DEL RIO Paolo
-cattedra(3041, 6093, ltps, a) :- codice_corso(3041), matricola_docente(6093), laurea(ltps), taf(a).
+cattedra(3041, 6093, lcpb, a) :- codice_corso(3041), matricola_docente(6093), laurea(lcpb), taf(a).
 %  Corso: 5068, Docente: DEL RIO Daniele
 cattedra(5068, 6319, lm, b) :- codice_corso(5068), matricola_docente(6319), laurea(lm), taf(b).
 %  Corso: 5081, Docente: DEL RIO Daniele
@@ -2752,17 +2981,17 @@ cattedra(3024, 6594, lt, c) :- codice_corso(3024), matricola_docente(6594), laur
 %  Corso: 5068, Docente: DELLAFIORA Luca
 cattedra(5068, 10714, lm, b) :- codice_corso(5068), matricola_docente(10714), laurea(lm), taf(b).
 %  Corso: 3049, Docente: DELLAFIORA Luca
-cattedra(3049, 10714, ltps, b) :- codice_corso(3049), matricola_docente(10714), laurea(ltps), taf(b).
+cattedra(3049, 10714, lcpb, b) :- codice_corso(3049), matricola_docente(10714), laurea(lcpb), taf(b).
 %  Corso: 5028, Docente: DELL'ORTO Valentina Giovanna
-cattedra(5028, 39490, lmsm, c) :- codice_corso(5028), matricola_docente(39490), laurea(lmsm), taf(c).
+cattedra(5028, 39490, lcpb, c) :- codice_corso(5028), matricola_docente(39490), laurea(lcpb), taf(c).
 %  Corso: 3071, Docente: DELL'ORTO Valentina Giovanna
-cattedra(3071, 39490, ltps, b) :- codice_corso(3071), matricola_docente(39490), laurea(ltps), taf(b).
+cattedra(3071, 39490, lt, b) :- codice_corso(3071), matricola_docente(39490), laurea(lt), taf(b).
 %  Corso: 3042, Docente: DELL'ORTO Valentina Giovanna
-cattedra(3042, 39490, ltps, b) :- codice_corso(3042), matricola_docente(39490), laurea(ltps), taf(b).
+cattedra(3042, 39490, lcpb, b) :- codice_corso(3042), matricola_docente(39490), laurea(lcpb), taf(b).
 %  Corso: 3065, Docente: DELL'ORTO Valentina Giovanna
 cattedra(3065, 39490, lt, b) :- codice_corso(3065), matricola_docente(39490), laurea(lt), taf(b).
 %  Corso: 3067, Docente: DELL'ORTO Valentina Giovanna
-cattedra(3067, 39490, ltps, b) :- codice_corso(3067), matricola_docente(39490), laurea(ltps), taf(b).
+cattedra(3067, 39490, lcpb, b) :- codice_corso(3067), matricola_docente(39490), laurea(lcpb), taf(b).
 %  Corso: 5016, Docente: DELMONTE Nicola
 cattedra(5016, 6569, lm, c) :- codice_corso(5016), matricola_docente(6569), laurea(lm), taf(c).
 %  Corso: 3050, Docente: DELMONTE Nicola
@@ -2770,25 +2999,25 @@ cattedra(3050, 6569, lt, b) :- codice_corso(3050), matricola_docente(6569), laur
 %  Corso: 3050, Docente: DELMONTE Nicola
 cattedra(3050, 6569, lt, b) :- codice_corso(3050), matricola_docente(6569), laurea(lt), taf(b).
 %  Corso: 5028, Docente: DEMECO Andrea
-cattedra(5028, 38136, lmsm, b) :- codice_corso(5028), matricola_docente(38136), laurea(lmsm), taf(b).
+cattedra(5028, 38136, lcpb, b) :- codice_corso(5028), matricola_docente(38136), laurea(lcpb), taf(b).
 %  Corso: 3048, Docente: DEMECO Andrea
-cattedra(3048, 38136, ltps, f) :- codice_corso(3048), matricola_docente(38136), laurea(ltps), taf(f).
+cattedra(3048, 38136, lcpb, f) :- codice_corso(3048), matricola_docente(38136), laurea(lcpb), taf(f).
 %  Corso: 3042, Docente: DEMECO Andrea
-cattedra(3042, 38136, ltps, b) :- codice_corso(3042), matricola_docente(38136), laurea(ltps), taf(b).
+cattedra(3042, 38136, lcpb, b) :- codice_corso(3042), matricola_docente(38136), laurea(lcpb), taf(b).
 %  Corso: 5028, Docente: DEMECO Andrea
-cattedra(5028, 38136, lmsm, d) :- codice_corso(5028), matricola_docente(38136), laurea(lmsm), taf(d).
+cattedra(5028, 38136, lcpb, d) :- codice_corso(5028), matricola_docente(38136), laurea(lcpb), taf(d).
 %  Corso: 3019, Docente: DEMECO Andrea
-cattedra(3019, 38136, ltsm, d) :- codice_corso(3019), matricola_docente(38136), laurea(ltsm), taf(d).
+cattedra(3019, 38136, lcpa, d) :- codice_corso(3019), matricola_docente(38136), laurea(lcpa), taf(d).
 %  Corso: 3042, Docente: DEMECO Andrea
-cattedra(3042, 38136, ltps, b) :- codice_corso(3042), matricola_docente(38136), laurea(ltps), taf(b).
+cattedra(3042, 38136, lcpb, b) :- codice_corso(3042), matricola_docente(38136), laurea(lcpb), taf(b).
 %  Corso: 3019, Docente: DEMECO Andrea
-cattedra(3019, 38136, ltsm, b) :- codice_corso(3019), matricola_docente(38136), laurea(ltsm), taf(b).
+cattedra(3019, 38136, lcpa, b) :- codice_corso(3019), matricola_docente(38136), laurea(lcpa), taf(b).
 %  Corso: 5026, Docente: DEMECO Andrea
 cattedra(5026, 38136, lm6, b) :- codice_corso(5026), matricola_docente(38136), laurea(lm6), taf(b).
 %  Corso: 5074, Docente: DEMECO Andrea
 cattedra(5074, 38136, lm6, b) :- codice_corso(5074), matricola_docente(38136), laurea(lm6), taf(b).
 %  Corso: 3042, Docente: DEMECO Andrea
-cattedra(3042, 38136, ltps, b) :- codice_corso(3042), matricola_docente(38136), laurea(ltps), taf(b).
+cattedra(3042, 38136, lcpb, b) :- codice_corso(3042), matricola_docente(38136), laurea(lcpb), taf(b).
 %  Corso: 5073, Docente: Denti Chiara
 cattedra(5073, 37774, lm, c) :- codice_corso(5073), matricola_docente(37774), laurea(lm), taf(c).
 %  Corso: 5078, Docente: DERIU Marco
@@ -2804,17 +3033,17 @@ cattedra(5027, 6582, lm6, f) :- codice_corso(5027), matricola_docente(6582), lau
 %  Corso: 5027, Docente: DI BLASIO Alberto
 cattedra(5027, 6582, lm6, b) :- codice_corso(5027), matricola_docente(6582), laurea(lm6), taf(b).
 %  Corso: 3063, Docente: DI BLASIO Alberto
-cattedra(3063, 6582, lt, b) :- codice_corso(3063), matricola_docente(6582), laurea(lt), taf(b).
+cattedra(3063, 6582, lcpb, b) :- codice_corso(3063), matricola_docente(6582), laurea(lcpb), taf(b).
 %  Corso: 5027, Docente: DI BLASIO Alberto
 cattedra(5027, 6582, lm6, d) :- codice_corso(5027), matricola_docente(6582), laurea(lm6), taf(d).
 %  Corso: 3063, Docente: DI BLASIO Alberto
-cattedra(3063, 6582, lt, b) :- codice_corso(3063), matricola_docente(6582), laurea(lt), taf(b).
+cattedra(3063, 6582, lcpb, b) :- codice_corso(3063), matricola_docente(6582), laurea(lcpb), taf(b).
 %  Corso: 5027, Docente: DI BLASIO Alberto
 cattedra(5027, 6582, lm6, d) :- codice_corso(5027), matricola_docente(6582), laurea(lm6), taf(d).
 %  Corso: 5027, Docente: DI BLASIO Alberto
 cattedra(5027, 6582, lm6, f) :- codice_corso(5027), matricola_docente(6582), laurea(lm6), taf(f).
 %  Corso: 3067, Docente: DI CESARE Giuseppe
-cattedra(3067, 10321, ltps, a) :- codice_corso(3067), matricola_docente(10321), laurea(ltps), taf(a).
+cattedra(3067, 10321, lcpb, a) :- codice_corso(3067), matricola_docente(10321), laurea(lcpb), taf(a).
 %  Corso: 3059, Docente: DI CREDICO GIULIA
 cattedra(3059, 19220, lt, f) :- codice_corso(3059), matricola_docente(19220), laurea(lt), taf(f).
 %  Corso: 3020, Docente: DI CREDICO GIULIA
@@ -2826,13 +3055,13 @@ cattedra(5029, 9963, lm5, c) :- codice_corso(5029), matricola_docente(9963), lau
 %  Corso: 5029, Docente: DI IANNI Francesco
 cattedra(5029, 9963, lm5, b) :- codice_corso(5029), matricola_docente(9963), laurea(lm5), taf(b).
 %  Corso: 3046, Docente: DI LELLA Filippo
-cattedra(3046, 164526, ltps, c) :- codice_corso(3046), matricola_docente(164526), laurea(ltps), taf(c).
+cattedra(3046, 164526, lcpb, c) :- codice_corso(3046), matricola_docente(164526), laurea(lcpb), taf(c).
 %  Corso: 3046, Docente: DI LELLA Filippo
-cattedra(3046, 164526, ltps, b) :- codice_corso(3046), matricola_docente(164526), laurea(ltps), taf(b).
+cattedra(3046, 164526, lcpb, b) :- codice_corso(3046), matricola_docente(164526), laurea(lcpb), taf(b).
 %  Corso: 5026, Docente: DI LELLA Filippo
 cattedra(5026, 164526, lm6, f) :- codice_corso(5026), matricola_docente(164526), laurea(lm6), taf(f).
 %  Corso: 3043, Docente: DI LELLA Filippo
-cattedra(3043, 164526, ltps, c) :- codice_corso(3043), matricola_docente(164526), laurea(ltps), taf(c).
+cattedra(3043, 164526, lcpb, c) :- codice_corso(3043), matricola_docente(164526), laurea(lcpb), taf(c).
 %  Corso: 5027, Docente: DI LELLA Filippo
 cattedra(5027, 164526, lm6, b) :- codice_corso(5027), matricola_docente(164526), laurea(lm6), taf(b).
 %  Corso: 3024, Docente: DI MAIOLO FRANCESCO
@@ -2842,21 +3071,21 @@ cattedra(3062, 14454, lt, a) :- codice_corso(3062), matricola_docente(14454), la
 %  Corso: 5074, Docente: DI MARTINO Orsola
 cattedra(5074, 44238, lm6, d) :- codice_corso(5074), matricola_docente(44238), laurea(lm6), taf(d).
 %  Corso: 3041, Docente: DI MARTINO Orsola
-cattedra(3041, 44238, ltps, a) :- codice_corso(3041), matricola_docente(44238), laurea(ltps), taf(a).
+cattedra(3041, 44238, lcpb, a) :- codice_corso(3041), matricola_docente(44238), laurea(lcpb), taf(a).
 %  Corso: 5026, Docente: DI MARTINO Orsola
 cattedra(5026, 44238, lm6, a) :- codice_corso(5026), matricola_docente(44238), laurea(lm6), taf(a).
 %  Corso: 3071, Docente: DI MARTINO Orsola
-cattedra(3071, 44238, ltps, c) :- codice_corso(3071), matricola_docente(44238), laurea(ltps), taf(c).
+cattedra(3071, 44238, lt, c) :- codice_corso(3071), matricola_docente(44238), laurea(lt), taf(c).
 %  Corso: 5074, Docente: DI MARTINO Orsola
 cattedra(5074, 44238, lm6, a) :- codice_corso(5074), matricola_docente(44238), laurea(lm6), taf(a).
 %  Corso: 5028, Docente: DI NELLA Luca
-cattedra(5028, 5517, lmsm, c) :- codice_corso(5028), matricola_docente(5517), laurea(lmsm), taf(c).
+cattedra(5028, 5517, lcpb, c) :- codice_corso(5028), matricola_docente(5517), laurea(lcpb), taf(c).
 %  Corso: 3004, Docente: DI NELLA Luca
 cattedra(3004, 5517, lt, a) :- codice_corso(3004), matricola_docente(5517), laurea(lt), taf(a).
 %  Corso: 5005, Docente: DI NELLA Luca
 cattedra(5005, 5517, lm, b) :- codice_corso(5005), matricola_docente(5517), laurea(lm), taf(b).
 %  Corso: 3019, Docente: DI NELLA Luca
-cattedra(3019, 5517, ltsm, b) :- codice_corso(3019), matricola_docente(5517), laurea(ltsm), taf(b).
+cattedra(3019, 5517, lcpa, b) :- codice_corso(3019), matricola_docente(5517), laurea(lcpa), taf(b).
 %  Corso: 5027, Docente: DI NUZZO Sergio
 cattedra(5027, 6590, lm6, c) :- codice_corso(5027), matricola_docente(6590), laurea(lm6), taf(c).
 %  Corso: 5074, Docente: DI NUZZO Sergio
@@ -2910,7 +3139,7 @@ cattedra(995, 100739, lm5, a) :- codice_corso(995), matricola_docente(100739), l
 %  Corso: 3032, Docente: ERRIGO MARIA CHIARA
 cattedra(3032, 20832, lt, d) :- codice_corso(3032), matricola_docente(20832), laurea(lt), taf(d).
 %  Corso: 5010, Docente: ERRIGO MARIA CHIARA
-cattedra(5010, 20832, lmss, c) :- codice_corso(5010), matricola_docente(20832), laurea(lmss), taf(c).
+cattedra(5010, 20832, lcpb, c) :- codice_corso(5010), matricola_docente(20832), laurea(lcpb), taf(c).
 %  Corso: 5026, Docente: ESPOSITO Susanna Maria Roberta
 cattedra(5026, 28252, lm6, b) :- codice_corso(5026), matricola_docente(28252), laurea(lm6), taf(b).
 %  Corso: 5026, Docente: ESPOSITO Susanna Maria Roberta
@@ -2944,17 +3173,17 @@ cattedra(5008, 206063, lm5, d) :- codice_corso(5008), matricola_docente(206063),
 %  Corso: 5045, Docente: FAGGIANO Serena
 cattedra(5045, 206063, lm, b) :- codice_corso(5045), matricola_docente(206063), laurea(lm), taf(b).
 %  Corso: 3071, Docente: FAINARDI Valentina
-cattedra(3071, 9893, ltps, b) :- codice_corso(3071), matricola_docente(9893), laurea(ltps), taf(b).
+cattedra(3071, 9893, lt, b) :- codice_corso(3071), matricola_docente(9893), laurea(lt), taf(b).
 %  Corso: 3019, Docente: FAINARDI Valentina
-cattedra(3019, 9893, ltsm, c) :- codice_corso(3019), matricola_docente(9893), laurea(ltsm), taf(c).
+cattedra(3019, 9893, lcpa, c) :- codice_corso(3019), matricola_docente(9893), laurea(lcpa), taf(c).
 %  Corso: 3043, Docente: FAINARDI Valentina
-cattedra(3043, 9893, ltps, b) :- codice_corso(3043), matricola_docente(9893), laurea(ltps), taf(b).
+cattedra(3043, 9893, lcpb, b) :- codice_corso(3043), matricola_docente(9893), laurea(lcpb), taf(b).
 %  Corso: 5026, Docente: FALASCA MARCO
 cattedra(5026, 36062, lm6, a) :- codice_corso(5026), matricola_docente(36062), laurea(lm6), taf(a).
 %  Corso: 5026, Docente: FALASCA MARCO
 cattedra(5026, 36062, lm6, c) :- codice_corso(5026), matricola_docente(36062), laurea(lm6), taf(c).
 %  Corso: 3048, Docente: FALASCA MARCO
-cattedra(3048, 36062, ltps, a) :- codice_corso(3048), matricola_docente(36062), laurea(ltps), taf(a).
+cattedra(3048, 36062, lcpb, a) :- codice_corso(3048), matricola_docente(36062), laurea(lcpb), taf(a).
 %  Corso: 5074, Docente: FALASCA MARCO
 cattedra(5074, 36062, lm6, a) :- codice_corso(5074), matricola_docente(36062), laurea(lm6), taf(a).
 %  Corso: 3017, Docente: FALATO GIULIA
@@ -2966,13 +3195,13 @@ cattedra(3017, 43827, lt, d) :- codice_corso(3017), matricola_docente(43827), la
 %  Corso: 3004, Docente: FANELLI SIMONE
 cattedra(3004, 100825, lt, b) :- codice_corso(3004), matricola_docente(100825), laurea(lt), taf(b).
 %  Corso: 5050, Docente: FANELLI SIMONE
-cattedra(5050, 100825, lmi, b) :- codice_corso(5050), matricola_docente(100825), laurea(lmi), taf(b).
+cattedra(5050, 100825, lcpc, b) :- codice_corso(5050), matricola_docente(100825), laurea(lcpc), taf(b).
 %  Corso: 3004, Docente: FANELLI SIMONE
 cattedra(3004, 100825, lt, b) :- codice_corso(3004), matricola_docente(100825), laurea(lt), taf(b).
 %  Corso: 5068, Docente: FANTUZZI FEDERICA
 cattedra(5068, 19595, lm, d) :- codice_corso(5068), matricola_docente(19595), laurea(lm), taf(d).
 %  Corso: 3041, Docente: FANTUZZI FEDERICA
-cattedra(3041, 19595, ltps, b) :- codice_corso(3041), matricola_docente(19595), laurea(ltps), taf(b).
+cattedra(3041, 19595, lcpb, b) :- codice_corso(3041), matricola_docente(19595), laurea(lcpb), taf(b).
 %  Corso: 5026, Docente: FANTUZZI FEDERICA
 cattedra(5026, 19595, lm6, b) :- codice_corso(5026), matricola_docente(19595), laurea(lm6), taf(b).
 %  Corso: 5016, Docente: FARINA Angelo
@@ -3016,9 +3245,9 @@ cattedra(5043, 6144, lm, d) :- codice_corso(5043), matricola_docente(6144), laur
 %  Corso: 5064, Docente: FERRAGINA Alessandro
 cattedra(5064, 45057, lm, b) :- codice_corso(5064), matricola_docente(45057), laurea(lm), taf(b).
 %  Corso: 3068, Docente: FERRAGINA Alessandro
-cattedra(3068, 45057, lt, f) :- codice_corso(3068), matricola_docente(45057), laurea(lt), taf(f).
+cattedra(3068, 45057, lcpb, f) :- codice_corso(3068), matricola_docente(45057), laurea(lcpb), taf(f).
 %  Corso: 3068, Docente: FERRAGINA Alessandro
-cattedra(3068, 45057, lt, c) :- codice_corso(3068), matricola_docente(45057), laurea(lt), taf(c).
+cattedra(3068, 45057, lcpb, c) :- codice_corso(3068), matricola_docente(45057), laurea(lcpb), taf(c).
 %  Corso: 5052, Docente: FERRARI Gianluigi
 cattedra(5052, 6099, lm, d) :- codice_corso(5052), matricola_docente(6099), laurea(lm), taf(d).
 %  Corso: 5027, Docente: FERRARI Silvano
@@ -3062,13 +3291,13 @@ cattedra(3023, 5646, lt, d) :- codice_corso(3023), matricola_docente(5646), laur
 %  Corso: 3021, Docente: FERRARI VERA
 cattedra(3021, 10588, lt, c) :- codice_corso(3021), matricola_docente(10588), laurea(lt), taf(c).
 %  Corso: 3049, Docente: FERRARI Elena
-cattedra(3049, 6517, ltps, a) :- codice_corso(3049), matricola_docente(6517), laurea(ltps), taf(a).
+cattedra(3049, 6517, lcpb, a) :- codice_corso(3049), matricola_docente(6517), laurea(lcpb), taf(a).
 %  Corso: 3050, Docente: FERRARI Gianluigi
 cattedra(3050, 6099, lt, b) :- codice_corso(3050), matricola_docente(6099), laurea(lt), taf(b).
 %  Corso: 3019, Docente: FERRARI Elena
-cattedra(3019, 6517, ltsm, a) :- codice_corso(3019), matricola_docente(6517), laurea(ltsm), taf(a).
+cattedra(3019, 6517, lcpa, a) :- codice_corso(3019), matricola_docente(6517), laurea(lcpa), taf(a).
 %  Corso: 3019, Docente: FERRARI VERA
-cattedra(3019, 10588, ltsm, a) :- codice_corso(3019), matricola_docente(10588), laurea(ltsm), taf(a).
+cattedra(3019, 10588, lcpa, a) :- codice_corso(3019), matricola_docente(10588), laurea(lcpa), taf(a).
 %  Corso: 5026, Docente: FERRARI Elena
 cattedra(5026, 6517, lm6, c) :- codice_corso(5026), matricola_docente(6517), laurea(lm6), taf(c).
 %  Corso: 5026, Docente: FERRARI Elena
@@ -3084,7 +3313,7 @@ cattedra(5011, 5031, lm, b) :- codice_corso(5011), matricola_docente(5031), laur
 %  Corso: 5068, Docente: FIACCADORI Enrico
 cattedra(5068, 4470, lm, c) :- codice_corso(5068), matricola_docente(4470), laurea(lm), taf(c).
 %  Corso: 3040, Docente: FIACCADORI Enrico
-cattedra(3040, 4470, ltps, b) :- codice_corso(3040), matricola_docente(4470), laurea(ltps), taf(b).
+cattedra(3040, 4470, lcpb, b) :- codice_corso(3040), matricola_docente(4470), laurea(lcpb), taf(b).
 %  Corso: 5026, Docente: FIACCADORI Enrico
 cattedra(5026, 4470, lm6, b) :- codice_corso(5026), matricola_docente(4470), laurea(lm6), taf(b).
 %  Corso: 5026, Docente: FIACCADORI Enrico
@@ -3106,7 +3335,7 @@ cattedra(3057, 35726, lt, a) :- codice_corso(3057), matricola_docente(35726), la
 %  Corso: 5053, Docente: FOGASSI Leonardo
 cattedra(5053, 4224, lm, c) :- codice_corso(5053), matricola_docente(4224), laurea(lm), taf(c).
 %  Corso: 3043, Docente: FOGASSI Leonardo
-cattedra(3043, 4224, ltps, f) :- codice_corso(3043), matricola_docente(4224), laurea(ltps), taf(f).
+cattedra(3043, 4224, lcpb, f) :- codice_corso(3043), matricola_docente(4224), laurea(lcpb), taf(f).
 %  Corso: 5053, Docente: FOGASSI Leonardo
 cattedra(5053, 4224, lm, c) :- codice_corso(5053), matricola_docente(4224), laurea(lm), taf(c).
 %  Corso: 5052, Docente: FOGGI Tommaso
@@ -3126,15 +3355,15 @@ cattedra(3020, 20765, lt, b) :- codice_corso(3020), matricola_docente(20765), la
 %  Corso: 5015, Docente: FONTANINI TOMASO
 cattedra(5015, 20765, lm, b) :- codice_corso(5015), matricola_docente(20765), laurea(lm), taf(b).
 %  Corso: 3049, Docente: FONTANINI TOMASO
-cattedra(3049, 20765, ltps, b) :- codice_corso(3049), matricola_docente(20765), laurea(ltps), taf(b).
+cattedra(3049, 20765, lcpb, b) :- codice_corso(3049), matricola_docente(20765), laurea(lcpb), taf(b).
 %  Corso: 3019, Docente: FORESTI Ruben
-cattedra(3019, 11484, ltsm, d) :- codice_corso(3019), matricola_docente(11484), laurea(ltsm), taf(d).
+cattedra(3019, 11484, lcpa, d) :- codice_corso(3019), matricola_docente(11484), laurea(lcpa), taf(d).
 %  Corso: 5074, Docente: FORESTI Ruben
 cattedra(5074, 11484, lm6, d) :- codice_corso(5074), matricola_docente(11484), laurea(lm6), taf(d).
 %  Corso: 3049, Docente: FORESTI Ruben
-cattedra(3049, 11484, ltps, b) :- codice_corso(3049), matricola_docente(11484), laurea(ltps), taf(b).
+cattedra(3049, 11484, lcpb, b) :- codice_corso(3049), matricola_docente(11484), laurea(lcpb), taf(b).
 %  Corso: 3048, Docente: FORESTI Ruben
-cattedra(3048, 11484, ltps, f) :- codice_corso(3048), matricola_docente(11484), laurea(ltps), taf(f).
+cattedra(3048, 11484, lcpb, f) :- codice_corso(3048), matricola_docente(11484), laurea(lcpb), taf(f).
 %  Corso: 5074, Docente: FORESTI Ruben
 cattedra(5074, 11484, lm6, a) :- codice_corso(5074), matricola_docente(11484), laurea(lm6), taf(a).
 %  Corso: 5026, Docente: FORMICA Francesco
@@ -3166,13 +3395,13 @@ cattedra(5054, 10463, lm, f) :- codice_corso(5054), matricola_docente(10463), la
 %  Corso: 5054, Docente: FRANCESCHINI Christian
 cattedra(5054, 10463, lm, f) :- codice_corso(5054), matricola_docente(10463), laurea(lm), taf(f).
 %  Corso: 3019, Docente: FRANCESCHINI Christian
-cattedra(3019, 10463, ltsm, d) :- codice_corso(3019), matricola_docente(10463), laurea(ltsm), taf(d).
+cattedra(3019, 10463, lcpa, d) :- codice_corso(3019), matricola_docente(10463), laurea(lcpa), taf(d).
 %  Corso: 5028, Docente: FRANCESCHINI Christian
-cattedra(5028, 10463, lmsm, d) :- codice_corso(5028), matricola_docente(10463), laurea(lmsm), taf(d).
+cattedra(5028, 10463, lcpb, d) :- codice_corso(5028), matricola_docente(10463), laurea(lcpb), taf(d).
 %  Corso: 5028, Docente: FRANCESCHINI Christian
-cattedra(5028, 10463, lmsm, d) :- codice_corso(5028), matricola_docente(10463), laurea(lmsm), taf(d).
+cattedra(5028, 10463, lcpb, d) :- codice_corso(5028), matricola_docente(10463), laurea(lcpb), taf(d).
 %  Corso: 3041, Docente: FRANCESCHINI Christian
-cattedra(3041, 10463, ltps, b) :- codice_corso(3041), matricola_docente(10463), laurea(ltps), taf(b).
+cattedra(3041, 10463, lcpb, b) :- codice_corso(3041), matricola_docente(10463), laurea(lcpb), taf(b).
 %  Corso: 3029, Docente: FRANCESE Roberto
 cattedra(3029, 6793, lt, d) :- codice_corso(3029), matricola_docente(6793), laurea(lt), taf(d).
 %  Corso: 5072, Docente: FRANCESE Roberto
@@ -3204,23 +3433,23 @@ cattedra(5026, 17104, lm6, b) :- codice_corso(5026), matricola_docente(17104), l
 %  Corso: 5026, Docente: FREYRIE Antonio
 cattedra(5026, 17104, lm6, f) :- codice_corso(5026), matricola_docente(17104), laurea(lm6), taf(f).
 %  Corso: 3049, Docente: FRIZZELLI ANNALISA
-cattedra(3049, 19630, ltps, b) :- codice_corso(3049), matricola_docente(19630), laurea(ltps), taf(b).
+cattedra(3049, 19630, lcpb, b) :- codice_corso(3049), matricola_docente(19630), laurea(lcpb), taf(b).
 %  Corso: 5074, Docente: FRIZZELLI ANNALISA
 cattedra(5074, 19630, lm6, b) :- codice_corso(5074), matricola_docente(19630), laurea(lm6), taf(b).
 %  Corso: 3048, Docente: FRIZZELLI ANNALISA
-cattedra(3048, 19630, ltps, b) :- codice_corso(3048), matricola_docente(19630), laurea(ltps), taf(b).
+cattedra(3048, 19630, lcpb, b) :- codice_corso(3048), matricola_docente(19630), laurea(lcpb), taf(b).
 %  Corso: 3049, Docente: FUCCI Stefania
-cattedra(3049, 29353, ltps, b) :- codice_corso(3049), matricola_docente(29353), laurea(ltps), taf(b).
+cattedra(3049, 29353, lcpb, b) :- codice_corso(3049), matricola_docente(29353), laurea(lcpb), taf(b).
 %  Corso: 3006, Docente: FUCCI Stefania
-cattedra(3006, 29353, ltss, b) :- codice_corso(3006), matricola_docente(29353), laurea(ltss), taf(b).
+cattedra(3006, 29353, lcpa, b) :- codice_corso(3006), matricola_docente(29353), laurea(lcpa), taf(b).
 %  Corso: 3049, Docente: FUCCI Stefania
-cattedra(3049, 29353, ltps, c) :- codice_corso(3049), matricola_docente(29353), laurea(ltps), taf(c).
+cattedra(3049, 29353, lcpb, c) :- codice_corso(3049), matricola_docente(29353), laurea(lcpb), taf(c).
 %  Corso: 5010, Docente: FUCCI Stefania
-cattedra(5010, 29353, lmss, c) :- codice_corso(5010), matricola_docente(29353), laurea(lmss), taf(c).
+cattedra(5010, 29353, lcpb, c) :- codice_corso(5010), matricola_docente(29353), laurea(lcpb), taf(c).
 %  Corso: 5010, Docente: FUCCI Stefania
-cattedra(5010, 29353, lmss, c) :- codice_corso(5010), matricola_docente(29353), laurea(lmss), taf(c).
+cattedra(5010, 29353, lcpb, c) :- codice_corso(5010), matricola_docente(29353), laurea(lcpb), taf(c).
 %  Corso: 3006, Docente: FUCCI Stefania
-cattedra(3006, 29353, ltss, d) :- codice_corso(3006), matricola_docente(29353), laurea(ltss), taf(d).
+cattedra(3006, 29353, lcpa, d) :- codice_corso(3006), matricola_docente(29353), laurea(lcpa), taf(d).
 %  Corso: 3004, Docente: FURLOTTI Katia
 cattedra(3004, 7015, lt, a) :- codice_corso(3004), matricola_docente(7015), laurea(lt), taf(a).
 %  Corso: 3004, Docente: FURLOTTI Katia
@@ -3250,7 +3479,7 @@ cattedra(5053, 4801, lm, b) :- codice_corso(5053), matricola_docente(4801), laur
 %  Corso: 5026, Docente: GALLESE Vittorio
 cattedra(5026, 4801, lm6, d) :- codice_corso(5026), matricola_docente(4801), laurea(lm6), taf(d).
 %  Corso: 3047, Docente: GALLI Carlo
-cattedra(3047, 205032, ltps, a) :- codice_corso(3047), matricola_docente(205032), laurea(ltps), taf(a).
+cattedra(3047, 205032, lcpb, a) :- codice_corso(3047), matricola_docente(205032), laurea(lcpb), taf(a).
 %  Corso: 995, Docente: GALLI Cesare
 cattedra(995, 5349, lm5, d) :- codice_corso(995), matricola_docente(5349), laurea(lm5), taf(d).
 %  Corso: 5026, Docente: GALLI Carlo
@@ -3280,9 +3509,9 @@ cattedra(5074, 205032, lm6, d) :- codice_corso(5074), matricola_docente(205032),
 %  Corso: 5081, Docente: GALLI Cesare
 cattedra(5081, 5349, lm, b) :- codice_corso(5081), matricola_docente(5349), laurea(lm), taf(b).
 %  Corso: 3041, Docente: GALLI Carlo
-cattedra(3041, 205032, ltps, a) :- codice_corso(3041), matricola_docente(205032), laurea(ltps), taf(a).
+cattedra(3041, 205032, lcpb, a) :- codice_corso(3041), matricola_docente(205032), laurea(lcpb), taf(a).
 %  Corso: 3046, Docente: GALLI Carlo
-cattedra(3046, 205032, ltps, a) :- codice_corso(3046), matricola_docente(205032), laurea(ltps), taf(a).
+cattedra(3046, 205032, lcpb, a) :- codice_corso(3046), matricola_docente(205032), laurea(lcpb), taf(a).
 %  Corso: 3062, Docente: GALLICHI NOTTIANI Duccio
 cattedra(3062, 38137, lt, c) :- codice_corso(3062), matricola_docente(38137), laurea(lt), taf(c).
 %  Corso: 5014, Docente: GALLICHI NOTTIANI Duccio
@@ -3290,15 +3519,15 @@ cattedra(5014, 38137, lm, d) :- codice_corso(5014), matricola_docente(38137), la
 %  Corso: 3004, Docente: GALLO Ettore
 cattedra(3004, 44216, lt, b) :- codice_corso(3004), matricola_docente(44216), laurea(lt), taf(b).
 %  Corso: 3040, Docente: GALLO Mariana
-cattedra(3040, 30448, ltps, a) :- codice_corso(3040), matricola_docente(30448), laurea(ltps), taf(a).
+cattedra(3040, 30448, lcpb, a) :- codice_corso(3040), matricola_docente(30448), laurea(lcpb), taf(a).
 %  Corso: 3040, Docente: GALLO Mariana
-cattedra(3040, 30448, ltps, a) :- codice_corso(3040), matricola_docente(30448), laurea(ltps), taf(a).
+cattedra(3040, 30448, lcpb, a) :- codice_corso(3040), matricola_docente(30448), laurea(lcpb), taf(a).
 %  Corso: 3004, Docente: GALLO Ettore
 cattedra(3004, 44216, lt, c) :- codice_corso(3004), matricola_docente(44216), laurea(lt), taf(c).
 %  Corso: 3042, Docente: GALLO Mariana
-cattedra(3042, 30448, ltps, a) :- codice_corso(3042), matricola_docente(30448), laurea(ltps), taf(a).
+cattedra(3042, 30448, lcpb, a) :- codice_corso(3042), matricola_docente(30448), laurea(lcpb), taf(a).
 %  Corso: 3041, Docente: GALLO Mariana
-cattedra(3041, 30448, ltps, a) :- codice_corso(3041), matricola_docente(30448), laurea(ltps), taf(a).
+cattedra(3041, 30448, lcpb, a) :- codice_corso(3041), matricola_docente(30448), laurea(lcpb), taf(a).
 %  Corso: 5027, Docente: GALLO Mariana
 cattedra(5027, 30448, lm6, a) :- codice_corso(5027), matricola_docente(30448), laurea(lm6), taf(a).
 %  Corso: 5026, Docente: GALLO Mariana
@@ -3314,7 +3543,7 @@ cattedra(3011, 6049, lt, b) :- codice_corso(3011), matricola_docente(6049), laur
 %  Corso: 5016, Docente: GAMBAROTTA Agostino
 cattedra(5016, 6049, lm, b) :- codice_corso(5016), matricola_docente(6049), laurea(lm), taf(b).
 %  Corso: 3049, Docente: GAMBAROTTA Agostino
-cattedra(3049, 6049, ltps, b) :- codice_corso(3049), matricola_docente(6049), laurea(ltps), taf(b).
+cattedra(3049, 6049, lcpb, b) :- codice_corso(3049), matricola_docente(6049), laurea(lcpb), taf(b).
 %  Corso: 3004, Docente: GANDOLFI Gino
 cattedra(3004, 5433, lt, b) :- codice_corso(3004), matricola_docente(5433), laurea(lt), taf(b).
 %  Corso: 3054, Docente: GANDOLFI Carlo Giorgio Benedetto
@@ -3328,9 +3557,9 @@ cattedra(3054, 11296, lt, c) :- codice_corso(3054), matricola_docente(11296), la
 %  Corso: 3020, Docente: GANINO Tommaso
 cattedra(3020, 207009, lt, b) :- codice_corso(3020), matricola_docente(207009), laurea(lt), taf(b).
 %  Corso: 3064, Docente: GANINO Tommaso
-cattedra(3064, 207009, lt, b) :- codice_corso(3064), matricola_docente(207009), laurea(lt), taf(b).
+cattedra(3064, 207009, lcpb, b) :- codice_corso(3064), matricola_docente(207009), laurea(lcpb), taf(b).
 %  Corso: 3064, Docente: GANINO Tommaso
-cattedra(3064, 207009, lt, f) :- codice_corso(3064), matricola_docente(207009), laurea(lt), taf(f).
+cattedra(3064, 207009, lcpb, f) :- codice_corso(3064), matricola_docente(207009), laurea(lcpb), taf(f).
 %  Corso: 3000, Docente: GANINO Tommaso
 cattedra(3000, 207009, lt, a) :- codice_corso(3000), matricola_docente(207009), laurea(lt), taf(a).
 %  Corso: 3000, Docente: GANINO Tommaso
@@ -3362,7 +3591,7 @@ cattedra(3000, 6515, lt, b) :- codice_corso(3000), matricola_docente(6515), laur
 %  Corso: 5000, Docente: GATTI Monica
 cattedra(5000, 6515, lm, b) :- codice_corso(5000), matricola_docente(6515), laurea(lm), taf(b).
 %  Corso: 3068, Docente: GATTI Monica
-cattedra(3068, 6515, lt, b) :- codice_corso(3068), matricola_docente(6515), laurea(lt), taf(b).
+cattedra(3068, 6515, lcpb, b) :- codice_corso(3068), matricola_docente(6515), laurea(lcpb), taf(b).
 %  Corso: 3000, Docente: GATTI Monica
 cattedra(3000, 6515, lt, b) :- codice_corso(3000), matricola_docente(6515), laurea(lt), taf(b).
 %  Corso: 5077, Docente: GATTI Monica
@@ -3394,19 +3623,19 @@ cattedra(3014, 10290, lt, c) :- codice_corso(3014), matricola_docente(10290), la
 %  Corso: 3014, Docente: GENTILE Marco
 cattedra(3014, 10290, lt, a) :- codice_corso(3014), matricola_docente(10290), laurea(lt), taf(a).
 %  Corso: 3041, Docente: GERBELLA Marzio
-cattedra(3041, 205053, ltps, a) :- codice_corso(3041), matricola_docente(205053), laurea(ltps), taf(a).
+cattedra(3041, 205053, lcpb, a) :- codice_corso(3041), matricola_docente(205053), laurea(lcpb), taf(a).
 %  Corso: 5026, Docente: GERBELLA Marzio
 cattedra(5026, 205053, lm6, a) :- codice_corso(5026), matricola_docente(205053), laurea(lm6), taf(a).
 %  Corso: 3040, Docente: GERBELLA Marzio
-cattedra(3040, 205053, ltps, a) :- codice_corso(3040), matricola_docente(205053), laurea(ltps), taf(a).
+cattedra(3040, 205053, lcpb, a) :- codice_corso(3040), matricola_docente(205053), laurea(lcpb), taf(a).
 %  Corso: 5026, Docente: GERBELLA Marzio
 cattedra(5026, 205053, lm6, c) :- codice_corso(5026), matricola_docente(205053), laurea(lm6), taf(c).
 %  Corso: 3048, Docente: GERBELLA Marzio
-cattedra(3048, 205053, ltps, a) :- codice_corso(3048), matricola_docente(205053), laurea(ltps), taf(a).
+cattedra(3048, 205053, lcpb, a) :- codice_corso(3048), matricola_docente(205053), laurea(lcpb), taf(a).
 %  Corso: 3044, Docente: GERBELLA Marzio
-cattedra(3044, 205053, ltps, a) :- codice_corso(3044), matricola_docente(205053), laurea(ltps), taf(a).
+cattedra(3044, 205053, lcpb, a) :- codice_corso(3044), matricola_docente(205053), laurea(lcpb), taf(a).
 %  Corso: 3044, Docente: GERBELLA Marzio
-cattedra(3044, 205053, ltps, a) :- codice_corso(3044), matricola_docente(205053), laurea(ltps), taf(a).
+cattedra(3044, 205053, lcpb, a) :- codice_corso(3044), matricola_docente(205053), laurea(lcpb), taf(a).
 %  Corso: 5055, Docente: GERRA MARIA CARLA
 cattedra(5055, 12507, lm, b) :- codice_corso(5055), matricola_docente(12507), laurea(lm), taf(b).
 %  Corso: 5078, Docente: GHERARDI Laura
@@ -3428,7 +3657,7 @@ cattedra(3054, 9966, lt, c) :- codice_corso(3054), matricola_docente(9966), laur
 %  Corso: 3054, Docente: GHERRI Barbara
 cattedra(3054, 9966, lt, b) :- codice_corso(3054), matricola_docente(9966), laurea(lt), taf(b).
 %  Corso: 3063, Docente: GHEZZI BENEDETTA
-cattedra(3063, 19553, lt, b) :- codice_corso(3063), matricola_docente(19553), laurea(lt), taf(b).
+cattedra(3063, 19553, lcpb, b) :- codice_corso(3063), matricola_docente(19553), laurea(lcpb), taf(b).
 %  Corso: 5027, Docente: GHEZZI BENEDETTA
 cattedra(5027, 19553, lm6, d) :- codice_corso(5027), matricola_docente(19553), laurea(lm6), taf(d).
 %  Corso: 5045, Docente: GHEZZI BENEDETTA
@@ -3492,21 +3721,21 @@ cattedra(3014, 8858, lt, a) :- codice_corso(3014), matricola_docente(8858), laur
 %  Corso: 3014, Docente: GIBERTINI Simone
 cattedra(3014, 8858, lt, c) :- codice_corso(3014), matricola_docente(8858), laurea(lt), taf(c).
 %  Corso: 3066, Docente: GILIBERTI Luca
-cattedra(3066, 39715, lt, c) :- codice_corso(3066), matricola_docente(39715), laurea(lt), taf(c).
+cattedra(3066, 39715, lcpa, c) :- codice_corso(3066), matricola_docente(39715), laurea(lcpa), taf(c).
 %  Corso: 3038, Docente: GILIBERTI Luca
 cattedra(3038, 39715, lt, a) :- codice_corso(3038), matricola_docente(39715), laurea(lt), taf(a).
 %  Corso: 5046, Docente: GILIBERTI Luca
 cattedra(5046, 39715, lm, b) :- codice_corso(5046), matricola_docente(39715), laurea(lm), taf(b).
 %  Corso: 3047, Docente: GIORDANO Giovanna
-cattedra(3047, 4860, ltps, b) :- codice_corso(3047), matricola_docente(4860), laurea(ltps), taf(b).
+cattedra(3047, 4860, lcpb, b) :- codice_corso(3047), matricola_docente(4860), laurea(lcpb), taf(b).
 %  Corso: 3041, Docente: GIORDANO Giovanna
-cattedra(3041, 4860, ltps, b) :- codice_corso(3041), matricola_docente(4860), laurea(ltps), taf(b).
+cattedra(3041, 4860, lcpb, b) :- codice_corso(3041), matricola_docente(4860), laurea(lcpb), taf(b).
 %  Corso: 5026, Docente: GIORDANO Giovanna
 cattedra(5026, 4860, lm6, b) :- codice_corso(5026), matricola_docente(4860), laurea(lm6), taf(b).
 %  Corso: 3047, Docente: GIORDANO Giovanna
-cattedra(3047, 4860, ltps, b) :- codice_corso(3047), matricola_docente(4860), laurea(ltps), taf(b).
+cattedra(3047, 4860, lcpb, b) :- codice_corso(3047), matricola_docente(4860), laurea(lcpb), taf(b).
 %  Corso: 3019, Docente: GIORGIO Carmine
-cattedra(3019, 7245, ltsm, a) :- codice_corso(3019), matricola_docente(7245), laurea(ltsm), taf(a).
+cattedra(3019, 7245, lcpa, a) :- codice_corso(3019), matricola_docente(7245), laurea(lcpa), taf(a).
 %  Corso: 5009, Docente: GIORGIO Carmine
 cattedra(5009, 7245, lm5, b) :- codice_corso(5009), matricola_docente(7245), laurea(lm5), taf(b).
 %  Corso: 5008, Docente: GIORGIO Carmine
@@ -3518,7 +3747,7 @@ cattedra(5071, 206026, lm, b) :- codice_corso(5071), matricola_docente(206026), 
 %  Corso: 5045, Docente: GIOVATI Laura
 cattedra(5045, 206026, lm, b) :- codice_corso(5045), matricola_docente(206026), laurea(lm), taf(b).
 %  Corso: 3063, Docente: GIOVATI Laura
-cattedra(3063, 206026, lt, b) :- codice_corso(3063), matricola_docente(206026), laurea(lt), taf(b).
+cattedra(3063, 206026, lcpb, b) :- codice_corso(3063), matricola_docente(206026), laurea(lcpb), taf(b).
 %  Corso: 5025, Docente: GIUFFRE' Martina
 cattedra(5025, 19890, lm, b) :- codice_corso(5025), matricola_docente(19890), laurea(lm), taf(b).
 %  Corso: 5078, Docente: GIUFFRE' Martina
@@ -3528,7 +3757,7 @@ cattedra(5054, 19890, lm, c) :- codice_corso(5054), matricola_docente(19890), la
 %  Corso: 5078, Docente: GIUFFRE' Martina
 cattedra(5078, 19890, lm, b) :- codice_corso(5078), matricola_docente(19890), laurea(lm), taf(b).
 %  Corso: 3047, Docente: GIULIANI Nicola
-cattedra(3047, 5794, ltps, d) :- codice_corso(3047), matricola_docente(5794), laurea(ltps), taf(d).
+cattedra(3047, 5794, lcpb, d) :- codice_corso(3047), matricola_docente(5794), laurea(lcpb), taf(d).
 %  Corso: 5045, Docente: GIULIANI Nicola
 cattedra(5045, 5794, lm, b) :- codice_corso(5045), matricola_docente(5794), laurea(lm), taf(b).
 %  Corso: 5011, Docente: GIULIANI Felice
@@ -3536,9 +3765,9 @@ cattedra(5011, 5056, lm, b) :- codice_corso(5011), matricola_docente(5056), laur
 %  Corso: 5026, Docente: GIULIANI Nicola
 cattedra(5026, 5794, lm6, b) :- codice_corso(5026), matricola_docente(5794), laurea(lm6), taf(b).
 %  Corso: 3047, Docente: GIULIANI Nicola
-cattedra(3047, 5794, ltps, b) :- codice_corso(3047), matricola_docente(5794), laurea(ltps), taf(b).
+cattedra(3047, 5794, lcpb, b) :- codice_corso(3047), matricola_docente(5794), laurea(lcpb), taf(b).
 %  Corso: 3019, Docente: GIULIANI Nicola
-cattedra(3019, 5794, ltsm, c) :- codice_corso(3019), matricola_docente(5794), laurea(ltsm), taf(c).
+cattedra(3019, 5794, lcpa, c) :- codice_corso(3019), matricola_docente(5794), laurea(lcpa), taf(c).
 %  Corso: 5011, Docente: GIULIANI Felice
 cattedra(5011, 5056, lm, b) :- codice_corso(5011), matricola_docente(5056), laurea(lm), taf(b).
 %  Corso: 5029, Docente: GNUDI Giacomo
@@ -3552,19 +3781,19 @@ cattedra(5029, 4451, lm5, b) :- codice_corso(5029), matricola_docente(4451), lau
 %  Corso: 5026, Docente: GOBBI Giuliana
 cattedra(5026, 6580, lm6, b) :- codice_corso(5026), matricola_docente(6580), laurea(lm6), taf(b).
 %  Corso: 5028, Docente: GOBBI Giuliana
-cattedra(5028, 6580, lmsm, b) :- codice_corso(5028), matricola_docente(6580), laurea(lmsm), taf(b).
+cattedra(5028, 6580, lcpb, b) :- codice_corso(5028), matricola_docente(6580), laurea(lcpb), taf(b).
 %  Corso: 5026, Docente: GOBBI Giuliana
 cattedra(5026, 6580, lm6, a) :- codice_corso(5026), matricola_docente(6580), laurea(lm6), taf(a).
 %  Corso: 3019, Docente: GOBBI Giuliana
-cattedra(3019, 6580, ltsm, e) :- codice_corso(3019), matricola_docente(6580), laurea(ltsm), taf(e).
+cattedra(3019, 6580, lcpa, e) :- codice_corso(3019), matricola_docente(6580), laurea(lcpa), taf(e).
 %  Corso: 3019, Docente: GOBBI Giuliana
-cattedra(3019, 6580, ltsm, b) :- codice_corso(3019), matricola_docente(6580), laurea(ltsm), taf(b).
+cattedra(3019, 6580, lcpa, b) :- codice_corso(3019), matricola_docente(6580), laurea(lcpa), taf(b).
 %  Corso: 3019, Docente: GOBBI Giuliana
-cattedra(3019, 6580, ltsm, a) :- codice_corso(3019), matricola_docente(6580), laurea(ltsm), taf(a).
+cattedra(3019, 6580, lcpa, a) :- codice_corso(3019), matricola_docente(6580), laurea(lcpa), taf(a).
 %  Corso: 5028, Docente: GOBBI Giuliana
-cattedra(5028, 6580, lmsm, b) :- codice_corso(5028), matricola_docente(6580), laurea(lmsm), taf(b).
+cattedra(5028, 6580, lcpb, b) :- codice_corso(5028), matricola_docente(6580), laurea(lcpb), taf(b).
 %  Corso: 3019, Docente: GOBBI Giuliana
-cattedra(3019, 6580, ltsm, a) :- codice_corso(3019), matricola_docente(6580), laurea(ltsm), taf(a).
+cattedra(3019, 6580, lcpa, a) :- codice_corso(3019), matricola_docente(6580), laurea(lcpa), taf(a).
 %  Corso: 995, Docente: GRAGNOLI Enrico
 cattedra(995, 6435, lm5, b) :- codice_corso(995), matricola_docente(6435), laurea(lm5), taf(b).
 %  Corso: 995, Docente: GRAGNOLI Enrico
@@ -3596,7 +3825,7 @@ cattedra(3028, 5556, lt, b) :- codice_corso(3028), matricola_docente(5556), laur
 %  Corso: 5061, Docente: GRASSO Donato Antonio
 cattedra(5061, 5556, lm, c) :- codice_corso(5061), matricola_docente(5556), laurea(lm), taf(c).
 %  Corso: 3064, Docente: GRASSO Donato Antonio
-cattedra(3064, 5556, lt, a) :- codice_corso(3064), matricola_docente(5556), laurea(lt), taf(a).
+cattedra(3064, 5556, lcpb, a) :- codice_corso(3064), matricola_docente(5556), laurea(lcpb), taf(a).
 %  Corso: 5054, Docente: GRAZIA VALENTINA
 cattedra(5054, 15906, lm, d) :- codice_corso(5054), matricola_docente(15906), laurea(lm), taf(d).
 %  Corso: 3038, Docente: GRAZIA VALENTINA
@@ -3606,7 +3835,7 @@ cattedra(5054, 15906, lm, b) :- codice_corso(5054), matricola_docente(15906), la
 %  Corso: 5003, Docente: GRECO MARIA GIOVANNA
 cattedra(5003, 11346, lm, d) :- codice_corso(5003), matricola_docente(11346), laurea(lm), taf(d).
 %  Corso: 3006, Docente: GRECO MARIA GIOVANNA
-cattedra(3006, 11346, ltss, b) :- codice_corso(3006), matricola_docente(11346), laurea(ltss), taf(b).
+cattedra(3006, 11346, lcpa, b) :- codice_corso(3006), matricola_docente(11346), laurea(lcpa), taf(b).
 %  Corso: 3004, Docente: GRECO MARIA GIOVANNA
 cattedra(3004, 11346, lt, d) :- codice_corso(3004), matricola_docente(11346), laurea(lt), taf(d).
 %  Corso: 3038, Docente: GRECO MARIA GIOVANNA
@@ -3648,7 +3877,7 @@ cattedra(5015, 4831, lm, b) :- codice_corso(5015), matricola_docente(4831), laur
 %  Corso: 5015, Docente: GUARINO LO BIANCO Corrado
 cattedra(5015, 4831, lm, b) :- codice_corso(5015), matricola_docente(4831), laurea(lm), taf(b).
 %  Corso: 3071, Docente: GUIZZARDI Stefano
-cattedra(3071, 4322, ltps, a) :- codice_corso(3071), matricola_docente(4322), laurea(ltps), taf(a).
+cattedra(3071, 4322, lt, a) :- codice_corso(3071), matricola_docente(4322), laurea(lt), taf(a).
 %  Corso: 5026, Docente: GUIZZARDI Stefano
 cattedra(5026, 4322, lm6, b) :- codice_corso(5026), matricola_docente(4322), laurea(lm6), taf(b).
 %  Corso: 5074, Docente: GUIZZARDI Stefano
@@ -3668,11 +3897,11 @@ cattedra(3052, 5114, lt, c) :- codice_corso(3052), matricola_docente(5114), laur
 %  Corso: 5029, Docente: GUZMAN-GARCIA Carmen
 cattedra(5029, 43598, lm5, b) :- codice_corso(5029), matricola_docente(43598), laurea(lm5), taf(b).
 %  Corso: 3068, Docente: HADJ SAADOUN JASMINE
-cattedra(3068, 25837, lt, f) :- codice_corso(3068), matricola_docente(25837), laurea(lt), taf(f).
+cattedra(3068, 25837, lcpb, f) :- codice_corso(3068), matricola_docente(25837), laurea(lcpb), taf(f).
 %  Corso: 3000, Docente: HADJ SAADOUN JASMINE
 cattedra(3000, 25837, lt, b) :- codice_corso(3000), matricola_docente(25837), laurea(lt), taf(b).
 %  Corso: 3064, Docente: HADJ SAADOUN JASMINE
-cattedra(3064, 25837, lt, f) :- codice_corso(3064), matricola_docente(25837), laurea(lt), taf(f).
+cattedra(3064, 25837, lcpb, f) :- codice_corso(3064), matricola_docente(25837), laurea(lcpb), taf(f).
 %  Corso: 5000, Docente: HADJ SAADOUN JASMINE
 cattedra(5000, 25837, lm, b) :- codice_corso(5000), matricola_docente(25837), laurea(lm), taf(b).
 %  Corso: 5013, Docente: HOANG MINH LONG
@@ -3750,15 +3979,15 @@ cattedra(5029, 5406, lm5, b) :- codice_corso(5029), matricola_docente(5406), lau
 %  Corso: 5029, Docente: KRAMER Laura Helen
 cattedra(5029, 5406, lm5, b) :- codice_corso(5029), matricola_docente(5406), laurea(lm5), taf(b).
 %  Corso: 3071, Docente: LA MONICA Silvia
-cattedra(3071, 207008, ltps, a) :- codice_corso(3071), matricola_docente(207008), laurea(ltps), taf(a).
+cattedra(3071, 207008, lt, a) :- codice_corso(3071), matricola_docente(207008), laurea(lt), taf(a).
 %  Corso: 3047, Docente: LA MONICA Silvia
-cattedra(3047, 207008, ltps, b) :- codice_corso(3047), matricola_docente(207008), laurea(ltps), taf(b).
+cattedra(3047, 207008, lcpb, b) :- codice_corso(3047), matricola_docente(207008), laurea(lcpb), taf(b).
 %  Corso: 3048, Docente: LA MONICA Silvia
-cattedra(3048, 207008, ltps, a) :- codice_corso(3048), matricola_docente(207008), laurea(ltps), taf(a).
+cattedra(3048, 207008, lcpb, a) :- codice_corso(3048), matricola_docente(207008), laurea(lcpb), taf(a).
 %  Corso: 3042, Docente: LA MONICA Silvia
-cattedra(3042, 207008, ltps, a) :- codice_corso(3042), matricola_docente(207008), laurea(ltps), taf(a).
+cattedra(3042, 207008, lcpb, a) :- codice_corso(3042), matricola_docente(207008), laurea(lcpb), taf(a).
 %  Corso: 3044, Docente: LA MONICA Silvia
-cattedra(3044, 207008, ltps, a) :- codice_corso(3044), matricola_docente(207008), laurea(ltps), taf(a).
+cattedra(3044, 207008, lcpb, a) :- codice_corso(3044), matricola_docente(207008), laurea(lcpb), taf(a).
 %  Corso: 5026, Docente: LAGHI Luigi Andrea Giuseppe
 cattedra(5026, 30289, lm6, b) :- codice_corso(5026), matricola_docente(30289), laurea(lm6), taf(b).
 %  Corso: 5074, Docente: LAGHI Luigi Andrea Giuseppe
@@ -3776,7 +4005,7 @@ cattedra(3024, 17240, lt, a) :- codice_corso(3024), matricola_docente(17240), la
 %  Corso: 5074, Docente: LANZILOTTO MARCO
 cattedra(5074, 13659, lm6, a) :- codice_corso(5074), matricola_docente(13659), laurea(lm6), taf(a).
 %  Corso: 3019, Docente: LANZILOTTO MARCO
-cattedra(3019, 13659, ltsm, a) :- codice_corso(3019), matricola_docente(13659), laurea(ltsm), taf(a).
+cattedra(3019, 13659, lcpa, a) :- codice_corso(3019), matricola_docente(13659), laurea(lcpa), taf(a).
 %  Corso: 3024, Docente: LAPINI Andrea
 cattedra(3024, 32477, lt, b) :- codice_corso(3024), matricola_docente(32477), laurea(lt), taf(b).
 %  Corso: 3024, Docente: LAPINI Andrea
@@ -3798,17 +4027,17 @@ cattedra(3004, 5986, lt, b) :- codice_corso(3004), matricola_docente(5986), laur
 %  Corso: 5026, Docente: LAURETANI Fulvio
 cattedra(5026, 10073, lm6, f) :- codice_corso(5026), matricola_docente(10073), laurea(lm6), taf(f).
 %  Corso: 3040, Docente: LAURETANI Fulvio
-cattedra(3040, 10073, ltps, a) :- codice_corso(3040), matricola_docente(10073), laurea(ltps), taf(a).
+cattedra(3040, 10073, lcpb, a) :- codice_corso(3040), matricola_docente(10073), laurea(lcpb), taf(a).
 %  Corso: 3046, Docente: LAURETANI Fulvio
-cattedra(3046, 10073, ltps, a) :- codice_corso(3046), matricola_docente(10073), laurea(ltps), taf(a).
+cattedra(3046, 10073, lcpb, a) :- codice_corso(3046), matricola_docente(10073), laurea(lcpb), taf(a).
 %  Corso: 5074, Docente: LAURETANI Fulvio
 cattedra(5074, 10073, lm6, b) :- codice_corso(5074), matricola_docente(10073), laurea(lm6), taf(b).
 %  Corso: 3040, Docente: LAURETANI Fulvio
-cattedra(3040, 10073, ltps, a) :- codice_corso(3040), matricola_docente(10073), laurea(ltps), taf(a).
+cattedra(3040, 10073, lcpb, a) :- codice_corso(3040), matricola_docente(10073), laurea(lcpb), taf(a).
 %  Corso: 5028, Docente: LAURETANI Fulvio
-cattedra(5028, 10073, lmsm, d) :- codice_corso(5028), matricola_docente(10073), laurea(lmsm), taf(d).
+cattedra(5028, 10073, lcpb, d) :- codice_corso(5028), matricola_docente(10073), laurea(lcpb), taf(d).
 %  Corso: 3042, Docente: LAURETANI Fulvio
-cattedra(3042, 10073, ltps, a) :- codice_corso(3042), matricola_docente(10073), laurea(ltps), taf(a).
+cattedra(3042, 10073, lcpb, a) :- codice_corso(3042), matricola_docente(10073), laurea(lcpb), taf(a).
 %  Corso: 5015, Docente: LAURINI MATTIA
 cattedra(5015, 13436, lm, c) :- codice_corso(5015), matricola_docente(13436), laurea(lm), taf(c).
 %  Corso: 5047, Docente: LAURINI Fabrizio
@@ -3820,7 +4049,7 @@ cattedra(5005, 6644, lm, c) :- codice_corso(5005), matricola_docente(6644), laur
 %  Corso: 5061, Docente: LAZZARONI Martina
 cattedra(5061, 48861, lm, d) :- codice_corso(5061), matricola_docente(48861), laurea(lm), taf(d).
 %  Corso: 3068, Docente: LAZZI Camilla
-cattedra(3068, 6274, lt, b) :- codice_corso(3068), matricola_docente(6274), laurea(lt), taf(b).
+cattedra(3068, 6274, lcpb, b) :- codice_corso(3068), matricola_docente(6274), laurea(lcpb), taf(b).
 %  Corso: 3052, Docente: LAZZI Camilla
 cattedra(3052, 6274, lt, c) :- codice_corso(3052), matricola_docente(6274), laurea(lt), taf(c).
 %  Corso: 3069, Docente: LAZZI Camilla
@@ -3830,17 +4059,17 @@ cattedra(3057, 6274, lt, c) :- codice_corso(3057), matricola_docente(6274), laur
 %  Corso: 3000, Docente: LAZZI Camilla
 cattedra(3000, 6274, lt, b) :- codice_corso(3000), matricola_docente(6274), laurea(lt), taf(b).
 %  Corso: 3048, Docente: LEDDA ROBERTA EUFRASIA
-cattedra(3048, 25852, ltps, b) :- codice_corso(3048), matricola_docente(25852), laurea(ltps), taf(b).
+cattedra(3048, 25852, lcpb, b) :- codice_corso(3048), matricola_docente(25852), laurea(lcpb), taf(b).
 %  Corso: 3067, Docente: LEDDA ROBERTA EUFRASIA
-cattedra(3067, 25852, ltps, b) :- codice_corso(3067), matricola_docente(25852), laurea(ltps), taf(b).
+cattedra(3067, 25852, lcpb, b) :- codice_corso(3067), matricola_docente(25852), laurea(lcpb), taf(b).
 %  Corso: 5074, Docente: LEDDA ROBERTA EUFRASIA
 cattedra(5074, 25852, lm6, b) :- codice_corso(5074), matricola_docente(25852), laurea(lm6), taf(b).
 %  Corso: 5074, Docente: LEDDA ROBERTA EUFRASIA
 cattedra(5074, 25852, lm6, b) :- codice_corso(5074), matricola_docente(25852), laurea(lm6), taf(b).
 %  Corso: 3048, Docente: LEO LUDOVICA
-cattedra(3048, 22301, ltps, d) :- codice_corso(3048), matricola_docente(22301), laurea(ltps), taf(d).
+cattedra(3048, 22301, lcpb, d) :- codice_corso(3048), matricola_docente(22301), laurea(lcpb), taf(d).
 %  Corso: 3044, Docente: LEO LUDOVICA
-cattedra(3044, 22301, ltps, a) :- codice_corso(3044), matricola_docente(22301), laurea(ltps), taf(a).
+cattedra(3044, 22301, lcpb, a) :- codice_corso(3044), matricola_docente(22301), laurea(lcpb), taf(a).
 %  Corso: 3022, Docente: LEONARDI Stefano
 cattedra(3022, 5462, lt, b) :- codice_corso(3022), matricola_docente(5462), laurea(lt), taf(b).
 %  Corso: 5061, Docente: LEONARDI Stefano
@@ -3860,9 +4089,9 @@ cattedra(3059, 39460, lt, a) :- codice_corso(3059), matricola_docente(39460), la
 %  Corso: 3000, Docente: LEVANTE Alessia
 cattedra(3000, 11384, lt, d) :- codice_corso(3000), matricola_docente(11384), laurea(lt), taf(d).
 %  Corso: 3068, Docente: LEVANTE Alessia
-cattedra(3068, 11384, lt, f) :- codice_corso(3068), matricola_docente(11384), laurea(lt), taf(f).
+cattedra(3068, 11384, lcpb, f) :- codice_corso(3068), matricola_docente(11384), laurea(lcpb), taf(f).
 %  Corso: 3040, Docente: LO CASCIO GIULIANA
-cattedra(3040, 38375, ltps, a) :- codice_corso(3040), matricola_docente(38375), laurea(ltps), taf(a).
+cattedra(3040, 38375, lcpb, a) :- codice_corso(3040), matricola_docente(38375), laurea(lcpb), taf(a).
 %  Corso: 5074, Docente: LO CASCIO GIULIANA
 cattedra(5074, 38375, lm6, b) :- codice_corso(5074), matricola_docente(38375), laurea(lm6), taf(b).
 %  Corso: 5026, Docente: LO CASCIO GIULIANA
@@ -3892,9 +4121,9 @@ cattedra(5009, 6593, lm5, b) :- codice_corso(5009), matricola_docente(6593), lau
 %  Corso: 5009, Docente: LODOLA Alessio
 cattedra(5009, 6593, lm5, b) :- codice_corso(5009), matricola_docente(6593), laurea(lm5), taf(b).
 %  Corso: 3064, Docente: LOLLI VERONICA
-cattedra(3064, 17253, lt, c) :- codice_corso(3064), matricola_docente(17253), laurea(lt), taf(c).
+cattedra(3064, 17253, lcpb, c) :- codice_corso(3064), matricola_docente(17253), laurea(lcpb), taf(c).
 %  Corso: 3064, Docente: LOLLI VERONICA
-cattedra(3064, 17253, lt, f) :- codice_corso(3064), matricola_docente(17253), laurea(lt), taf(f).
+cattedra(3064, 17253, lcpb, f) :- codice_corso(3064), matricola_docente(17253), laurea(lcpb), taf(f).
 %  Corso: 3014, Docente: LOMBARDO GIANFRANCO
 cattedra(3014, 22348, lt, c) :- codice_corso(3014), matricola_docente(22348), laurea(lt), taf(c).
 %  Corso: 3050, Docente: LOMBARDO GIANFRANCO
@@ -3936,17 +4165,17 @@ cattedra(3004, 4837, lt, d) :- codice_corso(3004), matricola_docente(4837), laur
 %  Corso: 3004, Docente: LUCERI Beatrice
 cattedra(3004, 4837, lt, c) :- codice_corso(3004), matricola_docente(4837), laurea(lt), taf(c).
 %  Corso: 3040, Docente: LUGLI Marco
-cattedra(3040, 4528, ltps, a) :- codice_corso(3040), matricola_docente(4528), laurea(ltps), taf(a).
+cattedra(3040, 4528, lcpb, a) :- codice_corso(3040), matricola_docente(4528), laurea(lcpb), taf(a).
 %  Corso: 3022, Docente: LUGLI Gabriele Andrea
 cattedra(3022, 11368, lt, c) :- codice_corso(3022), matricola_docente(11368), laurea(lt), taf(c).
 %  Corso: 5055, Docente: LUGLI Gabriele Andrea
 cattedra(5055, 11368, lm, c) :- codice_corso(5055), matricola_docente(11368), laurea(lm), taf(c).
 %  Corso: 3049, Docente: LUGLI Marco
-cattedra(3049, 4528, ltps, a) :- codice_corso(3049), matricola_docente(4528), laurea(ltps), taf(a).
+cattedra(3049, 4528, lcpb, a) :- codice_corso(3049), matricola_docente(4528), laurea(lcpb), taf(a).
 %  Corso: 3062, Docente: LUGLI Gabriele Andrea
 cattedra(3062, 11368, lt, c) :- codice_corso(3062), matricola_docente(11368), laurea(lt), taf(c).
 %  Corso: 3063, Docente: LUMETTI Simone
-cattedra(3063, 6942, lt, b) :- codice_corso(3063), matricola_docente(6942), laurea(lt), taf(b).
+cattedra(3063, 6942, lcpb, b) :- codice_corso(3063), matricola_docente(6942), laurea(lcpb), taf(b).
 %  Corso: 5027, Docente: LUMETTI Simone
 cattedra(5027, 6942, lm6, b) :- codice_corso(5027), matricola_docente(6942), laurea(lm6), taf(b).
 %  Corso: 5027, Docente: LUMETTI Simone
@@ -3972,11 +4201,11 @@ cattedra(3023, 5571, lt, b) :- codice_corso(3023), matricola_docente(5571), laur
 %  Corso: 3023, Docente: LUNGHI Paolo
 cattedra(3023, 5571, lt, d) :- codice_corso(3023), matricola_docente(5571), laurea(lt), taf(d).
 %  Corso: 3043, Docente: LUPPINO Giuseppe
-cattedra(3043, 4257, ltps, a) :- codice_corso(3043), matricola_docente(4257), laurea(ltps), taf(a).
+cattedra(3043, 4257, lcpb, a) :- codice_corso(3043), matricola_docente(4257), laurea(lcpb), taf(a).
 %  Corso: 5026, Docente: LUPPINO Giuseppe
 cattedra(5026, 4257, lm6, a) :- codice_corso(5026), matricola_docente(4257), laurea(lm6), taf(a).
 %  Corso: 3042, Docente: LUPPINO Giuseppe
-cattedra(3042, 4257, ltps, a) :- codice_corso(3042), matricola_docente(4257), laurea(ltps), taf(a).
+cattedra(3042, 4257, lcpb, a) :- codice_corso(3042), matricola_docente(4257), laurea(lcpb), taf(a).
 %  Corso: 5026, Docente: LUPPINO Giuseppe
 cattedra(5026, 4257, lm6, a) :- codice_corso(5026), matricola_docente(4257), laurea(lm6), taf(a).
 %  Corso: 3011, Docente: LUTEY Adrian Hugh Alexander
@@ -3990,9 +4219,9 @@ cattedra(3029, 19924, lt, a) :- codice_corso(3029), matricola_docente(19924), la
 %  Corso: 5077, Docente: MACCARI MICHELE
 cattedra(5077, 25587, lm, d) :- codice_corso(5077), matricola_docente(25587), laurea(lm), taf(d).
 %  Corso: 3006, Docente: MACI Francesca
-cattedra(3006, 44211, ltss, a) :- codice_corso(3006), matricola_docente(44211), laurea(ltss), taf(a).
+cattedra(3006, 44211, lcpa, a) :- codice_corso(3006), matricola_docente(44211), laurea(lcpa), taf(a).
 %  Corso: 3006, Docente: MACI Francesca
-cattedra(3006, 44211, ltss, b) :- codice_corso(3006), matricola_docente(44211), laurea(ltss), taf(b).
+cattedra(3006, 44211, lcpa, b) :- codice_corso(3006), matricola_docente(44211), laurea(lcpa), taf(b).
 %  Corso: 3038, Docente: MADELLA LAURA
 cattedra(3038, 11750, lt, c) :- codice_corso(3038), matricola_docente(11750), laurea(lt), taf(c).
 %  Corso: 3038, Docente: MADELLA LAURA
@@ -4020,7 +4249,7 @@ cattedra(3028, 4614, lt, c) :- codice_corso(3028), matricola_docente(4614), laur
 %  Corso: 3024, Docente: MAESTRI Giovanni
 cattedra(3024, 7224, lt, a) :- codice_corso(3024), matricola_docente(7224), laurea(lt), taf(a).
 %  Corso: 3041, Docente: MAESTRONI Umberto Vittorio
-cattedra(3041, 156582, ltps, b) :- codice_corso(3041), matricola_docente(156582), laurea(ltps), taf(b).
+cattedra(3041, 156582, lcpb, b) :- codice_corso(3041), matricola_docente(156582), laurea(lcpb), taf(b).
 %  Corso: 5074, Docente: MAESTRONI Umberto Vittorio
 cattedra(5074, 156582, lm6, b) :- codice_corso(5074), matricola_docente(156582), laurea(lm6), taf(b).
 %  Corso: 5003, Docente: MAFFI LUCIANO
@@ -4052,25 +4281,25 @@ cattedra(5026, 6624, lm6, f) :- codice_corso(5026), matricola_docente(6624), lau
 %  Corso: 5074, Docente: MAGGIO Marcello Giuseppe
 cattedra(5074, 6624, lm6, b) :- codice_corso(5074), matricola_docente(6624), laurea(lm6), taf(b).
 %  Corso: 3040, Docente: MAGGIO Marcello Giuseppe
-cattedra(3040, 6624, ltps, f) :- codice_corso(3040), matricola_docente(6624), laurea(ltps), taf(f).
+cattedra(3040, 6624, lcpb, f) :- codice_corso(3040), matricola_docente(6624), laurea(lcpb), taf(f).
 %  Corso: 5026, Docente: MAGGIO Marcello Giuseppe
 cattedra(5026, 6624, lm6, d) :- codice_corso(5026), matricola_docente(6624), laurea(lm6), taf(d).
 %  Corso: 5068, Docente: MAGGIO Marcello Giuseppe
 cattedra(5068, 6624, lm, c) :- codice_corso(5068), matricola_docente(6624), laurea(lm), taf(c).
 %  Corso: 3040, Docente: MAGGIO Marcello Giuseppe
-cattedra(3040, 6624, ltps, a) :- codice_corso(3040), matricola_docente(6624), laurea(ltps), taf(a).
+cattedra(3040, 6624, lcpb, a) :- codice_corso(3040), matricola_docente(6624), laurea(lcpb), taf(a).
 %  Corso: 3040, Docente: MAGGIO Marcello Giuseppe
-cattedra(3040, 6624, ltps, a) :- codice_corso(3040), matricola_docente(6624), laurea(ltps), taf(a).
+cattedra(3040, 6624, lcpb, a) :- codice_corso(3040), matricola_docente(6624), laurea(lcpb), taf(a).
 %  Corso: 3040, Docente: MAGGIORE UMBERTO
-cattedra(3040, 8460, ltps, b) :- codice_corso(3040), matricola_docente(8460), laurea(ltps), taf(b).
+cattedra(3040, 8460, lcpb, b) :- codice_corso(3040), matricola_docente(8460), laurea(lcpb), taf(b).
 %  Corso: 5074, Docente: MAGGIORE UMBERTO
 cattedra(5074, 8460, lm6, b) :- codice_corso(5074), matricola_docente(8460), laurea(lm6), taf(b).
 %  Corso: 5026, Docente: MAGGIORE UMBERTO
 cattedra(5026, 8460, lm6, f) :- codice_corso(5026), matricola_docente(8460), laurea(lm6), taf(f).
 %  Corso: 3040, Docente: MAGLIONA Bruno
-cattedra(3040, 6122, ltps, b) :- codice_corso(3040), matricola_docente(6122), laurea(ltps), taf(b).
+cattedra(3040, 6122, lcpb, b) :- codice_corso(3040), matricola_docente(6122), laurea(lcpb), taf(b).
 %  Corso: 3006, Docente: MAGLIONA Bruno
-cattedra(3006, 6122, ltss, c) :- codice_corso(3006), matricola_docente(6122), laurea(ltss), taf(c).
+cattedra(3006, 6122, lcpa, c) :- codice_corso(3006), matricola_docente(6122), laurea(lcpa), taf(c).
 %  Corso: 3004, Docente: MAGNANI Marco
 cattedra(3004, 6629, lt, b) :- codice_corso(3004), matricola_docente(6629), laurea(lt), taf(b).
 %  Corso: 5047, Docente: MAGNANI Marco
@@ -4084,7 +4313,7 @@ cattedra(3014, 5482, lt, b) :- codice_corso(3014), matricola_docente(5482), laur
 %  Corso: 3004, Docente: MAIO EMANUELA
 cattedra(3004, 25053, lt, a) :- codice_corso(3004), matricola_docente(25053), laurea(lt), taf(a).
 %  Corso: 3019, Docente: MAIO EMANUELA
-cattedra(3019, 25053, ltsm, a) :- codice_corso(3019), matricola_docente(25053), laurea(ltsm), taf(a).
+cattedra(3019, 25053, lcpa, a) :- codice_corso(3019), matricola_docente(25053), laurea(lcpa), taf(a).
 %  Corso: 3004, Docente: MAIO EMANUELA
 cattedra(3004, 25053, lt, d) :- codice_corso(3004), matricola_docente(25053), laurea(lt), taf(d).
 %  Corso: 5077, Docente: MAIO EMANUELA
@@ -4114,7 +4343,7 @@ cattedra(3051, 14316, lt, b) :- codice_corso(3051), matricola_docente(14316), la
 %  Corso: 3060, Docente: MALVEZZI JENNIFER
 cattedra(3060, 14316, lt, b) :- codice_corso(3060), matricola_docente(14316), laurea(lt), taf(b).
 %  Corso: 3067, Docente: MALVEZZI Matteo Charles
-cattedra(3067, 40348, ltps, a) :- codice_corso(3067), matricola_docente(40348), laurea(ltps), taf(a).
+cattedra(3067, 40348, lcpb, a) :- codice_corso(3067), matricola_docente(40348), laurea(lcpb), taf(a).
 %  Corso: 5026, Docente: MALVEZZI Matteo Charles
 cattedra(5026, 40348, lm6, b) :- codice_corso(5026), matricola_docente(40348), laurea(lm6), taf(b).
 %  Corso: 3054, Docente: MAMBRIANI Carlo
@@ -4132,7 +4361,7 @@ cattedra(5066, 6056, lm, b) :- codice_corso(5066), matricola_docente(6056), laur
 %  Corso: 5066, Docente: MAMBRIANI Carlo
 cattedra(5066, 6056, lm, c) :- codice_corso(5066), matricola_docente(6056), laurea(lm), taf(c).
 %  Corso: 3063, Docente: MANCABELLI Leonardo
-cattedra(3063, 13967, lt, c) :- codice_corso(3063), matricola_docente(13967), laurea(lt), taf(c).
+cattedra(3063, 13967, lcpb, c) :- codice_corso(3063), matricola_docente(13967), laurea(lcpb), taf(c).
 %  Corso: 5027, Docente: MANCABELLI Leonardo
 cattedra(5027, 13967, lm6, c) :- codice_corso(5027), matricola_docente(13967), laurea(lm6), taf(c).
 %  Corso: 5074, Docente: MANCABELLI Leonardo
@@ -4150,7 +4379,7 @@ cattedra(3004, 5496, lt, c) :- codice_corso(3004), matricola_docente(5496), laur
 %  Corso: 5077, Docente: MANCINI Maria Cecilia
 cattedra(5077, 5496, lm, c) :- codice_corso(5077), matricola_docente(5496), laurea(lm), taf(c).
 %  Corso: 5050, Docente: MANCINI Tiziana
-cattedra(5050, 5205, lmi, b) :- codice_corso(5050), matricola_docente(5205), laurea(lmi), taf(b).
+cattedra(5050, 5205, lcpc, b) :- codice_corso(5050), matricola_docente(5205), laurea(lcpc), taf(b).
 %  Corso: 5016, Docente: MANCONI Elisabetta
 cattedra(5016, 205050, lm, b) :- codice_corso(5016), matricola_docente(205050), laurea(lm), taf(b).
 %  Corso: 5016, Docente: MANCONI Elisabetta
@@ -4158,7 +4387,7 @@ cattedra(5016, 205050, lm, d) :- codice_corso(5016), matricola_docente(205050), 
 %  Corso: 5016, Docente: MANCONI Elisabetta
 cattedra(5016, 205050, lm, b) :- codice_corso(5016), matricola_docente(205050), laurea(lm), taf(b).
 %  Corso: 3063, Docente: MANFREDI Maddalena
-cattedra(3063, 5789, lt, b) :- codice_corso(3063), matricola_docente(5789), laurea(lt), taf(b).
+cattedra(3063, 5789, lcpb, b) :- codice_corso(3063), matricola_docente(5789), laurea(lcpb), taf(b).
 %  Corso: 5027, Docente: MANFREDI Edoardo
 cattedra(5027, 7576, lm6, f) :- codice_corso(5027), matricola_docente(7576), laurea(lm6), taf(f).
 %  Corso: 5027, Docente: MANFREDI Maddalena
@@ -4212,13 +4441,13 @@ cattedra(3022, 8831, lt, a) :- codice_corso(3022), matricola_docente(8831), laur
 %  Corso: 3062, Docente: MANICARDI Alex
 cattedra(3062, 8831, lt, b) :- codice_corso(3062), matricola_docente(8831), laurea(lt), taf(b).
 %  Corso: 3040, Docente: MANISCALCO PIETRO
-cattedra(3040, 32834, ltps, b) :- codice_corso(3040), matricola_docente(32834), laurea(ltps), taf(b).
+cattedra(3040, 32834, lcpb, b) :- codice_corso(3040), matricola_docente(32834), laurea(lcpb), taf(b).
 %  Corso: 3042, Docente: MANISCALCO PIETRO
-cattedra(3042, 32834, ltps, b) :- codice_corso(3042), matricola_docente(32834), laurea(ltps), taf(b).
+cattedra(3042, 32834, lcpb, b) :- codice_corso(3042), matricola_docente(32834), laurea(lcpb), taf(b).
 %  Corso: 5074, Docente: MANISCALCO PIETRO
 cattedra(5074, 32834, lm6, b) :- codice_corso(5074), matricola_docente(32834), laurea(lm6), taf(b).
 %  Corso: 3042, Docente: MANISCALCO PIETRO
-cattedra(3042, 32834, ltps, f) :- codice_corso(3042), matricola_docente(32834), laurea(ltps), taf(f).
+cattedra(3042, 32834, lcpb, f) :- codice_corso(3042), matricola_docente(32834), laurea(lcpb), taf(f).
 %  Corso: 3004, Docente: MANSANI Luigi
 cattedra(3004, 4739, lt, b) :- codice_corso(3004), matricola_docente(4739), laurea(lt), taf(b).
 %  Corso: 3052, Docente: MANSANI Luigi
@@ -4254,17 +4483,17 @@ cattedra(5053, 4349, lm, c) :- codice_corso(5053), matricola_docente(4349), laur
 %  Corso: 5026, Docente: MARCHESI Federico
 cattedra(5026, 136411, lm6, b) :- codice_corso(5026), matricola_docente(136411), laurea(lm6), taf(b).
 %  Corso: 3067, Docente: MARCHESI Carlo
-cattedra(3067, 4349, ltps, c) :- codice_corso(3067), matricola_docente(4349), laurea(ltps), taf(c).
+cattedra(3067, 4349, lcpb, c) :- codice_corso(3067), matricola_docente(4349), laurea(lcpb), taf(c).
 %  Corso: 3040, Docente: MARCHESI Carlo
-cattedra(3040, 4349, ltps, b) :- codice_corso(3040), matricola_docente(4349), laurea(ltps), taf(b).
+cattedra(3040, 4349, lcpb, b) :- codice_corso(3040), matricola_docente(4349), laurea(lcpb), taf(b).
 %  Corso: 3041, Docente: MARCHESI Carlo
-cattedra(3041, 4349, ltps, b) :- codice_corso(3041), matricola_docente(4349), laurea(ltps), taf(b).
+cattedra(3041, 4349, lcpb, b) :- codice_corso(3041), matricola_docente(4349), laurea(lcpb), taf(b).
 %  Corso: 5026, Docente: MARCHESI Federico
 cattedra(5026, 136411, lm6, f) :- codice_corso(5026), matricola_docente(136411), laurea(lm6), taf(f).
 %  Corso: 5026, Docente: MARCHESI Federico
 cattedra(5026, 136411, lm6, b) :- codice_corso(5026), matricola_docente(136411), laurea(lm6), taf(b).
 %  Corso: 3067, Docente: MARCHESI Carlo
-cattedra(3067, 4349, ltps, c) :- codice_corso(3067), matricola_docente(4349), laurea(ltps), taf(c).
+cattedra(3067, 4349, lcpb, c) :- codice_corso(3067), matricola_docente(4349), laurea(lcpb), taf(c).
 %  Corso: 5027, Docente: MARCHESI Federico
 cattedra(5027, 136411, lm6, b) :- codice_corso(5027), matricola_docente(136411), laurea(lm6), taf(b).
 %  Corso: 5026, Docente: MARCHESI Carlo
@@ -4272,17 +4501,17 @@ cattedra(5026, 4349, lm6, b) :- codice_corso(5026), matricola_docente(4349), lau
 %  Corso: 5054, Docente: MARCHESI Carlo
 cattedra(5054, 4349, lm, c) :- codice_corso(5054), matricola_docente(4349), laurea(lm), taf(c).
 %  Corso: 3067, Docente: MARCHESI Carlo
-cattedra(3067, 4349, ltps, c) :- codice_corso(3067), matricola_docente(4349), laurea(ltps), taf(c).
+cattedra(3067, 4349, lcpb, c) :- codice_corso(3067), matricola_docente(4349), laurea(lcpb), taf(c).
 %  Corso: 5074, Docente: MARCHESI Federico
 cattedra(5074, 136411, lm6, b) :- codice_corso(5074), matricola_docente(136411), laurea(lm6), taf(b).
 %  Corso: 5026, Docente: MARCHETTI Marialaura
 cattedra(5026, 10736, lm6, a) :- codice_corso(5026), matricola_docente(10736), laurea(lm6), taf(a).
 %  Corso: 3043, Docente: MARCHETTI Marialaura
-cattedra(3043, 10736, ltps, a) :- codice_corso(3043), matricola_docente(10736), laurea(ltps), taf(a).
+cattedra(3043, 10736, lcpb, a) :- codice_corso(3043), matricola_docente(10736), laurea(lcpb), taf(a).
 %  Corso: 5074, Docente: MARCHETTI Marialaura
 cattedra(5074, 10736, lm6, a) :- codice_corso(5074), matricola_docente(10736), laurea(lm6), taf(a).
 %  Corso: 3043, Docente: MARCHETTI Marialaura
-cattedra(3043, 10736, ltps, a) :- codice_corso(3043), matricola_docente(10736), laurea(ltps), taf(a).
+cattedra(3043, 10736, lcpb, a) :- codice_corso(3043), matricola_docente(10736), laurea(lcpb), taf(a).
 %  Corso: 5003, Docente: MARCHINI Pier Luigi
 cattedra(5003, 6023, lm, b) :- codice_corso(5003), matricola_docente(6023), laurea(lm), taf(b).
 %  Corso: 3004, Docente: MARCHINI Pier Luigi
@@ -4320,7 +4549,7 @@ cattedra(5029, 18084, lm5, c) :- codice_corso(5029), matricola_docente(18084), l
 %  Corso: 5029, Docente: MARTELLI Paolo
 cattedra(5029, 4033, lm5, b) :- codice_corso(5029), matricola_docente(4033), laurea(lm5), taf(b).
 %  Corso: 3064, Docente: MARTELLI FRANCESCO
-cattedra(3064, 19742, lt, f) :- codice_corso(3064), matricola_docente(19742), laurea(lt), taf(f).
+cattedra(3064, 19742, lcpb, f) :- codice_corso(3064), matricola_docente(19742), laurea(lcpb), taf(f).
 %  Corso: 5000, Docente: MARTELLI FRANCESCO
 cattedra(5000, 19742, lm, b) :- codice_corso(5000), matricola_docente(19742), laurea(lm), taf(b).
 %  Corso: 3000, Docente: MARTELLI FRANCESCO
@@ -4340,7 +4569,7 @@ cattedra(3014, 6745, lt, a) :- codice_corso(3014), matricola_docente(6745), laur
 %  Corso: 5049, Docente: MARTINELLI Donatella
 cattedra(5049, 6745, lm, c) :- codice_corso(5049), matricola_docente(6745), laurea(lm), taf(c).
 %  Corso: 3066, Docente: MARTINELLI Donatella
-cattedra(3066, 6745, lt, a) :- codice_corso(3066), matricola_docente(6745), laurea(lt), taf(a).
+cattedra(3066, 6745, lcpa, a) :- codice_corso(3066), matricola_docente(6745), laurea(lcpa), taf(a).
 %  Corso: 3014, Docente: MARTINELLI Donatella
 cattedra(3014, 6745, lt, b) :- codice_corso(3014), matricola_docente(6745), laurea(lt), taf(b).
 %  Corso: 3017, Docente: MARTINES Enrico
@@ -4368,15 +4597,15 @@ cattedra(5039, 5894, lm, b) :- codice_corso(5039), matricola_docente(5894), laur
 %  Corso: 5039, Docente: MASINO Matteo
 cattedra(5039, 5894, lm, c) :- codice_corso(5039), matricola_docente(5894), laurea(lm), taf(c).
 %  Corso: 3019, Docente: MASOTTI Vittoria
-cattedra(3019, 206832, ltsm, c) :- codice_corso(3019), matricola_docente(206832), laurea(ltsm), taf(c).
+cattedra(3019, 206832, lcpa, c) :- codice_corso(3019), matricola_docente(206832), laurea(lcpa), taf(c).
 %  Corso: 3049, Docente: MASOTTI Vittoria
-cattedra(3049, 206832, ltps, b) :- codice_corso(3049), matricola_docente(206832), laurea(ltps), taf(b).
+cattedra(3049, 206832, lcpb, b) :- codice_corso(3049), matricola_docente(206832), laurea(lcpb), taf(b).
 %  Corso: 3041, Docente: MASOTTI Vittoria
-cattedra(3041, 206832, ltps, f) :- codice_corso(3041), matricola_docente(206832), laurea(ltps), taf(f).
+cattedra(3041, 206832, lcpb, f) :- codice_corso(3041), matricola_docente(206832), laurea(lcpb), taf(f).
 %  Corso: 5026, Docente: MASSELLI Elena
 cattedra(5026, 7355, lm6, a) :- codice_corso(5026), matricola_docente(7355), laurea(lm6), taf(a).
 %  Corso: 3063, Docente: MASSELLI Elena
-cattedra(3063, 7355, lt, a) :- codice_corso(3063), matricola_docente(7355), laurea(lt), taf(a).
+cattedra(3063, 7355, lcpb, a) :- codice_corso(3063), matricola_docente(7355), laurea(lcpb), taf(a).
 %  Corso: 5026, Docente: MASSELLI Elena
 cattedra(5026, 7355, lm6, b) :- codice_corso(5026), matricola_docente(7355), laurea(lm6), taf(b).
 %  Corso: 5074, Docente: MASSELLI Elena
@@ -4408,7 +4637,7 @@ cattedra(3004, 10739, lt, b) :- codice_corso(3004), matricola_docente(10739), la
 %  Corso: 3038, Docente: MAZZACUVA Francesco
 cattedra(3038, 8869, lt, c) :- codice_corso(3038), matricola_docente(8869), laurea(lt), taf(c).
 %  Corso: 3006, Docente: MAZZACUVA Francesco
-cattedra(3006, 8869, ltss, c) :- codice_corso(3006), matricola_docente(8869), laurea(ltss), taf(c).
+cattedra(3006, 8869, lcpa, c) :- codice_corso(3006), matricola_docente(8869), laurea(lcpa), taf(c).
 %  Corso: 5078, Docente: MAZZACUVA Francesco
 cattedra(5078, 8869, lm, b) :- codice_corso(5078), matricola_docente(8869), laurea(lm), taf(b).
 %  Corso: 995, Docente: MAZZACUVA Francesco
@@ -4442,7 +4671,7 @@ cattedra(5027, 9775, lm6, d) :- codice_corso(5027), matricola_docente(9775), lau
 %  Corso: 5027, Docente: MELETI Marco
 cattedra(5027, 9775, lm6, f) :- codice_corso(5027), matricola_docente(9775), laurea(lm6), taf(f).
 %  Corso: 3063, Docente: MELETI Marco
-cattedra(3063, 9775, lt, b) :- codice_corso(3063), matricola_docente(9775), laurea(lt), taf(b).
+cattedra(3063, 9775, lcpb, b) :- codice_corso(3063), matricola_docente(9775), laurea(lcpb), taf(b).
 %  Corso: 5027, Docente: MELETI Marco
 cattedra(5027, 9775, lm6, f) :- codice_corso(5027), matricola_docente(9775), laurea(lm6), taf(f).
 %  Corso: 5027, Docente: MELETI Marco
@@ -4452,7 +4681,7 @@ cattedra(5027, 9775, lm6, f) :- codice_corso(5027), matricola_docente(9775), lau
 %  Corso: 5027, Docente: MELETI Marco
 cattedra(5027, 9775, lm6, b) :- codice_corso(5027), matricola_docente(9775), laurea(lm6), taf(b).
 %  Corso: 3048, Docente: MELETI Marco
-cattedra(3048, 9775, ltps, b) :- codice_corso(3048), matricola_docente(9775), laurea(ltps), taf(b).
+cattedra(3048, 9775, lcpb, b) :- codice_corso(3048), matricola_docente(9775), laurea(lcpb), taf(b).
 %  Corso: 5074, Docente: MELETI Marco
 cattedra(5074, 9775, lm6, b) :- codice_corso(5074), matricola_docente(9775), laurea(lm6), taf(b).
 %  Corso: 5027, Docente: MELETI Marco
@@ -4488,7 +4717,7 @@ cattedra(5013, 4610, lm, b) :- codice_corso(5013), matricola_docente(4610), laur
 %  Corso: 3000, Docente: MENOZZI Davide
 cattedra(3000, 207021, lt, b) :- codice_corso(3000), matricola_docente(207021), laurea(lt), taf(b).
 %  Corso: 3064, Docente: MENOZZI Davide
-cattedra(3064, 207021, lt, a) :- codice_corso(3064), matricola_docente(207021), laurea(lt), taf(a).
+cattedra(3064, 207021, lcpb, a) :- codice_corso(3064), matricola_docente(207021), laurea(lcpb), taf(a).
 %  Corso: 3020, Docente: MENOZZI Alessandro
 cattedra(3020, 6101, lt, b) :- codice_corso(3020), matricola_docente(6101), laurea(lt), taf(b).
 %  Corso: 3028, Docente: MENTA Cristina
@@ -4512,11 +4741,11 @@ cattedra(5026, 5895, lm6, f) :- codice_corso(5026), matricola_docente(5895), lau
 %  Corso: 5026, Docente: MERISIO Carla
 cattedra(5026, 5895, lm6, b) :- codice_corso(5026), matricola_docente(5895), laurea(lm6), taf(b).
 %  Corso: 3041, Docente: MERISIO Carla
-cattedra(3041, 5895, ltps, b) :- codice_corso(3041), matricola_docente(5895), laurea(ltps), taf(b).
+cattedra(3041, 5895, lcpb, b) :- codice_corso(3041), matricola_docente(5895), laurea(lcpb), taf(b).
 %  Corso: 3040, Docente: MESCHI Tiziana
-cattedra(3040, 5887, ltps, b) :- codice_corso(3040), matricola_docente(5887), laurea(ltps), taf(b).
+cattedra(3040, 5887, lcpb, b) :- codice_corso(3040), matricola_docente(5887), laurea(lcpb), taf(b).
 %  Corso: 3040, Docente: MESCHI Tiziana
-cattedra(3040, 5887, ltps, b) :- codice_corso(3040), matricola_docente(5887), laurea(ltps), taf(b).
+cattedra(3040, 5887, lcpb, b) :- codice_corso(3040), matricola_docente(5887), laurea(lcpb), taf(b).
 %  Corso: 5026, Docente: MESCHI Tiziana
 cattedra(5026, 5887, lm6, b) :- codice_corso(5026), matricola_docente(5887), laurea(lm6), taf(b).
 %  Corso: 5026, Docente: MESCHI Tiziana
@@ -4582,11 +4811,11 @@ cattedra(5066, 22304, lm, b) :- codice_corso(5066), matricola_docente(22304), la
 %  Corso: 5027, Docente: MILANESE Gianluca
 cattedra(5027, 10914, lm6, b) :- codice_corso(5027), matricola_docente(10914), laurea(lm6), taf(b).
 %  Corso: 3063, Docente: MILANESE Gianluca
-cattedra(3063, 10914, lt, c) :- codice_corso(3063), matricola_docente(10914), laurea(lt), taf(c).
+cattedra(3063, 10914, lcpb, c) :- codice_corso(3063), matricola_docente(10914), laurea(lcpb), taf(c).
 %  Corso: 3064, Docente: MILANESE DANIEL
-cattedra(3064, 20656, lt, b) :- codice_corso(3064), matricola_docente(20656), laurea(lt), taf(b).
+cattedra(3064, 20656, lcpb, b) :- codice_corso(3064), matricola_docente(20656), laurea(lcpb), taf(b).
 %  Corso: 3064, Docente: MILANESE DANIEL
-cattedra(3064, 20656, lt, f) :- codice_corso(3064), matricola_docente(20656), laurea(lt), taf(f).
+cattedra(3064, 20656, lcpb, f) :- codice_corso(3064), matricola_docente(20656), laurea(lcpb), taf(f).
 %  Corso: 3057, Docente: MILANESE DANIEL
 cattedra(3057, 20656, lt, a) :- codice_corso(3057), matricola_docente(20656), laurea(lt), taf(a).
 %  Corso: 3010, Docente: MILANESE DANIEL
@@ -4612,31 +4841,31 @@ cattedra(5003, 4356, lm, b) :- codice_corso(5003), matricola_docente(4356), laur
 %  Corso: 3007, Docente: MINGIONE Giuseppe
 cattedra(3007, 5036, lt, a) :- codice_corso(3007), matricola_docente(5036), laurea(lt), taf(a).
 %  Corso: 3046, Docente: MIRAGOLI MICHELE
-cattedra(3046, 9455, ltps, b) :- codice_corso(3046), matricola_docente(9455), laurea(ltps), taf(b).
+cattedra(3046, 9455, lcpb, b) :- codice_corso(3046), matricola_docente(9455), laurea(lcpb), taf(b).
 %  Corso: 3046, Docente: MIRAGOLI MICHELE
-cattedra(3046, 9455, ltps, b) :- codice_corso(3046), matricola_docente(9455), laurea(ltps), taf(b).
+cattedra(3046, 9455, lcpb, b) :- codice_corso(3046), matricola_docente(9455), laurea(lcpb), taf(b).
 %  Corso: 3049, Docente: MIRAGOLI MICHELE
-cattedra(3049, 9455, ltps, b) :- codice_corso(3049), matricola_docente(9455), laurea(ltps), taf(b).
+cattedra(3049, 9455, lcpb, b) :- codice_corso(3049), matricola_docente(9455), laurea(lcpb), taf(b).
 %  Corso: 5074, Docente: MIRAGOLI MICHELE
 cattedra(5074, 9455, lm6, c) :- codice_corso(5074), matricola_docente(9455), laurea(lm6), taf(c).
 %  Corso: 3046, Docente: MIRAGOLI MICHELE
-cattedra(3046, 9455, ltps, b) :- codice_corso(3046), matricola_docente(9455), laurea(ltps), taf(b).
+cattedra(3046, 9455, lcpb, b) :- codice_corso(3046), matricola_docente(9455), laurea(lcpb), taf(b).
 %  Corso: 3047, Docente: MIRAGOLI MICHELE
-cattedra(3047, 9455, ltps, c) :- codice_corso(3047), matricola_docente(9455), laurea(ltps), taf(c).
+cattedra(3047, 9455, lcpb, c) :- codice_corso(3047), matricola_docente(9455), laurea(lcpb), taf(c).
 %  Corso: 3065, Docente: MIRAGOLI MICHELE
 cattedra(3065, 9455, lt, b) :- codice_corso(3065), matricola_docente(9455), laurea(lt), taf(b).
 %  Corso: 3046, Docente: MIRAGOLI MICHELE
-cattedra(3046, 9455, ltps, b) :- codice_corso(3046), matricola_docente(9455), laurea(ltps), taf(b).
+cattedra(3046, 9455, lcpb, b) :- codice_corso(3046), matricola_docente(9455), laurea(lcpb), taf(b).
 %  Corso: 3019, Docente: MIRANDOLA Prisco
-cattedra(3019, 5891, ltsm, d) :- codice_corso(3019), matricola_docente(5891), laurea(ltsm), taf(d).
+cattedra(3019, 5891, lcpa, d) :- codice_corso(3019), matricola_docente(5891), laurea(lcpa), taf(d).
 %  Corso: 3042, Docente: MIRANDOLA Prisco
-cattedra(3042, 5891, ltps, a) :- codice_corso(3042), matricola_docente(5891), laurea(ltps), taf(a).
+cattedra(3042, 5891, lcpb, a) :- codice_corso(3042), matricola_docente(5891), laurea(lcpb), taf(a).
 %  Corso: 5045, Docente: MIRANDOLA Prisco
 cattedra(5045, 5891, lm, d) :- codice_corso(5045), matricola_docente(5891), laurea(lm), taf(d).
 %  Corso: 5026, Docente: MIRANDOLA Prisco
 cattedra(5026, 5891, lm6, a) :- codice_corso(5026), matricola_docente(5891), laurea(lm6), taf(a).
 %  Corso: 5028, Docente: MIRANDOLA Prisco
-cattedra(5028, 5891, lmsm, b) :- codice_corso(5028), matricola_docente(5891), laurea(lmsm), taf(b).
+cattedra(5028, 5891, lcpb, b) :- codice_corso(5028), matricola_docente(5891), laurea(lcpb), taf(b).
 %  Corso: 5026, Docente: MIRANDOLA Prisco
 cattedra(5026, 5891, lm6, a) :- codice_corso(5026), matricola_docente(5891), laurea(lm6), taf(a).
 %  Corso: 5027, Docente: MIRANDOLA Prisco
@@ -4644,7 +4873,7 @@ cattedra(5027, 5891, lm6, a) :- codice_corso(5027), matricola_docente(5891), lau
 %  Corso: 5045, Docente: MIRANDOLA Prisco
 cattedra(5045, 5891, lm, c) :- codice_corso(5045), matricola_docente(5891), laurea(lm), taf(c).
 %  Corso: 3041, Docente: MISSALE Gabriele
-cattedra(3041, 7512, ltps, b) :- codice_corso(3041), matricola_docente(7512), laurea(ltps), taf(b).
+cattedra(3041, 7512, lcpb, b) :- codice_corso(3041), matricola_docente(7512), laurea(lcpb), taf(b).
 %  Corso: 5026, Docente: MISSALE Gabriele
 cattedra(5026, 7512, lm6, b) :- codice_corso(5026), matricola_docente(7512), laurea(lm6), taf(b).
 %  Corso: 5074, Docente: MISSALE Gabriele
@@ -4652,7 +4881,7 @@ cattedra(5074, 7512, lm6, b) :- codice_corso(5074), matricola_docente(7512), lau
 %  Corso: 5053, Docente: MITOLO MICAELA
 cattedra(5053, 39477, lm, d) :- codice_corso(5053), matricola_docente(39477), laurea(lm), taf(d).
 %  Corso: 3019, Docente: MITOLO MICAELA
-cattedra(3019, 39477, ltsm, b) :- codice_corso(3019), matricola_docente(39477), laurea(ltsm), taf(b).
+cattedra(3019, 39477, lcpa, b) :- codice_corso(3019), matricola_docente(39477), laurea(lcpa), taf(b).
 %  Corso: 3004, Docente: MODESTI Paola Assunta Emilia
 cattedra(3004, 5327, lt, a) :- codice_corso(3004), matricola_docente(5327), laurea(lt), taf(a).
 %  Corso: 5005, Docente: MODESTI Paola Assunta Emilia
@@ -4680,11 +4909,11 @@ cattedra(995, 6307, lm5, b) :- codice_corso(995), matricola_docente(6307), laure
 %  Corso: 995, Docente: MONTANARI Massimo
 cattedra(995, 6307, lm5, d) :- codice_corso(995), matricola_docente(6307), laurea(lm5), taf(d).
 %  Corso: 3047, Docente: MONTANARO ANNA
-cattedra(3047, 22073, ltps, b) :- codice_corso(3047), matricola_docente(22073), laurea(ltps), taf(b).
+cattedra(3047, 22073, lcpb, b) :- codice_corso(3047), matricola_docente(22073), laurea(lcpb), taf(b).
 %  Corso: 5026, Docente: MONTANARO ANNA
 cattedra(5026, 22073, lm6, b) :- codice_corso(5026), matricola_docente(22073), laurea(lm6), taf(b).
 %  Corso: 3047, Docente: MONTANARO ANNA
-cattedra(3047, 22073, ltps, b) :- codice_corso(3047), matricola_docente(22073), laurea(ltps), taf(b).
+cattedra(3047, 22073, lcpb, b) :- codice_corso(3047), matricola_docente(22073), laurea(lcpb), taf(b).
 %  Corso: 3022, Docente: MONTANINI Barbara
 cattedra(3022, 253676, lt, b) :- codice_corso(3022), matricola_docente(253676), laurea(lt), taf(b).
 %  Corso: 5072, Docente: MONTANINI Alessandra
@@ -4708,27 +4937,27 @@ cattedra(5009, 4620, lm5, b) :- codice_corso(5009), matricola_docente(4620), lau
 %  Corso: 3069, Docente: MORA Cristina
 cattedra(3069, 4878, lt, b) :- codice_corso(3069), matricola_docente(4878), laurea(lt), taf(b).
 %  Corso: 3064, Docente: MORA Cristina
-cattedra(3064, 4878, lt, f) :- codice_corso(3064), matricola_docente(4878), laurea(lt), taf(f).
+cattedra(3064, 4878, lcpb, f) :- codice_corso(3064), matricola_docente(4878), laurea(lcpb), taf(f).
 %  Corso: 3044, Docente: MORA Paolo
-cattedra(3044, 6584, ltps, b) :- codice_corso(3044), matricola_docente(6584), laurea(ltps), taf(b).
+cattedra(3044, 6584, lcpb, b) :- codice_corso(3044), matricola_docente(6584), laurea(lcpb), taf(b).
 %  Corso: 3044, Docente: MORA Paolo
-cattedra(3044, 6584, ltps, b) :- codice_corso(3044), matricola_docente(6584), laurea(ltps), taf(b).
+cattedra(3044, 6584, lcpb, b) :- codice_corso(3044), matricola_docente(6584), laurea(lcpb), taf(b).
 %  Corso: 3044, Docente: MORA Paolo
-cattedra(3044, 6584, ltps, b) :- codice_corso(3044), matricola_docente(6584), laurea(ltps), taf(b).
+cattedra(3044, 6584, lcpb, b) :- codice_corso(3044), matricola_docente(6584), laurea(lcpb), taf(b).
 %  Corso: 3019, Docente: MORA Paolo
-cattedra(3019, 6584, ltsm, c) :- codice_corso(3019), matricola_docente(6584), laurea(ltsm), taf(c).
+cattedra(3019, 6584, lcpa, c) :- codice_corso(3019), matricola_docente(6584), laurea(lcpa), taf(c).
 %  Corso: 3064, Docente: MORA Cristina
-cattedra(3064, 4878, lt, b) :- codice_corso(3064), matricola_docente(4878), laurea(lt), taf(b).
+cattedra(3064, 4878, lcpb, b) :- codice_corso(3064), matricola_docente(4878), laurea(lcpb), taf(b).
 %  Corso: 3000, Docente: MORA Cristina
 cattedra(3000, 4878, lt, b) :- codice_corso(3000), matricola_docente(4878), laurea(lt), taf(b).
 %  Corso: 3044, Docente: MORA Paolo
-cattedra(3044, 6584, ltps, b) :- codice_corso(3044), matricola_docente(6584), laurea(ltps), taf(b).
+cattedra(3044, 6584, lcpb, b) :- codice_corso(3044), matricola_docente(6584), laurea(lcpb), taf(b).
 %  Corso: 5026, Docente: MORA Paolo
 cattedra(5026, 6584, lm6, f) :- codice_corso(5026), matricola_docente(6584), laurea(lm6), taf(f).
 %  Corso: 3044, Docente: MORA Paolo
-cattedra(3044, 6584, ltps, b) :- codice_corso(3044), matricola_docente(6584), laurea(ltps), taf(b).
+cattedra(3044, 6584, lcpb, b) :- codice_corso(3044), matricola_docente(6584), laurea(lcpb), taf(b).
 %  Corso: 3044, Docente: MORA Paolo
-cattedra(3044, 6584, ltps, b) :- codice_corso(3044), matricola_docente(6584), laurea(ltps), taf(b).
+cattedra(3044, 6584, lcpb, b) :- codice_corso(3044), matricola_docente(6584), laurea(lcpb), taf(b).
 %  Corso: 5026, Docente: MORA Paolo
 cattedra(5026, 6584, lm6, b) :- codice_corso(5026), matricola_docente(6584), laurea(lm6), taf(b).
 %  Corso: 5069, Docente: MORANDIN Francesco
@@ -4808,11 +5037,11 @@ cattedra(5062, 49026, lm, d) :- codice_corso(5062), matricola_docente(49026), la
 %  Corso: 5082, Docente: MOUBAYIDIN Laila
 cattedra(5082, 49026, lm, c) :- codice_corso(5082), matricola_docente(49026), laurea(lm), taf(c).
 %  Corso: 3040, Docente: MOZZONI Paola
-cattedra(3040, 5672, ltps, b) :- codice_corso(3040), matricola_docente(5672), laurea(ltps), taf(b).
+cattedra(3040, 5672, lcpb, b) :- codice_corso(3040), matricola_docente(5672), laurea(lcpb), taf(b).
 %  Corso: 3047, Docente: MOZZONI Paola
-cattedra(3047, 5672, ltps, c) :- codice_corso(3047), matricola_docente(5672), laurea(ltps), taf(c).
+cattedra(3047, 5672, lcpb, c) :- codice_corso(3047), matricola_docente(5672), laurea(lcpb), taf(c).
 %  Corso: 3041, Docente: MOZZONI Paola
-cattedra(3041, 5672, ltps, b) :- codice_corso(3041), matricola_docente(5672), laurea(ltps), taf(b).
+cattedra(3041, 5672, lcpb, b) :- codice_corso(3041), matricola_docente(5672), laurea(lcpb), taf(b).
 %  Corso: 5027, Docente: MOZZONI Paola
 cattedra(5027, 5672, lm6, c) :- codice_corso(5027), matricola_docente(5672), laurea(lm6), taf(c).
 %  Corso: 3051, Docente: MOZZONI Isabella
@@ -4820,7 +5049,7 @@ cattedra(3051, 5389, lt, b) :- codice_corso(3051), matricola_docente(5389), laur
 %  Corso: 5046, Docente: MOZZONI Isabella
 cattedra(5046, 5389, lm, b) :- codice_corso(5046), matricola_docente(5389), laurea(lm), taf(b).
 %  Corso: 3047, Docente: MOZZONI Paola
-cattedra(3047, 5672, ltps, c) :- codice_corso(3047), matricola_docente(5672), laurea(ltps), taf(c).
+cattedra(3047, 5672, lcpb, c) :- codice_corso(3047), matricola_docente(5672), laurea(lcpb), taf(c).
 %  Corso: 3038, Docente: MOZZONI Isabella
 cattedra(3038, 5389, lt, b) :- codice_corso(3038), matricola_docente(5389), laurea(lt), taf(b).
 %  Corso: 3050, Docente: MUCCI Domenico
@@ -4844,7 +5073,7 @@ cattedra(3017, 31084, lt, a) :- codice_corso(3017), matricola_docente(31084), la
 %  Corso: 3017, Docente: MUSCIANISI DOMENICO GIUSEPPE
 cattedra(3017, 31084, lt, a) :- codice_corso(3017), matricola_docente(31084), laurea(lt), taf(a).
 %  Corso: 3066, Docente: MUSCIANISI DOMENICO GIUSEPPE
-cattedra(3066, 31084, lt, a) :- codice_corso(3066), matricola_docente(31084), laurea(lt), taf(a).
+cattedra(3066, 31084, lcpa, a) :- codice_corso(3066), matricola_docente(31084), laurea(lcpa), taf(a).
 %  Corso: 3014, Docente: MUSCIANISI DOMENICO GIUSEPPE
 cattedra(3014, 31084, lt, b) :- codice_corso(3014), matricola_docente(31084), laurea(lt), taf(b).
 %  Corso: 3021, Docente: MUSETTI Alessandro
@@ -4868,7 +5097,7 @@ cattedra(5066, 30478, lm, c) :- codice_corso(5066), matricola_docente(30478), la
 %  Corso: 5066, Docente: NABONI Emanuele
 cattedra(5066, 30478, lm, b) :- codice_corso(5066), matricola_docente(30478), laurea(lm), taf(b).
 %  Corso: 5028, Docente: NAPONELLI Valeria
-cattedra(5028, 10684, lmsm, b) :- codice_corso(5028), matricola_docente(10684), laurea(lmsm), taf(b).
+cattedra(5028, 10684, lcpb, b) :- codice_corso(5028), matricola_docente(10684), laurea(lcpb), taf(b).
 %  Corso: 5026, Docente: NAPONELLI Valeria
 cattedra(5026, 10684, lm6, a) :- codice_corso(5026), matricola_docente(10684), laurea(lm6), taf(a).
 %  Corso: 5026, Docente: NAPONELLI Valeria
@@ -4900,19 +5129,19 @@ cattedra(5026, 31627, lm6, f) :- codice_corso(5026), matricola_docente(31627), l
 %  Corso: 5026, Docente: NICCOLI GIAMPAOLO
 cattedra(5026, 31627, lm6, b) :- codice_corso(5026), matricola_docente(31627), laurea(lm6), taf(b).
 %  Corso: 3019, Docente: NICCOLI GIAMPAOLO
-cattedra(3019, 31627, ltsm, c) :- codice_corso(3019), matricola_docente(31627), laurea(ltsm), taf(c).
+cattedra(3019, 31627, lcpa, c) :- codice_corso(3019), matricola_docente(31627), laurea(lcpa), taf(c).
 %  Corso: 3042, Docente: NICCOLI GIAMPAOLO
-cattedra(3042, 31627, ltps, b) :- codice_corso(3042), matricola_docente(31627), laurea(ltps), taf(b).
+cattedra(3042, 31627, lcpb, b) :- codice_corso(3042), matricola_docente(31627), laurea(lcpb), taf(b).
 %  Corso: 5074, Docente: NICCOLI GIAMPAOLO
 cattedra(5074, 31627, lm6, b) :- codice_corso(5074), matricola_docente(31627), laurea(lm6), taf(b).
 %  Corso: 5028, Docente: NICCOLI GIAMPAOLO
-cattedra(5028, 31627, lmsm, b) :- codice_corso(5028), matricola_docente(31627), laurea(lmsm), taf(b).
+cattedra(5028, 31627, lcpb, b) :- codice_corso(5028), matricola_docente(31627), laurea(lcpb), taf(b).
 %  Corso: 3041, Docente: NICCOLI GIAMPAOLO
-cattedra(3041, 31627, ltps, b) :- codice_corso(3041), matricola_docente(31627), laurea(ltps), taf(b).
+cattedra(3041, 31627, lcpb, b) :- codice_corso(3041), matricola_docente(31627), laurea(lcpb), taf(b).
 %  Corso: 3040, Docente: NICCOLI GIAMPAOLO
-cattedra(3040, 31627, ltps, b) :- codice_corso(3040), matricola_docente(31627), laurea(ltps), taf(b).
+cattedra(3040, 31627, lcpb, b) :- codice_corso(3040), matricola_docente(31627), laurea(lcpb), taf(b).
 %  Corso: 3048, Docente: NICCOLI GIAMPAOLO
-cattedra(3048, 31627, ltps, f) :- codice_corso(3048), matricola_docente(31627), laurea(ltps), taf(f).
+cattedra(3048, 31627, lcpb, f) :- codice_corso(3048), matricola_docente(31627), laurea(lcpb), taf(f).
 %  Corso: 5045, Docente: NICOLI Sara
 cattedra(5045, 5706, lm, c) :- codice_corso(5045), matricola_docente(5706), laurea(lm), taf(c).
 %  Corso: 5008, Docente: NICOLI Sara
@@ -4950,15 +5179,15 @@ cattedra(5061, 5410, lm, b) :- codice_corso(5061), matricola_docente(5410), laur
 %  Corso: 3069, Docente: NONNIS MARZANO Francesco
 cattedra(3069, 5410, lt, a) :- codice_corso(3069), matricola_docente(5410), laurea(lt), taf(a).
 %  Corso: 3067, Docente: NOUVENNE ANTONIO
-cattedra(3067, 164352, ltps, a) :- codice_corso(3067), matricola_docente(164352), laurea(ltps), taf(a).
+cattedra(3067, 164352, lcpb, a) :- codice_corso(3067), matricola_docente(164352), laurea(lcpb), taf(a).
 %  Corso: 5026, Docente: NOUVENNE ANTONIO
 cattedra(5026, 164352, lm6, b) :- codice_corso(5026), matricola_docente(164352), laurea(lm6), taf(b).
 %  Corso: 3019, Docente: NOUVENNE ANTONIO
-cattedra(3019, 164352, ltsm, b) :- codice_corso(3019), matricola_docente(164352), laurea(ltsm), taf(b).
+cattedra(3019, 164352, lcpa, b) :- codice_corso(3019), matricola_docente(164352), laurea(lcpa), taf(b).
 %  Corso: 3063, Docente: NUARA Arturo
-cattedra(3063, 39488, lt, a) :- codice_corso(3063), matricola_docente(39488), laurea(lt), taf(a).
+cattedra(3063, 39488, lcpb, a) :- codice_corso(3063), matricola_docente(39488), laurea(lcpb), taf(a).
 %  Corso: 3040, Docente: NUARA Arturo
-cattedra(3040, 39488, ltps, a) :- codice_corso(3040), matricola_docente(39488), laurea(ltps), taf(a).
+cattedra(3040, 39488, lcpb, a) :- codice_corso(3040), matricola_docente(39488), laurea(lcpb), taf(a).
 %  Corso: 5014, Docente: OCCHIOCUPO Nicoletta
 cattedra(5014, 6538, lm, c) :- codice_corso(5014), matricola_docente(6538), laurea(lm), taf(c).
 %  Corso: 5014, Docente: OCCHIOCUPO Nicoletta
@@ -4980,17 +5209,17 @@ cattedra(5029, 4853, lm5, b) :- codice_corso(5029), matricola_docente(4853), lau
 %  Corso: 5065, Docente: OSSIPRANDI Maria Cristina
 cattedra(5065, 4853, lm, d) :- codice_corso(5065), matricola_docente(4853), laurea(lm), taf(d).
 %  Corso: 3040, Docente: OSSOLA Paolo
-cattedra(3040, 9899, ltps, b) :- codice_corso(3040), matricola_docente(9899), laurea(ltps), taf(b).
+cattedra(3040, 9899, lcpb, b) :- codice_corso(3040), matricola_docente(9899), laurea(lcpb), taf(b).
 %  Corso: 5054, Docente: OSSOLA Paolo
 cattedra(5054, 9899, lm, c) :- codice_corso(5054), matricola_docente(9899), laurea(lm), taf(c).
 %  Corso: 3040, Docente: OSSOLA Paolo
-cattedra(3040, 9899, ltps, b) :- codice_corso(3040), matricola_docente(9899), laurea(ltps), taf(b).
+cattedra(3040, 9899, lcpb, b) :- codice_corso(3040), matricola_docente(9899), laurea(lcpb), taf(b).
 %  Corso: 3067, Docente: OSSOLA Paolo
-cattedra(3067, 9899, ltps, c) :- codice_corso(3067), matricola_docente(9899), laurea(ltps), taf(c).
+cattedra(3067, 9899, lcpb, c) :- codice_corso(3067), matricola_docente(9899), laurea(lcpb), taf(c).
 %  Corso: 5027, Docente: OSSOLA Paolo
 cattedra(5027, 9899, lm6, b) :- codice_corso(5027), matricola_docente(9899), laurea(lm6), taf(b).
 %  Corso: 3067, Docente: OSSOLA Paolo
-cattedra(3067, 9899, ltps, b) :- codice_corso(3067), matricola_docente(9899), laurea(ltps), taf(b).
+cattedra(3067, 9899, lcpb, b) :- codice_corso(3067), matricola_docente(9899), laurea(lcpb), taf(b).
 %  Corso: 5066, Docente: OTTONI Federica
 cattedra(5066, 206035, lm, b) :- codice_corso(5066), matricola_docente(206035), laurea(lm), taf(b).
 %  Corso: 5066, Docente: OTTONI Federica
@@ -5018,7 +5247,7 @@ cattedra(5049, 19876, lm, b) :- codice_corso(5049), matricola_docente(19876), la
 %  Corso: 5049, Docente: PAGLIARA Alessandro
 cattedra(5049, 19876, lm, b) :- codice_corso(5049), matricola_docente(19876), laurea(lm), taf(b).
 %  Corso: 3040, Docente: PAGLIARO LUCA
-cattedra(3040, 27469, ltps, b) :- codice_corso(3040), matricola_docente(27469), laurea(ltps), taf(b).
+cattedra(3040, 27469, lcpb, b) :- codice_corso(3040), matricola_docente(27469), laurea(lcpb), taf(b).
 %  Corso: 5039, Docente: PAINELLI Anna
 cattedra(5039, 4473, lm, b) :- codice_corso(5039), matricola_docente(4473), laurea(lm), taf(b).
 %  Corso: 3024, Docente: PAINELLI Anna
@@ -5030,7 +5259,7 @@ cattedra(5026, 5024, lm6, a) :- codice_corso(5026), matricola_docente(5024), lau
 %  Corso: 5027, Docente: PALANZA Paola
 cattedra(5027, 5024, lm6, a) :- codice_corso(5027), matricola_docente(5024), laurea(lm6), taf(a).
 %  Corso: 3067, Docente: PALANZA Paola
-cattedra(3067, 5024, ltps, a) :- codice_corso(3067), matricola_docente(5024), laurea(ltps), taf(a).
+cattedra(3067, 5024, lcpb, a) :- codice_corso(3067), matricola_docente(5024), laurea(lcpb), taf(a).
 %  Corso: 5053, Docente: PALANZA Paola
 cattedra(5053, 5024, lm, c) :- codice_corso(5053), matricola_docente(5024), laurea(lm), taf(c).
 %  Corso: 5045, Docente: PALANZA Paola
@@ -5040,9 +5269,9 @@ cattedra(3062, 10666, lt, a) :- codice_corso(3062), matricola_docente(10666), la
 %  Corso: 3061, Docente: PALATUCCI Giampiero
 cattedra(3061, 10666, lt, a) :- codice_corso(3061), matricola_docente(10666), laurea(lt), taf(a).
 %  Corso: 3046, Docente: PALLADINI Susanna
-cattedra(3046, 6576, ltps, b) :- codice_corso(3046), matricola_docente(6576), laurea(ltps), taf(b).
+cattedra(3046, 6576, lcpb, b) :- codice_corso(3046), matricola_docente(6576), laurea(lcpb), taf(b).
 %  Corso: 5010, Docente: PALLADINI Susanna
-cattedra(5010, 6576, lmss, b) :- codice_corso(5010), matricola_docente(6576), laurea(lmss), taf(b).
+cattedra(5010, 6576, lcpb, b) :- codice_corso(5010), matricola_docente(6576), laurea(lcpb), taf(b).
 %  Corso: 995, Docente: PALLADINI Susanna
 cattedra(995, 6576, lm5, b) :- codice_corso(995), matricola_docente(6576), laurea(lm5), taf(b).
 %  Corso: 995, Docente: PALLADINI Susanna
@@ -5054,15 +5283,15 @@ cattedra(3004, 205057, lt, d) :- codice_corso(3004), matricola_docente(205057), 
 %  Corso: 3021, Docente: PANARI Chiara
 cattedra(3021, 205057, lt, b) :- codice_corso(3021), matricola_docente(205057), laurea(lt), taf(b).
 %  Corso: 5050, Docente: PANARI Chiara
-cattedra(5050, 205057, lmi, b) :- codice_corso(5050), matricola_docente(205057), laurea(lmi), taf(b).
+cattedra(5050, 205057, lcpc, b) :- codice_corso(5050), matricola_docente(205057), laurea(lcpc), taf(b).
 %  Corso: 3041, Docente: PANARI Chiara
-cattedra(3041, 205057, ltps, b) :- codice_corso(3041), matricola_docente(205057), laurea(ltps), taf(b).
+cattedra(3041, 205057, lcpb, b) :- codice_corso(3041), matricola_docente(205057), laurea(lcpb), taf(b).
 %  Corso: 3000, Docente: PANIZZI Stefano
 cattedra(3000, 4499, lt, a) :- codice_corso(3000), matricola_docente(4499), laurea(lt), taf(a).
 %  Corso: 3030, Docente: PANIZZI Stefano
 cattedra(3030, 4499, lt, a) :- codice_corso(3030), matricola_docente(4499), laurea(lt), taf(a).
 %  Corso: 3006, Docente: PANTANO Fabio
-cattedra(3006, 10279, ltss, b) :- codice_corso(3006), matricola_docente(10279), laurea(ltss), taf(b).
+cattedra(3006, 10279, lcpa, b) :- codice_corso(3006), matricola_docente(10279), laurea(lcpa), taf(b).
 %  Corso: 995, Docente: PANTANO Fabio
 cattedra(995, 10279, lm5, d) :- codice_corso(995), matricola_docente(10279), laurea(lm5), taf(d).
 %  Corso: 3032, Docente: PANTANO Fabio
@@ -5082,7 +5311,7 @@ cattedra(3017, 5237, lt, c) :- codice_corso(3017), matricola_docente(5237), laur
 %  Corso: 5046, Docente: PAPOTTI Davide
 cattedra(5046, 5237, lm, b) :- codice_corso(5046), matricola_docente(5237), laurea(lm), taf(b).
 %  Corso: 3064, Docente: PARENTI Ottavia
-cattedra(3064, 39467, lt, f) :- codice_corso(3064), matricola_docente(39467), laurea(lt), taf(f).
+cattedra(3064, 39467, lcpb, f) :- codice_corso(3064), matricola_docente(39467), laurea(lcpb), taf(f).
 %  Corso: 3057, Docente: PARENTI Ottavia
 cattedra(3057, 39467, lt, c) :- codice_corso(3057), matricola_docente(39467), laurea(lt), taf(c).
 %  Corso: 5036, Docente: PARISINI Antonella
@@ -5090,37 +5319,37 @@ cattedra(5036, 4336, lm, c) :- codice_corso(5036), matricola_docente(4336), laur
 %  Corso: 3026, Docente: PARISINI Antonella
 cattedra(3026, 4336, lt, b) :- codice_corso(3026), matricola_docente(4336), laurea(lt), taf(b).
 %  Corso: 3044, Docente: PARRINO Liborio
-cattedra(3044, 4891, ltps, b) :- codice_corso(3044), matricola_docente(4891), laurea(ltps), taf(b).
+cattedra(3044, 4891, lcpb, b) :- codice_corso(3044), matricola_docente(4891), laurea(lcpb), taf(b).
 %  Corso: 5074, Docente: PARRINO Liborio
 cattedra(5074, 4891, lm6, b) :- codice_corso(5074), matricola_docente(4891), laurea(lm6), taf(b).
 %  Corso: 3042, Docente: PARRINO Liborio
-cattedra(3042, 4891, ltps, b) :- codice_corso(3042), matricola_docente(4891), laurea(ltps), taf(b).
+cattedra(3042, 4891, lcpb, b) :- codice_corso(3042), matricola_docente(4891), laurea(lcpb), taf(b).
 %  Corso: 3044, Docente: PARRINO Liborio
-cattedra(3044, 4891, ltps, b) :- codice_corso(3044), matricola_docente(4891), laurea(ltps), taf(b).
+cattedra(3044, 4891, lcpb, b) :- codice_corso(3044), matricola_docente(4891), laurea(lcpb), taf(b).
 %  Corso: 3046, Docente: PASANISI Enrico
-cattedra(3046, 4612, ltps, b) :- codice_corso(3046), matricola_docente(4612), laurea(ltps), taf(b).
+cattedra(3046, 4612, lcpb, b) :- codice_corso(3046), matricola_docente(4612), laurea(lcpb), taf(b).
 %  Corso: 3046, Docente: PASANISI Enrico
-cattedra(3046, 4612, ltps, b) :- codice_corso(3046), matricola_docente(4612), laurea(ltps), taf(b).
+cattedra(3046, 4612, lcpb, b) :- codice_corso(3046), matricola_docente(4612), laurea(lcpb), taf(b).
 %  Corso: 3043, Docente: PASANISI Enrico
-cattedra(3043, 4612, ltps, b) :- codice_corso(3043), matricola_docente(4612), laurea(ltps), taf(b).
+cattedra(3043, 4612, lcpb, b) :- codice_corso(3043), matricola_docente(4612), laurea(lcpb), taf(b).
 %  Corso: 3046, Docente: PASANISI Enrico
-cattedra(3046, 4612, ltps, b) :- codice_corso(3046), matricola_docente(4612), laurea(ltps), taf(b).
+cattedra(3046, 4612, lcpb, b) :- codice_corso(3046), matricola_docente(4612), laurea(lcpb), taf(b).
 %  Corso: 5026, Docente: PASANISI Enrico
 cattedra(5026, 4612, lm6, b) :- codice_corso(5026), matricola_docente(4612), laurea(lm6), taf(b).
 %  Corso: 3043, Docente: PASANISI Enrico
-cattedra(3043, 4612, ltps, b) :- codice_corso(3043), matricola_docente(4612), laurea(ltps), taf(b).
+cattedra(3043, 4612, lcpb, b) :- codice_corso(3043), matricola_docente(4612), laurea(lcpb), taf(b).
 %  Corso: 3046, Docente: PASANISI Enrico
-cattedra(3046, 4612, ltps, b) :- codice_corso(3046), matricola_docente(4612), laurea(ltps), taf(b).
+cattedra(3046, 4612, lcpb, b) :- codice_corso(3046), matricola_docente(4612), laurea(lcpb), taf(b).
 %  Corso: 5026, Docente: PASQUARELLA Cesira Isabella Maria
 cattedra(5026, 5869, lm6, b) :- codice_corso(5026), matricola_docente(5869), laurea(lm6), taf(b).
 %  Corso: 3019, Docente: PASQUARELLA Cesira Isabella Maria
-cattedra(3019, 5869, ltsm, a) :- codice_corso(3019), matricola_docente(5869), laurea(ltsm), taf(a).
+cattedra(3019, 5869, lcpa, a) :- codice_corso(3019), matricola_docente(5869), laurea(lcpa), taf(a).
 %  Corso: 5027, Docente: PASQUARELLA Cesira Isabella Maria
 cattedra(5027, 5869, lm6, b) :- codice_corso(5027), matricola_docente(5869), laurea(lm6), taf(b).
 %  Corso: 5050, Docente: PASQUARELLA Cesira Isabella Maria
-cattedra(5050, 5869, lmi, b) :- codice_corso(5050), matricola_docente(5869), laurea(lmi), taf(b).
+cattedra(5050, 5869, lcpc, b) :- codice_corso(5050), matricola_docente(5869), laurea(lcpc), taf(b).
 %  Corso: 5028, Docente: PASQUARELLA Cesira Isabella Maria
-cattedra(5028, 5869, lmsm, b) :- codice_corso(5028), matricola_docente(5869), laurea(lmsm), taf(b).
+cattedra(5028, 5869, lcpb, b) :- codice_corso(5028), matricola_docente(5869), laurea(lcpb), taf(b).
 %  Corso: 5026, Docente: PASQUARELLA Cesira Isabella Maria
 cattedra(5026, 5869, lm6, b) :- codice_corso(5026), matricola_docente(5869), laurea(lm6), taf(b).
 %  Corso: 5026, Docente: PASQUARELLA Cesira Isabella Maria
@@ -5128,7 +5357,7 @@ cattedra(5026, 5869, lm6, d) :- codice_corso(5026), matricola_docente(5869), lau
 %  Corso: 5026, Docente: PASQUARELLA Cesira Isabella Maria
 cattedra(5026, 5869, lm6, b) :- codice_corso(5026), matricola_docente(5869), laurea(lm6), taf(b).
 %  Corso: 5050, Docente: PASQUARELLA Cesira Isabella Maria
-cattedra(5050, 5869, lmi, b) :- codice_corso(5050), matricola_docente(5869), laurea(lmi), taf(b).
+cattedra(5050, 5869, lcpc, b) :- codice_corso(5050), matricola_docente(5869), laurea(lcpc), taf(b).
 %  Corso: 3030, Docente: PASQUERO Stefano
 cattedra(3030, 4625, lt, b) :- codice_corso(3030), matricola_docente(4625), laurea(lt), taf(b).
 %  Corso: 3022, Docente: PASSERI Benedetta
@@ -5148,39 +5377,39 @@ cattedra(3020, 5539, lt, b) :- codice_corso(3020), matricola_docente(5539), laur
 %  Corso: 5029, Docente: PASSERI Benedetta
 cattedra(5029, 5539, lm5, b) :- codice_corso(5029), matricola_docente(5539), laurea(lm5), taf(b).
 %  Corso: 3041, Docente: PASSERI Giovanni
-cattedra(3041, 5542, ltps, b) :- codice_corso(3041), matricola_docente(5542), laurea(ltps), taf(b).
+cattedra(3041, 5542, lcpb, b) :- codice_corso(3041), matricola_docente(5542), laurea(lcpb), taf(b).
 %  Corso: 3063, Docente: PASSERI Giovanni
-cattedra(3063, 5542, lt, a) :- codice_corso(3063), matricola_docente(5542), laurea(lt), taf(a).
+cattedra(3063, 5542, lcpb, a) :- codice_corso(3063), matricola_docente(5542), laurea(lcpb), taf(a).
 %  Corso: 5027, Docente: PATERLINI Silvia
 cattedra(5027, 11364, lm6, a) :- codice_corso(5027), matricola_docente(11364), laurea(lm6), taf(a).
 %  Corso: 3067, Docente: PATERLINI Silvia
-cattedra(3067, 11364, ltps, a) :- codice_corso(3067), matricola_docente(11364), laurea(ltps), taf(a).
+cattedra(3067, 11364, lcpb, a) :- codice_corso(3067), matricola_docente(11364), laurea(lcpb), taf(a).
 %  Corso: 3041, Docente: PATERLINI Silvia
-cattedra(3041, 11364, ltps, a) :- codice_corso(3041), matricola_docente(11364), laurea(ltps), taf(a).
+cattedra(3041, 11364, lcpb, a) :- codice_corso(3041), matricola_docente(11364), laurea(lcpb), taf(a).
 %  Corso: 3007, Docente: PAVESI Maura
 cattedra(3007, 6653, lt, a) :- codice_corso(3007), matricola_docente(6653), laurea(lt), taf(a).
 %  Corso: 3026, Docente: PAVESI Maura
 cattedra(3026, 6653, lt, c) :- codice_corso(3026), matricola_docente(6653), laurea(lt), taf(c).
 %  Corso: 3006, Docente: PEDRABISSI Stefania
-cattedra(3006, 6427, ltss, b) :- codice_corso(3006), matricola_docente(6427), laurea(ltss), taf(b).
+cattedra(3006, 6427, lcpa, b) :- codice_corso(3006), matricola_docente(6427), laurea(lcpa), taf(b).
 %  Corso: 3032, Docente: PEDRABISSI Stefania
 cattedra(3032, 6427, lt, b) :- codice_corso(3032), matricola_docente(6427), laurea(lt), taf(b).
 %  Corso: 995, Docente: PEDRABISSI Stefania
 cattedra(995, 6427, lm5, d) :- codice_corso(995), matricola_docente(6427), laurea(lm5), taf(d).
 %  Corso: 5050, Docente: PEDRABISSI Stefania
-cattedra(5050, 6427, lmi, b) :- codice_corso(5050), matricola_docente(6427), laurea(lmi), taf(b).
+cattedra(5050, 6427, lcpc, b) :- codice_corso(5050), matricola_docente(6427), laurea(lcpc), taf(b).
 %  Corso: 5050, Docente: PEDRAZZI Giuseppe
-cattedra(5050, 4057, lmi, b) :- codice_corso(5050), matricola_docente(4057), laurea(lmi), taf(b).
+cattedra(5050, 4057, lcpc, b) :- codice_corso(5050), matricola_docente(4057), laurea(lcpc), taf(b).
 %  Corso: 3040, Docente: PEDRAZZI Giuseppe
-cattedra(3040, 4057, ltps, b) :- codice_corso(3040), matricola_docente(4057), laurea(ltps), taf(b).
+cattedra(3040, 4057, lcpb, b) :- codice_corso(3040), matricola_docente(4057), laurea(lcpb), taf(b).
 %  Corso: 5050, Docente: PEDRAZZI Giuseppe
-cattedra(5050, 4057, lmi, b) :- codice_corso(5050), matricola_docente(4057), laurea(lmi), taf(b).
+cattedra(5050, 4057, lcpc, b) :- codice_corso(5050), matricola_docente(4057), laurea(lcpc), taf(b).
 %  Corso: 5027, Docente: PEDRAZZI Giuseppe
 cattedra(5027, 4057, lm6, a) :- codice_corso(5027), matricola_docente(4057), laurea(lm6), taf(a).
 %  Corso: 3044, Docente: PEDRAZZI Giuseppe
-cattedra(3044, 4057, ltps, a) :- codice_corso(3044), matricola_docente(4057), laurea(ltps), taf(a).
+cattedra(3044, 4057, lcpb, a) :- codice_corso(3044), matricola_docente(4057), laurea(lcpb), taf(a).
 %  Corso: 3048, Docente: PEDRAZZI Giuseppe
-cattedra(3048, 4057, ltps, a) :- codice_corso(3048), matricola_docente(4057), laurea(ltps), taf(a).
+cattedra(3048, 4057, lcpb, a) :- codice_corso(3048), matricola_docente(4057), laurea(lcpb), taf(a).
 %  Corso: 3062, Docente: PEDRINI Alessandro
 cattedra(3062, 11103, lt, b) :- codice_corso(3062), matricola_docente(11103), laurea(lt), taf(b).
 %  Corso: 5041, Docente: PEDRINI Alessandro
@@ -5202,11 +5431,11 @@ cattedra(3004, 5387, lt, b) :- codice_corso(3004), matricola_docente(5387), laur
 %  Corso: 5044, Docente: PELLEGRINO Vincenza
 cattedra(5044, 10639, lm, c) :- codice_corso(5044), matricola_docente(10639), laurea(lm), taf(c).
 %  Corso: 3006, Docente: PELLEGRINO Vincenza
-cattedra(3006, 10639, ltss, a) :- codice_corso(3006), matricola_docente(10639), laurea(ltss), taf(a).
+cattedra(3006, 10639, lcpa, a) :- codice_corso(3006), matricola_docente(10639), laurea(lcpa), taf(a).
 %  Corso: 5010, Docente: PELLEGRINO Vincenza
-cattedra(5010, 10639, lmss, c) :- codice_corso(5010), matricola_docente(10639), laurea(lmss), taf(c).
+cattedra(5010, 10639, lcpb, c) :- codice_corso(5010), matricola_docente(10639), laurea(lcpb), taf(c).
 %  Corso: 3006, Docente: PELLEGRINO Vincenza
-cattedra(3006, 10639, ltss, d) :- codice_corso(3006), matricola_docente(10639), laurea(ltss), taf(d).
+cattedra(3006, 10639, lcpa, d) :- codice_corso(3006), matricola_docente(10639), laurea(lcpa), taf(d).
 %  Corso: 5053, Docente: PELOSI Annalisa
 cattedra(5053, 6200, lm, d) :- codice_corso(5053), matricola_docente(6200), laurea(lm), taf(d).
 %  Corso: 5053, Docente: PELOSI Annalisa
@@ -5218,11 +5447,11 @@ cattedra(3022, 4495, lt, a) :- codice_corso(3022), matricola_docente(4495), laur
 %  Corso: 5053, Docente: PERA MARIA CARMELA
 cattedra(5053, 46380, lm, c) :- codice_corso(5053), matricola_docente(46380), laurea(lm), taf(c).
 %  Corso: 3071, Docente: PERA MARIA CARMELA
-cattedra(3071, 46380, ltps, b) :- codice_corso(3071), matricola_docente(46380), laurea(ltps), taf(b).
+cattedra(3071, 46380, lt, b) :- codice_corso(3071), matricola_docente(46380), laurea(lt), taf(b).
 %  Corso: 5026, Docente: PERA MARIA CARMELA
 cattedra(5026, 46380, lm6, b) :- codice_corso(5026), matricola_docente(46380), laurea(lm6), taf(b).
 %  Corso: 3042, Docente: PERA MARIA CARMELA
-cattedra(3042, 46380, ltps, b) :- codice_corso(3042), matricola_docente(46380), laurea(ltps), taf(b).
+cattedra(3042, 46380, lcpb, b) :- codice_corso(3042), matricola_docente(46380), laurea(lcpb), taf(b).
 %  Corso: 3022, Docente: PERACCHI Alessio
 cattedra(3022, 5281, lt, a) :- codice_corso(3022), matricola_docente(5281), laurea(lt), taf(a).
 %  Corso: 5062, Docente: PERACCHI Alessio
@@ -5234,7 +5463,7 @@ cattedra(5026, 16566, lm6, c) :- codice_corso(5026), matricola_docente(16566), l
 %  Corso: 5074, Docente: PERCESEPE Antonio
 cattedra(5074, 16566, lm6, b) :- codice_corso(5074), matricola_docente(16566), laurea(lm6), taf(b).
 %  Corso: 3041, Docente: PERCESEPE Antonio
-cattedra(3041, 16566, ltps, a) :- codice_corso(3041), matricola_docente(16566), laurea(ltps), taf(a).
+cattedra(3041, 16566, lcpb, a) :- codice_corso(3041), matricola_docente(16566), laurea(lcpb), taf(a).
 %  Corso: 5074, Docente: PERCESEPE Antonio
 cattedra(5074, 16566, lm6, a) :- codice_corso(5074), matricola_docente(16566), laurea(lm6), taf(a).
 %  Corso: 5026, Docente: PERCESEPE Antonio
@@ -5246,9 +5475,9 @@ cattedra(5062, 5860, lm, c) :- codice_corso(5062), matricola_docente(5860), laur
 %  Corso: 5074, Docente: PERINI Paolo
 cattedra(5074, 7358, lm6, b) :- codice_corso(5074), matricola_docente(7358), laurea(lm6), taf(b).
 %  Corso: 3040, Docente: PERINI Paolo
-cattedra(3040, 7358, ltps, b) :- codice_corso(3040), matricola_docente(7358), laurea(ltps), taf(b).
+cattedra(3040, 7358, lcpb, b) :- codice_corso(3040), matricola_docente(7358), laurea(lcpb), taf(b).
 %  Corso: 3040, Docente: PERINI Paolo
-cattedra(3040, 7358, ltps, b) :- codice_corso(3040), matricola_docente(7358), laurea(ltps), taf(b).
+cattedra(3040, 7358, lcpb, b) :- codice_corso(3040), matricola_docente(7358), laurea(lcpb), taf(b).
 %  Corso: 3017, Docente: PEROTTI Olga
 cattedra(3017, 6152, lt, b) :- codice_corso(3017), matricola_docente(6152), laurea(lt), taf(b).
 %  Corso: 3017, Docente: PEROTTI Olga
@@ -5266,13 +5495,13 @@ cattedra(5062, 5341, lm, b) :- codice_corso(5062), matricola_docente(5341), laur
 %  Corso: 5026, Docente: PERRONE Serafina
 cattedra(5026, 27018, lm6, b) :- codice_corso(5026), matricola_docente(27018), laurea(lm6), taf(b).
 %  Corso: 5050, Docente: PERRONE Serafina
-cattedra(5050, 27018, lmi, b) :- codice_corso(5050), matricola_docente(27018), laurea(lmi), taf(b).
+cattedra(5050, 27018, lcpc, b) :- codice_corso(5050), matricola_docente(27018), laurea(lcpc), taf(b).
 %  Corso: 3040, Docente: PERRONE Serafina
-cattedra(3040, 27018, ltps, b) :- codice_corso(3040), matricola_docente(27018), laurea(ltps), taf(b).
+cattedra(3040, 27018, lcpb, b) :- codice_corso(3040), matricola_docente(27018), laurea(lcpb), taf(b).
 %  Corso: 3041, Docente: PERRONE Serafina
-cattedra(3041, 27018, ltps, b) :- codice_corso(3041), matricola_docente(27018), laurea(ltps), taf(b).
+cattedra(3041, 27018, lcpb, b) :- codice_corso(3041), matricola_docente(27018), laurea(lcpb), taf(b).
 %  Corso: 3041, Docente: PERRONE Serafina
-cattedra(3041, 27018, ltps, b) :- codice_corso(3041), matricola_docente(27018), laurea(ltps), taf(b).
+cattedra(3041, 27018, lcpb, b) :- codice_corso(3041), matricola_docente(27018), laurea(lcpb), taf(b).
 %  Corso: 3028, Docente: PERSICO Davide
 cattedra(3028, 6539, lt, b) :- codice_corso(3028), matricola_docente(6539), laurea(lt), taf(b).
 %  Corso: 5061, Docente: PERSICO Davide
@@ -5284,13 +5513,13 @@ cattedra(5027, 6619, lm6, a) :- codice_corso(5027), matricola_docente(6619), lau
 %  Corso: 5074, Docente: PERTINHEZ Thelma
 cattedra(5074, 6619, lm6, b) :- codice_corso(5074), matricola_docente(6619), laurea(lm6), taf(b).
 %  Corso: 3047, Docente: PERTINHEZ Thelma
-cattedra(3047, 6619, ltps, a) :- codice_corso(3047), matricola_docente(6619), laurea(ltps), taf(a).
+cattedra(3047, 6619, lcpb, a) :- codice_corso(3047), matricola_docente(6619), laurea(lcpb), taf(a).
 %  Corso: 5026, Docente: PERTINHEZ Thelma
 cattedra(5026, 6619, lm6, b) :- codice_corso(5026), matricola_docente(6619), laurea(lm6), taf(b).
 %  Corso: 3047, Docente: PERTINHEZ Thelma
-cattedra(3047, 6619, ltps, b) :- codice_corso(3047), matricola_docente(6619), laurea(ltps), taf(b).
+cattedra(3047, 6619, lcpb, b) :- codice_corso(3047), matricola_docente(6619), laurea(lcpb), taf(b).
 %  Corso: 3041, Docente: PERTINHEZ Thelma
-cattedra(3041, 6619, ltps, f) :- codice_corso(3041), matricola_docente(6619), laurea(ltps), taf(f).
+cattedra(3041, 6619, lcpb, f) :- codice_corso(3041), matricola_docente(6619), laurea(lcpb), taf(f).
 %  Corso: 5009, Docente: PESCINA Silvia
 cattedra(5009, 9953, lm5, b) :- codice_corso(5009), matricola_docente(9953), laurea(lm5), taf(b).
 %  Corso: 5009, Docente: PESCINA Silvia
@@ -5322,7 +5551,7 @@ cattedra(3028, 206824, lt, b) :- codice_corso(3028), matricola_docente(206824), 
 %  Corso: 5061, Docente: PETRAGLIA Alessandro
 cattedra(5061, 206824, lm, c) :- codice_corso(5061), matricola_docente(206824), laurea(lm), taf(c).
 %  Corso: 3064, Docente: PETRAGLIA Alessandro
-cattedra(3064, 206824, lt, a) :- codice_corso(3064), matricola_docente(206824), laurea(lt), taf(a).
+cattedra(3064, 206824, lcpb, a) :- codice_corso(3064), matricola_docente(206824), laurea(lcpb), taf(a).
 %  Corso: 3028, Docente: PETRAGLIA Alessandro
 cattedra(3028, 206824, lt, d) :- codice_corso(3028), matricola_docente(206824), laurea(lt), taf(d).
 %  Corso: 5061, Docente: PETRAGLIA Alessandro
@@ -5392,13 +5621,13 @@ cattedra(5027, 5481, lm6, a) :- codice_corso(5027), matricola_docente(5481), lau
 %  Corso: 5026, Docente: PINO Olimpia
 cattedra(5026, 5481, lm6, a) :- codice_corso(5026), matricola_docente(5481), laurea(lm6), taf(a).
 %  Corso: 3047, Docente: PINO Olimpia
-cattedra(3047, 5481, ltps, b) :- codice_corso(3047), matricola_docente(5481), laurea(ltps), taf(b).
+cattedra(3047, 5481, lcpb, b) :- codice_corso(3047), matricola_docente(5481), laurea(lcpb), taf(b).
 %  Corso: 5053, Docente: PINO Olimpia
 cattedra(5053, 5481, lm, b) :- codice_corso(5053), matricola_docente(5481), laurea(lm), taf(b).
 %  Corso: 3041, Docente: PINO Olimpia
-cattedra(3041, 5481, ltps, a) :- codice_corso(3041), matricola_docente(5481), laurea(ltps), taf(a).
+cattedra(3041, 5481, lcpb, a) :- codice_corso(3041), matricola_docente(5481), laurea(lcpb), taf(a).
 %  Corso: 3042, Docente: PINO Olimpia
-cattedra(3042, 5481, ltps, b) :- codice_corso(3042), matricola_docente(5481), laurea(ltps), taf(b).
+cattedra(3042, 5481, lcpb, b) :- codice_corso(3042), matricola_docente(5481), laurea(lcpb), taf(b).
 %  Corso: 5053, Docente: PINO Olimpia
 cattedra(5053, 5481, lm, b) :- codice_corso(5053), matricola_docente(5481), laurea(lm), taf(b).
 %  Corso: 5046, Docente: PINTUS ANDREA
@@ -5456,11 +5685,11 @@ cattedra(3061, 4617, lt, b) :- codice_corso(3061), matricola_docente(4617), laur
 %  Corso: 5015, Docente: POGGI Agostino
 cattedra(5015, 4617, lm, b) :- codice_corso(5015), matricola_docente(4617), laurea(lm), taf(b).
 %  Corso: 3040, Docente: POGLIACOMI Francesco
-cattedra(3040, 6521, ltps, b) :- codice_corso(3040), matricola_docente(6521), laurea(ltps), taf(b).
+cattedra(3040, 6521, lcpb, b) :- codice_corso(3040), matricola_docente(6521), laurea(lcpb), taf(b).
 %  Corso: 3019, Docente: POGLIACOMI Francesco
-cattedra(3019, 6521, ltsm, b) :- codice_corso(3019), matricola_docente(6521), laurea(ltsm), taf(b).
+cattedra(3019, 6521, lcpa, b) :- codice_corso(3019), matricola_docente(6521), laurea(lcpa), taf(b).
 %  Corso: 3042, Docente: POGLIACOMI Francesco
-cattedra(3042, 6521, ltps, b) :- codice_corso(3042), matricola_docente(6521), laurea(ltps), taf(b).
+cattedra(3042, 6521, lcpb, b) :- codice_corso(3042), matricola_docente(6521), laurea(lcpb), taf(b).
 %  Corso: 5026, Docente: POGLIACOMI Francesco
 cattedra(5026, 6521, lm6, f) :- codice_corso(5026), matricola_docente(6521), laurea(lm6), taf(f).
 %  Corso: 3004, Docente: POLETTI Lucia
@@ -5474,7 +5703,7 @@ cattedra(5026, 3717, lm6, b) :- codice_corso(5026), matricola_docente(3717), lau
 %  Corso: 5052, Docente: POLI Federica
 cattedra(5052, 207088, lm, b) :- codice_corso(5052), matricola_docente(207088), laurea(lm), taf(b).
 %  Corso: 3041, Docente: POLI Enzo
-cattedra(3041, 3717, ltps, a) :- codice_corso(3041), matricola_docente(3717), laurea(ltps), taf(a).
+cattedra(3041, 3717, lcpb, a) :- codice_corso(3041), matricola_docente(3717), laurea(lcpb), taf(a).
 %  Corso: 3061, Docente: POLI Federica
 cattedra(3061, 207088, lt, c) :- codice_corso(3061), matricola_docente(207088), laurea(lt), taf(c).
 %  Corso: 5071, Docente: POLI Enzo
@@ -5492,13 +5721,13 @@ cattedra(5026, 3717, lm6, b) :- codice_corso(5026), matricola_docente(3717), lau
 %  Corso: 5026, Docente: POLI Enzo
 cattedra(5026, 3717, lm6, b) :- codice_corso(5026), matricola_docente(3717), laurea(lm6), taf(b).
 %  Corso: 3043, Docente: POLI Tito
-cattedra(3043, 6583, ltps, b) :- codice_corso(3043), matricola_docente(6583), laurea(ltps), taf(b).
+cattedra(3043, 6583, lcpb, b) :- codice_corso(3043), matricola_docente(6583), laurea(lcpb), taf(b).
 %  Corso: 3043, Docente: POLI Tito
-cattedra(3043, 6583, ltps, b) :- codice_corso(3043), matricola_docente(6583), laurea(ltps), taf(b).
+cattedra(3043, 6583, lcpb, b) :- codice_corso(3043), matricola_docente(6583), laurea(lcpb), taf(b).
 %  Corso: 3046, Docente: POLI Tito
-cattedra(3046, 6583, ltps, f) :- codice_corso(3046), matricola_docente(6583), laurea(ltps), taf(f).
+cattedra(3046, 6583, lcpb, f) :- codice_corso(3046), matricola_docente(6583), laurea(lcpb), taf(f).
 %  Corso: 3040, Docente: POLI Enzo
-cattedra(3040, 3717, ltps, a) :- codice_corso(3040), matricola_docente(3717), laurea(ltps), taf(a).
+cattedra(3040, 3717, lcpb, a) :- codice_corso(3040), matricola_docente(3717), laurea(lcpb), taf(a).
 %  Corso: 5036, Docente: POLVERINI Eugenia
 cattedra(5036, 6086, lm, b) :- codice_corso(5036), matricola_docente(6086), laurea(lm), taf(b).
 %  Corso: 5036, Docente: PONTIROLI Daniele
@@ -5510,25 +5739,25 @@ cattedra(3010, 253752, lt, a) :- codice_corso(3010), matricola_docente(253752), 
 %  Corso: 5027, Docente: PONZI DAVIDE
 cattedra(5027, 26137, lm6, a) :- codice_corso(5027), matricola_docente(26137), laurea(lm6), taf(a).
 %  Corso: 3019, Docente: PONZI DAVIDE
-cattedra(3019, 26137, ltsm, a) :- codice_corso(3019), matricola_docente(26137), laurea(ltsm), taf(a).
+cattedra(3019, 26137, lcpa, a) :- codice_corso(3019), matricola_docente(26137), laurea(lcpa), taf(a).
 %  Corso: 5053, Docente: PONZI DAVIDE
 cattedra(5053, 26137, lm, c) :- codice_corso(5053), matricola_docente(26137), laurea(lm), taf(c).
 %  Corso: 5026, Docente: POTI' Francesco
 cattedra(5026, 205023, lm6, b) :- codice_corso(5026), matricola_docente(205023), laurea(lm6), taf(b).
 %  Corso: 3040, Docente: POTI' Francesco
-cattedra(3040, 205023, ltps, a) :- codice_corso(3040), matricola_docente(205023), laurea(ltps), taf(a).
+cattedra(3040, 205023, lcpb, a) :- codice_corso(3040), matricola_docente(205023), laurea(lcpb), taf(a).
 %  Corso: 5026, Docente: POTI' Francesco
 cattedra(5026, 205023, lm6, b) :- codice_corso(5026), matricola_docente(205023), laurea(lm6), taf(b).
 %  Corso: 5050, Docente: POTI' Francesco
-cattedra(5050, 205023, lmi, b) :- codice_corso(5050), matricola_docente(205023), laurea(lmi), taf(b).
+cattedra(5050, 205023, lcpc, b) :- codice_corso(5050), matricola_docente(205023), laurea(lcpc), taf(b).
 %  Corso: 5028, Docente: POTI' Francesco
-cattedra(5028, 205023, lmsm, d) :- codice_corso(5028), matricola_docente(205023), laurea(lmsm), taf(d).
+cattedra(5028, 205023, lcpb, d) :- codice_corso(5028), matricola_docente(205023), laurea(lcpb), taf(d).
 %  Corso: 3067, Docente: POTI' Francesco
-cattedra(3067, 205023, ltps, a) :- codice_corso(3067), matricola_docente(205023), laurea(ltps), taf(a).
+cattedra(3067, 205023, lcpb, a) :- codice_corso(3067), matricola_docente(205023), laurea(lcpb), taf(a).
 %  Corso: 5074, Docente: POTI' Francesco
 cattedra(5074, 205023, lm6, b) :- codice_corso(5074), matricola_docente(205023), laurea(lm6), taf(b).
 %  Corso: 3019, Docente: POZZI GIULIA
-cattedra(3019, 18164, ltsm, b) :- codice_corso(3019), matricola_docente(18164), laurea(ltsm), taf(b).
+cattedra(3019, 18164, lcpa, b) :- codice_corso(3019), matricola_docente(18164), laurea(lcpa), taf(b).
 %  Corso: 5027, Docente: POZZI GIULIA
 cattedra(5027, 18164, lm6, a) :- codice_corso(5027), matricola_docente(18164), laurea(lm6), taf(a).
 %  Corso: 5027, Docente: POZZI GIULIA
@@ -5536,17 +5765,17 @@ cattedra(5027, 18164, lm6, a) :- codice_corso(5027), matricola_docente(18164), l
 %  Corso: 5074, Docente: POZZI GIULIA
 cattedra(5074, 18164, lm6, d) :- codice_corso(5074), matricola_docente(18164), laurea(lm6), taf(d).
 %  Corso: 3044, Docente: POZZI GIULIA
-cattedra(3044, 18164, ltps, a) :- codice_corso(3044), matricola_docente(18164), laurea(ltps), taf(a).
+cattedra(3044, 18164, lcpb, a) :- codice_corso(3044), matricola_docente(18164), laurea(lcpb), taf(a).
 %  Corso: 3071, Docente: POZZI GIULIA
-cattedra(3071, 18164, ltps, c) :- codice_corso(3071), matricola_docente(18164), laurea(ltps), taf(c).
+cattedra(3071, 18164, lt, c) :- codice_corso(3071), matricola_docente(18164), laurea(lt), taf(c).
 %  Corso: 5071, Docente: POZZI GIULIA
 cattedra(5071, 18164, lm, b) :- codice_corso(5071), matricola_docente(18164), laurea(lm), taf(b).
 %  Corso: 3046, Docente: POZZOLI Cristina
-cattedra(3046, 4859, ltps, b) :- codice_corso(3046), matricola_docente(4859), laurea(ltps), taf(b).
+cattedra(3046, 4859, lcpb, b) :- codice_corso(3046), matricola_docente(4859), laurea(lcpb), taf(b).
 %  Corso: 5071, Docente: POZZOLI Cristina
 cattedra(5071, 4859, lm, c) :- codice_corso(5071), matricola_docente(4859), laurea(lm), taf(c).
 %  Corso: 3042, Docente: POZZOLI Cristina
-cattedra(3042, 4859, ltps, b) :- codice_corso(3042), matricola_docente(4859), laurea(ltps), taf(b).
+cattedra(3042, 4859, lcpb, b) :- codice_corso(3042), matricola_docente(4859), laurea(lcpb), taf(b).
 %  Corso: 5066, Docente: PRANDI Enrico
 cattedra(5066, 6641, lm, c) :- codice_corso(5066), matricola_docente(6641), laurea(lm), taf(c).
 %  Corso: 5000, Docente: PRANDI Barbara
@@ -5566,33 +5795,33 @@ cattedra(5008, 17401, lm5, d) :- codice_corso(5008), matricola_docente(17401), l
 %  Corso: 3061, Docente: PRATI Andrea
 cattedra(3061, 17401, lt, b) :- codice_corso(3061), matricola_docente(17401), laurea(lt), taf(b).
 %  Corso: 3019, Docente: PRESTA VALENTINA
-cattedra(3019, 21802, ltsm, b) :- codice_corso(3019), matricola_docente(21802), laurea(ltsm), taf(b).
+cattedra(3019, 21802, lcpa, b) :- codice_corso(3019), matricola_docente(21802), laurea(lcpa), taf(b).
 %  Corso: 3019, Docente: PRESTA VALENTINA
-cattedra(3019, 21802, ltsm, b) :- codice_corso(3019), matricola_docente(21802), laurea(ltsm), taf(b).
+cattedra(3019, 21802, lcpa, b) :- codice_corso(3019), matricola_docente(21802), laurea(lcpa), taf(b).
 %  Corso: 5028, Docente: PRESTA VALENTINA
-cattedra(5028, 21802, lmsm, b) :- codice_corso(5028), matricola_docente(21802), laurea(lmsm), taf(b).
+cattedra(5028, 21802, lcpb, b) :- codice_corso(5028), matricola_docente(21802), laurea(lcpb), taf(b).
 %  Corso: 5028, Docente: PRESTA VALENTINA
-cattedra(5028, 21802, lmsm, b) :- codice_corso(5028), matricola_docente(21802), laurea(lmsm), taf(b).
+cattedra(5028, 21802, lcpb, b) :- codice_corso(5028), matricola_docente(21802), laurea(lcpb), taf(b).
 %  Corso: 3040, Docente: PRUNETI Carlo
-cattedra(3040, 5879, ltps, b) :- codice_corso(3040), matricola_docente(5879), laurea(ltps), taf(b).
+cattedra(3040, 5879, lcpb, b) :- codice_corso(3040), matricola_docente(5879), laurea(lcpb), taf(b).
 %  Corso: 5028, Docente: PRUNETI Carlo
-cattedra(5028, 5879, lmsm, d) :- codice_corso(5028), matricola_docente(5879), laurea(lmsm), taf(d).
+cattedra(5028, 5879, lcpb, d) :- codice_corso(5028), matricola_docente(5879), laurea(lcpb), taf(d).
 %  Corso: 3038, Docente: PRUNETI Carlo
 cattedra(3038, 5879, lt, b) :- codice_corso(3038), matricola_docente(5879), laurea(lt), taf(b).
 %  Corso: 5028, Docente: PRUNETI Carlo
-cattedra(5028, 5879, lmsm, d) :- codice_corso(5028), matricola_docente(5879), laurea(lmsm), taf(d).
+cattedra(5028, 5879, lcpb, d) :- codice_corso(5028), matricola_docente(5879), laurea(lcpb), taf(d).
 %  Corso: 5028, Docente: PRUNETI Carlo
-cattedra(5028, 5879, lmsm, b) :- codice_corso(5028), matricola_docente(5879), laurea(lmsm), taf(b).
+cattedra(5028, 5879, lcpb, b) :- codice_corso(5028), matricola_docente(5879), laurea(lcpb), taf(b).
 %  Corso: 5050, Docente: PRUNETI Carlo
-cattedra(5050, 5879, lmi, b) :- codice_corso(5050), matricola_docente(5879), laurea(lmi), taf(b).
+cattedra(5050, 5879, lcpc, b) :- codice_corso(5050), matricola_docente(5879), laurea(lcpc), taf(b).
 %  Corso: 3041, Docente: PRUNETI Carlo
-cattedra(3041, 5879, ltps, b) :- codice_corso(3041), matricola_docente(5879), laurea(ltps), taf(b).
+cattedra(3041, 5879, lcpb, b) :- codice_corso(3041), matricola_docente(5879), laurea(lcpb), taf(b).
 %  Corso: 3040, Docente: PRUNETI Carlo
-cattedra(3040, 5879, ltps, b) :- codice_corso(3040), matricola_docente(5879), laurea(ltps), taf(b).
+cattedra(3040, 5879, lcpb, b) :- codice_corso(3040), matricola_docente(5879), laurea(lcpb), taf(b).
 %  Corso: 3040, Docente: PRUNETI Carlo
-cattedra(3040, 5879, ltps, b) :- codice_corso(3040), matricola_docente(5879), laurea(ltps), taf(b).
+cattedra(3040, 5879, lcpb, b) :- codice_corso(3040), matricola_docente(5879), laurea(lcpb), taf(b).
 %  Corso: 5050, Docente: PRUNETI Carlo
-cattedra(5050, 5879, lmi, d) :- codice_corso(5050), matricola_docente(5879), laurea(lmi), taf(d).
+cattedra(5050, 5879, lcpc, d) :- codice_corso(5050), matricola_docente(5879), laurea(lcpc), taf(d).
 %  Corso: 995, Docente: PUTINATI Stefano
 cattedra(995, 5144, lm5, d) :- codice_corso(995), matricola_docente(5144), laurea(lm5), taf(d).
 %  Corso: 3032, Docente: PUTINATI Stefano
@@ -5602,7 +5831,7 @@ cattedra(5008, 23798, lm5, b) :- codice_corso(5008), matricola_docente(23798), l
 %  Corso: 5074, Docente: QUATTRINI FABRIZIO
 cattedra(5074, 31178, lm6, b) :- codice_corso(5074), matricola_docente(31178), laurea(lm6), taf(b).
 %  Corso: 3042, Docente: QUATTRINI FABRIZIO
-cattedra(3042, 31178, ltps, b) :- codice_corso(3042), matricola_docente(31178), laurea(ltps), taf(b).
+cattedra(3042, 31178, lcpb, b) :- codice_corso(3042), matricola_docente(31178), laurea(lcpb), taf(b).
 %  Corso: 5029, Docente: QUINTAVALLA Fausto
 cattedra(5029, 3718, lm5, d) :- codice_corso(5029), matricola_docente(3718), laurea(lm5), taf(d).
 %  Corso: 5029, Docente: QUINTAVALLA Fausto
@@ -5652,21 +5881,21 @@ cattedra(3057, 5007, lt, c) :- codice_corso(3057), matricola_docente(5007), laur
 %  Corso: 5011, Docente: RAINIERI Sara
 cattedra(5011, 5007, lm, d) :- codice_corso(5011), matricola_docente(5007), laurea(lm), taf(d).
 %  Corso: 3064, Docente: RAINIERI Sara
-cattedra(3064, 5007, lt, b) :- codice_corso(3064), matricola_docente(5007), laurea(lt), taf(b).
+cattedra(3064, 5007, lcpb, b) :- codice_corso(3064), matricola_docente(5007), laurea(lcpb), taf(b).
 %  Corso: 5016, Docente: RAINIERI Sara
 cattedra(5016, 5007, lm, b) :- codice_corso(5016), matricola_docente(5007), laurea(lm), taf(b).
 %  Corso: 3019, Docente: RAMAZZINA Ileana
-cattedra(3019, 8811, ltsm, b) :- codice_corso(3019), matricola_docente(8811), laurea(ltsm), taf(b).
+cattedra(3019, 8811, lcpa, b) :- codice_corso(3019), matricola_docente(8811), laurea(lcpa), taf(b).
 %  Corso: 5027, Docente: RAMAZZINA Ileana
 cattedra(5027, 8811, lm6, a) :- codice_corso(5027), matricola_docente(8811), laurea(lm6), taf(a).
 %  Corso: 3019, Docente: RAMAZZINA Ileana
-cattedra(3019, 8811, ltsm, a) :- codice_corso(3019), matricola_docente(8811), laurea(ltsm), taf(a).
+cattedra(3019, 8811, lcpa, a) :- codice_corso(3019), matricola_docente(8811), laurea(lcpa), taf(a).
 %  Corso: 3047, Docente: RAMAZZINA Ileana
-cattedra(3047, 8811, ltps, a) :- codice_corso(3047), matricola_docente(8811), laurea(ltps), taf(a).
+cattedra(3047, 8811, lcpb, a) :- codice_corso(3047), matricola_docente(8811), laurea(lcpb), taf(a).
 %  Corso: 3042, Docente: RAMAZZINA Ileana
-cattedra(3042, 8811, ltps, a) :- codice_corso(3042), matricola_docente(8811), laurea(ltps), taf(a).
+cattedra(3042, 8811, lcpb, a) :- codice_corso(3042), matricola_docente(8811), laurea(lcpb), taf(a).
 %  Corso: 5028, Docente: RAMAZZINA Ileana
-cattedra(5028, 8811, lmsm, b) :- codice_corso(5028), matricola_docente(8811), laurea(lmsm), taf(b).
+cattedra(5028, 8811, lcpb, b) :- codice_corso(5028), matricola_docente(8811), laurea(lcpb), taf(b).
 %  Corso: 3020, Docente: RAMONI Roberto
 cattedra(3020, 4411, lt, b) :- codice_corso(3020), matricola_docente(4411), laurea(lt), taf(b).
 %  Corso: 5029, Docente: RAMONI Roberto
@@ -5676,7 +5905,7 @@ cattedra(5029, 4411, lm5, a) :- codice_corso(5029), matricola_docente(4411), lau
 %  Corso: 5029, Docente: RAMONI Roberto
 cattedra(5029, 4411, lm5, a) :- codice_corso(5029), matricola_docente(4411), laurea(lm5), taf(a).
 %  Corso: 3042, Docente: RANZIERI SILVIA
-cattedra(3042, 19640, ltps, b) :- codice_corso(3042), matricola_docente(19640), laurea(ltps), taf(b).
+cattedra(3042, 19640, lcpb, b) :- codice_corso(3042), matricola_docente(19640), laurea(lcpb), taf(b).
 %  Corso: 5029, Docente: RAVANETTI Francesca
 cattedra(5029, 10400, lm5, a) :- codice_corso(5029), matricola_docente(10400), laurea(lm5), taf(a).
 %  Corso: 5045, Docente: RAVANETTI Francesca
@@ -5686,13 +5915,13 @@ cattedra(5005, 6058, lm, c) :- codice_corso(5005), matricola_docente(6058), laur
 %  Corso: 5003, Docente: REGALLI Massimo
 cattedra(5003, 6058, lm, b) :- codice_corso(5003), matricola_docente(6058), laurea(lm), taf(b).
 %  Corso: 3049, Docente: REGOLISTI GIUSEPPE
-cattedra(3049, 8011, ltps, a) :- codice_corso(3049), matricola_docente(8011), laurea(ltps), taf(a).
+cattedra(3049, 8011, lcpb, a) :- codice_corso(3049), matricola_docente(8011), laurea(lcpb), taf(a).
 %  Corso: 5026, Docente: REGOLISTI GIUSEPPE
 cattedra(5026, 8011, lm6, b) :- codice_corso(5026), matricola_docente(8011), laurea(lm6), taf(b).
 %  Corso: 5074, Docente: REGOLISTI GIUSEPPE
 cattedra(5074, 8011, lm6, b) :- codice_corso(5074), matricola_docente(8011), laurea(lm6), taf(b).
 %  Corso: 3040, Docente: REGOLISTI GIUSEPPE
-cattedra(3040, 8011, ltps, b) :- codice_corso(3040), matricola_docente(8011), laurea(ltps), taf(b).
+cattedra(3040, 8011, lcpb, b) :- codice_corso(3040), matricola_docente(8011), laurea(lcpb), taf(b).
 %  Corso: 3004, Docente: RIANI Marco
 cattedra(3004, 4932, lt, c) :- codice_corso(3004), matricola_docente(4932), laurea(lt), taf(c).
 %  Corso: 3004, Docente: RIANI Marco
@@ -5712,9 +5941,9 @@ cattedra(3000, 17254, lt, b) :- codice_corso(3000), matricola_docente(17254), la
 %  Corso: 3022, Docente: RICCI Ada
 cattedra(3022, 4311, lt, b) :- codice_corso(3022), matricola_docente(4311), laurea(lt), taf(b).
 %  Corso: 3068, Docente: RICCI ANNALISA
-cattedra(3068, 17254, lt, f) :- codice_corso(3068), matricola_docente(17254), laurea(lt), taf(f).
+cattedra(3068, 17254, lcpb, f) :- codice_corso(3068), matricola_docente(17254), laurea(lcpb), taf(f).
 %  Corso: 3064, Docente: RICCI ANNALISA
-cattedra(3064, 17254, lt, b) :- codice_corso(3064), matricola_docente(17254), laurea(lt), taf(b).
+cattedra(3064, 17254, lcpb, b) :- codice_corso(3064), matricola_docente(17254), laurea(lcpb), taf(b).
 %  Corso: 3023, Docente: RICCI Ada
 cattedra(3023, 4311, lt, b) :- codice_corso(3023), matricola_docente(4311), laurea(lt), taf(b).
 %  Corso: 3061, Docente: RICCO' Mauro
@@ -5780,7 +6009,7 @@ cattedra(5068, 7577, lm, c) :- codice_corso(5068), matricola_docente(7577), laur
 %  Corso: 5074, Docente: RIZZI Federica Maria Angela
 cattedra(5074, 7577, lm6, a) :- codice_corso(5074), matricola_docente(7577), laurea(lm6), taf(a).
 %  Corso: 3047, Docente: RIZZI Federica Maria Angela
-cattedra(3047, 7577, ltps, c) :- codice_corso(3047), matricola_docente(7577), laurea(ltps), taf(c).
+cattedra(3047, 7577, lcpb, c) :- codice_corso(3047), matricola_docente(7577), laurea(lcpb), taf(c).
 %  Corso: 5027, Docente: RIZZI Federica Maria Angela
 cattedra(5027, 7577, lm6, a) :- codice_corso(5027), matricola_docente(7577), laurea(lm6), taf(a).
 %  Corso: 5014, Docente: RIZZI Antonio
@@ -5794,9 +6023,9 @@ cattedra(3028, 3905, lt, a) :- codice_corso(3028), matricola_docente(3905), laur
 %  Corso: 3069, Docente: RODOLFI Margherita
 cattedra(3069, 11088, lt, b) :- codice_corso(3069), matricola_docente(11088), laurea(lt), taf(b).
 %  Corso: 3064, Docente: RODOLFI Margherita
-cattedra(3064, 11088, lt, f) :- codice_corso(3064), matricola_docente(11088), laurea(lt), taf(f).
+cattedra(3064, 11088, lcpb, f) :- codice_corso(3064), matricola_docente(11088), laurea(lcpb), taf(f).
 %  Corso: 3064, Docente: RODOLFI Margherita
-cattedra(3064, 11088, lt, b) :- codice_corso(3064), matricola_docente(11088), laurea(lt), taf(b).
+cattedra(3064, 11088, lcpb, b) :- codice_corso(3064), matricola_docente(11088), laurea(lcpb), taf(b).
 %  Corso: 5039, Docente: ROGOLINO Dominga
 cattedra(5039, 6119, lm, d) :- codice_corso(5039), matricola_docente(6119), laurea(lm), taf(d).
 %  Corso: 3026, Docente: ROGOLINO Dominga
@@ -5804,11 +6033,11 @@ cattedra(3026, 6119, lt, a) :- codice_corso(3026), matricola_docente(6119), laur
 %  Corso: 5053, Docente: ROLLO Dolores
 cattedra(5053, 6247, lm, b) :- codice_corso(5053), matricola_docente(6247), laurea(lm), taf(b).
 %  Corso: 3067, Docente: ROLLO Dolores
-cattedra(3067, 6247, ltps, a) :- codice_corso(3067), matricola_docente(6247), laurea(ltps), taf(a).
+cattedra(3067, 6247, lcpb, a) :- codice_corso(3067), matricola_docente(6247), laurea(lcpb), taf(a).
 %  Corso: 3021, Docente: ROLLO Dolores
 cattedra(3021, 6247, lt, f) :- codice_corso(3021), matricola_docente(6247), laurea(lt), taf(f).
 %  Corso: 3071, Docente: ROLLO Dolores
-cattedra(3071, 6247, ltps, a) :- codice_corso(3071), matricola_docente(6247), laurea(ltps), taf(a).
+cattedra(3071, 6247, lt, a) :- codice_corso(3071), matricola_docente(6247), laurea(lt), taf(a).
 %  Corso: 5014, Docente: ROMAGNOLI Giovanni
 cattedra(5014, 10022, lm, b) :- codice_corso(5014), matricola_docente(10022), laurea(lm), taf(b).
 %  Corso: 3010, Docente: ROMAGNOLI Giovanni
@@ -5836,19 +6065,19 @@ cattedra(3004, 6142, lt, d) :- codice_corso(3004), matricola_docente(6142), laur
 %  Corso: 5027, Docente: RONDA Luca
 cattedra(5027, 8719, lm6, a) :- codice_corso(5027), matricola_docente(8719), laurea(lm6), taf(a).
 %  Corso: 3049, Docente: RONDA Luca
-cattedra(3049, 8719, ltps, a) :- codice_corso(3049), matricola_docente(8719), laurea(ltps), taf(a).
+cattedra(3049, 8719, lcpb, a) :- codice_corso(3049), matricola_docente(8719), laurea(lcpb), taf(a).
 %  Corso: 3042, Docente: RONDA Luca
-cattedra(3042, 8719, ltps, a) :- codice_corso(3042), matricola_docente(8719), laurea(ltps), taf(a).
+cattedra(3042, 8719, lcpb, a) :- codice_corso(3042), matricola_docente(8719), laurea(lcpb), taf(a).
 %  Corso: 3049, Docente: RONDA Luca
-cattedra(3049, 8719, ltps, a) :- codice_corso(3049), matricola_docente(8719), laurea(ltps), taf(a).
+cattedra(3049, 8719, lcpb, a) :- codice_corso(3049), matricola_docente(8719), laurea(lcpb), taf(a).
 %  Corso: 5074, Docente: RONDA Luca
 cattedra(5074, 8719, lm6, a) :- codice_corso(5074), matricola_docente(8719), laurea(lm6), taf(a).
 %  Corso: 3044, Docente: RONDA Luca
-cattedra(3044, 8719, ltps, a) :- codice_corso(3044), matricola_docente(8719), laurea(ltps), taf(a).
+cattedra(3044, 8719, lcpb, a) :- codice_corso(3044), matricola_docente(8719), laurea(lcpb), taf(a).
 %  Corso: 3044, Docente: RONDA Luca
-cattedra(3044, 8719, ltps, a) :- codice_corso(3044), matricola_docente(8719), laurea(ltps), taf(a).
+cattedra(3044, 8719, lcpb, a) :- codice_corso(3044), matricola_docente(8719), laurea(lcpb), taf(a).
 %  Corso: 3019, Docente: RONDA Nicoletta
-cattedra(3019, 5487, ltsm, b) :- codice_corso(3019), matricola_docente(5487), laurea(ltsm), taf(b).
+cattedra(3019, 5487, lcpa, b) :- codice_corso(3019), matricola_docente(5487), laurea(lcpa), taf(b).
 %  Corso: 5005, Docente: ROSA CARLO
 cattedra(5005, 38886, lm, b) :- codice_corso(5005), matricola_docente(38886), laurea(lm), taf(b).
 %  Corso: 3052, Docente: ROSA CARLO
@@ -5886,7 +6115,7 @@ cattedra(5049, 205024, lm, nan) :- codice_corso(5049), matricola_docente(205024)
 %  Corso: 3014, Docente: ROTA Gualtiero
 cattedra(3014, 205024, lt, c) :- codice_corso(3014), matricola_docente(205024), laurea(lt), taf(c).
 %  Corso: 3040, Docente: ROTI Giovanni
-cattedra(3040, 19896, ltps, b) :- codice_corso(3040), matricola_docente(19896), laurea(ltps), taf(b).
+cattedra(3040, 19896, lcpb, b) :- codice_corso(3040), matricola_docente(19896), laurea(lcpb), taf(b).
 %  Corso: 5074, Docente: ROTI Giovanni
 cattedra(5074, 19896, lm6, b) :- codice_corso(5074), matricola_docente(19896), laurea(lm6), taf(b).
 %  Corso: 5045, Docente: ROTI Giovanni
@@ -5894,7 +6123,7 @@ cattedra(5045, 19896, lm, b) :- codice_corso(5045), matricola_docente(19896), la
 %  Corso: 5071, Docente: ROTOLI Bianca Maria
 cattedra(5071, 4420, lm, b) :- codice_corso(5071), matricola_docente(4420), laurea(lm), taf(b).
 %  Corso: 3067, Docente: ROTOLI Bianca Maria
-cattedra(3067, 4420, ltps, a) :- codice_corso(3067), matricola_docente(4420), laurea(ltps), taf(a).
+cattedra(3067, 4420, lcpb, a) :- codice_corso(3067), matricola_docente(4420), laurea(lcpb), taf(a).
 %  Corso: 5027, Docente: ROTOLI Bianca Maria
 cattedra(5027, 4420, lm6, b) :- codice_corso(5027), matricola_docente(4420), laurea(lm6), taf(b).
 %  Corso: 5026, Docente: ROTOLI Bianca Maria
@@ -5914,11 +6143,11 @@ cattedra(5027, 6536, lm6, a) :- codice_corso(5027), matricola_docente(6536), lau
 %  Corso: 5026, Docente: ROZZI Stefano
 cattedra(5026, 6536, lm6, a) :- codice_corso(5026), matricola_docente(6536), laurea(lm6), taf(a).
 %  Corso: 3071, Docente: ROZZI Stefano
-cattedra(3071, 6536, ltps, a) :- codice_corso(3071), matricola_docente(6536), laurea(ltps), taf(a).
+cattedra(3071, 6536, lt, a) :- codice_corso(3071), matricola_docente(6536), laurea(lt), taf(a).
 %  Corso: 5026, Docente: ROZZI Stefano
 cattedra(5026, 6536, lm6, b) :- codice_corso(5026), matricola_docente(6536), laurea(lm6), taf(b).
 %  Corso: 3040, Docente: RUBINI Patrizia
-cattedra(3040, 5793, ltps, b) :- codice_corso(3040), matricola_docente(5793), laurea(ltps), taf(b).
+cattedra(3040, 5793, lcpb, b) :- codice_corso(3040), matricola_docente(5793), laurea(lcpb), taf(b).
 %  Corso: 5055, Docente: RUOTOLO Roberta
 cattedra(5055, 7295, lm, b) :- codice_corso(5055), matricola_docente(7295), laurea(lm), taf(b).
 %  Corso: 3022, Docente: RUOTOLO Roberta
@@ -5936,11 +6165,11 @@ cattedra(5029, 4324, lm5, b) :- codice_corso(5029), matricola_docente(4324), lau
 %  Corso: 3020, Docente: SABBIONI Alberto
 cattedra(3020, 4324, lt, a) :- codice_corso(3020), matricola_docente(4324), laurea(lt), taf(a).
 %  Corso: 3068, Docente: SABBIONI Alberto
-cattedra(3068, 4324, lt, a) :- codice_corso(3068), matricola_docente(4324), laurea(lt), taf(a).
+cattedra(3068, 4324, lcpb, a) :- codice_corso(3068), matricola_docente(4324), laurea(lcpb), taf(a).
 %  Corso: 3017, Docente: SAGLIA Diego
 cattedra(3017, 5280, lt, d) :- codice_corso(3017), matricola_docente(5280), laurea(lt), taf(d).
 %  Corso: 3066, Docente: SAGLIA Diego
-cattedra(3066, 5280, lt, a) :- codice_corso(3066), matricola_docente(5280), laurea(lt), taf(a).
+cattedra(3066, 5280, lcpa, a) :- codice_corso(3066), matricola_docente(5280), laurea(lcpa), taf(a).
 %  Corso: 3017, Docente: SAGLIA Diego
 cattedra(3017, 5280, lt, b) :- codice_corso(3017), matricola_docente(5280), laurea(lt), taf(b).
 %  Corso: 5073, Docente: SAGLIA Diego
@@ -5948,13 +6177,13 @@ cattedra(5073, 5280, lm, b) :- codice_corso(5073), matricola_docente(5280), laur
 %  Corso: 5045, Docente: SALA Roberto
 cattedra(5045, 4605, lm, b) :- codice_corso(5045), matricola_docente(4605), laurea(lm), taf(b).
 %  Corso: 5050, Docente: SALA Roberto
-cattedra(5050, 4605, lmi, b) :- codice_corso(5050), matricola_docente(4605), laurea(lmi), taf(b).
+cattedra(5050, 4605, lcpc, b) :- codice_corso(5050), matricola_docente(4605), laurea(lcpc), taf(b).
 %  Corso: 5045, Docente: SALA Roberto
 cattedra(5045, 4605, lm, c) :- codice_corso(5045), matricola_docente(4605), laurea(lm), taf(c).
 %  Corso: 5026, Docente: SALA Roberto
 cattedra(5026, 4605, lm6, b) :- codice_corso(5026), matricola_docente(4605), laurea(lm6), taf(b).
 %  Corso: 3048, Docente: SALA Roberto
-cattedra(3048, 4605, ltps, c) :- codice_corso(3048), matricola_docente(4605), laurea(ltps), taf(c).
+cattedra(3048, 4605, lcpb, c) :- codice_corso(3048), matricola_docente(4605), laurea(lcpb), taf(c).
 %  Corso: 3060, Docente: SALARELLI Alberto
 cattedra(3060, 5231, lt, b) :- codice_corso(3060), matricola_docente(5231), laurea(lt), taf(b).
 %  Corso: 5048, Docente: SALARELLI Alberto
@@ -5988,13 +6217,13 @@ cattedra(5027, 11376, lm6, d) :- codice_corso(5027), matricola_docente(11376), l
 %  Corso: 5027, Docente: SALVATERRA TOFFOLI ANDREA
 cattedra(5027, 11376, lm6, f) :- codice_corso(5027), matricola_docente(11376), laurea(lm6), taf(f).
 %  Corso: 3063, Docente: SALVATERRA TOFFOLI ANDREA
-cattedra(3063, 11376, lt, b) :- codice_corso(3063), matricola_docente(11376), laurea(lt), taf(b).
+cattedra(3063, 11376, lcpb, b) :- codice_corso(3063), matricola_docente(11376), laurea(lcpb), taf(b).
 %  Corso: 5027, Docente: SALVATERRA TOFFOLI ANDREA
 cattedra(5027, 11376, lm6, f) :- codice_corso(5027), matricola_docente(11376), laurea(lm6), taf(f).
 %  Corso: 5027, Docente: SALVATERRA TOFFOLI ANDREA
 cattedra(5027, 11376, lm6, b) :- codice_corso(5027), matricola_docente(11376), laurea(lm6), taf(b).
 %  Corso: 3063, Docente: SALVATERRA TOFFOLI ANDREA
-cattedra(3063, 11376, lt, b) :- codice_corso(3063), matricola_docente(11376), laurea(lt), taf(b).
+cattedra(3063, 11376, lcpb, b) :- codice_corso(3063), matricola_docente(11376), laurea(lcpb), taf(b).
 %  Corso: 5027, Docente: SALVATERRA TOFFOLI ANDREA
 cattedra(5027, 11376, lm6, f) :- codice_corso(5027), matricola_docente(11376), laurea(lm6), taf(f).
 %  Corso: 5072, Docente: SALVIOLI MARIANI Emma
@@ -6024,11 +6253,11 @@ cattedra(3000, 6762, lt, a) :- codice_corso(3000), matricola_docente(6762), laur
 %  Corso: 3007, Docente: SARACCO Alberto
 cattedra(3007, 8887, lt, a) :- codice_corso(3007), matricola_docente(8887), laurea(lt), taf(a).
 %  Corso: 3006, Docente: SARLI Annavittoria
-cattedra(3006, 39372, ltss, d) :- codice_corso(3006), matricola_docente(39372), laurea(ltss), taf(d).
+cattedra(3006, 39372, lcpa, d) :- codice_corso(3006), matricola_docente(39372), laurea(lcpa), taf(d).
 %  Corso: 3006, Docente: SARLI Annavittoria
-cattedra(3006, 39372, ltss, d) :- codice_corso(3006), matricola_docente(39372), laurea(ltss), taf(d).
+cattedra(3006, 39372, lcpa, d) :- codice_corso(3006), matricola_docente(39372), laurea(lcpa), taf(d).
 %  Corso: 3006, Docente: SARLI Annavittoria
-cattedra(3006, 39372, ltss, b) :- codice_corso(3006), matricola_docente(39372), laurea(ltss), taf(b).
+cattedra(3006, 39372, lcpa, b) :- codice_corso(3006), matricola_docente(39372), laurea(lcpa), taf(b).
 %  Corso: 3069, Docente: SARTORI Andrea
 cattedra(3069, 6537, lt, a) :- codice_corso(3069), matricola_docente(6537), laurea(lt), taf(a).
 %  Corso: 5000, Docente: SARTORI Andrea
@@ -6072,17 +6301,17 @@ cattedra(5075, 21794, lm, c) :- codice_corso(5075), matricola_docente(21794), la
 %  Corso: 3057, Docente: SCIANCALEPORE CORRADO
 cattedra(3057, 21794, lt, c) :- codice_corso(3057), matricola_docente(21794), laurea(lt), taf(c).
 %  Corso: 3006, Docente: SCIVOLETTO Chiara
-cattedra(3006, 6913, ltss, b) :- codice_corso(3006), matricola_docente(6913), laurea(ltss), taf(b).
+cattedra(3006, 6913, lcpa, b) :- codice_corso(3006), matricola_docente(6913), laurea(lcpa), taf(b).
 %  Corso: 3006, Docente: SCIVOLETTO Chiara
-cattedra(3006, 6913, ltss, c) :- codice_corso(3006), matricola_docente(6913), laurea(ltss), taf(c).
+cattedra(3006, 6913, lcpa, c) :- codice_corso(3006), matricola_docente(6913), laurea(lcpa), taf(c).
 %  Corso: 5010, Docente: SCIVOLETTO Chiara
-cattedra(5010, 6913, lmss, d) :- codice_corso(5010), matricola_docente(6913), laurea(lmss), taf(d).
+cattedra(5010, 6913, lcpb, d) :- codice_corso(5010), matricola_docente(6913), laurea(lcpb), taf(d).
 %  Corso: 5010, Docente: SCIVOLETTO Chiara
-cattedra(5010, 6913, lmss, b) :- codice_corso(5010), matricola_docente(6913), laurea(lmss), taf(b).
+cattedra(5010, 6913, lcpb, b) :- codice_corso(5010), matricola_docente(6913), laurea(lcpb), taf(b).
 %  Corso: 3067, Docente: SCIVOLETTO Chiara
-cattedra(3067, 6913, ltps, b) :- codice_corso(3067), matricola_docente(6913), laurea(ltps), taf(b).
+cattedra(3067, 6913, lcpb, b) :- codice_corso(3067), matricola_docente(6913), laurea(lcpb), taf(b).
 %  Corso: 3019, Docente: SEBASTIANI MARCO
-cattedra(3019, 45232, ltsm, c) :- codice_corso(3019), matricola_docente(45232), laurea(ltsm), taf(c).
+cattedra(3019, 45232, lcpa, c) :- codice_corso(3019), matricola_docente(45232), laurea(lcpa), taf(c).
 %  Corso: 5026, Docente: SEBASTIANI MARCO
 cattedra(5026, 45232, lm6, b) :- codice_corso(5026), matricola_docente(45232), laurea(lm6), taf(b).
 %  Corso: 5074, Docente: SEBASTIANI MARCO
@@ -6098,25 +6327,25 @@ cattedra(3007, 5663, lt, b) :- codice_corso(3007), matricola_docente(5663), laur
 %  Corso: 5018, Docente: SEGALINI Andrea
 cattedra(5018, 5663, lm, b) :- codice_corso(5018), matricola_docente(5663), laurea(lm), taf(b).
 %  Corso: 3048, Docente: SELIS Luisella
-cattedra(3048, 4607, ltps, f) :- codice_corso(3048), matricola_docente(4607), laurea(ltps), taf(f).
+cattedra(3048, 4607, lcpb, f) :- codice_corso(3048), matricola_docente(4607), laurea(lcpb), taf(f).
 %  Corso: 3048, Docente: SELIS Luisella
-cattedra(3048, 4607, ltps, b) :- codice_corso(3048), matricola_docente(4607), laurea(ltps), taf(b).
+cattedra(3048, 4607, lcpb, b) :- codice_corso(3048), matricola_docente(4607), laurea(lcpb), taf(b).
 %  Corso: 5010, Docente: SELMI Giulia
-cattedra(5010, 35727, lmss, c) :- codice_corso(5010), matricola_docente(35727), laurea(lmss), taf(c).
+cattedra(5010, 35727, lcpb, c) :- codice_corso(5010), matricola_docente(35727), laurea(lcpb), taf(c).
 %  Corso: 3042, Docente: SELMI Giulia
-cattedra(3042, 35727, ltps, a) :- codice_corso(3042), matricola_docente(35727), laurea(ltps), taf(a).
+cattedra(3042, 35727, lcpb, a) :- codice_corso(3042), matricola_docente(35727), laurea(lcpb), taf(a).
 %  Corso: 5010, Docente: SELMI Giulia
-cattedra(5010, 35727, lmss, c) :- codice_corso(5010), matricola_docente(35727), laurea(lmss), taf(c).
+cattedra(5010, 35727, lcpb, c) :- codice_corso(5010), matricola_docente(35727), laurea(lcpb), taf(c).
 %  Corso: 5010, Docente: SELMI Giulia
-cattedra(5010, 35727, lmss, c) :- codice_corso(5010), matricola_docente(35727), laurea(lmss), taf(c).
+cattedra(5010, 35727, lcpb, c) :- codice_corso(5010), matricola_docente(35727), laurea(lcpb), taf(c).
 %  Corso: 3006, Docente: SEMPREBON Michela
-cattedra(3006, 33687, ltss, d) :- codice_corso(3006), matricola_docente(33687), laurea(ltss), taf(d).
+cattedra(3006, 33687, lcpa, d) :- codice_corso(3006), matricola_docente(33687), laurea(lcpa), taf(d).
 %  Corso: 5010, Docente: SEMPREBON Michela
-cattedra(5010, 33687, lmss, c) :- codice_corso(5010), matricola_docente(33687), laurea(lmss), taf(c).
+cattedra(5010, 33687, lcpb, c) :- codice_corso(5010), matricola_docente(33687), laurea(lcpb), taf(c).
 %  Corso: 3032, Docente: SEMPREBON Michela
 cattedra(3032, 33687, lt, b) :- codice_corso(3032), matricola_docente(33687), laurea(lt), taf(b).
 %  Corso: 3067, Docente: SEMPREBON Michela
-cattedra(3067, 33687, ltps, a) :- codice_corso(3067), matricola_docente(33687), laurea(ltps), taf(a).
+cattedra(3067, 33687, lcpb, a) :- codice_corso(3067), matricola_docente(33687), laurea(lcpb), taf(a).
 %  Corso: 3050, Docente: SERENA Paolo
 cattedra(3050, 6228, lt, b) :- codice_corso(3050), matricola_docente(6228), laurea(lt), taf(b).
 %  Corso: 5052, Docente: SERENA Paolo
@@ -6142,17 +6371,17 @@ cattedra(5074, 9912, lm6, b) :- codice_corso(5074), matricola_docente(9912), lau
 %  Corso: 5027, Docente: SILVA Mario
 cattedra(5027, 9912, lm6, b) :- codice_corso(5027), matricola_docente(9912), laurea(lm6), taf(b).
 %  Corso: 3071, Docente: SILVA Mario
-cattedra(3071, 9912, ltps, c) :- codice_corso(3071), matricola_docente(9912), laurea(ltps), taf(c).
+cattedra(3071, 9912, lt, c) :- codice_corso(3071), matricola_docente(9912), laurea(lt), taf(c).
 %  Corso: 5008, Docente: SILVA Claudia
 cattedra(5008, 4035, lm5, b) :- codice_corso(5008), matricola_docente(4035), laurea(lm5), taf(b).
 %  Corso: 3048, Docente: SILVA Mario
-cattedra(3048, 9912, ltps, b) :- codice_corso(3048), matricola_docente(9912), laurea(ltps), taf(b).
+cattedra(3048, 9912, lcpb, b) :- codice_corso(3048), matricola_docente(9912), laurea(lcpb), taf(b).
 %  Corso: 5075, Docente: SILVESTRI Marco
 cattedra(5075, 6107, lm, b) :- codice_corso(5075), matricola_docente(6107), laurea(lm), taf(b).
 %  Corso: 5074, Docente: SIMONE Luciano
 cattedra(5074, 11069, lm6, a) :- codice_corso(5074), matricola_docente(11069), laurea(lm6), taf(a).
 %  Corso: 3047, Docente: SIMONE Luciano
-cattedra(3047, 11069, ltps, a) :- codice_corso(3047), matricola_docente(11069), laurea(ltps), taf(a).
+cattedra(3047, 11069, lcpb, a) :- codice_corso(3047), matricola_docente(11069), laurea(lcpb), taf(a).
 %  Corso: 5074, Docente: SIMONE Luciano
 cattedra(5074, 11069, lm6, b) :- codice_corso(5074), matricola_docente(11069), laurea(lm6), taf(b).
 %  Corso: 5066, Docente: SIRICO Alice
@@ -6174,9 +6403,9 @@ cattedra(5005, 11071, lm, b) :- codice_corso(5005), matricola_docente(11071), la
 %  Corso: 5000, Docente: SOGARI GIOVANNI
 cattedra(5000, 12922, lm, b) :- codice_corso(5000), matricola_docente(12922), laurea(lm), taf(b).
 %  Corso: 3064, Docente: SOGARI GIOVANNI
-cattedra(3064, 12922, lt, a) :- codice_corso(3064), matricola_docente(12922), laurea(lt), taf(a).
+cattedra(3064, 12922, lcpb, a) :- codice_corso(3064), matricola_docente(12922), laurea(lcpb), taf(a).
 %  Corso: 3064, Docente: SOGARI GIOVANNI
-cattedra(3064, 12922, lt, f) :- codice_corso(3064), matricola_docente(12922), laurea(lt), taf(f).
+cattedra(3064, 12922, lcpb, f) :- codice_corso(3064), matricola_docente(12922), laurea(lcpb), taf(f).
 %  Corso: 5077, Docente: SOGARI GIOVANNI
 cattedra(5077, 12922, lm, c) :- codice_corso(5077), matricola_docente(12922), laurea(lm), taf(c).
 %  Corso: 3011, Docente: SOLARI Federico
@@ -6210,7 +6439,7 @@ cattedra(3062, 35825, lt, b) :- codice_corso(3062), matricola_docente(35825), la
 %  Corso: 3062, Docente: SPOLTORE Donato
 cattedra(3062, 35825, lt, a) :- codice_corso(3062), matricola_docente(35825), laurea(lt), taf(a).
 %  Corso: 3066, Docente: SPRUGNOLI Rachele
-cattedra(3066, 35356, lt, c) :- codice_corso(3066), matricola_docente(35356), laurea(lt), taf(c).
+cattedra(3066, 35356, lcpa, c) :- codice_corso(3066), matricola_docente(35356), laurea(lcpa), taf(c).
 %  Corso: 3013, Docente: STAITI ANDREA SEBASTIANO
 cattedra(3013, 11624, lt, c) :- codice_corso(3013), matricola_docente(11624), laurea(lt), taf(c).
 %  Corso: 5025, Docente: STAITI ANDREA SEBASTIANO
@@ -6224,9 +6453,9 @@ cattedra(3010, 26035, lt, d) :- codice_corso(3010), matricola_docente(26035), la
 %  Corso: 3057, Docente: STEFANINI ROBERTA
 cattedra(3057, 26035, lt, c) :- codice_corso(3057), matricola_docente(26035), laurea(lt), taf(c).
 %  Corso: 3064, Docente: STOCCO GIORGIA
-cattedra(3064, 26644, lt, b) :- codice_corso(3064), matricola_docente(26644), laurea(lt), taf(b).
+cattedra(3064, 26644, lcpb, b) :- codice_corso(3064), matricola_docente(26644), laurea(lcpb), taf(b).
 %  Corso: 3064, Docente: STOCCO GIORGIA
-cattedra(3064, 26644, lt, f) :- codice_corso(3064), matricola_docente(26644), laurea(lt), taf(f).
+cattedra(3064, 26644, lcpb, f) :- codice_corso(3064), matricola_docente(26644), laurea(lcpb), taf(f).
 %  Corso: 3069, Docente: STOCCO GIORGIA
 cattedra(3069, 26644, lt, b) :- codice_corso(3069), matricola_docente(26644), laurea(lt), taf(b).
 %  Corso: 5045, Docente: STORTI Paola
@@ -6234,33 +6463,33 @@ cattedra(5045, 9980, lm, b) :- codice_corso(5045), matricola_docente(9980), laur
 %  Corso: 3029, Docente: STORTI Fabrizio
 cattedra(3029, 10307, lt, b) :- codice_corso(3029), matricola_docente(10307), laurea(lt), taf(b).
 %  Corso: 3049, Docente: STORTI Paola
-cattedra(3049, 9980, ltps, b) :- codice_corso(3049), matricola_docente(9980), laurea(ltps), taf(b).
+cattedra(3049, 9980, lcpb, b) :- codice_corso(3049), matricola_docente(9980), laurea(lcpb), taf(b).
 %  Corso: 5026, Docente: STREET Maria Elisabeth
 cattedra(5026, 5501, lm6, f) :- codice_corso(5026), matricola_docente(5501), laurea(lm6), taf(f).
 %  Corso: 5050, Docente: STREET Maria Elisabeth
-cattedra(5050, 5501, lmi, b) :- codice_corso(5050), matricola_docente(5501), laurea(lmi), taf(b).
+cattedra(5050, 5501, lcpc, b) :- codice_corso(5050), matricola_docente(5501), laurea(lcpc), taf(b).
 %  Corso: 3046, Docente: STREET Maria Elisabeth
-cattedra(3046, 5501, ltps, f) :- codice_corso(3046), matricola_docente(5501), laurea(ltps), taf(f).
+cattedra(3046, 5501, lcpb, f) :- codice_corso(3046), matricola_docente(5501), laurea(lcpb), taf(f).
 %  Corso: 3068, Docente: SUMMER Andrea
-cattedra(3068, 5537, lt, b) :- codice_corso(3068), matricola_docente(5537), laurea(lt), taf(b).
+cattedra(3068, 5537, lcpb, b) :- codice_corso(3068), matricola_docente(5537), laurea(lcpb), taf(b).
 %  Corso: 5029, Docente: SUMMER Andrea
 cattedra(5029, 5537, lm5, b) :- codice_corso(5029), matricola_docente(5537), laurea(lm5), taf(b).
 %  Corso: 3020, Docente: SUMMER Andrea
 cattedra(3020, 5537, lt, d) :- codice_corso(3020), matricola_docente(5537), laurea(lt), taf(d).
 %  Corso: 3044, Docente: SVERZELLATI Nicola
-cattedra(3044, 156573, ltps, b) :- codice_corso(3044), matricola_docente(156573), laurea(ltps), taf(b).
+cattedra(3044, 156573, lcpb, b) :- codice_corso(3044), matricola_docente(156573), laurea(lcpb), taf(b).
 %  Corso: 5026, Docente: SVERZELLATI Nicola
 cattedra(5026, 156573, lm6, b) :- codice_corso(5026), matricola_docente(156573), laurea(lm6), taf(b).
 %  Corso: 5026, Docente: SVERZELLATI Nicola
 cattedra(5026, 156573, lm6, f) :- codice_corso(5026), matricola_docente(156573), laurea(lm6), taf(f).
 %  Corso: 3048, Docente: SVERZELLATI Nicola
-cattedra(3048, 156573, ltps, b) :- codice_corso(3048), matricola_docente(156573), laurea(ltps), taf(b).
+cattedra(3048, 156573, lcpb, b) :- codice_corso(3048), matricola_docente(156573), laurea(lcpb), taf(b).
 %  Corso: 3048, Docente: SVERZELLATI Nicola
-cattedra(3048, 156573, ltps, b) :- codice_corso(3048), matricola_docente(156573), laurea(ltps), taf(b).
+cattedra(3048, 156573, lcpb, b) :- codice_corso(3048), matricola_docente(156573), laurea(lcpb), taf(b).
 %  Corso: 3048, Docente: SVERZELLATI Nicola
-cattedra(3048, 156573, ltps, b) :- codice_corso(3048), matricola_docente(156573), laurea(ltps), taf(b).
+cattedra(3048, 156573, lcpb, b) :- codice_corso(3048), matricola_docente(156573), laurea(lcpb), taf(b).
 %  Corso: 3048, Docente: SVERZELLATI Nicola
-cattedra(3048, 156573, ltps, b) :- codice_corso(3048), matricola_docente(156573), laurea(ltps), taf(b).
+cattedra(3048, 156573, lcpb, b) :- codice_corso(3048), matricola_docente(156573), laurea(lcpb), taf(b).
 %  Corso: 5074, Docente: SVERZELLATI Nicola
 cattedra(5074, 156573, lm6, b) :- codice_corso(5074), matricola_docente(156573), laurea(lm6), taf(b).
 %  Corso: 3020, Docente: TADDEI Simone
@@ -6268,13 +6497,13 @@ cattedra(3020, 5116, lt, b) :- codice_corso(3020), matricola_docente(5116), laur
 %  Corso: 5029, Docente: TADDEI Simone
 cattedra(5029, 5116, lm5, b) :- codice_corso(5029), matricola_docente(5116), laurea(lm5), taf(b).
 %  Corso: 3040, Docente: TAGLIAFERRI Sara
-cattedra(3040, 7279, ltps, a) :- codice_corso(3040), matricola_docente(7279), laurea(ltps), taf(a).
+cattedra(3040, 7279, lcpb, a) :- codice_corso(3040), matricola_docente(7279), laurea(lcpb), taf(a).
 %  Corso: 5026, Docente: TAGLIAFERRI Sara
 cattedra(5026, 7279, lm6, a) :- codice_corso(5026), matricola_docente(7279), laurea(lm6), taf(a).
 %  Corso: 3063, Docente: TAGLIAFERRI Sara
-cattedra(3063, 7279, lt, a) :- codice_corso(3063), matricola_docente(7279), laurea(lt), taf(a).
+cattedra(3063, 7279, lcpb, a) :- codice_corso(3063), matricola_docente(7279), laurea(lcpb), taf(a).
 %  Corso: 3071, Docente: TAGLIAFERRI Sara
-cattedra(3071, 7279, ltps, a) :- codice_corso(3071), matricola_docente(7279), laurea(ltps), taf(a).
+cattedra(3071, 7279, lt, a) :- codice_corso(3071), matricola_docente(7279), laurea(lt), taf(a).
 %  Corso: 5066, Docente: TAGLIAVINI Giulio
 cattedra(5066, 4253, lm, c) :- codice_corso(5066), matricola_docente(4253), laurea(lm), taf(c).
 %  Corso: 3004, Docente: TAGLIAVINI Giulio
@@ -6304,25 +6533,25 @@ cattedra(5011, 5664, lm, b) :- codice_corso(5011), matricola_docente(5664), laur
 %  Corso: 5064, Docente: TEDESCHI Tullia
 cattedra(5064, 6528, lm, b) :- codice_corso(5064), matricola_docente(6528), laurea(lm), taf(b).
 %  Corso: 3064, Docente: TEDESCHI Tullia
-cattedra(3064, 6528, lt, f) :- codice_corso(3064), matricola_docente(6528), laurea(lt), taf(f).
+cattedra(3064, 6528, lcpb, f) :- codice_corso(3064), matricola_docente(6528), laurea(lcpb), taf(f).
 %  Corso: 5000, Docente: TEDESCHI Tullia
 cattedra(5000, 6528, lm, b) :- codice_corso(5000), matricola_docente(6528), laurea(lm), taf(b).
 %  Corso: 3064, Docente: TEDESCHI Tullia
-cattedra(3064, 6528, lt, c) :- codice_corso(3064), matricola_docente(6528), laurea(lt), taf(c).
+cattedra(3064, 6528, lcpb, c) :- codice_corso(3064), matricola_docente(6528), laurea(lcpb), taf(c).
 %  Corso: 5000, Docente: TEDESCHI Tullia
 cattedra(5000, 6528, lm, b) :- codice_corso(5000), matricola_docente(6528), laurea(lm), taf(b).
 %  Corso: 3049, Docente: TEDESCO DARIO
-cattedra(3049, 40505, ltps, b) :- codice_corso(3049), matricola_docente(40505), laurea(ltps), taf(b).
+cattedra(3049, 40505, lcpb, b) :- codice_corso(3049), matricola_docente(40505), laurea(lcpb), taf(b).
 %  Corso: 3063, Docente: TEDESCO DARIO
-cattedra(3063, 40505, lt, b) :- codice_corso(3063), matricola_docente(40505), laurea(lt), taf(b).
+cattedra(3063, 40505, lcpb, b) :- codice_corso(3063), matricola_docente(40505), laurea(lcpb), taf(b).
 %  Corso: 3040, Docente: TEDESCO DARIO
-cattedra(3040, 40505, ltps, a) :- codice_corso(3040), matricola_docente(40505), laurea(ltps), taf(a).
+cattedra(3040, 40505, lcpb, a) :- codice_corso(3040), matricola_docente(40505), laurea(lcpb), taf(a).
 %  Corso: 5074, Docente: TEDESCO DARIO
 cattedra(5074, 40505, lm6, c) :- codice_corso(5074), matricola_docente(40505), laurea(lm6), taf(c).
 %  Corso: 3067, Docente: TEDESCO DARIO
-cattedra(3067, 40505, ltps, b) :- codice_corso(3067), matricola_docente(40505), laurea(ltps), taf(b).
+cattedra(3067, 40505, lcpb, b) :- codice_corso(3067), matricola_docente(40505), laurea(lcpb), taf(b).
 %  Corso: 3049, Docente: TEDESCO DARIO
-cattedra(3049, 40505, ltps, b) :- codice_corso(3049), matricola_docente(40505), laurea(ltps), taf(b).
+cattedra(3049, 40505, lcpb, b) :- codice_corso(3049), matricola_docente(40505), laurea(lcpb), taf(b).
 %  Corso: 3024, Docente: TEGONI Matteo
 cattedra(3024, 6100, lt, a) :- codice_corso(3024), matricola_docente(6100), laurea(lt), taf(a).
 %  Corso: 3024, Docente: TEGONI Matteo
@@ -6358,7 +6587,7 @@ cattedra(5003, 206793, lm, b) :- codice_corso(5003), matricola_docente(206793), 
 %  Corso: 5026, Docente: TICINESI Andrea
 cattedra(5026, 10142, lm6, b) :- codice_corso(5026), matricola_docente(10142), laurea(lm6), taf(b).
 %  Corso: 3019, Docente: TICINESI Andrea
-cattedra(3019, 10142, ltsm, b) :- codice_corso(3019), matricola_docente(10142), laurea(ltsm), taf(b).
+cattedra(3019, 10142, lcpa, b) :- codice_corso(3019), matricola_docente(10142), laurea(lcpa), taf(b).
 %  Corso: 5026, Docente: TICINESI Andrea
 cattedra(5026, 10142, lm6, f) :- codice_corso(5026), matricola_docente(10142), laurea(lm6), taf(f).
 %  Corso: 3065, Docente: TICINESI Andrea
@@ -6378,7 +6607,7 @@ cattedra(5072, 5730, lm, c) :- codice_corso(5072), matricola_docente(5730), laur
 %  Corso: 3065, Docente: TISEO Marcello
 cattedra(3065, 10091, lt, b) :- codice_corso(3065), matricola_docente(10091), laurea(lt), taf(b).
 %  Corso: 3047, Docente: TISEO Marcello
-cattedra(3047, 10091, ltps, b) :- codice_corso(3047), matricola_docente(10091), laurea(ltps), taf(b).
+cattedra(3047, 10091, lcpb, b) :- codice_corso(3047), matricola_docente(10091), laurea(lcpb), taf(b).
 %  Corso: 5026, Docente: TISEO Marcello
 cattedra(5026, 10091, lm6, f) :- codice_corso(5026), matricola_docente(10091), laurea(lm6), taf(f).
 %  Corso: 5026, Docente: TISEO Marcello
@@ -6386,11 +6615,11 @@ cattedra(5026, 10091, lm6, b) :- codice_corso(5026), matricola_docente(10091), l
 %  Corso: 5074, Docente: TISEO Marcello
 cattedra(5074, 10091, lm6, b) :- codice_corso(5074), matricola_docente(10091), laurea(lm6), taf(b).
 %  Corso: 3047, Docente: TOGNOLINI Massimiliano
-cattedra(3047, 5808, ltps, a) :- codice_corso(3047), matricola_docente(5808), laurea(ltps), taf(a).
+cattedra(3047, 5808, lcpb, a) :- codice_corso(3047), matricola_docente(5808), laurea(lcpb), taf(a).
 %  Corso: 5009, Docente: TOGNOLINI Massimiliano
 cattedra(5009, 5808, lm5, b) :- codice_corso(5009), matricola_docente(5808), laurea(lm5), taf(b).
 %  Corso: 3048, Docente: TOGNOLINI Massimiliano
-cattedra(3048, 5808, ltps, a) :- codice_corso(3048), matricola_docente(5808), laurea(ltps), taf(a).
+cattedra(3048, 5808, lcpb, a) :- codice_corso(3048), matricola_docente(5808), laurea(lcpb), taf(a).
 %  Corso: 5015, Docente: TOMAIUOLO Michele
 cattedra(5015, 6085, lm, b) :- codice_corso(5015), matricola_docente(6085), laurea(lm), taf(b).
 %  Corso: 3010, Docente: TOMAIUOLO Michele
@@ -6408,33 +6637,33 @@ cattedra(3030, 5252, lt, b) :- codice_corso(3030), matricola_docente(5252), laur
 %  Corso: 5074, Docente: TONNA Matteo
 cattedra(5074, 156616, lm6, b) :- codice_corso(5074), matricola_docente(156616), laurea(lm6), taf(b).
 %  Corso: 3067, Docente: TONNA Matteo
-cattedra(3067, 156616, ltps, b) :- codice_corso(3067), matricola_docente(156616), laurea(ltps), taf(b).
+cattedra(3067, 156616, lcpb, b) :- codice_corso(3067), matricola_docente(156616), laurea(lcpb), taf(b).
 %  Corso: 3067, Docente: TONNA Matteo
-cattedra(3067, 156616, ltps, b) :- codice_corso(3067), matricola_docente(156616), laurea(ltps), taf(b).
+cattedra(3067, 156616, lcpb, b) :- codice_corso(3067), matricola_docente(156616), laurea(lcpb), taf(b).
 %  Corso: 3006, Docente: TONNA Matteo
-cattedra(3006, 156616, ltss, b) :- codice_corso(3006), matricola_docente(156616), laurea(ltss), taf(b).
+cattedra(3006, 156616, lcpa, b) :- codice_corso(3006), matricola_docente(156616), laurea(lcpa), taf(b).
 %  Corso: 5050, Docente: TONNA Matteo
-cattedra(5050, 156616, lmi, b) :- codice_corso(5050), matricola_docente(156616), laurea(lmi), taf(b).
+cattedra(5050, 156616, lcpc, b) :- codice_corso(5050), matricola_docente(156616), laurea(lcpc), taf(b).
 %  Corso: 3042, Docente: TORELLI Paola
-cattedra(3042, 6600, ltps, f) :- codice_corso(3042), matricola_docente(6600), laurea(ltps), taf(f).
+cattedra(3042, 6600, lcpb, f) :- codice_corso(3042), matricola_docente(6600), laurea(lcpb), taf(f).
 %  Corso: 5074, Docente: TORELLI Paola
 cattedra(5074, 6600, lm6, b) :- codice_corso(5074), matricola_docente(6600), laurea(lm6), taf(b).
 %  Corso: 3067, Docente: TORELLI Paola
-cattedra(3067, 6600, ltps, b) :- codice_corso(3067), matricola_docente(6600), laurea(ltps), taf(b).
+cattedra(3067, 6600, lcpb, b) :- codice_corso(3067), matricola_docente(6600), laurea(lcpb), taf(b).
 %  Corso: 5027, Docente: TORELLI Paola
 cattedra(5027, 6600, lm6, b) :- codice_corso(5027), matricola_docente(6600), laurea(lm6), taf(b).
 %  Corso: 3023, Docente: TORELLI Anna
 cattedra(3023, 4297, lt, a) :- codice_corso(3023), matricola_docente(4297), laurea(lt), taf(a).
 %  Corso: 3046, Docente: TORELLI Paola
-cattedra(3046, 6600, ltps, b) :- codice_corso(3046), matricola_docente(6600), laurea(ltps), taf(b).
+cattedra(3046, 6600, lcpb, b) :- codice_corso(3046), matricola_docente(6600), laurea(lcpb), taf(b).
 %  Corso: 3040, Docente: TORELLI Paola
-cattedra(3040, 6600, ltps, b) :- codice_corso(3040), matricola_docente(6600), laurea(ltps), taf(b).
+cattedra(3040, 6600, lcpb, b) :- codice_corso(3040), matricola_docente(6600), laurea(lcpb), taf(b).
 %  Corso: 5027, Docente: TORELLI Paola
 cattedra(5027, 6600, lm6, f) :- codice_corso(5027), matricola_docente(6600), laurea(lm6), taf(f).
 %  Corso: 995, Docente: TORRETTA Paola
 cattedra(995, 6406, lm5, a) :- codice_corso(995), matricola_docente(6406), laurea(lm5), taf(a).
 %  Corso: 3006, Docente: TORRETTA Paola
-cattedra(3006, 6406, ltss, a) :- codice_corso(3006), matricola_docente(6406), laurea(ltss), taf(a).
+cattedra(3006, 6406, lcpa, a) :- codice_corso(3006), matricola_docente(6406), laurea(lcpa), taf(a).
 %  Corso: 5025, Docente: TORZA ALESSANDRO
 cattedra(5025, 33346, lm, b) :- codice_corso(5025), matricola_docente(33346), laurea(lm), taf(b).
 %  Corso: 3013, Docente: TORZA ALESSANDRO
@@ -6456,7 +6685,7 @@ cattedra(5078, 25946, lm, b) :- codice_corso(5078), matricola_docente(25946), la
 %  Corso: 5046, Docente: TOSI CAMBINI SABRINA
 cattedra(5046, 25946, lm, c) :- codice_corso(5046), matricola_docente(25946), laurea(lm), taf(c).
 %  Corso: 3041, Docente: TOSI CAMBINI SABRINA
-cattedra(3041, 25946, ltps, a) :- codice_corso(3041), matricola_docente(25946), laurea(ltps), taf(a).
+cattedra(3041, 25946, lcpb, a) :- codice_corso(3041), matricola_docente(25946), laurea(lcpb), taf(a).
 %  Corso: 3060, Docente: TOSI CAMBINI SABRINA
 cattedra(3060, 25946, lt, a) :- codice_corso(3060), matricola_docente(25946), laurea(lt), taf(a).
 %  Corso: 3017, Docente: TOSI CAMBINI SABRINA
@@ -6494,7 +6723,7 @@ cattedra(3050, 10960, lt, b) :- codice_corso(3050), matricola_docente(10960), la
 %  Corso: 3013, Docente: UMILTA' Maria Alessandra
 cattedra(3013, 6096, lt, c) :- codice_corso(3013), matricola_docente(6096), laurea(lt), taf(c).
 %  Corso: 3046, Docente: UMILTA' Maria Alessandra
-cattedra(3046, 6096, ltps, a) :- codice_corso(3046), matricola_docente(6096), laurea(ltps), taf(a).
+cattedra(3046, 6096, lcpb, a) :- codice_corso(3046), matricola_docente(6096), laurea(lcpb), taf(a).
 %  Corso: 5009, Docente: VACONDIO Federica
 cattedra(5009, 5886, lm5, b) :- codice_corso(5009), matricola_docente(5886), laurea(lm5), taf(b).
 %  Corso: 5009, Docente: VACONDIO Federica
@@ -6514,15 +6743,15 @@ cattedra(995, 5515, lm5, d) :- codice_corso(995), matricola_docente(5515), laure
 %  Corso: 5026, Docente: VAIENTI Enrico
 cattedra(5026, 4536, lm6, b) :- codice_corso(5026), matricola_docente(4536), laurea(lm6), taf(b).
 %  Corso: 3042, Docente: VAIENTI Enrico
-cattedra(3042, 4536, ltps, f) :- codice_corso(3042), matricola_docente(4536), laurea(ltps), taf(f).
+cattedra(3042, 4536, lcpb, f) :- codice_corso(3042), matricola_docente(4536), laurea(lcpb), taf(f).
 %  Corso: 3042, Docente: VAIENTI Enrico
-cattedra(3042, 4536, ltps, b) :- codice_corso(3042), matricola_docente(4536), laurea(ltps), taf(b).
+cattedra(3042, 4536, lcpb, b) :- codice_corso(3042), matricola_docente(4536), laurea(lcpb), taf(b).
 %  Corso: 5010, Docente: VALENTI Veronica
-cattedra(5010, 7031, lmss, c) :- codice_corso(5010), matricola_docente(7031), laurea(lmss), taf(c).
+cattedra(5010, 7031, lcpb, c) :- codice_corso(5010), matricola_docente(7031), laurea(lcpb), taf(c).
 %  Corso: 3032, Docente: VALENTI Veronica
 cattedra(3032, 7031, lt, a) :- codice_corso(3032), matricola_docente(7031), laurea(lt), taf(a).
 %  Corso: 3006, Docente: VALENTI Veronica
-cattedra(3006, 7031, ltss, b) :- codice_corso(3006), matricola_docente(7031), laurea(ltss), taf(b).
+cattedra(3006, 7031, lcpa, b) :- codice_corso(3006), matricola_docente(7031), laurea(lcpa), taf(b).
 %  Corso: 3017, Docente: VALENTI Simonetta Anna
 cattedra(3017, 11339, lt, b) :- codice_corso(3017), matricola_docente(11339), laurea(lt), taf(b).
 %  Corso: 3017, Docente: VALENTI Simonetta Anna
@@ -6576,9 +6805,9 @@ cattedra(3014, 7138, lt, a) :- codice_corso(3014), matricola_docente(7138), laur
 %  Corso: 5078, Docente: VAROTTI Carlo
 cattedra(5078, 7138, lm, c) :- codice_corso(5078), matricola_docente(7138), laurea(lm), taf(c).
 %  Corso: 3064, Docente: VARRÀ MARIA OLGA
-cattedra(3064, 22324, lt, f) :- codice_corso(3064), matricola_docente(22324), laurea(lt), taf(f).
+cattedra(3064, 22324, lcpb, f) :- codice_corso(3064), matricola_docente(22324), laurea(lcpb), taf(f).
 %  Corso: 3064, Docente: VARRÀ MARIA OLGA
-cattedra(3064, 22324, lt, b) :- codice_corso(3064), matricola_docente(22324), laurea(lt), taf(b).
+cattedra(3064, 22324, lcpb, b) :- codice_corso(3064), matricola_docente(22324), laurea(lcpb), taf(b).
 %  Corso: 995, Docente: VASTA Stefania
 cattedra(995, 5474, lm5, b) :- codice_corso(995), matricola_docente(5474), laurea(lm5), taf(b).
 %  Corso: 995, Docente: VASTA Stefania
@@ -6600,7 +6829,7 @@ cattedra(5053, 9709, lm, b) :- codice_corso(5053), matricola_docente(9709), laur
 %  Corso: 5074, Docente: VENNERI ANNALENA
 cattedra(5074, 9709, lm6, c) :- codice_corso(5074), matricola_docente(9709), laurea(lm6), taf(c).
 %  Corso: 3067, Docente: VENNERI ANNALENA
-cattedra(3067, 9709, ltps, b) :- codice_corso(3067), matricola_docente(9709), laurea(ltps), taf(b).
+cattedra(3067, 9709, lcpb, b) :- codice_corso(3067), matricola_docente(9709), laurea(lcpb), taf(b).
 %  Corso: 5053, Docente: VENNERI ANNALENA
 cattedra(5053, 9709, lm, d) :- codice_corso(5053), matricola_docente(9709), laurea(lm), taf(d).
 %  Corso: 5074, Docente: VENNERI ANNALENA
@@ -6644,7 +6873,7 @@ cattedra(5026, 5892, lm6, b) :- codice_corso(5026), matricola_docente(5892), lau
 %  Corso: 5026, Docente: VERONESI Licia
 cattedra(5026, 5892, lm6, b) :- codice_corso(5026), matricola_docente(5892), laurea(lm6), taf(b).
 %  Corso: 3043, Docente: VESCOVI Paolo
-cattedra(3043, 5551, ltps, b) :- codice_corso(3043), matricola_docente(5551), laurea(ltps), taf(b).
+cattedra(3043, 5551, lcpb, b) :- codice_corso(3043), matricola_docente(5551), laurea(lcpb), taf(b).
 %  Corso: 5027, Docente: VESCOVI Paolo
 cattedra(5027, 5551, lm6, b) :- codice_corso(5027), matricola_docente(5551), laurea(lm6), taf(b).
 %  Corso: 5027, Docente: VESCOVI Paolo
@@ -6662,13 +6891,13 @@ cattedra(5027, 5551, lm6, b) :- codice_corso(5027), matricola_docente(5551), lau
 %  Corso: 5027, Docente: VESCOVI Paolo
 cattedra(5027, 5551, lm6, d) :- codice_corso(5027), matricola_docente(5551), laurea(lm6), taf(d).
 %  Corso: 3063, Docente: VESCOVI Paolo
-cattedra(3063, 5551, lt, b) :- codice_corso(3063), matricola_docente(5551), laurea(lt), taf(b).
+cattedra(3063, 5551, lcpb, b) :- codice_corso(3063), matricola_docente(5551), laurea(lcpb), taf(b).
 %  Corso: 3063, Docente: VESCOVI Paolo
-cattedra(3063, 5551, lt, b) :- codice_corso(3063), matricola_docente(5551), laurea(lt), taf(b).
+cattedra(3063, 5551, lcpb, b) :- codice_corso(3063), matricola_docente(5551), laurea(lcpb), taf(b).
 %  Corso: 3063, Docente: VESCOVI Paolo
-cattedra(3063, 5551, lt, b) :- codice_corso(3063), matricola_docente(5551), laurea(lt), taf(b).
+cattedra(3063, 5551, lcpb, b) :- codice_corso(3063), matricola_docente(5551), laurea(lcpb), taf(b).
 %  Corso: 3063, Docente: VESCOVI Paolo
-cattedra(3063, 5551, lt, b) :- codice_corso(3063), matricola_docente(5551), laurea(lt), taf(b).
+cattedra(3063, 5551, lcpb, b) :- codice_corso(3063), matricola_docente(5551), laurea(lcpb), taf(b).
 %  Corso: 995, Docente: VETRO' Francesco
 cattedra(995, 31517, lm5, b) :- codice_corso(995), matricola_docente(31517), laurea(lm5), taf(b).
 %  Corso: 995, Docente: VETRO' Francesco
@@ -6676,13 +6905,13 @@ cattedra(995, 31517, lm5, d) :- codice_corso(995), matricola_docente(31517), lau
 %  Corso: 995, Docente: VETRO' Francesco
 cattedra(995, 31517, lm5, d) :- codice_corso(995), matricola_docente(31517), laurea(lm5), taf(d).
 %  Corso: 3071, Docente: VEZZANI Bianca
-cattedra(3071, 39489, ltps, a) :- codice_corso(3071), matricola_docente(39489), laurea(ltps), taf(a).
+cattedra(3071, 39489, lt, a) :- codice_corso(3071), matricola_docente(39489), laurea(lt), taf(a).
 %  Corso: 3044, Docente: VEZZANI Bianca
-cattedra(3044, 39489, ltps, a) :- codice_corso(3044), matricola_docente(39489), laurea(ltps), taf(a).
+cattedra(3044, 39489, lcpb, a) :- codice_corso(3044), matricola_docente(39489), laurea(lcpb), taf(a).
 %  Corso: 3047, Docente: VEZZANI Bianca
-cattedra(3047, 39489, ltps, a) :- codice_corso(3047), matricola_docente(39489), laurea(ltps), taf(a).
+cattedra(3047, 39489, lcpb, a) :- codice_corso(3047), matricola_docente(39489), laurea(lcpb), taf(a).
 %  Corso: 3042, Docente: VEZZANI Bianca
-cattedra(3042, 39489, ltps, a) :- codice_corso(3042), matricola_docente(39489), laurea(ltps), taf(a).
+cattedra(3042, 39489, lcpb, a) :- codice_corso(3042), matricola_docente(39489), laurea(lcpb), taf(a).
 %  Corso: 5036, Docente: VIAPPIANI Cristiano
 cattedra(5036, 4696, lm, b) :- codice_corso(5036), matricola_docente(4696), laurea(lm), taf(b).
 %  Corso: 5075, Docente: VIGNALI Giuseppe
@@ -6706,23 +6935,23 @@ cattedra(5049, 20105, lm, nan) :- codice_corso(5049), matricola_docente(20105), 
 %  Corso: 3014, Docente: VILLICICH Riccardo
 cattedra(3014, 20105, lt, b) :- codice_corso(3014), matricola_docente(20105), laurea(lt), taf(b).
 %  Corso: 3046, Docente: VINCENTI Vincenzo
-cattedra(3046, 5476, ltps, b) :- codice_corso(3046), matricola_docente(5476), laurea(ltps), taf(b).
+cattedra(3046, 5476, lcpb, b) :- codice_corso(3046), matricola_docente(5476), laurea(lcpb), taf(b).
 %  Corso: 3046, Docente: VINCENTI Vincenzo
-cattedra(3046, 5476, ltps, b) :- codice_corso(3046), matricola_docente(5476), laurea(ltps), taf(b).
+cattedra(3046, 5476, lcpb, b) :- codice_corso(3046), matricola_docente(5476), laurea(lcpb), taf(b).
 %  Corso: 3046, Docente: VINCENTI Vincenzo
-cattedra(3046, 5476, ltps, b) :- codice_corso(3046), matricola_docente(5476), laurea(ltps), taf(b).
+cattedra(3046, 5476, lcpb, b) :- codice_corso(3046), matricola_docente(5476), laurea(lcpb), taf(b).
 %  Corso: 5026, Docente: VINCENTI Vincenzo
 cattedra(5026, 5476, lm6, b) :- codice_corso(5026), matricola_docente(5476), laurea(lm6), taf(b).
 %  Corso: 3066, Docente: VINCENTI Vincenzo
-cattedra(3066, 5476, lt, c) :- codice_corso(3066), matricola_docente(5476), laurea(lt), taf(c).
+cattedra(3066, 5476, lcpa, c) :- codice_corso(3066), matricola_docente(5476), laurea(lcpa), taf(c).
 %  Corso: 3043, Docente: VINCENTI Vincenzo
-cattedra(3043, 5476, ltps, b) :- codice_corso(3043), matricola_docente(5476), laurea(ltps), taf(b).
+cattedra(3043, 5476, lcpb, b) :- codice_corso(3043), matricola_docente(5476), laurea(lcpb), taf(b).
 %  Corso: 3040, Docente: VIRGILIO Edoardo
-cattedra(3040, 30782, ltps, b) :- codice_corso(3040), matricola_docente(30782), laurea(ltps), taf(b).
+cattedra(3040, 30782, lcpb, b) :- codice_corso(3040), matricola_docente(30782), laurea(lcpb), taf(b).
 %  Corso: 5026, Docente: VIRGILIO Edoardo
 cattedra(5026, 30782, lm6, f) :- codice_corso(5026), matricola_docente(30782), laurea(lm6), taf(f).
 %  Corso: 3048, Docente: VIRGILIO Edoardo
-cattedra(3048, 30782, ltps, a) :- codice_corso(3048), matricola_docente(30782), laurea(ltps), taf(a).
+cattedra(3048, 30782, lcpb, a) :- codice_corso(3048), matricola_docente(30782), laurea(lcpb), taf(a).
 %  Corso: 5074, Docente: VIRGILIO Edoardo
 cattedra(5074, 30782, lm6, b) :- codice_corso(5074), matricola_docente(30782), laurea(lm6), taf(b).
 %  Corso: 3022, Docente: VISIOLI Giovanna
@@ -6780,7 +7009,7 @@ cattedra(3010, 11350, lt, a) :- codice_corso(3010), matricola_docente(11350), la
 %  Corso: 5036, Docente: WIMBERGER Sandro Marcel
 cattedra(5036, 11350, lm, b) :- codice_corso(5036), matricola_docente(11350), laurea(lm), taf(b).
 %  Corso: 3064, Docente: WONGPRAWMAS RUNGSARAN
-cattedra(3064, 31051, lt, f) :- codice_corso(3064), matricola_docente(31051), laurea(lt), taf(f).
+cattedra(3064, 31051, lcpb, f) :- codice_corso(3064), matricola_docente(31051), laurea(lcpb), taf(f).
 %  Corso: 3055, Docente: WONGPRAWMAS RUNGSARAN
 cattedra(3055, 31051, lt, d) :- codice_corso(3055), matricola_docente(31051), laurea(lt), taf(d).
 %  Corso: 3030, Docente: ZACCAGNINI Alessandro
@@ -6872,7 +7101,7 @@ cattedra(5068, 207024, lm, b) :- codice_corso(5068), matricola_docente(207024), 
 %  Corso: 5068, Docente: ZIMETTI Francesca
 cattedra(5068, 207024, lm, b) :- codice_corso(5068), matricola_docente(207024), laurea(lm), taf(b).
 %  Corso: 3049, Docente: ZONI Roberta
-cattedra(3049, 4303, ltps, b) :- codice_corso(3049), matricola_docente(4303), laurea(ltps), taf(b).
+cattedra(3049, 4303, lcpb, b) :- codice_corso(3049), matricola_docente(4303), laurea(lcpb), taf(b).
 %  Corso: 3049, Docente: ZONI Roberta
-cattedra(3049, 4303, ltps, b) :- codice_corso(3049), matricola_docente(4303), laurea(ltps), taf(b).
+cattedra(3049, 4303, lcpb, b) :- codice_corso(3049), matricola_docente(4303), laurea(lcpb), taf(b).
 
