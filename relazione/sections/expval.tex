@@ -8,7 +8,7 @@ generare soluzioni valide, rispettando i vincoli definiti e implementando corret
 le ottimizzazioni.
 
 I dati di input per il modello sono stati generati attraverso un comando Python, che ha 
-prodotto i file necessari contenenti i fatti relativi ai docenti, alle coperture, ai 
+generato i file necessari contenenti i fatti relativi ai docenti, alle coperture, ai 
 docenti a contratto e ai limiti ministeriali.
 
 \begin{lstlisting}[language=bash]
@@ -18,7 +18,7 @@ docenti a contratto e ai limiti ministeriali.
 Una volta generati i file, l'analisi è stata eseguita utilizzando Clingo.
 
 \begin{lstlisting}[language=bash]
- clingo -n 15 --parallel-mode 8 --time-limit=180 lp/* main.lp
+ clingo -n 0 --parallel-mode 8 --time-limit=180 lp/* main.lp
 \end{lstlisting}
 
 Il modello ha prodotto una soluzione ottima in un \textit{centesimo di secondo}, 
@@ -42,10 +42,12 @@ tramite Python.
  python3 main.py --3027 --5069 --3026 --5036 --3030 --5037
 \end{lstlisting}
 
-L'analisi è stata eseguita con Clingo utilizzando lo stesso comando precedentemente 
-indicato. Il modello ha dimostrato di poter gestire un numero maggiore di corsi, producendo 
-soluzioni valide in tempi brevi. In questo caso, il tempo di computazione è stato di circa 
-\textit{due secondi} per ottenere la soluzione ottimale.
+L'analisi è stata eseguita con Clingo utilizzando lo stesso comando precedentemente indicato, 
+ma con un timer impostato a un'ora. Sebbene non sia stata trovata una soluzione ottimale 
+entro il limite di tempo, il modello ha generato 23 soluzioni in pochissimi secondi, 
+tra cui un modello ottimale rispetto ai vincoli soddisfacibili. Questo modello ottimale, 
+tra quelli generati, ha assegnato zero docenti a contratto come garanti su un totale di 45 
+garanti, dimostrando la capacità del sistema di rispettare i vincoli più stringenti.
 
 Durante il test, è stata utilizzata la configurazione che prevede solo pesi pari a 10, al 
 fine di ridurre la complessità computazionale. Tuttavia, il modello supporta anche l'opzione 
@@ -56,35 +58,16 @@ maggiore flessibilità nella generazione delle soluzioni.
 \subsection{Dataset grande: tutti i dipartimenti}
 \label{sec:dataset-tutti-dipartimenti}
 
-Come ultima valutazione del modello, è stato utilizzato un dataset 
-comprendente tutti i corsi di studio del dipartimento. Prima dell'elaborazione, sono stati 
-esclusi i casi particolari relativi ai corsi inter-atenei, poiché non erano considerati 
-rilevanti per questa analisi. Inoltre, è stato rimosso il vincolo che richiedeva che almeno 
-il 50\% dei garanti afferissero al macrosettore caratterizzante del corso. Questa scelta è 
-stata necessaria perché in molti corsi la composizione dei docenti non permetteva di 
-soddisfare tale requisito: in alcuni casi, solo due docenti su venti erano afferenti al 
-macrosettore caratterizzante, rendendo impossibile il rispetto di questa condizione.
-
-La prima analisi è stata condotta utilizzando la configurazione con solo pesi pari a 10, 
-ma questa si è rivelata insoddisfacibile a causa di due corsi specifici, rispettivamente 
-il corso a ciclo unico di Farmacia (codice: 5079) e il corso a ciclo unico di Chimica e 
-Tecnologia Farmaceutiche (codice: 5080). Rimossi questi corsi problematici, il modello 
-è stato rilanciato con la configurazione basata esclusivamente su pesi pari a 10, 
-risultando soddisfacibile in pochi secondi. Questa prima fase ha dimostrato che, 
-eliminando i corsi che introducono situazioni particolarmente complesse, il modello 
-è in grado di produrre soluzioni valide e coerenti in modo estremamente rapido.
-
-Successivamente, per includere anche i corsi precedentemente rimossi, è stata 
-effettuata una nuova run abilitando l'opzione dei pesi pari a 5. 
-Entrambe le configurazioni sono state lanciate con il seguente comando:
-
+Come ultima valutazione del modello, è stato utilizzato un dataset comprendente tutti i corsi 
+di studio dell'ateneo. Prima dell'elaborazione, sono stati esclusi i casi particolari relativi 
+ai corsi inter-atenei, poiché non erano considerati rilevanti per questa analisi.
+Anche in quest'ultimo caso, i file di input sono stati generati tramite Python.
 \begin{lstlisting}[language=bash]
- clingo -n 15 --parallel-mode 10 --time-limit=3000 lp/* main.lp
+ python3 main.py --all
 \end{lstlisting}
 
-Nonostante non sia stato raggiunto un modello ottimale entro il limite di tempo di un'ora, 
-sono stati generati 10 modelli, tra cui uno ottimale rispetto ai vincoli soddisfacibili. 
-L'aggiunta del peso 5 ha aumentato significativamente la flessibilità del modello, ma ha 
-anche comportato un'esplosione esponenziale del costo computazionale. Questa crescita è 
-stata causata dal maggiore numero di combinazioni generate, che hanno richiesto un tempo di 
-elaborazione considerevolmente superiore.
+Durante questa valutazione, è stato impostato un limite di tempo di un'ora. Sebbene non sia stato 
+trovato un modello ottimale entro il limite stabilito, il modello ha generato 283 soluzioni, 
+tra cui un modello ottimale rispetto ai vincoli soddisfacibili. Questo modello finale includeva 
+solo 11 docenti a contratto su un totale di 869 garanti assegnati, dimostrando una notevole 
+efficienza nell'ottimizzazione delle risorse e una forte preferenza per l'utilizzo di docenti non a contratto.
