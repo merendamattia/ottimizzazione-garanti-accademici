@@ -39,9 +39,13 @@ path_docenti = "../dataset/docenti.xlsx"
 
 df_docenti = pd.read_excel(path_docenti, engine="openpyxl", dtype=str)
 df_docenti = df_docenti[["Matricola", "Cognome e Nome"]]
+df_docenti["Matricola"] = df_docenti["Matricola"].astype(int)
+df_docenti["Matricola"] = df_docenti["Matricola"].astype(str)
 
 df_coperture = pd.read_excel(path_coperture, engine="openpyxl", dtype=str)
 df_coperture = df_coperture[["Cod. Corso di Studio", "Des. Corso di Studio"]]
+df_coperture["Cod. Corso di Studio"] = df_coperture["Cod. Corso di Studio"].astype(int)
+df_coperture["Cod. Corso di Studio"] = df_coperture["Cod. Corso di Studio"].astype(str)
 
 result = []
 jolly_data = []
@@ -110,6 +114,11 @@ df_excel.to_excel(excel_output_path, index=False, engine="openpyxl")
 print(f"File Excel salvato in '{excel_output_path}'.")
 
 df_jolly = pd.DataFrame(jolly_data, columns=["Codice Corso", "Des. Corso", "Numero di Jolly"])
-df_jolly = df_jolly.rename(columns={"Numero di Jolly": "Numero di Contratti"})
-df_jolly.to_excel(jolly_output_path, index=False, engine="openpyxl")
-print(f"File Excel con i Jolly salvato in '{jolly_output_path}'.")
+df_jolly = df_jolly[df_jolly["Numero di Jolly"] > 0]
+
+if not df_jolly.empty:
+    df_jolly = df_jolly.rename(columns={"Numero di Jolly": "Numero di Contratti"})
+    df_jolly.to_excel(jolly_output_path, index=False, engine="openpyxl")
+    print(f"File Excel con i contratti salvato in '{jolly_output_path}'.")
+else:
+    print("Nessun corso con contratti trovato, file non creato.")
