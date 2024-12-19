@@ -231,11 +231,19 @@ escludendo esplicitamente i docenti a contratto (\texttt{c}).
 \begin{lstlisting}[language=prolog, caption=Generazione dei garanti non a contratto.]
 Minimo{
       garante(Docente, Corso, Peso, Fascia) :
-            cattedra(Corso, Docente, _, _),
             peso(Peso),
-            docente(Docente, Fascia, _),
             fascia(Fascia),
-            Fascia != c
+            Fascia != c,
+
+            % Docente 1
+            cattedra(Corso, Docente, _, _),
+            docente(Docente, Fascia, _),
+            
+            % Docente 2
+            cattedra(Corso, Docente2, _, _),
+            docente(Docente2, Fascia, _),
+
+            Docente >= Docente2
 }Massimo :-
       ministeriale(Corso, MinimoComplessivo, _, _, MassimoDocentiContratto),
       Minimo = MinimoComplessivo - MassimoDocentiContratto,
@@ -250,8 +258,9 @@ appartenere alle fasce \texttt{td} e \texttt{ti}.
 
 Il numero massimo di garanti non a contratto (\texttt{Massimo}), invece, coincide con il valore 
 minimo dei garanti richiesti per quel corso, garantendo che la somma totale dei garanti sia 
-conforme ai requisiti ministeriali.
-
+conforme ai requisiti ministeriali. Inoltre, è stata fissata una relazione d'ordine sul numero di 
+matricola (\texttt{Docente >= Docente2}): in questo modo, si vanno ad eliminare le possibili 
+permutazioni in fase di generazione.
 
 \paragraph{Docenti a contratto.}
 I docenti \textit{a contratto} vengono considerati come una risorsa ausiliaria, identificati tramite 
@@ -276,9 +285,8 @@ di codice seguente.
 \end{lstlisting}
 
 Questa regola garantisce che il numero di docenti a contratto utilizzati come garanti non ecceda il 
-valore massimo consentito, specificato dal valore \texttt{Massimo} associato al corso.
-Inoltre, è stata fissata una relazione d'ordine sul numero di matricola (\texttt{Docente > Docente2}): 
-in questo modo, si vanno ad eliminare le possibili permutazioni in fase di generazione.
+valore massimo consentito, specificato dal valore \texttt{Massimo} associato al corso. Anche in questo 
+caso, viene utilizzata una relazione d'ordine in fase di generazione.
 
 
 \subsection{Vincoli}\label{sec:constraints}
@@ -365,7 +373,6 @@ limite massimo specificato dai requisiti ministeriali.
 
 
 
-
 \subsection{Gestione delle priorità}\label{sec:priorita}
 La gestione delle priorità è stata un aspetto fondamentale nel nostro progetto, poiché 
 miravamo a rispettare scrupolosamente i vincoli ministeriali, garantendo al contempo 
@@ -431,14 +438,22 @@ le competenze richieste dai corsi.
                  corso(Corso, _, SettoreSSD, _) }.
 \end{lstlisting}
 
-Infine, per mantenere l'equilibrio tra la qualità e l'efficacia del sistema, abbiamo 
+Per mantenere l'equilibrio tra la qualità e l'efficacia del sistema, abbiamo 
 minimizzato il numero di garanti assegnati a ciascun corso, penalizzando le situazioni 
 in cui il numero di garanti supera il minimo richiesto. Questo vincolo ci ha permesso 
 di ottimizzare le risorse, evitando l'assegnazione di più docenti di quanto fosse necessario.
 
 \begin{lstlisting}[language=prolog, caption=Minimizzazione dei garanti per corso di laurea.]
-% Minimizzo il numero di garanti per ogni corso
-#minimize { Penalita : garanti_per_corso(Corso, Numero),
-                       Penalita = Numero * 10 }.
+ % Minimizzo il numero di garanti per ogni corso
+ #minimize { Penalita : garanti_per_corso(Corso, Numero),
+                        Penalita = Numero * 10 }.
 \end{lstlisting}
 
+Infine, abbiamo introdotto un ulteriore criterio di ottimizzazione per privilegiare i 
+garanti che ricoprono il ruolo di presidente del loro corso di laurea. 
+
+\begin{lstlisting}[language=prolog, caption=Massimizzazione dei presidenti come garanti.]
+ % Massimizza i presidenti che sono garanti nel loro corso di laurea
+ #maximize { 50, Docente, Corso : garante(Docente, Corso, _, _), 
+                                  presidente(Docente, Corso) }.
+\end{lstlisting}
