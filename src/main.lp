@@ -207,6 +207,9 @@ garanti_per_corso(Corso, Numero) :-
 
 % Minimizzare i docenti con peso 5
 #minimize { 100, Docente : garante(Docente, _, Peso, _), Peso = 5 }.
+
+% % Massimizza i presidenti che sono garanti nel loro corso di laurea
+#maximize { 50, Docente, Corso :  garante(Docente, Corso, _, _), presidente(Docente, Corso) }.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% ! 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% ! Massimizzo i docenti con TAF maggiore

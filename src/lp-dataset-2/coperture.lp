@@ -3,22 +3,11 @@ laurea(lt).
 laurea(lm).
 
 %  SEZIONE: SSD
-ssd(fis, 7).
-ssd(fis, 3).
-ssd(mat, 5).
-ssd(mat, 8).
-ssd(fis, 1).
-ssd(mat, 2).
-ssd(inf, 1).
-ssd(mat, 4).
-ssd(mat, 3).
-ssd(mat, 7).
-ssd(fis, 2).
-ssd(chim, 3).
-ssd(fis, 8).
-ssd(mat, 6).
-ssd(fis, 4).
-ssd(icar, 8).
+ssd(fis).
+ssd(mat).
+ssd(inf).
+ssd(chim).
+ssd(icar).
 
 %  SEZIONE: TAF
 taf(c).
@@ -43,17 +32,27 @@ codice_corso(5069).
 
 %  SEZIONE: Informazioni Corsi
 %  Corso: 3026 (lt)
-corso(3026, lt, fis, 7) :- codice_corso(3026), laurea(lt), ssd(fis, 7).
+corso(3026, lt, chim) :- codice_corso(3026), laurea(lt), ssd(chim).
+%  Corso: 3026 (lt)
+corso(3026, lt, fis) :- codice_corso(3026), laurea(lt), ssd(fis).
+%  Corso: 3026 (lt)
+corso(3026, lt, mat) :- codice_corso(3026), laurea(lt), ssd(mat).
 %  Corso: 5036 (lm)
-corso(5036, lm, fis, 3) :- codice_corso(5036), laurea(lm), ssd(fis, 3).
+corso(5036, lm, fis) :- codice_corso(5036), laurea(lm), ssd(fis).
 %  Corso: 3030 (lt)
-corso(3030, lt, mat, 8) :- codice_corso(3030), laurea(lt), ssd(mat, 8).
+corso(3030, lt, inf) :- codice_corso(3030), laurea(lt), ssd(inf).
+%  Corso: 3030 (lt)
+corso(3030, lt, mat) :- codice_corso(3030), laurea(lt), ssd(mat).
 %  Corso: 5037 (lm)
-corso(5037, lm, mat, 8) :- codice_corso(5037), laurea(lm), ssd(mat, 8).
+corso(5037, lm, mat) :- codice_corso(5037), laurea(lm), ssd(mat).
 %  Corso: 3027 (lt)
-corso(3027, lt, inf, 1) :- codice_corso(3027), laurea(lt), ssd(inf, 1).
+corso(3027, lt, inf) :- codice_corso(3027), laurea(lt), ssd(inf).
+%  Corso: 3027 (lt)
+corso(3027, lt, fis) :- codice_corso(3027), laurea(lt), ssd(fis).
+%  Corso: 3027 (lt)
+corso(3027, lt, mat) :- codice_corso(3027), laurea(lt), ssd(mat).
 %  Corso: 5069 (lm)
-corso(5069, lm, inf, 1) :- codice_corso(5069), laurea(lm), ssd(inf, 1).
+corso(5069, lm, inf) :- codice_corso(5069), laurea(lm), ssd(inf).
 
 %  SEZIONE: Relazioni Corsi-Docenti
 %  Corso: 3026, Docente: ABBRUZZETTI Stefania

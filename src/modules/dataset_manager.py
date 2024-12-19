@@ -133,9 +133,25 @@ class DatasetManager:
         comment_character = '% '
         # filepath = os.path.join(self.dataset_path, filename + '.lp')
         filepath = os.path.join(output_dir, filename + '.lp')
-        # todo: continuare qui
+        added = set()
+        try:
         
+            with open(filepath, "w") as f:
+                f.write(f"{comment_character} SEZIONE: PRESIDENTI\n")
+                for _, row in df.iterrows():
+                    codice_corso = row["CODICE U-GOV"]
+                    matricola_docente = row["Matricola"]
+                    t = tuple([codice_corso, matricola_docente])
+                    if t not in added:
+                        added.add(t)
+                        f.write(f"{comment_character} {row["PRESIDENTE"]}\n")
+                        f.write(f"presidente({matricola_docente}, {codice_corso}) :- matricola_docente({matricola_docente}), codice_corso({codice_corso}).\n")
+            
+            print(f"Dati salvati con successo in: {filepath}")
         
+        except Exception as e:
+            raise Exception(f"Errore durante il salvataggio dei dati su '{filepath}': {e}")
+    
     def scrivi_coperture(self, df, filename):
         """
         Genera un file ASP contenente informazioni sui corsi, TAF e SSD.
