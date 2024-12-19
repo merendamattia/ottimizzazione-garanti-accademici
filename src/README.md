@@ -70,3 +70,6 @@ clingo -n 15 --parallel-mode 8 --time-limit=180 lp/* main.lp > output.txt
 cd utils
 python3 post-proc.py ../output.txt
 ```
+A questo punto si avranno 2 file:
+- `garanti.xlsx` contenente i garanti per ciascun corso di laurea.
+- `contratti.xlsx` contenente il numero di contratti necessari per ciascun corso di laurea.
