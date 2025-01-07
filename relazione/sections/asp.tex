@@ -6,16 +6,16 @@ Per facilitare l'ordine visivo e semplificare eventuali ispezioni manuali,
 il progetto è stato suddiviso in più file sorgenti, ciascuno dedicato a un 
 aspetto specifico del dataset e delle regole.
 
-Abbiamo separato i fatti e le regole in due file principali: uno dedicato 
-ai docenti (Sezione~\ref*{sec:rules-docenti}) e un altro focalizzato sulle 
-coperture (Sezione~\ref*{sec:rules-coperture}). Per maggiore praticità, è 
+Abbiamo separato i fatti e le regole in cinque file principali: uno dedicato 
+ai docenti (Sezione~\ref{sec:rules-docenti}) e un altro focalizzato sulle 
+coperture (Sezione~\ref{sec:rules-coperture}). Per maggiore praticità, è 
 stato creato un file specifico per i docenti a contratto 
-(Sezione~\ref*{sec:rules-docenti-contratto}) e un altro per i limiti 
-ministeriali (Sezione~\ref*{sec:rules-ministeriale}).
+(Sezione~\ref{sec:rules-docenti-contratto}) e un altro per i limiti 
+ministeriali (Sezione~\ref{sec:rules-ministeriale}).
 
 Il file principale, il main, integra tutte le regole relative ai garanti, 
 inclusi i vincoli e le priorità definite per l'ottimizzazione del sistema 
-(Sezione~\ref*{sec:garanti}).
+(Sezione~\ref{sec:garanti}).
 
 È importante sottolineare che tutti questi file vengono generati dinamicamente 
 dal programma di preprocessing scritto in Python. Questa fase, gestita dal 
@@ -389,17 +389,17 @@ garanti per un solo corso, evitando situazioni in cui un docente fosse impegnato
 garante per più corsi contemporaneamente al 50\%.
 
 \begin{lstlisting}[language=prolog, caption=Gestione delle priorità dei docenti.]
- % Docenti a tempo determinato (ricercatori)
- #maximize { 50 : garante(_, _, _, td) }.
+ % Massimizzare i docenti a tempo determinato (ricercatori)
+ #maximize { 50, Docente : garante(Docente, _, _, td) }.
 
- % Docenti a tempo indeterminato
- #maximize { 40 : garante(_, _, _, ti) }.
+ % Massimizzare i docenti a tempo indeterminato
+ #maximize { 40, Docente : garante(Docente, _, _, ti) }.
 
- % Docenti a contratto
- #maximize { 32 : garante(_, _, _, c) }.
+ % Minimizzare i docenti a contratto
+ #maximize { 32, Docente : garante(Docente, _, _, c) }.
 
- % Docenti con peso 10
- #maximize { 25 : garante(_, _, Peso, _), Peso = 10 }.
+ % Massimizzare i docenti con peso 10
+ #maximize { 25, Docente : garante(Docente, _, Peso, _), Peso = 10 }.
 
  % Minimizzare i docenti con peso 5
  #minimize { 100, Docente : garante(Docente, _, Peso, _), Peso = 5 }.
@@ -411,19 +411,19 @@ e gli insegnamenti caratterizzanti, identificati dal TAF B.
 
 \begin{lstlisting}[language=prolog, caption=Gestione delle priorità del TAF.]
  % Garanti che hanno insegnamenti di base
- #maximize { 25 : garante(Docente, Corso, _, _), 
-                  cattedra(Corso, Docente, _, TAF), 
-                  TAF = a}.
+ #maximize { 25, Docente : garante(Docente, Corso, _, _), 
+                           cattedra(Corso, Docente, _, TAF), 
+                           TAF = a}.
 
  % Garanti che hanno insegnamenti caratterizzanti
- #maximize { 18 : garante(Docente, Corso, _, _), 
-                  cattedra(Corso, Docente, _, TAF), 
-                  TAF = b}.
+ #maximize { 18, Docente : garante(Docente, Corso, _, _), 
+                           cattedra(Corso, Docente, _, TAF), 
+                           TAF = b}.
 
  % Garanti che hanno insegnamenti affini
- #maximize { 10 : garante(Docente, Corso, _, _), 
-                  cattedra(Corso, Docente, _, TAF), 
-                  TAF = c}.
+ #maximize { 10, Docente : garante(Docente, Corso, _, _), 
+                           cattedra(Corso, Docente, _, TAF), 
+                           TAF = c}.
 \end{lstlisting}
 
 Per ottimizzare l'assegnazione dei garanti in base alla loro competenza, sono stati 
@@ -433,9 +433,9 @@ le competenze richieste dai corsi.
 
 \begin{lstlisting}[language=prolog, caption=Preferenza dei garanti con macrosettore coerente a quello del corso.]
 % Ottimizzare i garanti con SSD caratterizzante
-#maximize { 20 : garante(Docente, Corso, _, _), 
-                 docente(Docente, _, SettoreSSD, _), 
-                 corso(Corso, _, SettoreSSD, _) }.
+#maximize { 20, Docente : garante(Docente, Corso, _, _), 
+                          docente(Docente, _, SettoreSSD, _), 
+                          corso(Corso, _, SettoreSSD, _) }.
 \end{lstlisting}
 
 Per mantenere l'equilibrio tra la qualità e l'efficacia del sistema, abbiamo 
@@ -445,8 +445,8 @@ di ottimizzare le risorse, evitando l'assegnazione di più docenti di quanto fos
 
 \begin{lstlisting}[language=prolog, caption=Minimizzazione dei garanti per corso di laurea.]
  % Minimizzo il numero di garanti per ogni corso
- #minimize { Penalita : garanti_per_corso(Corso, Numero),
-                        Penalita = Numero * 10 }.
+ #minimize { Penalita, Corso : garanti_per_corso(Corso, Numero),
+                               Penalita = Numero * 10 }.
 \end{lstlisting}
 
 Infine, abbiamo introdotto un ulteriore criterio di ottimizzazione per privilegiare i 
